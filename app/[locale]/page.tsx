@@ -79,7 +79,7 @@ export default async function HomePage() {
       return {
         slug: item.drama_slug.trim(),
         title: item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug,
-        backdropUrl: drama ? tmdbImage(drama.backdropUrl, 'original') : null,
+        backdropUrl: drama ? (tmdbImage(drama.backdropUrl, 'original') || null) : null,
         comment: item.comment?.[locale] || item.comment?.en || '',
         badge: item.badge_text || '🔥 Trending',
       };
@@ -99,7 +99,7 @@ export default async function HomePage() {
       return {
         slug: item.drama_slug.trim(),
         title: item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug,
-        posterUrl: drama ? tmdbImage(drama.posterUrl, 'w500') : null,
+        posterUrl: drama ? (tmdbImage(drama.posterUrl, 'w500') || null) : null,
         comment: item.comment?.[locale] || item.comment?.en || '',
         year: drama?.year,
         moods: drama ? parseJsonArray(drama.moodTags) : [],
@@ -254,7 +254,7 @@ export default async function HomePage() {
                   key={drama.slug}
                   slug={drama.slug}
                   title={title}
-                  posterUrl={tmdbImage(drama.posterUrl, 'w500')}
+                  posterUrl={tmdbImage(drama.posterUrl, 'w500') || null}
                   moods={moodTags.slice(0, 2)}
                   moodLabels={{
                     wanna_cry: t('mood.wanna_cry'),
@@ -283,7 +283,7 @@ export default async function HomePage() {
                     key={drama.slug}
                     slug={drama.slug}
                     title={title}
-                    posterUrl={tmdbImage(drama.posterUrl, 'w500')}
+                    posterUrl={tmdbImage(drama.posterUrl, 'w500') || null}
                     year={drama.year}
                     locale={locale}
                   />

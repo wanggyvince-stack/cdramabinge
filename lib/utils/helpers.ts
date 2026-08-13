@@ -109,8 +109,14 @@ export const ALL_GENRES = [
 /**
  * Build TMDB image URL
  */
+export function isPlaceholderPoster(url: string | null | undefined): boolean {
+  if (!url) return true;
+  return url.includes('placeholder_') || url.includes('/placeholder-');
+}
+
 export function tmdbImage(path: string | null | undefined, size: 'w342' | 'w500' | 'w780' | 'original' = 'w500'): string {
-  if (!path) return '/placeholder-poster.svg';
+  if (!path) return '';
+  if (isPlaceholderPoster(path)) return '';
   if (path.startsWith('http')) return path;
   return `https://image.tmdb.org/t/p/${size}${path}`;
 }

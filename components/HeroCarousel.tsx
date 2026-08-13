@@ -20,10 +20,12 @@ interface HeroCarouselProps {
 /**
  * HeroCarousel — 首页轮播组件
  * Full-width, 5s auto-play, ink wash gradient transition
+ * Fetches real backdrop images from TMDB when missing/placeholder
  */
 export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [resolvedBackdrops, setResolvedBackdrops] = useState<Record<string, string | null>>({});
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % items.length);
@@ -39,7 +41,29 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
     return () => clearInterval(timer);
   }, [isPaused, next]);
 
+  // Fetch missing backdrops from TMDB API
+  useEffect(() => {
+    items.forEach((item) => {
+      if (!item.backdropUrl && !resolvedBackdrops[item.slug]) {
+        fetch(`/api/tmdb-poster?slug=${item.slug}`)
+          .then(res => res.json())
+          .then(data => {
+            if (data.backdropUrl) {
+              setResolvedBackdrops(prev => ({ ...prev, [item.slug]: data.backdropUrl }));
+            }
+          })
+          .catch(() => {});
+      }
+    });
+  }, [items, resolvedBackdrops]);
+
   if (items.length === 0) return null;
+
+  // Get the effective backdrop URL for an item
+  const getBackdrop = (item: CarouselItem) => {
+    if (item.backdropUrl) return item.backdropUrl;
+    return resolvedBackdrops[item.slug] || null;
+  };
 
   return (
     <section
@@ -57,14 +81,14 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
           }`}
         >
           {/* Background image */}
-          {item.backdropUrl ? (
+          {getBackdrop(item) ? (
             <img
-              src={item.backdropUrl}
+              src={getBackdrop(item)!}
               alt={item.title}
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-ink-2 to-ink-3" />
+            <div className="w-full h-full bg-gradient-to-br from-ink-2 via-dingyao to-ink-3" />
           )}
 
           {/* Ink wash overlay — bottom gradient to sujuan */}

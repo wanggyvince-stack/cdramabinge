@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MOOD_EMOJI, MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
 
@@ -15,6 +18,7 @@ interface DramaCardProps {
 /**
  * DramaCard — 剧卡片组件
  * Song Dynasty style: 9:16 poster, subtle border, gradient overlay
+ * When poster is missing/placeholder, fetches real poster from TMDB via API route
  */
 export default function DramaCard({
   slug,
@@ -26,6 +30,24 @@ export default function DramaCard({
   year,
   locale,
 }: DramaCardProps) {
+  const [resolvedPoster, setResolvedPoster] = useState<string | null>(posterUrl || null);
+  const [fetchAttempted, setFetchAttempted] = useState(false);
+
+  // If no poster, try to fetch from TMDB API
+  useEffect(() => {
+    if (!resolvedPoster && !fetchAttempted) {
+      setFetchAttempted(true);
+      fetch(`/api/tmdb-poster?slug=${slug}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.posterUrl) {
+            setResolvedPoster(data.posterUrl);
+          }
+        })
+        .catch(() => {}); // Silently fail
+    }
+  }, [resolvedPoster, fetchAttempted, slug]);
+
   return (
     <Link
       href={`/${locale}/drama/${slug}`}
@@ -34,16 +56,17 @@ export default function DramaCard({
       <div className="song-card overflow-hidden glaze-hover">
         {/* Poster */}
         <div className="relative aspect-[9/16] overflow-hidden rounded-t-song">
-          {posterUrl ? (
+          {resolvedPoster ? (
             <img
-              src={posterUrl}
+              src={resolvedPoster}
               alt={title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
+              onError={() => setResolvedPoster(null)}
             />
           ) : (
-            <div className="w-full h-full bg-dingyao flex items-center justify-center">
-              <span className="text-ink-5 text-4xl font-display">剧</span>
+            <div className="w-full h-full bg-gradient-to-br from-dingyao via-ivory-border to-dingyao flex items-center justify-center">
+              <span className="text-ink-5 text-4xl font-display opacity-40">{title.charAt(0)}</span>
             </div>
           )}
 
