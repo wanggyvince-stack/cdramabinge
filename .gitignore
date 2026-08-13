@@ -34,8 +34,7 @@ next-env.d.ts
 # Drizzle
 drizzle/
 
-# Database
-data/*.db
+# Database (runtime journal excluded, db file committed for MVP)
 data/*.db-journal
 
 # Python
