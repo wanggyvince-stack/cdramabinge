@@ -177,7 +177,7 @@ export default async function BestGenrePage({
   }
 
   // Fetch all dramas and filter
-  let filteredDramas = [];
+  let filteredDramas: any[] = [];
   try {
     const allDramas = await db.select().from(dramas).all();
 
