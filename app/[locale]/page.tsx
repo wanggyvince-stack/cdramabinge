@@ -202,7 +202,7 @@ export default async function HomePage() {
 
           <div className="horizontal-scroll song-scrollbar">
             <div className="flex gap-5 pb-4">
-              {editorsPickItems.map((item) => (
+              {editorsPickItems.map((item: { slug: string; title: string; posterUrl: string | null; comment: string; year?: number; moods: string[] }) => (
                 <div key={item.slug} className="flex-shrink-0 w-44">
                   <DramaCard
                     slug={item.slug}

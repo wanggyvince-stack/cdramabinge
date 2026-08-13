@@ -79,7 +79,7 @@ export default async function ActorDetailPage({
   const collaborations = parseJsonArray<{ name: string; slug: string; count: number }>(actor.collaborationsJson);
 
   // Resolve dramas
-  const actorDramas = [];
+  const actorDramas: any[] = [];
   for (const dramaSlug of dramaSlugs.slice(0, 12)) {
     try {
       const drama = await db.select().from(dramas).where(eq(dramas.slug, dramaSlug.trim())).get();

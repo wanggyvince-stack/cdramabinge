@@ -73,7 +73,7 @@ export default async function DramasLikePage({
   const similarDramasData = parseJsonObject<Array<{ slug: string; title: string; score: number; reason: string }>>(drama.similarDramasJson);
 
   // Resolve similar dramas
-  const similarDramas = [];
+  const similarDramas: any[] = [];
   if (similarDramasData && Array.isArray(similarDramasData)) {
     for (const item of similarDramasData.slice(0, 10)) {
       try {

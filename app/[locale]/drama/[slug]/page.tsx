@@ -92,7 +92,7 @@ export default async function DramaDetailPage({
   const similarDramasData = parseJsonObject<Array<{ slug: string; title: string; score: number; reason: string }>>(drama.similarDramasJson);
 
   // Resolve similar dramas to get poster URLs
-  const similarDramasResolved = [];
+  const similarDramasResolved: any[] = [];
   if (similarDramasData && Array.isArray(similarDramasData)) {
     for (const item of similarDramasData.slice(0, 10)) {
       try {
