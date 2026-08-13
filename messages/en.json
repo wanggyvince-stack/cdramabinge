@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Home",
+    "browse": "Browse",
+    "actors": "Actors",
+    "quiz": "Quiz",
+    "search": "Search C-dramas...",
+    "searchPlaceholder": "Search by title, actor, or genre..."
+  },
+  "footer": {
+    "tagline": "Your guide to Chinese dramas",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "copyright": "© 2026 CDramaDB. Made with ♥ for C-drama fans."
+  },
+  "home": {
+    "heroTrending": "🔥 Trending Now",
+    "vibeTitle": "What's your vibe tonight?",
+    "vibeSubtitle": "Pick your mood, discover your next obsession",
+    "quizCta": "Discover your C-drama soul type →",
+    "editorsPicks": "Editor's Picks",
+    "justPremiered": "Just Premiered",
+    "browseMood": "By Mood",
+    "browseGenre": "By Genre"
+  },
+  "mood": {
+    "wanna_cry": "Wanna Cry",
+    "light_fun": "Light & Fun",
+    "intense": "Intense",
+    "romantic": "Romantic",
+    "mindbending": "Mind-bending",
+    "spooky": "Spooky",
+    "empowering": "Empowering",
+    "aesthetic": "Aesthetic"
+  },
+  "genre": {
+    "romance": "Romance",
+    "historical": "Historical",
+    "fantasy": "Fantasy",
+    "wuxia": "Wuxia",
+    "xianxia": "Xianxia",
+    "modern": "Modern",
+    "thriller": "Thriller",
+    "comedy": "Comedy",
+    "drama": "Drama",
+    "action": "Action",
+    "mystery": "Mystery",
+    "sci_fi": "Sci-Fi"
+  },
+  "drama": {
+    "overview": "Overview",
+    "cast": "Cast",
+    "whereToWatch": "Where to Watch",
+    "similar": "If you liked this, try...",
+    "episodes": "Episodes",
+    "rating": "Rating",
+    "year": "Year",
+    "status": "Status",
+    "genres": "Genres",
+    "faq": "FAQ"
+  },
+  "quiz": {
+    "start": "Start Quiz",
+    "next": "Next",
+    "result": "Your Result",
+    "share": "Share Result",
+    "retake": "Retake"
+  },
+  "seo": {
+    "siteName": "CDramaDB",
+    "description": "The ultimate guide to Chinese dramas. AI-powered recommendations, mood-based discovery, and in-depth reviews."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "notFound": "Not found",
+    "backHome": "Back to Home",
+    "viewAll": "View All",
+    "share": "Share"
+  }
+}

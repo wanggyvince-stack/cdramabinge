@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "browse": "Khám phá",
+    "actors": "Diễn viên",
+    "quiz": "Trắc nghiệm",
+    "search": "Tìm phim Trung Quốc...",
+    "searchPlaceholder": "Tìm theo tên, diễn viên hoặc thể loại..."
+  },
+  "footer": {
+    "tagline": "Cẩm nang phim Hoa của bạn",
+    "about": "Giới thiệu",
+    "privacy": "Quyền riêng tư",
+    "terms": "Điều khoản",
+    "contact": "Liên hệ",
+    "copyright": "© 2026 CDramaDB. Tạo bởi ♥ cho fan phim Hoa."
+  },
+  "home": {
+    "heroTrending": "🔥 Đang thịnh hành",
+    "vibeTitle": "Tâm trạng今晚 của bạn?",
+    "vibeSubtitle": "Chọn tâm trạng, khám phá bộ phim tiếp theo",
+    "quizCta": "Khám phá linh hồn phim Hoa của bạn →",
+    "editorsPicks": "Biên tập chọn lọc",
+    "justPremiered": "Vừa lên sóng",
+    "browseMood": "Theo tâm trạng",
+    "browseGenre": "Theo thể loại"
+  },
+  "mood": {
+    "wanna_cry": "Muốn khóc",
+    "light_fun": "Vui nhẹ nhàng",
+    "intense": "Kịch tính",
+    "romantic": "Lãng mạn",
+    "mindbending": "Hack não",
+    "spooky": "Rùng rợn",
+    "empowering": "Truyền cảm hứng",
+    "aesthetic": "Thẩm mỹ"
+  },
+  "genre": {
+    "romance": "Tình cảm",
+    "historical": "Cổ trang",
+    "fantasy": "Huyễn tưởng",
+    "wuxia": "Kiếm hiệp",
+    "xianxia": "Tiên hiệp",
+    "modern": "Hiện đại",
+    "thriller": "Kinh dị",
+    "comedy": "Hài",
+    "drama": "Chính kịch",
+    "action": "Hành động",
+    "mystery": "Bí ẩn",
+    "sci_fi": "Khoa học viễn tưởng"
+  },
+  "drama": {
+    "overview": "Tổng quan",
+    "cast": "Diễn viên",
+    "whereToWatch": "Xem ở đâu",
+    "similar": "Nếu bạn thích phim này, hãy thử...",
+    "episodes": "Số tập",
+    "rating": "Đánh giá",
+    "year": "Năm",
+    "status": "Trạng thái",
+    "genres": "Thể loại",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "quiz": {
+    "start": "Bắt đầu",
+    "next": "Tiếp theo",
+    "result": "Kết quả",
+    "share": "Chia sẻ",
+    "retake": "Làm lại"
+  },
+  "seo": {
+    "siteName": "CDramaDB",
+    "description": "Cẩm nang phim Hoa ultimate. Đề xuất AI, khám phá theo tâm trạng, đánh giá chi tiết."
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "notFound": "Không tìm thấy",
+    "backHome": "Về trang chủ",
+    "viewAll": "Xem tất cả",
+    "share": "Chia sẻ"
+  }
+}

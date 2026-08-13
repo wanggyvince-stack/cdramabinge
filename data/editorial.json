@@ -1,0 +1,134 @@
+{
+  "hero_carousel": [
+    {
+      "drama_slug": "the-untamed",
+      "position": 1,
+      "title_override": {"en": "The Untamed", "vi": "Trần Tình Lệnh", "th": "ปรมาจารย์ลัทธิมาร"},
+      "comment": {"en": "A masterpiece that redefined xianxia for a generation.", "vi": "Kiệt tác định nghĩa lại tiên hiệp cho cả một thế hệ.", "th": "ผลงานชิ้นเอกที่กำหนดนิยามเซียนใหม่"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "nid-of-a-thousand-songs",
+      "position": 2,
+      "title_override": {"en": "Nid of a Thousand Songs", "vi": "Tổ Ấm Nghìn Ca", "th": "เพลงสยบนางปีศาจ"},
+      "comment": {"en": "Gripping supernatural thriller with stunning visuals.", "vi": "Phim kinh dị siêu nhiên hấp dẫn với hình ảnh tuyệt đẹp.", "th": "ระทึกขวัญเหนือธรรมชาติพร้อมภาพ Stunning"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "story-of-kunning",
+      "position": 3,
+      "title_override": {"en": "Story of Kunning Palace", "vi": "Ninh An Như Mộng", "th": "เรื่องวุ่นๆ ของนางในวัง"},
+      "comment": {"en": "Palace intrigue meets forbidden romance.", "vi": "Cung đấu kết hợp tình yêu cấm kỵ.", "th": "การเมืองในวังพบกับรักต้องห้าม"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "love-between-fairy-and-devil",
+      "position": 4,
+      "title_override": {"en": "Love Between Fairy and Devil", "vi": "Thương Lan Quyết", "th": "รักวุ่นวายระหว่างเทพกับมาร"},
+      "comment": {"en": "The drama that made the world fall for Dylan Wang.", "vi": "Bộ phim khiến cả thế giới mê Dylan Wang.", "th": "ซีรีส์ที่ทำให้โลกหลงรัก Dylan Wang"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "the-longest-promise",
+      "position": 5,
+      "title_override": {"en": "The Longest Promise", "vi": "Trường Nguyệt Tẫn Minh", "th": "จันทราติ้นหมิง"},
+      "comment": {"en": "Epic xianxia with breathtaking cinematography.", "vi": "Tiên hiệp sử thi với hình ảnh đẹp nghẹt thở.", "th": "เซียนมหากาพย์พร้อมภาพสวยจับใจ"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "hidden-love",
+      "position": 6,
+      "title_override": {"en": "Hidden Love", "vi": "Ẩn Giấu Tình Yêu", "th": "ซ่อนรัก"},
+      "comment": {"en": "The sweetest campus romance of the year.", "vi": "Câu chuyện tình ngọt ngào nhất năm.", "th": "โรแมนติกในมหาวิทยาลัยที่หวานที่สุด"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "joy-of-life-2",
+      "position": 7,
+      "title_override": {"en": "Joy of Life Season 2", "vi": "Khánh Dư Niên 2", "th": "จอมนางเหนือเวที 2"},
+      "comment": {"en": "The sequel that exceeded all expectations.", "vi": "Phần tiếp theo vượt xa mọi kỳ vọng.", "th": "ภาคต่อที่เกินความคาดหมาย"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    },
+    {
+      "drama_slug": "word-of-honor",
+      "position": 8,
+      "title_override": {"en": "Word of Honor", "vi": "Thiên Nhai Khách", "th": "พยัคฆ์ร้ายหมื่นลี้"},
+      "comment": {"en": "A poetic wuxia that captured hearts worldwide.", "vi": "Kiếm hiệp thơ mộng chinh phục trái tim toàn cầu.", "th": "กำลังภายในกวีที่ครองใจทั่วโลก"},
+      "badge_text": "🔥 Trending",
+      "active": true
+    }
+  ],
+  "editors_picks": [
+    {
+      "drama_slug": " Nirvana-in-Fire",
+      "position": 1,
+      "title_override": {"en": "Nirvana in Fire", "vi": "Lang Nha Bảng", "th": "หลางหยาป้าย"},
+      "comment": {"en": "The gold standard of Chinese political intrigue dramas.", "vi": "Tiêu chuẩn vàng của phim cung đấu Trung Quốc.", "th": "มาตรฐานทองของซีรีส์การเมืองจีน"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "story-of-minglan",
+      "position": 2,
+      "title_override": {"en": "The Story of Minglan", "vi": "Minh Lan Truyện", "th": "ตำนานหมิงหลาน"},
+      "comment": {"en": "A slow-burn masterpiece about resilience and wit.", "vi": "Kiệt tác chậm về sự kiên cường và trí tuệ.", "th": "ผลงานชิ้นเอกเกี่ยวกับความมุ่งมั่นและไหวพริบ"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "ashes-of-love",
+      "position": 3,
+      "title_override": {"en": "Ashes of Love", "vi": "Hương Mật Tựa Khói Sương", "th": "มธุรสหวานสวรรค์"},
+      "comment": {"en": "A xianxia romance that defined the genre for millions.", "vi": "Tình yêu tiên hiệp định nghĩa thể loại cho hàng triệu người.", "th": "รักเซียนที่กำหนดแนวสำหรับหลายคน"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "reset",
+      "position": 4,
+      "title_override": {"en": "Reset", "vi": "Bắt Đầu Lại", "th": "รีสตาร์ต"},
+      "comment": {"en": "A tight, brilliant time-loop thriller. Only 15 episodes.", "vi": "Thriller vòng lặp thời gian xuất sắc. Chỉ 15 tập.", "th": "ทริลเลอร์ลูปเวลาที่ยอดเยี่ยม เพียง 15 ตอน"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "the-knockout",
+      "position": 5,
+      "title_override": {"en": "The Knockout", "vi": "Cuồng Phong", "th": "เดอะน็อคเอาท์"},
+      "comment": {"en": "20 years of crime and corruption. A landmark drama.", "vi": "20 năm tội phạm và tham nhũng. Bộ phim mang tính bước ngoặt.", "th": "20 ปีแห่งอาชญากรรมและการทุจริต ซีรีส์ระดับสำคัญ"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "meet-yourself",
+      "position": 6,
+      "title_override": {"en": "Meet Yourself", "vi": "Gặp Lại Chính Mình", "th": "พบตัวเอง"},
+      "comment": {"en": "The healing drama that made everyone move to Yunnan.", "vi": "Phim chữa lành khiến mọi người chuyển đến Vân Nam.", "th": "ซีรีส์บำบัดที่ทำให้ทุกคนอยากย้ายไปยูนนาน"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "love-like-the-galaxy",
+      "position": 7,
+      "title_override": {"en": "Love Like the Galaxy", "vi": "Tinh Hán Xán Lạn", "th": "ดวงดารารัก"},
+      "comment": {"en": "Epic historical romance with Zhao Lusi at her best.", "vi": "Tình yêu cổ trang sử thi với Triệu Lộ Tư xuất sắc nhất.", "th": "รักพีเรียดมหากาพย์กับ Zhao Lusi ที่ยอดเยี่ยมที่สุด"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    },
+    {
+      "drama_slug": "a-little-reunion",
+      "position": 8,
+      "title_override": {"en": "A Little Reunion", "vi": "Tiểu Hoan Hỉ", "th": "ครอบครัวเล็ก"},
+      "comment": {"en": "The family drama that made China — and the world — cry.", "vi": "Phim gia đình khiến cả Trung Quốc — và thế giới — rơi nước mắt.", "th": "ซีรีส์ครอบครัวที่ทำให้จีน — และโลก — ร้องไห้"},
+      "badge_text": "Editor's Pick",
+      "active": true
+    }
+  ]
+}

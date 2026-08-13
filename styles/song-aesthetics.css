@@ -1,0 +1,98 @@
+/*
+ * Song Dynasty Aesthetics - Global CSS Variables
+ * 宋韵东方极简 — "克制的精致" (Restrained Refinement)
+ *
+ * Design Principles:
+ * - Whitespace ≥ 40%
+ * - Glaze texture (釉面质感) on cards
+ * - Ink color hierarchy (墨色五级)
+ * - Crackling glaze lines (开片纹路) for dividers
+ * - Restrained motion (动效克制) 200-300ms ease-in-out
+ */
+
+:root {
+  /* ============================================
+   * Brand Colors - 品牌色
+   * ============================================ */
+  --ruyao-cyan: #91B4BE;        /* 汝窑天青 - Primary brand */
+  --xianghui-clay: #B8B0A8;     /* 香灰胎 - Secondary brand */
+  --zhusha-red: #C73E3A;        /* 朱砂红 - CTA/Accent */
+  --jinsi-gold: #C9A86C;        /* 金丝金 - Gold accent */
+
+  /* ============================================
+   * Surface Colors - 背景色
+   * ============================================ */
+  --surface-sujuan: #F5F1E8;    /* 素绢 - Main background */
+  --surface-dingyao: #F0EEE8;   /* 定窑白 - Card background */
+  --surface-youse: #F0F1F2;     /* 釉色浅灰 - Secondary surface */
+
+  /* ============================================
+   * Dark Mode Surfaces - 墨韵
+   * ============================================ */
+  --dark-nongmo: #1A1A1A;       /* 浓墨 - Dark background */
+  --dark-zhongmo: #2C2825;      /* 重墨 - Dark card */
+  --dark-hebai: #F2F0EA;        /* 鹤白 - Dark text primary */
+  --dark-danmo: #8A8A8A;        /* 淡墨灰 - Dark text secondary */
+
+  /* ============================================
+   * Ink Five Levels - 墨色五级
+   * ============================================ */
+  --ink-jiaomo: #0D0D0D;        /* 焦墨 - H1/Main title */
+  --ink-nongmo: #1F1F1F;        /* 浓墨 - Body text */
+  --ink-zhongmo: #4A4A4A;       /* 重墨 - Secondary heading */
+  --ink-danmo: #7A7A7A;         /* 淡墨 - Auxiliary text */
+  --ink-qingmo: #B8B8B8;        /* 清墨 - Placeholder/Watermark */
+
+  /* ============================================
+   * Borders & Dividers
+   * ============================================ */
+  --border-ivory: #D8D4CC;      /* 象牙暖灰 - Card border */
+  --border-crackle-thin: 1px solid var(--border-ivory);
+  --border-crackle-thick: 2px solid var(--xianghui-clay);
+
+  /* ============================================
+   * Mood Gradients - 情绪渐变色
+   * ============================================ */
+  --gradient-wanna-cry: linear-gradient(135deg, #6B7B8B, #8B7BA0);     /* 烟雨青灰 */
+  --gradient-light-fun: linear-gradient(135deg, #B8A090, #D4B8A0);     /* 粉青暖釉 */
+  --gradient-intense: linear-gradient(135deg, #A0522D, #C73E3A);       /* 赭石朱砂 */
+  --gradient-romantic: linear-gradient(135deg, #C4A882, #D8C8B0);      /* 象牙暖金 */
+  --gradient-mindbending: linear-gradient(135deg, #2C3E6B, #4A5C80);   /* 瑞鹤靛蓝 */
+  --gradient-spooky: linear-gradient(135deg, #2C2825, #4A4A4A);        /* 铁线浓墨 */
+  --gradient-empowering: linear-gradient(135deg, #8B7355, #C9A86C);    /* 冰裂纹金 */
+  --gradient-aesthetic: linear-gradient(135deg, #8CB4A0, #A0C8B0);     /* 龙泉粉青 */
+
+  /* ============================================
+   * Typography Scale
+   * ============================================ */
+  --font-serif: 'Cormorant Garamond', 'Source Han Serif SC', 'Noto Serif Thai', serif;
+  --font-sans: 'Inter', 'Source Han Sans SC', 'Noto Sans Thai', sans-serif;
+
+  --text-h1: clamp(2.25rem, 4vw, 3rem);    /* 36-48px */
+  --text-h2: clamp(1.5rem, 2.5vw, 1.875rem); /* 24-30px */
+  --text-h3: clamp(1.125rem, 1.5vw, 1.375rem); /* 18-22px */
+  --text-body: 1rem;                         /* 16px */
+  --text-auxiliary: 0.875rem;               /* 14px */
+  --text-small: 0.75rem;                    /* 12px */
+
+  --leading-h1: 1.2;
+  --leading-h2: 1.3;
+  --leading-h3: 1.4;
+  --leading-body: 1.75;
+  --leading-aux: 1.6;
+  --leading-small: 1.5;
+
+  /* ============================================
+   * Spacing - Song Dynasty Whitespace
+   * ============================================ */
+  --space-section: 5rem;         /* 80px between major sections */
+  --space-section-sm: 4rem;      /* 64px for smaller sections */
+  --space-card: 1.5rem;          /* Card internal padding */
+
+  /* ============================================
+   * Transitions - Ink diffusion style
+   * ============================================ */
+  --transition-song: all 250ms ease-in-out;
+  --transition-fast: all 200ms ease-in-out;
+  --transition-slow: all 300ms ease-in-out;
+}

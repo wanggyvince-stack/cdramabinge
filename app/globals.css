@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './song-aesthetics.css';
+
+@layer base {
+  :root {
+    /* Song Dynasty Color System - Light Mode */
+    --color-brand: 145 180 190;       /* 汝窑天青 #91B4BE */
+    --color-brand-secondary: 184 176 168; /* 香灰胎 #B8B0A8 */
+    --color-accent: 199 62 58;        /* 朱砂红 #C73E3A */
+    --color-gold: 201 168 108;        /* 金丝金 #C9A86C */
+    --color-bg: 245 241 232;          /* 素绢 #F5F1E8 */
+    --color-card: 240 238 232;        /* 定窑白 #F0EEE8 */
+    --color-bg-secondary: 240 241 242; /* 釉色浅灰 #F0F1F2 */
+    --color-border: 216 212 204;      /* 象牙暖灰 #D8D4CC */
+
+    /* Ink levels */
+    --ink-1: 13 13 13;    /* 焦墨 #0D0D0D */
+    --ink-2: 31 31 31;    /* 浓墨 #1F1F1F */
+    --ink-3: 74 74 74;    /* 重墨 #4A4A4A */
+    --ink-4: 122 122 122; /* 淡墨 #7A7A7A */
+    --ink-5: 184 184 184; /* 清墨 #B8B8B8 */
+  }
+
+  .dark {
+    /* Song Dynasty Color System - Dark Mode (墨韵) */
+    --color-bg: 26 26 26;             /* 浓墨 #1A1A1A */
+    --color-card: 44 40 37;           /* 重墨 #2C2825 */
+    --color-border: 80 76 72;
+    --ink-1: 242 240 234;            /* 鹤白 #F2F0EA */
+    --ink-2: 200 198 192;
+    --ink-3: 160 158 152;
+    --ink-4: 138 138 138;            /* 淡墨灰 #8A8A8A */
+    --ink-5: 100 100 100;
+  }
+
+  html {
+    @apply bg-sujuan text-ink-2;
+    font-family: 'Inter', 'Source Han Sans SC', 'Noto Sans Thai', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography hierarchy - Song Dynasty style */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', 'Source Han Serif SC', 'Noto Serif Thai', serif;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold leading-tight text-ink-1;
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold leading-snug text-ink-1;
+    letter-spacing: 0.04em;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl font-medium leading-snug text-ink-3;
+    letter-spacing: 0.02em;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+    line-height: 1.75;
+  }
+}
+
+@layer components {
+  /* Song Dynasty card component */
+  .song-card {
+    @apply bg-dingyao rounded-song border border-ivory-border;
+    transition: all 250ms ease-in-out;
+  }
+
+  .song-card:hover {
+    @apply brightness-105;
+    box-shadow: 0 2px 12px rgba(145, 180, 190, 0.08);
+  }
+
+  /* Crackling glaze border effect (哥窑开片) */
+  .crackle-border {
+    border-image: repeating-linear-gradient(
+      90deg,
+      #D8D4CC 0px,
+      #D8D4CC 4px,
+      #C9A86C 4px,
+      #C9A86C 5px,
+      #D8D4CC 5px,
+      #D8D4CC 12px
+    ) 1;
+  }
+
+  /* Seal stamp style (印章风格) */
+  .seal-stamp {
+    @apply bg-zhusha text-white inline-flex items-center justify-center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* Mood button base */
+  .mood-btn {
+    @apply w-20 h-20 rounded-song flex flex-col items-center justify-center;
+    @apply transition-all duration-song;
+    font-size: 2rem;
+  }
+
+  .mood-btn:hover {
+    filter: brightness(1.05);
+  }
+
+  .mood-btn-label {
+    @apply text-xs text-ink-4 mt-1;
+  }
+}
+
+@layer utilities {
+  /* Section spacing - Song Dynasty whitespace */
+  .section-gap {
+    @apply py-16 md:py-20;
+  }
+
+  /* Ink wash transition effect */
+  .ink-transition {
+    transition: all 250ms ease-in-out;
+  }
+}
