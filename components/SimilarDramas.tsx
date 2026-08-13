@@ -41,6 +41,7 @@ export default function SimilarDramas({ dramas, title, locale }: SimilarDramasPr
                     src={drama.posterUrl}
                     alt={drama.title}
                     title={drama.title}
+                    slug={drama.slug}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 

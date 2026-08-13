@@ -94,17 +94,42 @@ export const MOOD_SOLID_CLASS: Record<string, string> = {
 };
 
 /**
- * Mood pill tag classes for Browse by Mood section (light bg with opacity)
+ * Mood pill tag classes for light backgrounds — frosted glass effect
+ * Used in: DramaCard, By Mood list, list pages
  */
 export const MOOD_PILL_LIGHT_CLASS: Record<string, string> = {
-  wanna_cry: 'bg-mood-wanna_cry/10 text-mood-wanna_cry border-mood-wanna_cry/20 hover:bg-mood-wanna_cry/20',
-  light_fun: 'bg-mood-light_fun/10 text-mood-light_fun border-mood-light_fun/20 hover:bg-mood-light_fun/20',
-  intense: 'bg-mood-intense/10 text-mood-intense border-mood-intense/20 hover:bg-mood-intense/20',
-  romantic: 'bg-mood-romantic/10 text-mood-romantic border-mood-romantic/20 hover:bg-mood-romantic/20',
-  mindbending: 'bg-mood-mindbending/10 text-mood-mindbending border-mood-mindbending/20 hover:bg-mood-mindbending/20',
-  spooky: 'bg-mood-spooky/10 text-mood-spooky border-mood-spooky/20 hover:bg-mood-spooky/20',
-  empowering: 'bg-mood-empowering/10 text-mood-empowering border-mood-empowering/20 hover:bg-mood-empowering/20',
-  aesthetic: 'bg-mood-aesthetic/10 text-mood-aesthetic border-mood-aesthetic/20 hover:bg-mood-aesthetic/20',
+  wanna_cry: 'backdrop-blur-sm bg-mood-wanna_cry/12 text-mood-wanna_cry border border-mood-wanna_cry/20 hover:bg-mood-wanna_cry/25',
+  light_fun: 'backdrop-blur-sm bg-mood-light_fun/12 text-mood-light_fun border border-mood-light_fun/20 hover:bg-mood-light_fun/25',
+  intense: 'backdrop-blur-sm bg-mood-intense/12 text-mood-intense border border-mood-intense/20 hover:bg-mood-intense/25',
+  romantic: 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20 hover:bg-mood-romantic/25',
+  mindbending: 'backdrop-blur-sm bg-mood-mindbending/12 text-mood-mindbending border border-mood-mindbending/20 hover:bg-mood-mindbending/25',
+  spooky: 'backdrop-blur-sm bg-mood-spooky/12 text-mood-spooky border border-mood-spooky/20 hover:bg-mood-spooky/25',
+  empowering: 'backdrop-blur-sm bg-mood-empowering/12 text-mood-empowering border border-mood-empowering/20 hover:bg-mood-empowering/25',
+  aesthetic: 'backdrop-blur-sm bg-mood-aesthetic/12 text-mood-aesthetic border border-mood-aesthetic/20 hover:bg-mood-aesthetic/25',
+};
+
+/**
+ * Mood pill dark class for hero/dark backgrounds — white frosted glass
+ */
+export const MOOD_PILL_DARK_CLASS = 'px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white/90 text-xs font-medium tracking-wide';
+
+/**
+ * Mood selector button base class — large frosted pills on light bg
+ */
+export const MOOD_SELECTOR_BASE_CLASS = 'px-8 py-3.5 rounded-full backdrop-blur-sm border font-display text-base tracking-wide transition-all duration-song cursor-pointer hover:scale-105 hover:-translate-y-0.5';
+
+/**
+ * Per-mood selector button classes (semi-transparent colored frosted)
+ */
+export const MOOD_SELECTOR_CLASS: Record<string, string> = {
+  wanna_cry: 'bg-mood-wanna_cry/15 text-mood-wanna_cry border-mood-wanna_cry/25 hover:bg-mood-wanna_cry/25',
+  light_fun: 'bg-mood-light_fun/15 text-mood-light_fun border-mood-light_fun/25 hover:bg-mood-light_fun/25',
+  intense: 'bg-mood-intense/15 text-mood-intense border-mood-intense/25 hover:bg-mood-intense/25',
+  romantic: 'bg-mood-romantic/15 text-mood-romantic border-mood-romantic/25 hover:bg-mood-romantic/25',
+  mindbending: 'bg-mood-mindbending/15 text-mood-mindbending border-mood-mindbending/25 hover:bg-mood-mindbending/25',
+  spooky: 'bg-mood-spooky/15 text-mood-spooky border-mood-spooky/25 hover:bg-mood-spooky/25',
+  empowering: 'bg-mood-empowering/15 text-mood-empowering border-mood-empowering/25 hover:bg-mood-empowering/25',
+  aesthetic: 'bg-mood-aesthetic/15 text-mood-aesthetic border-mood-aesthetic/25 hover:bg-mood-aesthetic/25',
 };
 
 /**

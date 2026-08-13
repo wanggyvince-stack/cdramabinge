@@ -5,6 +5,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    { pattern: /bg-mood-\w+\/\d+/ },
+    { pattern: /text-mood-\w+/ },
+    { pattern: /border-mood-\w+\/\d+/ },
+    { pattern: /hover:bg-mood-\w+\/\d+/ },
+    { pattern: /bg-mood-\w+/ },
+  ],
   darkMode: 'class',
   theme: {
     extend: {

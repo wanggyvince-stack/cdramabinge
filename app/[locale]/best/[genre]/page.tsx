@@ -302,7 +302,7 @@ export default async function BestGenrePage({
                         {moodTags.slice(0, 3).map((mood) => (
                           <span
                             key={mood}
-                            className={`inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium tracking-wide border transition-colors duration-song ${MOOD_PILL_LIGHT_CLASS[mood] || 'bg-mood-romantic/10 text-mood-romantic border-mood-romantic/20'}`}
+                            className={`inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium tracking-wide transition-colors duration-song ${MOOD_PILL_LIGHT_CLASS[mood] || 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20'}`}
                           >
                             {t(`mood.${mood}`)}
                           </span>

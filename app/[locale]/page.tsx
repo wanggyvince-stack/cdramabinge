@@ -357,12 +357,12 @@ export default async function HomePage() {
           </h2>
           <div className="flex flex-wrap gap-3 mb-12">
             {ALL_MOODS.map((mood) => {
-              const pillClass = MOOD_PILL_LIGHT_CLASS[mood] || 'bg-mood-romantic/10 text-mood-romantic border-mood-romantic/20 hover:bg-mood-romantic/20';
+              const pillClass = MOOD_PILL_LIGHT_CLASS[mood] || 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20 hover:bg-mood-romantic/25';
               return (
                 <Link
                   key={mood}
                   href={`/${locale}/best/${mood}`}
-                  className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide border transition-colors duration-song ${pillClass}`}
+                  className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-colors duration-song ${pillClass}`}
                 >
                   {t(`mood.${mood}`)}
                 </Link>
