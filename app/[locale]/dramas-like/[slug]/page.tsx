@@ -33,7 +33,7 @@ export async function generateMetadata({
   const suffix = locale === 'en' ? 'Dramas like' : locale === 'vi' ? 'Phim giống' : 'ซีรีส์ที่คล้าย';
 
   return {
-    title: `${suffix} ${title} — CDramaDB`,
+    title: `${suffix} ${title}`,
     description: locale === 'en'
       ? `Top 10 C-dramas similar to ${title}. AI-powered recommendations based on mood, genre, and storytelling style.`
       : locale === 'vi'
@@ -142,7 +142,7 @@ export default async function DramasLikePage({
       '@type': 'ListItem',
       position: index + 1,
       name: d.title,
-      url: `https://cdramadb.com/${locale}/drama/${d.slug}`,
+      url: `https://cdramabinge.com/${locale}/drama/${d.slug}`,
     })),
   };
 

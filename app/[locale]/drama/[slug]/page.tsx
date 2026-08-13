@@ -9,6 +9,8 @@ import {
   parseJsonArray,
   parseJsonObject,
   tmdbImage,
+  isPlaceholderPoster,
+  fetchTmdbOverview,
 } from '@/lib/utils/helpers';
 import MoodTag from '@/components/MoodTag';
 import EditorialComment from '@/components/EditorialComment';
@@ -16,6 +18,7 @@ import StreamingBadges from '@/components/StreamingBadges';
 import SimilarDramas from '@/components/SimilarDramas';
 import FAQ from '@/components/FAQ';
 import ShareButtons from '@/components/ShareButtons';
+import DramaHeroImages, { DramaPoster } from '@/components/DramaHeroImages';
 import type { Metadata } from 'next';
 
 // ────────────────────────────────────────
@@ -38,26 +41,35 @@ export async function generateMetadata({
   if (!drama) return { title: 'Drama Not Found' };
 
   const title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
-  const synopsis = getLocalizedText(drama.synopsesJson, locale);
-  const canonicalUrl = `https://cdramadb.com/${locale}/drama/${slug}`;
+
+  // Resolve real synopsis if template
+  let synopsis = getLocalizedText(drama.synopsesJson, locale);
+  if (synopsis.startsWith('A captivating')) {
+    const tmdbOverview = await fetchTmdbOverview(drama.originalTitle);
+    if (tmdbOverview) synopsis = tmdbOverview;
+  }
+
+  const canonicalUrl = `https://cdramabinge.com/${locale}/drama/${slug}`;
 
   return {
-    title: `${title} (${drama.year || 'N/A'}) — CDramaDB`,
+    title: `${title} (${drama.year || 'N/A'})`,
     description: synopsis.slice(0, 160),
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `/en/drama/${slug}`,
-        vi: `/vi/drama/${slug}`,
-        th: `/th/drama/${slug}`,
+        en: `https://cdramabinge.com/en/drama/${slug}`,
+        vi: `https://cdramabinge.com/vi/drama/${slug}`,
+        th: `https://cdramabinge.com/th/drama/${slug}`,
       },
     },
     openGraph: {
-      title: `${title} — CDramaDB`,
+      title: `${title} (${drama.year || 'N/A'})`,
       description: synopsis.slice(0, 160),
       url: canonicalUrl,
       type: 'video.tv_show',
-      images: drama.posterUrl ? [{ url: tmdbImage(drama.posterUrl, 'w780') }] : [],
+      images: drama.posterUrl && !isPlaceholderPoster(drama.posterUrl)
+        ? [{ url: tmdbImage(drama.posterUrl, 'w780') }]
+        : [],
     },
   };
 }
@@ -78,7 +90,14 @@ export default async function DramaDetailPage({
   if (!drama) notFound();
 
   const title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
-  const synopsis = getLocalizedText(drama.synopsesJson, locale);
+
+  // Resolve real synopsis if template
+  let synopsis = getLocalizedText(drama.synopsesJson, locale);
+  if (synopsis.startsWith('A captivating')) {
+    const tmdbOverview = await fetchTmdbOverview(drama.originalTitle);
+    if (tmdbOverview) synopsis = tmdbOverview;
+  }
+
   const genres = parseJsonArray<string>(drama.genres);
   const moodTags = parseJsonArray<string>(drama.moodTags);
   const streaming = parseJsonObject<Record<string, Array<{ platform: string; url: string }>>>(drama.streamingJson);
@@ -113,6 +132,12 @@ export default async function DramaDetailPage({
   const regionMap: Record<string, string> = { en: 'US', vi: 'VN', th: 'TH' };
   const region = regionMap[locale] || 'US';
   const streamingForRegion = streaming?.[region] || [];
+
+  // Determine image URLs — use real URLs directly, or let client component fetch
+  const posterIsPlaceholder = isPlaceholderPoster(drama.posterUrl);
+  const backdropIsPlaceholder = isPlaceholderPoster(drama.backdropUrl);
+  const realPosterUrl = posterIsPlaceholder ? undefined : tmdbImage(drama.posterUrl, 'w500');
+  const realBackdropUrl = backdropIsPlaceholder ? undefined : tmdbImage(drama.backdropUrl, 'original');
 
   // FAQ items (generated from drama data)
   const faqItems = [
@@ -150,12 +175,12 @@ export default async function DramaDetailPage({
           ratingCount: Math.floor(drama.rating * 100),
         }
       : undefined,
-    image: drama.posterUrl ? tmdbImage(drama.posterUrl, 'w780') : undefined,
-    url: `https://cdramadb.com/${locale}/drama/${slug}`,
+    image: realPosterUrl || undefined,
+    url: `https://cdramabinge.com/${locale}/drama/${slug}`,
     inLanguage: ['zh', 'en', 'vi', 'th'],
   };
 
-  const pageUrl = `https://cdramadb.com/${locale}/drama/${slug}`;
+  const pageUrl = `https://cdramabinge.com/${locale}/drama/${slug}`;
 
   return (
     <>
@@ -170,14 +195,18 @@ export default async function DramaDetailPage({
           ═══════════════════════════════════════ */}
       <section className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
         {/* Backdrop */}
-        {drama.backdropUrl ? (
+        {realBackdropUrl ? (
           <img
-            src={tmdbImage(drama.backdropUrl, 'original')}
+            src={realBackdropUrl}
             alt={title}
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-ink-2 to-ink-3" />
+          <DramaHeroImages
+            slug={slug}
+            initialBackdropUrl={undefined}
+            title={title}
+          />
         )}
 
         {/* Ink wash gradient overlay */}
@@ -189,16 +218,14 @@ export default async function DramaDetailPage({
           <div className="max-w-7xl mx-auto px-6 flex items-end gap-6 md:gap-10">
             {/* Poster */}
             <div className="hidden md:block flex-shrink-0 w-48 aspect-[9/14] rounded-song overflow-hidden border-2 border-ivory-border shadow-lg">
-              {drama.posterUrl ? (
+              {realPosterUrl ? (
                 <img
-                  src={tmdbImage(drama.posterUrl, 'w500')}
+                  src={realPosterUrl}
                   alt={title}
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full bg-dingyao flex items-center justify-center">
-                  <span className="text-ink-5 text-3xl font-display">剧</span>
-                </div>
+                <DramaPoster slug={slug} title={title} />
               )}
             </div>
 
@@ -262,7 +289,7 @@ export default async function DramaDetailPage({
         <section className="py-6">
           <EditorialComment
             text={synopsis.slice(0, 250)}
-            author={locale === 'en' ? 'CDramaDB Editors' : locale === 'vi' ? 'Biên tập CDramaDB' : 'บรรณาธิการ CDramaDB'}
+            author={locale === 'en' ? 'CDramaBinge Editors' : locale === 'vi' ? 'Biên tập CDramaBinge' : 'บรรณาธิการ CDramaBinge'}
           />
         </section>
 

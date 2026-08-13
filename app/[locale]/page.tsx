@@ -232,7 +232,7 @@ export default async function HomePage() {
           {/* Featured editorial comment */}
           {editorsPickItems[0]?.comment && (
             <div className="mt-8 max-w-xl">
-              <EditorialComment text={editorsPickItems[0].comment} author="CDramaDB Editors" />
+              <EditorialComment text={editorsPickItems[0].comment} author="CDramaBinge Editors" />
             </div>
           )}
         </section>

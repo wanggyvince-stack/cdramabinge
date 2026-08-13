@@ -143,7 +143,7 @@ export async function generateMetadata({
   const title = genre.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
   return {
-    title: `Best ${title} C-Dramas — CDramaDB`,
+    title: `Best ${title} C-Dramas`,
     description: intro.slice(0, 160),
   };
 }
@@ -218,7 +218,7 @@ export default async function BestGenrePage({
       '@type': 'ListItem',
       position: index + 1,
       name: getLocalizedText(drama.titlesJson, locale, drama.originalTitle),
-      url: `https://cdramadb.com/${locale}/drama/${drama.slug}`,
+      url: `https://cdramabinge.com/${locale}/drama/${drama.slug}`,
     })),
   };
 

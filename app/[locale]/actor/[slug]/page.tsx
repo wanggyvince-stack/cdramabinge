@@ -38,7 +38,7 @@ export async function generateMetadata({
   };
 
   return {
-    title: `${name} — CDramaDB`,
+    title: `${name}`,
     description: bio.slice(0, 160),
     other: {
       'application/ld+json': JSON.stringify(jsonLd),
@@ -92,11 +92,11 @@ export default async function ActorDetailPage({
     name,
     description: bio.slice(0, 200),
     image: actor.photoUrl || undefined,
-    url: `https://cdramadb.com/${locale}/actor/${slug}`,
+    url: `https://cdramabinge.com/${locale}/actor/${slug}`,
     knownFor: actorDramas.map((d) => ({
       '@type': 'TVSeries',
       name: d.title,
-      url: `https://cdramadb.com/${locale}/drama/${d.slug}`,
+      url: `https://cdramabinge.com/${locale}/drama/${d.slug}`,
     })),
   };
 

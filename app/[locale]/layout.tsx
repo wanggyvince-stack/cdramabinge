@@ -11,8 +11,8 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | CDramaDB',
-    default: 'CDramaDB — Your Guide to Chinese Dramas',
+    template: '%s | CDramaBinge',
+    default: 'CDramaBinge — Your Guide to Chinese Dramas',
   },
   description: 'The ultimate guide to Chinese dramas. AI-powered recommendations, mood-based discovery, and in-depth reviews.',
 };
@@ -48,7 +48,7 @@ export default async function LocaleLayout({
           <header className="fixed top-0 left-0 right-0 z-50 bg-sujuan/80 backdrop-blur-md border-b border-ivory-border">
             <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
               <a href={`/${locale}`} className="font-display text-2xl font-bold text-ink-1 tracking-wider">
-                CDramaDB
+                CDramaBinge
               </a>
               <div className="flex items-center gap-6">
                 {/* Language switcher */}
@@ -77,14 +77,14 @@ export default async function LocaleLayout({
           {/* Footer */}
           <footer className="bg-dingyao border-t border-ivory-border py-12">
             <div className="max-w-7xl mx-auto px-6 text-center">
-              <p className="font-display text-xl text-ink-3 mb-2">CDramaDB</p>
+              <p className="font-display text-xl text-ink-3 mb-2">CDramaBinge</p>
               <p className="text-sm text-ink-4">
                 {locale === 'en' && 'Your guide to Chinese dramas'}
                 {locale === 'vi' && 'Cẩm nang phim Hoa của bạn'}
                 {locale === 'th' && 'คู่มือซีรีส์จีนของคุณ'}
               </p>
               <p className="text-xs text-ink-5 mt-4">
-                © 2026 CDramaDB. Made with ♥ for C-drama fans.
+                © 2026 CDramaBinge. Made with ♥ for C-drama fans.
               </p>
             </div>
           </footer>

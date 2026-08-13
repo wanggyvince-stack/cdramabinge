@@ -120,3 +120,32 @@ export function tmdbImage(path: string | null | undefined, size: 'w342' | 'w500'
   if (path.startsWith('http')) return path;
   return `https://image.tmdb.org/t/p/${size}${path}`;
 }
+
+/**
+ * Fetch real overview from TMDB API for a given title.
+ * Used to replace template synopsis like "A captivating [genre] drama from [year]."
+ */
+export async function fetchTmdbOverview(originalTitle: string): Promise<string | null> {
+  if (!originalTitle || !process.env.TMDB_API_KEY) return null;
+  try {
+    const TMDB_BASE = 'https://api.themoviedb.org/3';
+    const res = await fetch(
+      `${TMDB_BASE}/search/tv?query=${encodeURIComponent(originalTitle)}&language=en-US`,
+      {
+        headers: {
+          'Authorization': `Bearer ${process.env.TMDB_API_KEY}`,
+          'Accept': 'application/json',
+        },
+      }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.results && data.results.length > 0) {
+      const overview = data.results[0].overview;
+      return overview || null;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
