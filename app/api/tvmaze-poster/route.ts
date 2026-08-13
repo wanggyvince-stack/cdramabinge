@@ -105,13 +105,14 @@ export async function GET(request: NextRequest) {
       error: 'No TVmaze results found',
       searchedFor: searchTitle || imdbId,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json({
       posterUrl: null,
       synopsis: null,
       tvmazeId: null,
       error: 'Unexpected error',
-      debug: error?.message,
+      debug: message,
     });
   }
 }
@@ -134,20 +135,25 @@ async function tryUpdateDb(
 
     if (!drama) return;
 
-    const updates: Record<string, string> = {};
+    const updates: Partial<Record<'posterUrl' | 'synopsesJson', string>> = {};
 
     if (posterUrl && isPlaceholderPoster(drama.posterUrl)) {
       updates.posterUrl = posterUrl;
     }
 
     // Update synopsis if it's a template placeholder (contains "A captivating" or similar)
-    if (synopsis && drama.synopsis) {
-      const isTemplate =
-        drama.synopsis.includes('A captivating') ||
-        drama.synopsis.startsWith('A ') && drama.synopsis.includes('from');
-      if (isTemplate) {
-        updates.synopsis = synopsis;
-      }
+    if (synopsis && drama.synopsesJson) {
+      try {
+        const synopses = JSON.parse(drama.synopsesJson);
+        const enSynopsis = synopses.en || '';
+        const isTemplate =
+          enSynopsis.includes('A captivating') ||
+          (enSynopsis.startsWith('A ') && enSynopsis.includes('from 20'));
+        if (isTemplate) {
+          synopses.en = synopsis;
+          updates.synopsesJson = JSON.stringify(synopses);
+        }
+      } catch {}
     }
 
     if (Object.keys(updates).length > 0) {
