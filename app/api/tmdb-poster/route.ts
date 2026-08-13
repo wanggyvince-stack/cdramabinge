@@ -41,18 +41,24 @@ export async function GET(request: NextRequest) {
       }
     } catch {}
 
-    // Search TMDB
-    const searchUrl = `${TMDB_BASE}/search/tv?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(enTitle)}&language=en-US&page=1`;
+    // Search TMDB using Bearer token
+    const searchUrl = `${TMDB_BASE}/search/tv?query=${encodeURIComponent(enTitle)}&language=en-US&page=1`;
     
     let res: Response;
     try {
-      res = await fetch(searchUrl, { next: { revalidate: 86400 } }); // Cache 24h
+      res = await fetch(searchUrl, {
+        headers: {
+          'Authorization': `Bearer ${TMDB_API_KEY}`,
+          'Accept': 'application/json'
+        },
+        next: { revalidate: 86400 } // Cache 24h
+      });
     } catch (fetchErr: any) {
       return NextResponse.json({ 
         posterUrl: null, 
         backdropUrl: null, 
         error: 'TMDB fetch failed',
-        debug: debug ? { message: fetchErr?.message, url: searchUrl.replace(TMDB_API_KEY, '***') } : undefined
+        debug: debug ? { message: fetchErr?.message } : undefined
       });
     }
 
