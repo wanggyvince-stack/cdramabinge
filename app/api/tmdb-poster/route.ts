@@ -25,8 +25,10 @@ export async function GET(request: NextRequest) {
     // Parse English title
     let enTitle = drama.originalTitle;
     try {
-      const titles = JSON.parse(drama.titlesJson);
-      if (titles.en) enTitle = titles.en;
+      if (drama.titlesJson) {
+        const titles = JSON.parse(drama.titlesJson);
+        if (titles.en) enTitle = titles.en;
+      }
     } catch {}
 
     // Search TMDB
