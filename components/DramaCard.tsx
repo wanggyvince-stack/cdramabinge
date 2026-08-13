@@ -33,9 +33,9 @@ export default function DramaCard({
   const [resolvedPoster, setResolvedPoster] = useState<string | null>(posterUrl || null);
   const [fetchAttempted, setFetchAttempted] = useState(false);
 
-  // If no poster, try to fetch from TMDB API
+  // If no poster or placeholder, try to fetch from TMDB API
   useEffect(() => {
-    if (!resolvedPoster && !fetchAttempted) {
+    if (!fetchAttempted && (!resolvedPoster || isPlaceholderPoster(resolvedPoster))) {
       setFetchAttempted(true);
       fetch(`/api/tmdb-poster?slug=${slug}`)
         .then(res => res.json())

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { isPlaceholderPoster } from '@/lib/utils/helpers';
 
 interface DramaHeroImagesProps {
   slug: string;
@@ -25,15 +26,15 @@ export default function DramaHeroImages({
   const [fetchAttempted, setFetchAttempted] = useState(false);
 
   useEffect(() => {
-    if (!fetchAttempted && (!posterUrl || !backdropUrl)) {
+    if (!fetchAttempted && ((!posterUrl || isPlaceholderPoster(posterUrl)) || (!backdropUrl || isPlaceholderPoster(backdropUrl)))) {
       setFetchAttempted(true);
       fetch(`/api/tmdb-poster?slug=${slug}`)
         .then((res) => res.json())
         .then((data) => {
-          if (data.posterUrl && !posterUrl) {
+          if (data.posterUrl && (!posterUrl || isPlaceholderPoster(posterUrl))) {
             setPosterUrl(data.posterUrl);
           }
-          if (data.backdropUrl && !backdropUrl) {
+          if (data.backdropUrl && (!backdropUrl || isPlaceholderPoster(backdropUrl))) {
             setBackdropUrl(data.backdropUrl);
           }
         })

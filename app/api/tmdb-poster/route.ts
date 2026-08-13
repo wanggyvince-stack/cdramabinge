@@ -32,17 +32,19 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ posterUrl: null, backdropUrl: null, error: `Drama not found: ${slug}` });
     }
 
-    // Parse English title
-    let enTitle = drama.originalTitle;
+    // Parse titles - try English first, then Chinese
+    let searchTitle = drama.originalTitle;
+    let zhTitle: string | null = null;
     try {
       if (drama.titlesJson) {
         const titles = JSON.parse(drama.titlesJson);
-        if (titles.en) enTitle = titles.en;
+        if (titles.en) searchTitle = titles.en;
+        if (titles.zh) zhTitle = titles.zh;
       }
     } catch {}
 
-    // Search TMDB using Bearer token
-    const searchUrl = `${TMDB_BASE}/search/tv?query=${encodeURIComponent(enTitle)}&language=en-US&page=1`;
+    // Search TMDB using Bearer token - try English title first
+    const searchUrl = `${TMDB_BASE}/search/tv?query=${encodeURIComponent(searchTitle)}&language=en-US&page=1`;
     
     let res: Response;
     try {
@@ -72,15 +74,40 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    const data = await res.json();
+    let data = await res.json();
+    let result: any = null;
 
     if (data.results?.length > 0) {
       // Prefer exact match
       const exact = data.results.find(
-        (r: any) => r.name?.toLowerCase() === enTitle.toLowerCase()
+        (r: any) => r.name?.toLowerCase() === searchTitle.toLowerCase()
       );
-      const result = exact || data.results[0];
-      
+      result = exact || data.results[0];
+    } else if (zhTitle) {
+      // If no results with English title, try Chinese title
+      const zhSearchUrl = `${TMDB_BASE}/search/tv?query=${encodeURIComponent(zhTitle)}&language=zh-CN&page=1`;
+      try {
+        const zhRes = await fetch(zhSearchUrl, {
+          headers: {
+            'Authorization': `Bearer ${TMDB_API_KEY}`,
+            'Accept': 'application/json'
+          },
+          next: { revalidate: 86400 }
+        });
+        if (zhRes.ok) {
+          const zhData = await zhRes.json();
+          if (zhData.results?.length > 0) {
+            const exactZh = zhData.results.find(
+              (r: any) => r.name?.toLowerCase() === zhTitle!.toLowerCase()
+            );
+            result = exactZh || zhData.results[0];
+            data = zhData; // Update data for response
+          }
+        }
+      } catch {} // Silently fail on Chinese search
+    }
+
+    if (result) {
       const posterUrl = result.poster_path 
         ? `https://image.tmdb.org/t/p/w500${result.poster_path}` 
         : null;
@@ -113,7 +140,7 @@ export async function GET(request: NextRequest) {
       posterUrl: null, 
       backdropUrl: null, 
       error: 'No TMDB results',
-      debug: debug ? { searchedFor: enTitle, slug, resultCount: data.results?.length ?? 0, totalResults: data.total_results } : undefined
+      debug: debug ? { searchedFor: searchTitle, zhTitle, slug, resultCount: data.results?.length ?? 0, totalResults: data.total_results } : undefined
     });
   } catch (error: any) {
     return NextResponse.json({ 

@@ -31,6 +31,9 @@ export default function DramaPoster({
         .then(data => {
           if (data.posterUrl) {
             setResolvedSrc(data.posterUrl);
+          } else {
+            // If API returns null, keep trying with different title
+            // For dramas not found in TMDB, show fallback
           }
         })
         .catch(() => {}); // Silently fail
