@@ -17,8 +17,8 @@
   },
   "home": {
     "heroTrending": "กำลังมาแรง",
-    "vibeTitle": "คืนนี้คุณอยากดูอารมณ์ไหน?",
-    "vibeSubtitle": "เลือกอารมณ์ของคุณ ค้นพบซีรีส์เรื่องต่อไป",
+    "vibeTitle": "ค้นพบตามอารมณ์",
+    "vibeSubtitle": "แต่ละอารมณ์เปิดโลกที่แตกต่าง",
     "quizCta": "ค้นพบประเภทจิตวิญญาณซีรีส์จีนของคุณ →",
     "editorsPicks": "บรรณาธิการเลือก",
     "justPremiered": "เพิ่งออกอากาศ",
@@ -26,14 +26,14 @@
     "browseGenre": "ตามแนว"
   },
   "mood": {
-    "wanna_cry": "อยากร้องไห้",
-    "light_fun": "เบาสนุก",
-    "intense": "เข้มข้น",
+    "wanna_cry": "ซึ้งกินใจ",
+    "light_fun": "เบาสบาย",
+    "intense": "ตื่นเต้น",
     "romantic": "โรแมนติก",
-    "mindbending": "พลิกสมอง",
-    "spooky": "สยองขวัญ",
+    "mindbending": "ลึกลับ",
+    "spooky": "หลอกหลอน",
     "empowering": "สร้างแรงบันดาลใจ",
-    "aesthetic": "สวยงาม"
+    "aesthetic": "เลือนราง"
   },
   "genre": {
     "romance": "โรแมนติก",

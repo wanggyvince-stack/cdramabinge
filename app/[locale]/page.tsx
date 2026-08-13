@@ -13,7 +13,7 @@ import EditorialComment from '@/components/EditorialComment';
 import {
   getLocalizedText,
   parseJsonArray,
-  MOOD_GRADIENT_CLASS,
+  MOOD_PILL_LIGHT_CLASS,
   ALL_MOODS,
   ALL_GENRES,
   tmdbImage,
@@ -356,16 +356,18 @@ export default async function HomePage() {
             {t('home.browseMood')}
           </h2>
           <div className="flex flex-wrap gap-3 mb-12">
-            {ALL_MOODS.map((mood) => (
-              <Link
-                key={mood}
-                href={`/${locale}/best/${mood}`}
-                className="px-5 py-2.5 rounded-song border border-ivory-border text-sm text-ink-3 hover:bg-dingyao transition-colors duration-song inline-flex items-center gap-2 glaze-hover"
-              >
-                <span className={`w-2 h-2 rounded-full ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`} />
-                <span>{t(`mood.${mood}`)}</span>
-              </Link>
-            ))}
+            {ALL_MOODS.map((mood) => {
+              const pillClass = MOOD_PILL_LIGHT_CLASS[mood] || 'bg-mood-romantic/10 text-mood-romantic border-mood-romantic/20 hover:bg-mood-romantic/20';
+              return (
+                <Link
+                  key={mood}
+                  href={`/${locale}/best/${mood}`}
+                  className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide border transition-colors duration-song ${pillClass}`}
+                >
+                  {t(`mood.${mood}`)}
+                </Link>
+              );
+            })}
           </div>
 
           {/* By Genre */}
@@ -377,7 +379,7 @@ export default async function HomePage() {
               <Link
                 key={genre}
                 href={`/${locale}/best/${genre}`}
-                className="px-5 py-2.5 rounded-song border border-ivory-border text-sm text-ink-3 hover:bg-dingyao transition-colors duration-song glaze-hover"
+                className="px-5 py-2.5 rounded-full bg-dingyao/50 text-ink-3 border border-ivory-border/60 text-sm tracking-wide hover:bg-dingyao hover:text-ink-1 transition-colors duration-song"
               >
                 {t(`genre.${genre}`)}
               </Link>

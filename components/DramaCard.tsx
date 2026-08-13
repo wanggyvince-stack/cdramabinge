@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MOOD_GRADIENT_CLASS, isPlaceholderPoster } from '@/lib/utils/helpers';
+import { MOOD_PILL_LIGHT_CLASS, isPlaceholderPoster } from '@/lib/utils/helpers';
 
 interface DramaCardProps {
   slug: string;
@@ -92,7 +92,7 @@ export default function DramaCard({
               {moods.slice(0, 3).map((mood) => (
                 <span
                   key={mood}
-                  className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] text-white ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`}
+                  className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide border transition-colors duration-song ${MOOD_PILL_LIGHT_CLASS[mood] || 'bg-mood-romantic/10 text-mood-romantic border-mood-romantic/20'}`}
                 >
                   {moodLabels[mood] || mood}
                 </span>

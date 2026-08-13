@@ -17,8 +17,8 @@
   },
   "home": {
     "heroTrending": "Đang thịnh hành",
-    "vibeTitle": "Tâm trạng tối nay của bạn?",
-    "vibeSubtitle": "Chọn tâm trạng, khám phá bộ phim tiếp theo",
+    "vibeTitle": "Khám phá theo tâm trạng",
+    "vibeSubtitle": "Mỗi tâm trạng mở ra một thế giới khác",
     "quizCta": "Khám phá linh hồn phim Hoa của bạn →",
     "editorsPicks": "Biên tập chọn lọc",
     "justPremiered": "Vừa lên sóng",
@@ -26,14 +26,14 @@
     "browseGenre": "Theo thể loại"
   },
   "mood": {
-    "wanna_cry": "Muốn khóc",
-    "light_fun": "Vui nhẹ nhàng",
-    "intense": "Kịch tính",
-    "romantic": "Lãng mạn",
-    "mindbending": "Hack não",
-    "spooky": "Rùng rợn",
-    "empowering": "Truyền cảm hứng",
-    "aesthetic": "Thẩm mỹ"
+    "wanna_cry": "Xúc Động",
+    "light_fun": "Nhẹ Nhàng",
+    "intense": "Kịch Tính",
+    "romantic": "Lãng Mạn",
+    "mindbending": "Bí Ẩn",
+    "spooky": "Ma Mị",
+    "empowering": "Truyền Cảm Hứng",
+    "aesthetic": "Phiêu Diêu"
   },
   "genre": {
     "romance": "Tình cảm",

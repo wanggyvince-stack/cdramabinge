@@ -17,8 +17,8 @@
   },
   "home": {
     "heroTrending": "Trending Now",
-    "vibeTitle": "What's your vibe tonight?",
-    "vibeSubtitle": "Pick your mood, discover your next obsession",
+    "vibeTitle": "Discover by Mood",
+    "vibeSubtitle": "Each mood opens a different world",
     "quizCta": "Discover your C-drama soul type →",
     "editorsPicks": "Editor's Picks",
     "justPremiered": "Just Premiered",
@@ -26,14 +26,14 @@
     "browseGenre": "By Genre"
   },
   "mood": {
-    "wanna_cry": "Wanna Cry",
-    "light_fun": "Light & Fun",
-    "intense": "Intense",
+    "wanna_cry": "Tearjerker",
+    "light_fun": "Breezy",
+    "intense": "Gripping",
     "romantic": "Romantic",
-    "mindbending": "Mind-bending",
-    "spooky": "Spooky",
-    "empowering": "Empowering",
-    "aesthetic": "Aesthetic"
+    "mindbending": "Enigmatic",
+    "spooky": "Haunting",
+    "empowering": "Uplifting",
+    "aesthetic": "Ethereal"
   },
   "genre": {
     "romance": "Romance",

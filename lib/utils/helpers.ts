@@ -80,6 +80,34 @@ export const MOOD_GRADIENT_CLASS: Record<string, string> = {
 };
 
 /**
+ * Mood to solid background class mapping (for pill tags)
+ */
+export const MOOD_SOLID_CLASS: Record<string, string> = {
+  wanna_cry: 'bg-mood-wanna_cry',
+  light_fun: 'bg-mood-light_fun',
+  intense: 'bg-mood-intense',
+  romantic: 'bg-mood-romantic',
+  mindbending: 'bg-mood-mindbending',
+  spooky: 'bg-mood-spooky',
+  empowering: 'bg-mood-empowering',
+  aesthetic: 'bg-mood-aesthetic',
+};
+
+/**
+ * Mood pill tag classes for Browse by Mood section (light bg with opacity)
+ */
+export const MOOD_PILL_LIGHT_CLASS: Record<string, string> = {
+  wanna_cry: 'bg-mood-wanna_cry/10 text-mood-wanna_cry border-mood-wanna_cry/20 hover:bg-mood-wanna_cry/20',
+  light_fun: 'bg-mood-light_fun/10 text-mood-light_fun border-mood-light_fun/20 hover:bg-mood-light_fun/20',
+  intense: 'bg-mood-intense/10 text-mood-intense border-mood-intense/20 hover:bg-mood-intense/20',
+  romantic: 'bg-mood-romantic/10 text-mood-romantic border-mood-romantic/20 hover:bg-mood-romantic/20',
+  mindbending: 'bg-mood-mindbending/10 text-mood-mindbending border-mood-mindbending/20 hover:bg-mood-mindbending/20',
+  spooky: 'bg-mood-spooky/10 text-mood-spooky border-mood-spooky/20 hover:bg-mood-spooky/20',
+  empowering: 'bg-mood-empowering/10 text-mood-empowering border-mood-empowering/20 hover:bg-mood-empowering/20',
+  aesthetic: 'bg-mood-aesthetic/10 text-mood-aesthetic border-mood-aesthetic/20 hover:bg-mood-aesthetic/20',
+};
+
+/**
  * All mood keys
  */
 export const ALL_MOODS = [

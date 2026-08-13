@@ -1,5 +1,3 @@
-import { MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
-
 interface MoodTagProps {
   mood: string;
   label: string;
@@ -7,19 +5,26 @@ interface MoodTagProps {
 }
 
 /**
- * MoodTag — 情绪标签（纯文字 + 色块）
- * Displays a small solid-color pill with mood label
+ * MoodTag — Mood pill tag (semi-transparent on hero/dark backgrounds)
+ * Uses white semi-transparent styling for contrast on dark backgrounds
  */
 export default function MoodTag({ mood, label, size = 'sm' }: MoodTagProps) {
-  const bgClass = MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic';
-
   const sizeClasses = size === 'sm'
-    ? 'px-2 py-0.5 text-xs'
-    : 'px-3 py-1 text-sm';
+    ? 'px-3 py-1 text-xs'
+    : 'px-3 py-1 text-xs';
 
   return (
     <span
-      className={`inline-flex items-center rounded-song text-white font-medium ${sizeClasses} ${bgClass}`}
+      className={`
+        inline-flex items-center
+        rounded-full
+        bg-white/15
+        text-white/90
+        border border-white/25
+        font-medium tracking-wide
+        backdrop-blur-sm
+        ${sizeClasses}
+      `}
     >
       {label}
     </span>
