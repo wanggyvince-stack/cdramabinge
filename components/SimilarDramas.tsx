@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import DramaPoster from '@/components/DramaPoster';
 
 interface SimilarDrama {
   slug: string;
@@ -36,18 +37,12 @@ export default function SimilarDramas({ dramas, title, locale }: SimilarDramasPr
             >
               <div className="song-card overflow-hidden glaze-hover">
                 <div className="relative aspect-[9/14] overflow-hidden">
-                  {drama.posterUrl ? (
-                    <img
-                      src={drama.posterUrl}
-                      alt={drama.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-dingyao flex items-center justify-center">
-                      <span className="text-ink-5 text-2xl font-display">#{index + 1}</span>
-                    </div>
-                  )}
+                  <DramaPoster
+                    src={drama.posterUrl}
+                    alt={drama.title}
+                    title={drama.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
                   {/* Rank badge */}
                   <div className="absolute top-2 left-2 w-6 h-6 bg-zhusha/90 text-white text-xs font-bold rounded-song flex items-center justify-center">

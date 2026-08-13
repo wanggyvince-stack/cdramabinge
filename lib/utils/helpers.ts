@@ -47,18 +47,23 @@ export function parseJsonObject<T = Record<string, unknown>>(
 }
 
 /**
- * Mood emoji mapping
+ * Mood label mapping (pure text, no emoji)
  */
-export const MOOD_EMOJI: Record<string, string> = {
-  wanna_cry: '😭',
-  light_fun: '😂',
-  intense: '🔥',
-  romantic: '🥰',
-  mindbending: '🤯',
-  spooky: '👻',
-  empowering: '💪',
-  aesthetic: '🌸',
+export const MOOD_LABEL: Record<string, string> = {
+  wanna_cry: 'Wanna Cry',
+  light_fun: 'Light & Fun',
+  intense: 'Intense',
+  romantic: 'Romantic',
+  mindbending: 'Mind-bending',
+  spooky: 'Spooky',
+  empowering: 'Empowering',
+  aesthetic: 'Aesthetic',
 };
+
+/**
+ * @deprecated Use MOOD_LABEL instead. Kept for backward compat during migration.
+ */
+export const MOOD_EMOJI: Record<string, string> = MOOD_LABEL;
 
 /**
  * Mood to Tailwind gradient class mapping

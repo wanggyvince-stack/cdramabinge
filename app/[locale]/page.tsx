@@ -13,7 +13,6 @@ import EditorialComment from '@/components/EditorialComment';
 import {
   getLocalizedText,
   parseJsonArray,
-  MOOD_EMOJI,
   MOOD_GRADIENT_CLASS,
   ALL_MOODS,
   ALL_GENRES,
@@ -81,7 +80,7 @@ export default async function HomePage() {
         title: item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug,
         backdropUrl: drama ? (tmdbImage(drama.backdropUrl, 'original') || null) : null,
         comment: item.comment?.[locale] || item.comment?.en || '',
-        badge: item.badge_text || '🔥 Trending',
+        badge: item.badge_text || 'Trending',
       };
     });
 
@@ -308,7 +307,7 @@ export default async function HomePage() {
                 href={`/${locale}/best/${mood}`}
                 className="px-5 py-2.5 rounded-song border border-ivory-border text-sm text-ink-3 hover:bg-dingyao transition-colors duration-song inline-flex items-center gap-2 glaze-hover"
               >
-                <span>{MOOD_EMOJI[mood]}</span>
+                <span className={`w-2 h-2 rounded-full ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`} />
                 <span>{t(`mood.${mood}`)}</span>
               </Link>
             ))}

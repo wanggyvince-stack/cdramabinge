@@ -1,4 +1,4 @@
-import { MOOD_EMOJI, MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
+import { MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
 
 interface MoodTagProps {
   mood: string;
@@ -7,23 +7,21 @@ interface MoodTagProps {
 }
 
 /**
- * MoodTag — 情绪标签（渐变色）
- * Displays a small gradient pill with mood emoji + label
+ * MoodTag — 情绪标签（纯文字 + 色块）
+ * Displays a small solid-color pill with mood label
  */
 export default function MoodTag({ mood, label, size = 'sm' }: MoodTagProps) {
-  const gradientClass = MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic';
-  const emoji = MOOD_EMOJI[mood] || '🎬';
+  const bgClass = MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic';
 
   const sizeClasses = size === 'sm'
-    ? 'px-2 py-0.5 text-xs gap-1'
-    : 'px-3 py-1 text-sm gap-1.5';
+    ? 'px-2 py-0.5 text-xs'
+    : 'px-3 py-1 text-sm';
 
   return (
     <span
-      className={`inline-flex items-center rounded-song text-white font-medium ${sizeClasses} ${gradientClass}`}
+      className={`inline-flex items-center rounded-song text-white font-medium ${sizeClasses} ${bgClass}`}
     >
-      <span>{emoji}</span>
-      <span>{label}</span>
+      {label}
     </span>
   );
 }

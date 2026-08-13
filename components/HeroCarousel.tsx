@@ -80,20 +80,20 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
             index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          {/* Background image */}
+          {/* Background image with micro-breath animation */}
           {getBackdrop(item) ? (
             <img
               src={getBackdrop(item)!}
               alt={item.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hero-backdrop"
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-ink-2 via-dingyao to-ink-3" />
           )}
 
-          {/* Ink wash overlay — bottom gradient to sujuan */}
-          <div className="absolute inset-0 bg-gradient-to-t from-sujuan via-sujuan/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent" />
+          {/* Ink wash overlay — lighter gradients for more image visibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-sujuan/80 via-sujuan/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
         </div>
       ))}
 
@@ -102,14 +102,19 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
         <div className="max-w-7xl mx-auto px-6">
           {items[current] && (
             <div className="max-w-2xl">
-              {/* Badge */}
-              <span className="inline-block px-3 py-1 bg-zhusha/90 text-white text-xs font-medium rounded-song mb-3 tracking-wide">
-                {items[current].badge || trendingLabel}
-              </span>
+              {/* Badge — Song Dynasty seal stamp style */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-12 h-12 bg-[#c04851] text-white rounded-song flex items-center justify-center font-display text-xl shadow-lg">
+                  {current + 1}
+                </span>
+                <span className="inline-block px-3 py-1 bg-zhusha/90 text-white text-xs font-medium rounded-song tracking-wide">
+                  {items[current].badge || trendingLabel}
+                </span>
+              </div>
 
               {/* Title */}
               <Link href={`/${locale}/drama/${items[current].slug}`}>
-                <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-3 tracking-wider leading-tight hover:text-ruyao transition-colors duration-song">
+                <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-3 tracking-widest leading-tight hover:text-ruyao transition-colors duration-song">
                   {items[current].title}
                 </h1>
               </Link>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { MOOD_EMOJI, MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
+import { MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
 
 interface MoodButtonProps {
   mood: string;
@@ -18,7 +18,6 @@ interface MoodButtonProps {
 export default function MoodButton({ mood, label, locale, dramaSlugs = [] }: MoodButtonProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const gradientClass = MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic';
-  const emoji = MOOD_EMOJI[mood] || '🎬';
 
   return (
     <div className="flex flex-col items-center">
@@ -30,8 +29,7 @@ export default function MoodButton({ mood, label, locale, dramaSlugs = [] }: Moo
         aria-expanded={isExpanded}
         aria-label={label}
       >
-        <span className="text-2xl">{emoji}</span>
-        <span className="text-xs text-white/80 mt-1 font-medium">{label}</span>
+        <span className="text-xs text-white/90 font-medium text-center leading-tight px-1">{label}</span>
       </button>
 
       {/* Expanded recommendations (horizontal scroll) */}

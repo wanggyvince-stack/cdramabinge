@@ -5,7 +5,7 @@
       "position": 1,
       "title_override": {"en": "The Untamed", "vi": "Trần Tình Lệnh", "th": "ปรมาจารย์ลัทธิมาร"},
       "comment": {"en": "A masterpiece that redefined xianxia for a generation.", "vi": "Kiệt tác định nghĩa lại tiên hiệp cho cả một thế hệ.", "th": "ผลงานชิ้นเอกที่กำหนดนิยามเซียนใหม่"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -13,7 +13,7 @@
       "position": 2,
       "title_override": {"en": "Nid of a Thousand Songs", "vi": "Tổ Ấm Nghìn Ca", "th": "เพลงสยบนางปีศาจ"},
       "comment": {"en": "Gripping supernatural thriller with stunning visuals.", "vi": "Phim kinh dị siêu nhiên hấp dẫn với hình ảnh tuyệt đẹp.", "th": "ระทึกขวัญเหนือธรรมชาติพร้อมภาพ Stunning"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -21,7 +21,7 @@
       "position": 3,
       "title_override": {"en": "Story of Kunning Palace", "vi": "Ninh An Như Mộng", "th": "เรื่องวุ่นๆ ของนางในวัง"},
       "comment": {"en": "Palace intrigue meets forbidden romance.", "vi": "Cung đấu kết hợp tình yêu cấm kỵ.", "th": "การเมืองในวังพบกับรักต้องห้าม"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -29,7 +29,7 @@
       "position": 4,
       "title_override": {"en": "Love Between Fairy and Devil", "vi": "Thương Lan Quyết", "th": "รักวุ่นวายระหว่างเทพกับมาร"},
       "comment": {"en": "The drama that made the world fall for Dylan Wang.", "vi": "Bộ phim khiến cả thế giới mê Dylan Wang.", "th": "ซีรีส์ที่ทำให้โลกหลงรัก Dylan Wang"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -37,7 +37,7 @@
       "position": 5,
       "title_override": {"en": "The Longest Promise", "vi": "Trường Nguyệt Tẫn Minh", "th": "จันทราติ้นหมิง"},
       "comment": {"en": "Epic xianxia with breathtaking cinematography.", "vi": "Tiên hiệp sử thi với hình ảnh đẹp nghẹt thở.", "th": "เซียนมหากาพย์พร้อมภาพสวยจับใจ"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -45,7 +45,7 @@
       "position": 6,
       "title_override": {"en": "Hidden Love", "vi": "Ẩn Giấu Tình Yêu", "th": "ซ่อนรัก"},
       "comment": {"en": "The sweetest campus romance of the year.", "vi": "Câu chuyện tình ngọt ngào nhất năm.", "th": "โรแมนติกในมหาวิทยาลัยที่หวานที่สุด"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -53,7 +53,7 @@
       "position": 7,
       "title_override": {"en": "Joy of Life Season 2", "vi": "Khánh Dư Niên 2", "th": "จอมนางเหนือเวที 2"},
       "comment": {"en": "The sequel that exceeded all expectations.", "vi": "Phần tiếp theo vượt xa mọi kỳ vọng.", "th": "ภาคต่อที่เกินความคาดหมาย"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     },
     {
@@ -61,7 +61,7 @@
       "position": 8,
       "title_override": {"en": "Word of Honor", "vi": "Thiên Nhai Khách", "th": "พยัคฆ์ร้ายหมื่นลี้"},
       "comment": {"en": "A poetic wuxia that captured hearts worldwide.", "vi": "Kiếm hiệp thơ mộng chinh phục trái tim toàn cầu.", "th": "กำลังภายในกวีที่ครองใจทั่วโลก"},
-      "badge_text": "🔥 Trending",
+      "badge_text": "Trending",
       "active": true
     }
   ],

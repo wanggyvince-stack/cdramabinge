@@ -7,7 +7,6 @@ import { dramas } from '@/lib/db/schema';
 import {
   getLocalizedText,
   parseJsonArray,
-  MOOD_EMOJI,
   MOOD_GRADIENT_CLASS,
   ALL_MOODS,
   ALL_GENRES,
@@ -204,7 +203,7 @@ export default async function BestGenrePage({
   // Editorial intro
   const intro = EDITORIAL_INTROS[genre]?.[locale] || EDITORIAL_INTROS[genre]?.en || '';
   const displayTitle = isMood
-    ? `${MOOD_EMOJI[genre]} ${t(`mood.${genre}`)}`
+    ? t(`mood.${genre}`)
     : t(`genre.${genre}`);
 
   // JSON-LD ItemList Schema
@@ -303,9 +302,9 @@ export default async function BestGenrePage({
                         {moodTags.slice(0, 3).map((mood) => (
                           <span
                             key={mood}
-                            className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] text-white ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`}
+                            className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] text-white ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`}
                           >
-                            {MOOD_EMOJI[mood]}
+                            {t(`mood.${mood}`)}
                           </span>
                         ))}
                       </div>

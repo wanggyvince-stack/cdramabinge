@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MOOD_EMOJI, MOOD_GRADIENT_CLASS } from '@/lib/utils/helpers';
+import { MOOD_GRADIENT_CLASS, isPlaceholderPoster } from '@/lib/utils/helpers';
 
 interface DramaCardProps {
   slug: string;
@@ -56,7 +56,7 @@ export default function DramaCard({
       <div className="song-card overflow-hidden glaze-hover">
         {/* Poster */}
         <div className="relative aspect-[9/16] overflow-hidden rounded-t-song">
-          {resolvedPoster ? (
+          {resolvedPoster && !isPlaceholderPoster(resolvedPoster) ? (
             <img
               src={resolvedPoster}
               alt={title}
@@ -65,8 +65,8 @@ export default function DramaCard({
               onError={() => setResolvedPoster(null)}
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-dingyao via-ivory-border to-dingyao flex items-center justify-center">
-              <span className="text-ink-5 text-4xl font-display opacity-40">{title.charAt(0)}</span>
+            <div className="w-full h-full bg-dingyao flex items-center justify-center">
+              <span className="text-ink-4 text-4xl font-display">{title.charAt(0).toUpperCase()}</span>
             </div>
           )}
 
@@ -92,9 +92,9 @@ export default function DramaCard({
               {moods.slice(0, 3).map((mood) => (
                 <span
                   key={mood}
-                  className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[10px] text-white ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`}
+                  className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] text-white ${MOOD_GRADIENT_CLASS[mood] || 'bg-mood-romantic'}`}
                 >
-                  {MOOD_EMOJI[mood]} {moodLabels[mood] || mood}
+                  {moodLabels[mood] || mood}
                 </span>
               ))}
             </div>

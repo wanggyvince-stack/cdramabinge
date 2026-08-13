@@ -34,7 +34,7 @@ export default function ShareButtons({ url, title, shareLabel }: ShareButtonsPro
     },
     {
       name: 'Copy Link',
-      icon: '🔗',
+      icon: 'link',
       href: '#',
       color: 'hover:bg-ruyao hover:text-white',
       isCopy: true,
@@ -63,7 +63,12 @@ export default function ShareButtons({ url, title, shareLabel }: ShareButtonsPro
           title={link.name}
           aria-label={`Share on ${link.name}`}
         >
-          {link.icon}
+          {link.isCopy ? (
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+          </svg>
+        ) : link.icon}
         </a>
       ))}
     </div>

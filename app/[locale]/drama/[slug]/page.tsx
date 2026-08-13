@@ -193,13 +193,13 @@ export default async function DramaDetailPage({
       {/* ═══════════════════════════════════════
           Hero Section — Large backdrop + overlay
           ═══════════════════════════════════════ */}
-      <section className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden">
+      <section className="relative w-full h-[70vh] md:h-[75vh] overflow-hidden">
         {/* Backdrop */}
         {realBackdropUrl ? (
           <img
             src={realBackdropUrl}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hero-backdrop"
           />
         ) : (
           <DramaHeroImages
@@ -209,9 +209,9 @@ export default async function DramaDetailPage({
           />
         )}
 
-        {/* Ink wash gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-sujuan via-sujuan/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
+        {/* Ink wash gradient overlay — lighter for more image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-sujuan/80 via-sujuan/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
 
         {/* Hero content */}
         <div className="absolute inset-x-0 bottom-0 pb-10">
@@ -275,7 +275,10 @@ export default async function DramaDetailPage({
         <section className="py-8">
           <div className="w-full aspect-video bg-dingyao rounded-song border border-ivory-border flex items-center justify-center">
             <div className="text-center">
-              <span className="text-4xl mb-2 block">🎬</span>
+              <svg className="w-10 h-10 mx-auto mb-2 text-ink-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7" />
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+              </svg>
               <p className="text-ink-4 text-sm">
                 {locale === 'en' && 'Trailer coming soon'}
                 {locale === 'vi' && 'Sắp có trailer'}
@@ -385,7 +388,10 @@ export default async function DramaDetailPage({
             {/* Cast will be populated from database when actor data is available */}
             <div className="flex-shrink-0 w-28 text-center">
               <div className="w-20 h-20 mx-auto rounded-full bg-dingyao border border-ivory-border flex items-center justify-center mb-2">
-                <span className="text-ink-5 text-xl">👤</span>
+                <svg className="w-8 h-8 text-ink-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
               </div>
               <p className="text-xs text-ink-4">
                 {locale === 'en' ? 'Cast info coming soon' : locale === 'vi' ? 'Sắp có thông tin diễn viên' : 'ข้อมูลนักแสดงเร็วๆ นี้'}

@@ -84,7 +84,7 @@ export const editorialSections = sqliteTable('editorial_sections', {
   position: integer('position').notNull(),
   titleOverrideJson: text('title_override_json'), // {"en":"...", "vi":"...", "th":"..."}
   commentJson: text('comment_json'),    // {"en":"...", "vi":"...", "th":"..."}
-  badgeText: text('badge_text'),        // "🔥 Trending" | "New" | "Editor's Pick"
+  badgeText: text('badge_text'),        // "Trending" | "New" | "Editor's Pick"
   active: integer('active', { mode: 'boolean' }).default(true),
   startDate: text('start_date'),
   endDate: text('end_date'),
