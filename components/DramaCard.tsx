@@ -33,15 +33,26 @@ export default function DramaCard({
   const [resolvedPoster, setResolvedPoster] = useState<string | null>(posterUrl || null);
   const [fetchAttempted, setFetchAttempted] = useState(false);
 
-  // If no poster or placeholder, try to fetch from TMDB API
+  // If no poster or placeholder, try TMDB first, then TVmaze as fallback
   useEffect(() => {
     if (!fetchAttempted && (!resolvedPoster || isPlaceholderPoster(resolvedPoster))) {
       setFetchAttempted(true);
+
+      // Try TMDB first
       fetch(`/api/tmdb-poster?slug=${slug}`)
         .then(res => res.json())
         .then(data => {
           if (data.posterUrl) {
             setResolvedPoster(data.posterUrl);
+          } else {
+            // TMDB failed — fallback to TVmaze
+            return fetch(`/api/tvmaze-poster?slug=${slug}`)
+              .then(res => res.json())
+              .then(tvmazeData => {
+                if (tvmazeData.posterUrl) {
+                  setResolvedPoster(tvmazeData.posterUrl);
+                }
+              });
           }
         })
         .catch(() => {}); // Silently fail

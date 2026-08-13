@@ -22,18 +22,26 @@ export default function DramaPoster({
   const [error, setError] = useState(false);
   const [fetchAttempted, setFetchAttempted] = useState(false);
 
-  // If no poster or placeholder, try to fetch from TMDB API
+  // If no poster or placeholder, try TMDB first, then TVmaze as fallback
   useEffect(() => {
     if (!fetchAttempted && (!resolvedSrc || isPlaceholderPoster(resolvedSrc)) && slug) {
       setFetchAttempted(true);
+
+      // Try TMDB first
       fetch(`/api/tmdb-poster?slug=${slug}`)
         .then(res => res.json())
         .then(data => {
           if (data.posterUrl) {
             setResolvedSrc(data.posterUrl);
           } else {
-            // If API returns null, keep trying with different title
-            // For dramas not found in TMDB, show fallback
+            // TMDB failed — fallback to TVmaze
+            return fetch(`/api/tvmaze-poster?slug=${slug}`)
+              .then(res => res.json())
+              .then(tvmazeData => {
+                if (tvmazeData.posterUrl) {
+                  setResolvedSrc(tvmazeData.posterUrl);
+                }
+              });
           }
         })
         .catch(() => {}); // Silently fail
