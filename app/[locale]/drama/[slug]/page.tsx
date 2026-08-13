@@ -11,6 +11,7 @@ import {
   tmdbImage,
   isPlaceholderPoster,
   fetchTmdbOverview,
+  fetchTmdbLocalization,
 } from '@/lib/utils/helpers';
 import MoodTag from '@/components/MoodTag';
 import EditorialComment from '@/components/EditorialComment';
@@ -49,11 +50,22 @@ export async function generateMetadata({
     if (tmdbOverview) synopsis = tmdbOverview;
   }
 
+  // Localize title and synopsis for non-English locales via TMDB
+  let displayTitle = title;
+  let displaySynopsis = synopsis;
+  if (locale !== 'en') {
+    const localized = await fetchTmdbLocalization(drama.originalTitle, locale);
+    if (localized) {
+      if (localized.title) displayTitle = localized.title;
+      if (localized.overview) displaySynopsis = localized.overview;
+    }
+  }
+
   const canonicalUrl = `https://cdramabinge.com/${locale}/drama/${slug}`;
 
   return {
-    title: `${title} (${drama.year || 'N/A'})`,
-    description: synopsis.slice(0, 160),
+    title: `${displayTitle} (${drama.year || 'N/A'})`,
+    description: displaySynopsis.slice(0, 160),
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -63,8 +75,8 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${title} (${drama.year || 'N/A'})`,
-      description: synopsis.slice(0, 160),
+      title: `${displayTitle} (${drama.year || 'N/A'})`,
+      description: displaySynopsis.slice(0, 160),
       url: canonicalUrl,
       type: 'video.tv_show',
       images: drama.posterUrl && !isPlaceholderPoster(drama.posterUrl)
@@ -96,6 +108,17 @@ export default async function DramaDetailPage({
   if (synopsis.startsWith('A captivating')) {
     const tmdbOverview = await fetchTmdbOverview(drama.originalTitle);
     if (tmdbOverview) synopsis = tmdbOverview;
+  }
+
+  // Localize title and synopsis for non-English locales via TMDB
+  let displayTitle = title;
+  let displaySynopsis = synopsis;
+  if (locale !== 'en') {
+    const localized = await fetchTmdbLocalization(drama.originalTitle, locale);
+    if (localized) {
+      if (localized.title) displayTitle = localized.title;
+      if (localized.overview) displaySynopsis = localized.overview;
+    }
   }
 
   const genres = parseJsonArray<string>(drama.genres);
@@ -142,15 +165,15 @@ export default async function DramaDetailPage({
   // FAQ items (generated from drama data)
   const faqItems = [
     {
-      question: locale === 'en' ? `What is ${title} about?` : locale === 'vi' ? `${title} nói về cái gì?` : `${title} เกี่ยวกับอะไร?`,
-      answer: synopsis.slice(0, 300),
+      question: locale === 'en' ? `What is ${displayTitle} about?` : locale === 'vi' ? `${displayTitle} nói về cái gì?` : `${displayTitle} เกี่ยวกับอะไร?`,
+      answer: displaySynopsis.slice(0, 300),
     },
     {
-      question: locale === 'en' ? `How many episodes does ${title} have?` : locale === 'vi' ? `${title} có bao nhiêu tập?` : `${title} มีกี่ตอน?`,
-      answer: locale === 'en' ? `${title} has ${drama.episodes || 'N/A'} episodes.` : locale === 'vi' ? `${title} có ${drama.episodes || 'N/A'} tập.` : `${title} มี ${drama.episodes || 'N/A'} ตอน`,
+      question: locale === 'en' ? `How many episodes does ${displayTitle} have?` : locale === 'vi' ? `${displayTitle} có bao nhiêu tập?` : `${displayTitle} มีกี่ตอน?`,
+      answer: locale === 'en' ? `${displayTitle} has ${drama.episodes || 'N/A'} episodes.` : locale === 'vi' ? `${displayTitle} có ${drama.episodes || 'N/A'} tập.` : `${displayTitle} มี ${drama.episodes || 'N/A'} ตอน`,
     },
     {
-      question: locale === 'en' ? `Where can I watch ${title}?` : locale === 'vi' ? `Tôi có thể xem ${title} ở đâu?` : `ฉันสามารถดู ${title} ได้ที่ไหน?`,
+      question: locale === 'en' ? `Where can I watch ${displayTitle}?` : locale === 'vi' ? `Tôi có thể xem ${displayTitle} ở đâu?` : `ฉันสามารถดู ${displayTitle} ได้ที่ไหน?`,
       answer: streamingForRegion.length > 0
         ? streamingForRegion.map((s) => s.platform).join(', ')
         : (locale === 'en' ? 'Check your local streaming platforms.' : locale === 'vi' ? 'Kiểm tra nền tảng phát trực tuyến tại địa phương.' : 'ตรวจสอบแพลตฟอร์มสตรีมมิ่งในท้องถิ่นของคุณ'),
@@ -161,8 +184,8 @@ export default async function DramaDetailPage({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'TVSeries',
-    name: title,
-    description: synopsis.slice(0, 300),
+    name: displayTitle,
+    description: displaySynopsis.slice(0, 300),
     datePublished: drama.year,
     numberOfEpisodes: drama.episodes,
     genre: genres.join(', '),
@@ -198,14 +221,14 @@ export default async function DramaDetailPage({
         {realBackdropUrl ? (
           <img
             src={realBackdropUrl}
-            alt={title}
+            alt={displayTitle}
             className="w-full h-full object-cover hero-backdrop"
           />
         ) : (
           <DramaHeroImages
             slug={slug}
             initialBackdropUrl={undefined}
-            title={title}
+            title={displayTitle}
           />
         )}
 
@@ -221,11 +244,11 @@ export default async function DramaDetailPage({
               {realPosterUrl ? (
                 <img
                   src={realPosterUrl}
-                  alt={title}
+                  alt={displayTitle}
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <DramaPoster slug={slug} title={title} />
+                <DramaPoster slug={slug} title={displayTitle} />
               )}
             </div>
 
@@ -246,7 +269,7 @@ export default async function DramaDetailPage({
               )}
 
               <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-2 tracking-wider leading-tight">
-                {title}
+                {displayTitle}
               </h1>
 
               <div className="flex items-center gap-4 text-sm text-white/70">
@@ -291,7 +314,7 @@ export default async function DramaDetailPage({
         {/* Editorial comment — "30秒追剧指南" */}
         <section className="py-6">
           <EditorialComment
-            text={synopsis.slice(0, 250)}
+            text={displaySynopsis.slice(0, 250)}
             author={locale === 'en' ? 'CDramaBinge Editors' : locale === 'vi' ? 'Biên tập CDramaBinge' : 'บรรณาธิการ CDramaBinge'}
           />
         </section>
@@ -360,7 +383,7 @@ export default async function DramaDetailPage({
             {t('drama.overview')}
           </h2>
           <p className="text-base text-ink-3 leading-relaxed max-w-3xl">
-            {synopsis}
+            {displaySynopsis}
           </p>
         </section>
 
@@ -418,7 +441,7 @@ export default async function DramaDetailPage({
         <section className="py-6">
           <ShareButtons
             url={pageUrl}
-            title={title}
+            title={displayTitle}
             shareLabel={t('common.share')}
           />
         </section>

@@ -154,3 +154,57 @@ export async function fetchTmdbOverview(originalTitle: string): Promise<string |
     return null;
   }
 }
+
+/**
+ * Fetch localized title and overview from TMDB for non-English locales.
+ * Uses Next.js fetch cache (24h) to avoid repeated API calls.
+ */
+export async function fetchTmdbLocalization(
+  originalTitle: string,
+  locale: string
+): Promise<{ title?: string; overview?: string } | null> {
+  if (locale === 'en') return null;
+
+  const TMDB_API_KEY = process.env.TMDB_API_KEY;
+  if (!TMDB_API_KEY) return null;
+
+  const TMDB_BASE = 'https://api.themoviedb.org/3';
+  const langMap: Record<string, string> = { vi: 'vi', th: 'th' };
+  const tmdbLang = langMap[locale];
+  if (!tmdbLang) return null;
+
+  const headers = {
+    'Authorization': `Bearer ${TMDB_API_KEY}`,
+    'Accept': 'application/json'
+  };
+
+  try {
+    // Step 1: Search TMDB to get TV show ID
+    const searchRes = await fetch(
+      `${TMDB_BASE}/search/tv?query=${encodeURIComponent(originalTitle)}&language=en-US&page=1`,
+      { headers, next: { revalidate: 86400 } }
+    );
+
+    if (!searchRes.ok) return null;
+    const searchData = await searchRes.json();
+    if (!searchData.results?.length) return null;
+
+    const tvId = searchData.results[0].id;
+
+    // Step 2: Get localized details (name + overview in target language)
+    const detailRes = await fetch(
+      `${TMDB_BASE}/tv/${tvId}?language=${tmdbLang}`,
+      { headers, next: { revalidate: 86400 } }
+    );
+
+    if (!detailRes.ok) return null;
+    const detail = await detailRes.json();
+
+    return {
+      title: detail.name || undefined,
+      overview: detail.overview || undefined,
+    };
+  } catch {
+    return null;
+  }
+}

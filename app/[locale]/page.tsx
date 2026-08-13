@@ -17,6 +17,7 @@ import {
   ALL_MOODS,
   ALL_GENRES,
   tmdbImage,
+  fetchTmdbLocalization,
 } from '@/lib/utils/helpers';
 
 // ────────────────────────────────────────
@@ -71,39 +72,12 @@ export default async function HomePage() {
   const heroDramas = await getDramasBySlugs(heroSlugs);
   const heroDramaMap = new Map(heroDramas.map((d) => [d.slug.trim(), d]));
 
-  const carouselItems = (editorial.hero_carousel || [])
-    .filter((item: { active: boolean }) => item.active)
-    .map((item: { drama_slug: string; title_override: Record<string, string>; comment: Record<string, string>; badge_text: string }) => {
-      const drama = heroDramaMap.get(item.drama_slug.trim());
-      return {
-        slug: item.drama_slug.trim(),
-        title: item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug,
-        backdropUrl: drama ? (tmdbImage(drama.backdropUrl, 'original') || null) : null,
-        comment: item.comment?.[locale] || item.comment?.en || '',
-        badge: item.badge_text || 'Trending',
-      };
-    });
-
   // Fetch editor's picks
   const pickSlugs = (editorial.editors_picks || [])
     .filter((item: { active: boolean }) => item.active)
     .map((item: { drama_slug: string }) => item.drama_slug.trim());
   const pickDramas = await getDramasBySlugs(pickSlugs);
   const pickDramaMap = new Map(pickDramas.map((d) => [d.slug.trim(), d]));
-
-  const editorsPickItems = (editorial.editors_picks || [])
-    .filter((item: { active: boolean }) => item.active)
-    .map((item: { drama_slug: string; title_override: Record<string, string>; comment: Record<string, string> }) => {
-      const drama = pickDramaMap.get(item.drama_slug.trim());
-      return {
-        slug: item.drama_slug.trim(),
-        title: item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug,
-        posterUrl: drama ? (tmdbImage(drama.posterUrl, 'w500') || null) : null,
-        comment: item.comment?.[locale] || item.comment?.en || '',
-        year: drama?.year,
-        moods: drama ? parseJsonArray(drama.moodTags) : [],
-      };
-    });
 
   // Get all dramas for "Just Premiered" and mood mapping
   const allDramas = await getAllDramas();
@@ -113,6 +87,77 @@ export default async function HomePage() {
     .filter((d) => d.year && d.year >= 2023)
     .sort((a, b) => (b.year || 0) - (a.year || 0))
     .slice(0, 8);
+
+  // Fetch TMDB localizations for non-English locales
+  // Collect all unique dramas that need localization (carousel + editor's picks + just premiered)
+  const allDramasForLocalization = new Map<string, string>();
+  for (const d of heroDramas) {
+    if (!allDramasForLocalization.has(d.slug)) {
+      allDramasForLocalization.set(d.slug, d.originalTitle);
+    }
+  }
+  for (const d of pickDramas) {
+    if (!allDramasForLocalization.has(d.slug)) {
+      allDramasForLocalization.set(d.slug, d.originalTitle);
+    }
+  }
+  for (const d of justPremiered) {
+    if (!allDramasForLocalization.has(d.slug)) {
+      allDramasForLocalization.set(d.slug, d.originalTitle);
+    }
+  }
+
+  // Fetch localizations in parallel (cached by Next.js for 24h)
+  const localizationEntries = await Promise.all(
+    Array.from(allDramasForLocalization.entries()).map(async ([slug, originalTitle]) => {
+      const localized = await fetchTmdbLocalization(originalTitle, locale);
+      return [slug, localized] as const;
+    })
+  );
+  const localizationMap = new Map<string, { title?: string; overview?: string } | null>(
+    localizationEntries
+  );
+
+  const carouselItems = (editorial.hero_carousel || [])
+    .filter((item: { active: boolean }) => item.active)
+    .map((item: { drama_slug: string; title_override: Record<string, string>; comment: Record<string, string>; badge_text: string }) => {
+      const drama = heroDramaMap.get(item.drama_slug.trim());
+      const slug = item.drama_slug.trim();
+      let title = item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug;
+      // Use TMDB localization for non-English if no locale-specific override
+      if (locale !== 'en' && !item.title_override?.[locale]) {
+        const loc = localizationMap.get(slug);
+        if (loc?.title) title = loc.title;
+      }
+      return {
+        slug,
+        title,
+        backdropUrl: drama ? (tmdbImage(drama.backdropUrl, 'original') || null) : null,
+        comment: item.comment?.[locale] || item.comment?.en || '',
+        badge: item.badge_text || 'Trending',
+      };
+    });
+
+  const editorsPickItems = (editorial.editors_picks || [])
+    .filter((item: { active: boolean }) => item.active)
+    .map((item: { drama_slug: string; title_override: Record<string, string>; comment: Record<string, string> }) => {
+      const drama = pickDramaMap.get(item.drama_slug.trim());
+      const slug = item.drama_slug.trim();
+      let title = item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug;
+      // Use TMDB localization for non-English if no locale-specific override
+      if (locale !== 'en' && !item.title_override?.[locale]) {
+        const loc = localizationMap.get(slug);
+        if (loc?.title) title = loc.title;
+      }
+      return {
+        slug,
+        title,
+        posterUrl: drama ? (tmdbImage(drama.posterUrl, 'w500') || null) : null,
+        comment: item.comment?.[locale] || item.comment?.en || '',
+        year: drama?.year,
+        moods: drama ? parseJsonArray(drama.moodTags) : [],
+      };
+    });
 
   // Build mood → drama slugs mapping for the mood engine
   const moodDramaMap: Record<string, string[]> = {};
@@ -246,7 +291,12 @@ export default async function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {justPremiered.map((drama) => {
-              const title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
+              let title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
+              // Use TMDB localization for non-English locales
+              if (locale !== 'en') {
+                const loc = localizationMap.get(drama.slug);
+                if (loc?.title) title = loc.title;
+              }
               const moodTags = parseJsonArray<string>(drama.moodTags);
               return (
                 <DramaCard
@@ -276,7 +326,12 @@ export default async function HomePage() {
           {justPremiered.length === 0 && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
               {allDramas.slice(0, 8).map((drama) => {
-                const title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
+                let title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
+                // Use TMDB localization for non-English locales
+                if (locale !== 'en') {
+                  const loc = localizationMap.get(drama.slug);
+                  if (loc?.title) title = loc.title;
+                }
                 return (
                   <DramaCard
                     key={drama.slug}
