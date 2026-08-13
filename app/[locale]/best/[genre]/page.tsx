@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { getTranslations, getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { db } from '@/lib/db';
