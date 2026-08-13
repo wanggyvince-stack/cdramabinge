@@ -9,9 +9,19 @@ const TMDB_BASE = 'https://api.themoviedb.org/3';
 
 export async function GET(request: NextRequest) {
   const slug = request.nextUrl.searchParams.get('slug');
+  const debug = request.nextUrl.searchParams.get('debug') === '1';
   
-  if (!slug || !TMDB_API_KEY) {
-    return NextResponse.json({ posterUrl: null, backdropUrl: null });
+  if (!slug) {
+    return NextResponse.json({ posterUrl: null, backdropUrl: null, error: 'Missing slug' });
+  }
+
+  if (!TMDB_API_KEY) {
+    return NextResponse.json({ 
+      posterUrl: null, 
+      backdropUrl: null, 
+      error: 'TMDB_API_KEY not configured',
+      debug: debug ? { hasKey: false, envKeys: Object.keys(process.env).filter(k => k.includes('TMDB')).join(',') } : undefined
+    });
   }
 
   try {
@@ -19,7 +29,7 @@ export async function GET(request: NextRequest) {
     const drama = await db.select().from(dramas).where(eq(dramas.slug, slug)).get();
     
     if (!drama) {
-      return NextResponse.json({ posterUrl: null, backdropUrl: null });
+      return NextResponse.json({ posterUrl: null, backdropUrl: null, error: `Drama not found: ${slug}` });
     }
 
     // Parse English title
@@ -33,7 +43,29 @@ export async function GET(request: NextRequest) {
 
     // Search TMDB
     const searchUrl = `${TMDB_BASE}/search/tv?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(enTitle)}&language=en-US&page=1`;
-    const res = await fetch(searchUrl, { next: { revalidate: 86400 } }); // Cache 24h
+    
+    let res: Response;
+    try {
+      res = await fetch(searchUrl, { next: { revalidate: 86400 } }); // Cache 24h
+    } catch (fetchErr: any) {
+      return NextResponse.json({ 
+        posterUrl: null, 
+        backdropUrl: null, 
+        error: 'TMDB fetch failed',
+        debug: debug ? { message: fetchErr?.message, url: searchUrl.replace(TMDB_API_KEY, '***') } : undefined
+      });
+    }
+
+    if (!res.ok) {
+      const text = await res.text();
+      return NextResponse.json({ 
+        posterUrl: null, 
+        backdropUrl: null, 
+        error: `TMDB returned ${res.status}`,
+        debug: debug ? { status: res.status, body: text.substring(0, 500) } : undefined
+      });
+    }
+
     const data = await res.json();
 
     if (data.results?.length > 0) {
@@ -71,8 +103,18 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ posterUrl, backdropUrl });
     }
 
-    return NextResponse.json({ posterUrl: null, backdropUrl: null });
-  } catch (error) {
-    return NextResponse.json({ posterUrl: null, backdropUrl: null });
+    return NextResponse.json({ 
+      posterUrl: null, 
+      backdropUrl: null, 
+      error: 'No TMDB results',
+      debug: debug ? { searchedFor: enTitle, slug, resultCount: data.results?.length ?? 0, totalResults: data.total_results } : undefined
+    });
+  } catch (error: any) {
+    return NextResponse.json({ 
+      posterUrl: null, 
+      backdropUrl: null, 
+      error: 'Unexpected error',
+      debug: debug ? { message: error?.message, stack: error?.stack?.substring(0, 500) } : undefined
+    });
   }
 }
