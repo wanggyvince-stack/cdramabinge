@@ -22,14 +22,6 @@ import type { Metadata } from 'next';
 // Dynamic params
 // ────────────────────────────────────────
 
-export async function generateStaticParams() {
-  try {
-    const allDramas = await db.select({ slug: dramas.slug }).from(dramas).all();
-    return allDramas.map((d) => ({ slug: d.slug }));
-  } catch {
-    return [];
-  }
-}
 
 // ────────────────────────────────────────
 // Metadata / SEO

@@ -13,19 +13,6 @@ import DramaCard from '@/components/DramaCard';
 import type { Metadata } from 'next';
 
 // ────────────────────────────────────────
-// Dynamic params
-// ────────────────────────────────────────
-
-export async function generateStaticParams() {
-  try {
-    const allActors = await db.select({ slug: actors.slug }).from(actors).all();
-    return allActors.map((a) => ({ slug: a.slug }));
-  } catch {
-    return [];
-  }
-}
-
-// ────────────────────────────────────────
 // Metadata
 // ────────────────────────────────────────
 
