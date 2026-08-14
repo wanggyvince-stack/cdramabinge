@@ -9,10 +9,10 @@
       "active": true
     },
     {
-      "drama_slug": "nid-of-a-thousand-songs",
+      "drama_slug": "nirvana-in-fire",
       "position": 2,
-      "title_override": {"en": "Nid of a Thousand Songs", "vi": "Tổ Ấm Nghìn Ca", "th": "เพลงสยบนางปีศาจ"},
-      "comment": {"en": "Gripping supernatural thriller with stunning visuals.", "vi": "Phim kinh dị siêu nhiên hấp dẫn với hình ảnh tuyệt đẹp.", "th": "ระทึกขวัญเหนือธรรมชาติพร้อมภาพ Stunning"},
+      "title_override": {"en": "Nirvana in Fire", "vi": "Lang Nha Bảng", "th": "หลางหยาป้าย"},
+      "comment": {"en": "The gold standard of Chinese political intrigue dramas.", "vi": "Tiêu chuẩn vàng của phim cung đấu Trung Quốc.", "th": "มาตรฐานทองของซีรีส์การเมืองจีน"},
       "badge_text": "Trending",
       "active": true
     },
@@ -49,10 +49,10 @@
       "active": true
     },
     {
-      "drama_slug": "joy-of-life-2",
+      "drama_slug": "joy-of-life",
       "position": 7,
-      "title_override": {"en": "Joy of Life Season 2", "vi": "Khánh Dư Niên 2", "th": "จอมนางเหนือเวที 2"},
-      "comment": {"en": "The sequel that exceeded all expectations.", "vi": "Phần tiếp theo vượt xa mọi kỳ vọng.", "th": "ภาคต่อที่เกินความคาดหมาย"},
+      "title_override": {"en": "Joy of Life", "vi": "Khánh Dư Niên", "th": "จอมนางเหนือเวที"},
+      "comment": {"en": "A brilliant political drama disguised as a comedy. Hilarious and gripping.", "vi": "Bộ phim chính trị xuất sắc ẩn mình trong hài hước.", "th": "ซีรีส์การเมืองที่ซ่อนอยู่ในตลกขบขัน"},
       "badge_text": "Trending",
       "active": true
     },
@@ -67,7 +67,7 @@
   ],
   "editors_picks": [
     {
-      "drama_slug": " Nirvana-in-Fire",
+      "drama_slug": "nirvana-in-fire",
       "position": 1,
       "title_override": {"en": "Nirvana in Fire", "vi": "Lang Nha Bảng", "th": "หลางหยาป้าย"},
       "comment": {"en": "The gold standard of Chinese political intrigue dramas.", "vi": "Tiêu chuẩn vàng của phim cung đấu Trung Quốc.", "th": "มาตรฐานทองของซีรีส์การเมืองจีน"},
