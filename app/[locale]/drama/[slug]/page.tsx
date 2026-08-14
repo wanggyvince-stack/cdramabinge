@@ -28,6 +28,23 @@ import type { Metadata } from 'next';
 
 
 // ────────────────────────────────────────
+// OG Image URL builder
+// ────────────────────────────────────────
+
+function buildOgUrl(type: string, title: string, desc: string, drama?: { posterUrl?: string | null; rating?: number | null; year?: number | null }) {
+  const ogUrl = new URL('/api/og', 'https://cdramabinge.com');
+  ogUrl.searchParams.set('type', type);
+  ogUrl.searchParams.set('title', title);
+  ogUrl.searchParams.set('description', desc);
+  if (drama?.rating) ogUrl.searchParams.set('rating', String(drama.rating));
+  if (drama?.year) ogUrl.searchParams.set('year', String(drama.year));
+  if (drama?.posterUrl && !isPlaceholderPoster(drama.posterUrl)) {
+    ogUrl.searchParams.set('poster', tmdbImage(drama.posterUrl, 'w500'));
+  }
+  return ogUrl.toString();
+}
+
+// ────────────────────────────────────────
 // Metadata / SEO
 // ────────────────────────────────────────
 
@@ -81,9 +98,18 @@ export async function generateMetadata({
       description: displaySynopsis.slice(0, 160),
       url: canonicalUrl,
       type: 'video.tv_show',
-      images: drama.posterUrl && !isPlaceholderPoster(drama.posterUrl)
-        ? [{ url: tmdbImage(drama.posterUrl, 'w780') }]
-        : [],
+      images: [{
+        url: buildOgUrl('drama', displayTitle, displaySynopsis.slice(0, 160), drama),
+        width: 1200,
+        height: 630,
+        alt: displayTitle,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${displayTitle} (${drama.year || 'N/A'})`,
+      description: displaySynopsis.slice(0, 160),
+      images: [buildOgUrl('drama', displayTitle, displaySynopsis.slice(0, 160), drama)],
     },
   };
 }

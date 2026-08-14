@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getLocale } from 'next-intl/server';
 import { Suspense } from 'react';
 import { db } from '@/lib/db';
@@ -6,6 +8,7 @@ import { inArray } from 'drizzle-orm';
 import { ALL_QUIZ_DRAMA_SLUGS } from '@/data/quiz-data';
 import { tmdbImage, getLocalizedText } from '@/lib/utils/helpers';
 import QuizClient from '@/components/QuizClient';
+import type { Metadata } from 'next';
 
 // ────────────────────────────────────────
 // Fetch drama data for quiz recommendations
@@ -40,10 +43,60 @@ async function getDramasBySlugs(slugs: string[], locale: string) {
 // Page
 // ────────────────────────────────────────
 
-export async function generateMetadata() {
+// Quiz result type labels for OG images
+const QUIZ_RESULT_LABELS: Record<string, { title: string; subtitle: string }> = {
+  romantic: { title: 'The Hopeless Romantic', subtitle: 'You watch dramas with your whole heart' },
+  schemer: { title: 'The Palace Schemer', subtitle: 'Every scene is a chess game' },
+  thrill: { title: 'The Thrill Seeker', subtitle: 'Heart-pounding suspense is your drama fuel' },
+  aesthetic: { title: 'The Aesthetic Soul', subtitle: 'Beauty is not a bonus — it\'s the point' },
+  feelgood: { title: 'The Feel-Good Seeker', subtitle: 'Life\'s too short for dramas that drain you' },
+  philosophy: { title: 'The Philosophy Nerd', subtitle: 'You don\'t just watch stories — you dissect them' },
+  action: { title: 'The Action Hero', subtitle: 'If there\'s no fight scene, is it even a drama?' },
+  nightowl: { title: 'The Night Owl Dreamer', subtitle: 'The best drama experience is at 2 AM' },
+};
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  params: { locale: string };
+  searchParams: { result?: string };
+}): Promise<Metadata> {
+  const resultKey = searchParams?.result;
+  const resultData = resultKey ? QUIZ_RESULT_LABELS[resultKey] : null;
+
+  const title = resultData
+    ? `${resultData.title} — C-drama Soul Type Quiz`
+    : 'C-drama Soul Type Quiz';
+  const description = resultData
+    ? `I'm ${resultData.title}! ${resultData.subtitle}. Take the quiz on CDramaBinge.`
+    : 'Take our 7-question quiz to discover your drama-watching archetype.';
+
+  // Dynamic OG image based on result
+  const ogUrl = new URL('/api/og', 'https://cdramabinge.com');
+  if (resultData) {
+    ogUrl.searchParams.set('type', 'quiz');
+    ogUrl.searchParams.set('title', resultData.title);
+    ogUrl.searchParams.set('subtitle', resultData.subtitle);
+  } else {
+    ogUrl.searchParams.set('type', 'quiz');
+    ogUrl.searchParams.set('title', 'Your C-drama Soul Type');
+    ogUrl.searchParams.set('subtitle', 'Take the quiz on CDramaBinge');
+  }
+
   return {
-    title: 'C-drama Soul Type Quiz',
-    description: 'Take our 7-question quiz to discover your drama-watching archetype.',
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogUrl.toString(), width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogUrl.toString()],
+    },
   };
 }
 
