@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 import { getTranslations, getLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { db } from '@/lib/db';
 import { dramas } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
@@ -37,7 +37,8 @@ export async function generateMetadata({
   params: { locale: string; slug: string };
 }): Promise<Metadata> {
   const { locale, slug } = params;
-  const drama = await db.select().from(dramas).where(eq(dramas.slug, slug)).get();
+  const normalizedSlug = slug.toLowerCase().trim();
+  const drama = await db.select().from(dramas).where(eq(dramas.slug, normalizedSlug)).get();
 
   if (!drama) return { title: 'Drama Not Found' };
 
@@ -61,7 +62,7 @@ export async function generateMetadata({
     }
   }
 
-  const canonicalUrl = `https://cdramabinge.com/${locale}/drama/${slug}`;
+  const canonicalUrl = `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`;
 
   return {
     title: `${displayTitle} (${drama.year || 'N/A'})`,
@@ -69,9 +70,9 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://cdramabinge.com/en/drama/${slug}`,
-        vi: `https://cdramabinge.com/vi/drama/${slug}`,
-        th: `https://cdramabinge.com/th/drama/${slug}`,
+        en: `https://cdramabinge.com/en/drama/${normalizedSlug}`,
+        vi: `https://cdramabinge.com/vi/drama/${normalizedSlug}`,
+        th: `https://cdramabinge.com/th/drama/${normalizedSlug}`,
       },
     },
     openGraph: {
@@ -98,7 +99,15 @@ export default async function DramaDetailPage({
   const t = await getTranslations();
   const { locale, slug } = params;
 
-  const drama = await db.select().from(dramas).where(eq(dramas.slug, slug)).get();
+  // Normalize slug to lowercase for case-insensitive matching
+  const normalizedSlug = slug.toLowerCase().trim();
+  
+  // Redirect to canonical lowercase URL if needed
+  if (slug !== normalizedSlug) {
+    redirect(`/${locale}/drama/${normalizedSlug}`);
+  }
+
+  const drama = await db.select().from(dramas).where(eq(dramas.slug, normalizedSlug)).get();
   if (!drama) notFound();
 
   const title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
@@ -199,11 +208,11 @@ export default async function DramaDetailPage({
         }
       : undefined,
     image: realPosterUrl || undefined,
-    url: `https://cdramabinge.com/${locale}/drama/${slug}`,
+    url: `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`,
     inLanguage: ['zh', 'en', 'vi', 'th'],
   };
 
-  const pageUrl = `https://cdramabinge.com/${locale}/drama/${slug}`;
+  const pageUrl = `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`;
 
   return (
     <>
@@ -226,7 +235,7 @@ export default async function DramaDetailPage({
           />
         ) : (
           <DramaHeroImages
-            slug={slug}
+            slug={normalizedSlug}
             initialBackdropUrl={undefined}
             title={displayTitle}
           />
@@ -248,7 +257,7 @@ export default async function DramaDetailPage({
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <DramaPoster slug={slug} title={displayTitle} />
+                <DramaPoster slug={normalizedSlug} title={displayTitle} />
               )}
             </div>
 
