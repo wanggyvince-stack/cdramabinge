@@ -132,7 +132,9 @@ export default async function DramaDetailPage({
 
   const genres = parseJsonArray<string>(drama.genres);
   const moodTags = parseJsonArray<string>(drama.moodTags);
-  const streaming = parseJsonObject<Record<string, Array<{ platform: string; url: string }>>>(drama.streamingJson);
+  // Load streaming data from editorial JSON instead of DB
+  const streamingDataFile = await import('@/data/streaming.json').then(m => m.default as Record<string, { platforms: Array<{ name: string; url: string; regions: string[] }> }>);
+  const dramaStreaming = streamingDataFile[normalizedSlug] || streamingDataFile[drama.slug];
   const similarDramasData = parseJsonObject<Array<{ slug: string; title: string; score: number; reason: string }>>(drama.similarDramasJson);
 
   // Resolve similar dramas to get poster URLs
@@ -160,10 +162,11 @@ export default async function DramaDetailPage({
     }
   }
 
-  // Streaming for current locale region
-  const regionMap: Record<string, string> = { en: 'US', vi: 'VN', th: 'TH' };
-  const region = regionMap[locale] || 'US';
-  const streamingForRegion = streaming?.[region] || [];
+  // Map streaming.json platforms to StreamingBadges format
+  const streamingForRegion = dramaStreaming?.platforms?.map((p) => ({
+    platform: p.name,
+    url: p.url,
+  })) || [];
 
   // Fetch trailer from TMDB videos API
   let trailerKey: string | null = null;
