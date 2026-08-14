@@ -158,8 +158,8 @@ export default async function HomePage() {
       };
     });
 
-  // Build mood → drama slugs mapping for the mood engine
-  const moodDramaMap: Record<string, string[]> = {};
+  // Build mood → drama info mapping for the mood engine
+  const moodDramaMap: Record<string, Array<{ slug: string; title: string; posterUrl: string | null }>> = {};
   for (const mood of ALL_MOODS) {
     moodDramaMap[mood] = allDramas
       .filter((d) => {
@@ -167,7 +167,11 @@ export default async function HomePage() {
         return tags.includes(mood);
       })
       .slice(0, 10)
-      .map((d) => d.slug);
+      .map((d) => ({
+        slug: d.slug,
+        title: getLocalizedText(d.titlesJson, locale, d.originalTitle),
+        posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w342') : null,
+      }));
   }
 
   return (
@@ -201,7 +205,7 @@ export default async function HomePage() {
                 mood={mood}
                 label={t(`mood.${mood}`)}
                 locale={locale}
-                dramaSlugs={moodDramaMap[mood] || []}
+                dramas={moodDramaMap[mood] || []}
               />
             ))}
           </div>

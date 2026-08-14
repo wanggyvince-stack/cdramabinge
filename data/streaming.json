@@ -15,7 +15,7 @@
   },
   "story-of-minglan": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/34940c-the-story-of-ming-lan", "regions": ["global"] },
+      { "name": "Viki", "url": "https://www.viki.com/tv/35895c-the-story-of-ming-lan", "regions": ["global"] },
       { "name": "WeTV", "url": "https://wetv.vip/en/play/the-story-of-minglan", "regions": ["global"] },
       { "name": "iQIYI", "url": "https://www.iq.com/album/the-story-of-minglan-2018", "regions": ["global"] }
     ]
@@ -58,7 +58,7 @@
   "hidden-love": {
     "platforms": [
       { "name": "Netflix", "url": "https://www.netflix.com/title/81596498", "regions": ["global"] },
-      { "name": "Youku", "url": "https://www.youku.com/hidden-love", "regions": ["global"] }
+      { "name": "Youku", "url": "https://www.youku.com/show/hidden-love", "regions": ["global"] }
     ]
   },
   "the-longest-promise": {
@@ -69,7 +69,7 @@
   },
   "story-of-kunning-palace": {
     "platforms": [
-      { "name": "iQIYI", "url": "https://www.iq.com/play/story-of-kunning-palace-i5px6m1pvw", "regions": ["global"] },
+      { "name": "iQIYI", "url": "https://www.iq.com/album/story-of-kunning-palace-2023", "regions": ["global"] },
       { "name": "Amazon Prime Video", "url": "https://www.amazon.com/dp/B0CLXM5TQK", "regions": ["global"] }
     ]
   },
@@ -82,7 +82,7 @@
   },
   "word-of-honor": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/37702c-word-of-honor", "regions": ["global"] },
+      { "name": "Viki", "url": "https://www.viki.com/tv/37730c-word-of-honor", "regions": ["global"] },
       { "name": "Netflix", "url": "https://www.netflix.com/title/81452820", "regions": ["global"] }
     ]
   },
