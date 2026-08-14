@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { MOOD_PILL_LIGHT_CLASS, isPlaceholderPoster } from '@/lib/utils/helpers';
+import { MOOD_PILL_BASE_CLASS, MOOD_LIGHT_STYLES, isPlaceholderPoster } from '@/lib/utils/helpers';
 
 interface DramaCardProps {
   slug: string;
@@ -100,14 +100,18 @@ export default function DramaCard({
           {/* Mood tags */}
           {moods.length > 0 && (
             <div className="flex flex-wrap gap-1 mb-1">
-              {moods.slice(0, 3).map((mood) => (
-                <span
-                  key={mood}
-                  className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide transition-colors duration-song ${MOOD_PILL_LIGHT_CLASS[mood] || 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20'}`}
-                >
-                  {moodLabels[mood] || mood}
-                </span>
-              ))}
+              {moods.slice(0, 3).map((mood) => {
+                const moodStyle = MOOD_LIGHT_STYLES[mood] || MOOD_LIGHT_STYLES['romantic'];
+                return (
+                  <span
+                    key={mood}
+                    className={MOOD_PILL_BASE_CLASS}
+                    style={moodStyle}
+                  >
+                    {moodLabels[mood] || mood}
+                  </span>
+                );
+              })}
             </div>
           )}
 

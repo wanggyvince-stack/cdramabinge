@@ -91,16 +91,6 @@ module.exports = {
         'mood-empower': 'linear-gradient(135deg, #8B7355, #C9A86C)',
         'mood-aesthetic': 'linear-gradient(135deg, #8CB4A0, #A0C8B0)',
       },
-
-      // === Mood solid colors (for pill tags with opacity) ===
-      'mood-wanna_cry': ({ withAlpha }) => withAlpha ? withAlpha('#7888A0') : '#7888A0',
-      'mood-light_fun': ({ withAlpha }) => withAlpha ? withAlpha('#C8B098') : '#C8B098',
-      'mood-intense': ({ withAlpha }) => withAlpha ? withAlpha('#B04030') : '#B04030',
-      'mood-romantic': ({ withAlpha }) => withAlpha ? withAlpha('#C4A882') : '#C4A882',
-      'mood-mindbending': ({ withAlpha }) => withAlpha ? withAlpha('#3A4E7B') : '#3A4E7B',
-      'mood-spooky': ({ withAlpha }) => withAlpha ? withAlpha('#3C3835') : '#3C3835',
-      'mood-empowering': ({ withAlpha }) => withAlpha ? withAlpha('#A08355') : '#A08355',
-      'mood-aesthetic': ({ withAlpha }) => withAlpha ? withAlpha('#8CB4A0') : '#8CB4A0',
     },
   },
   plugins: [],

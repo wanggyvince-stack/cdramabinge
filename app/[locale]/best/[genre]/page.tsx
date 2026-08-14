@@ -7,7 +7,8 @@ import { dramas } from '@/lib/db/schema';
 import {
   getLocalizedText,
   parseJsonArray,
-  MOOD_PILL_LIGHT_CLASS,
+  MOOD_LIGHT_STYLES,
+  MOOD_PILL_BASE_CLASS,
   ALL_MOODS,
   ALL_GENRES,
   tmdbImage,
@@ -299,14 +300,18 @@ export default async function BestGenrePage({
                     {/* Mood tags */}
                     {moodTags.length > 0 && (
                       <div className="flex flex-wrap gap-1.5 mt-2">
-                        {moodTags.slice(0, 3).map((mood) => (
-                          <span
-                            key={mood}
-                            className={`inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium tracking-wide transition-colors duration-song ${MOOD_PILL_LIGHT_CLASS[mood] || 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20'}`}
-                          >
-                            {t(`mood.${mood}`)}
-                          </span>
-                        ))}
+                        {moodTags.slice(0, 3).map((mood) => {
+                          const moodStyle = MOOD_LIGHT_STYLES[mood] || MOOD_LIGHT_STYLES['romantic'];
+                          return (
+                            <span
+                              key={mood}
+                              className={MOOD_PILL_BASE_CLASS}
+                              style={moodStyle}
+                            >
+                              {t(`mood.${mood}`)}
+                            </span>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

@@ -13,7 +13,7 @@ import EditorialComment from '@/components/EditorialComment';
 import {
   getLocalizedText,
   parseJsonArray,
-  MOOD_PILL_LIGHT_CLASS,
+  MOOD_LIGHT_STYLES,
   ALL_MOODS,
   ALL_GENRES,
   tmdbImage,
@@ -357,12 +357,13 @@ export default async function HomePage() {
           </h2>
           <div className="flex flex-wrap gap-3 mb-12">
             {ALL_MOODS.map((mood) => {
-              const pillClass = MOOD_PILL_LIGHT_CLASS[mood] || 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20 hover:bg-mood-romantic/25';
+              const moodStyle = MOOD_LIGHT_STYLES[mood] || MOOD_LIGHT_STYLES['romantic'];
               return (
                 <Link
                   key={mood}
                   href={`/${locale}/best/${mood}`}
-                  className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-colors duration-song ${pillClass}`}
+                  className="px-6 py-2.5 rounded-full text-sm font-medium tracking-wide transition-colors duration-song backdrop-blur-sm border"
+                  style={moodStyle}
                 >
                   {t(`mood.${mood}`)}
                 </Link>

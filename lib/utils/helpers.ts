@@ -1,6 +1,7 @@
 /**
  * Shared utility helpers for CDrama Database
  */
+import type { CSSProperties } from 'react';
 
 /**
  * Parse a multi-language JSON string and return the value for the given locale
@@ -94,43 +95,82 @@ export const MOOD_SOLID_CLASS: Record<string, string> = {
 };
 
 /**
- * Mood pill tag classes for light backgrounds — frosted glass effect
- * Used in: DramaCard, By Mood list, list pages
+ * Mood base hex colors — single source of truth for all mood styling
  */
-export const MOOD_PILL_LIGHT_CLASS: Record<string, string> = {
-  wanna_cry: 'backdrop-blur-sm bg-mood-wanna_cry/12 text-mood-wanna_cry border border-mood-wanna_cry/20 hover:bg-mood-wanna_cry/25',
-  light_fun: 'backdrop-blur-sm bg-mood-light_fun/12 text-mood-light_fun border border-mood-light_fun/20 hover:bg-mood-light_fun/25',
-  intense: 'backdrop-blur-sm bg-mood-intense/12 text-mood-intense border border-mood-intense/20 hover:bg-mood-intense/25',
-  romantic: 'backdrop-blur-sm bg-mood-romantic/12 text-mood-romantic border border-mood-romantic/20 hover:bg-mood-romantic/25',
-  mindbending: 'backdrop-blur-sm bg-mood-mindbending/12 text-mood-mindbending border border-mood-mindbending/20 hover:bg-mood-mindbending/25',
-  spooky: 'backdrop-blur-sm bg-mood-spooky/12 text-mood-spooky border border-mood-spooky/20 hover:bg-mood-spooky/25',
-  empowering: 'backdrop-blur-sm bg-mood-empowering/12 text-mood-empowering border border-mood-empowering/20 hover:bg-mood-empowering/25',
-  aesthetic: 'backdrop-blur-sm bg-mood-aesthetic/12 text-mood-aesthetic border border-mood-aesthetic/20 hover:bg-mood-aesthetic/25',
+export const MOOD_HEX: Record<string, string> = {
+  wanna_cry: '#7888A0',
+  light_fun: '#C8B098',
+  intense: '#B04030',
+  romantic: '#C4A882',
+  mindbending: '#3A4E7B',
+  spooky: '#3C3835',
+  empowering: '#A08355',
+  aesthetic: '#8CB4A0',
 };
 
 /**
- * Mood pill dark class for hero/dark backgrounds — white frosted glass
+ * Helper: convert hex + alpha (0-1) to rgba string
  */
-export const MOOD_PILL_DARK_CLASS = 'px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white/90 text-xs font-medium tracking-wide';
+function hexToRgba(hex: string, alpha: number): string {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
 
 /**
- * Mood selector button base class — large frosted pills on light bg
+ * Mood inline styles for light backgrounds — frosted glass effect
+ * Uses inline styles to bypass Tailwind opacity variant generation issues.
+ * Each entry provides: bg (12% opacity), border (20% opacity), text (solid color)
+ */
+export const MOOD_LIGHT_STYLES: Record<string, { backgroundColor: string; borderColor: string; color: string }> = {};
+for (const [key, hex] of Object.entries(MOOD_HEX)) {
+  MOOD_LIGHT_STYLES[key] = {
+    backgroundColor: hexToRgba(hex, 0.12),
+    borderColor: hexToRgba(hex, 0.20),
+    color: hex,
+  };
+}
+
+/**
+ * Mood inline styles for selector buttons — slightly more opaque (15% bg, 25% border)
+ */
+export const MOOD_SELECTOR_STYLES: Record<string, { backgroundColor: string; borderColor: string; color: string }> = {};
+for (const [key, hex] of Object.entries(MOOD_HEX)) {
+  MOOD_SELECTOR_STYLES[key] = {
+    backgroundColor: hexToRgba(hex, 0.15),
+    borderColor: hexToRgba(hex, 0.25),
+    color: hex,
+  };
+}
+
+/**
+ * Mood pill tag classes for light backgrounds — base Tailwind classes only (no opacity variants)
+ * Combine with MOOD_LIGHT_STYLES inline for colors
+ */
+export const MOOD_PILL_BASE_CLASS = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide backdrop-blur-sm border transition-colors duration-song';
+
+/**
+ * Mood pill dark class for hero/dark backgrounds — white frosted glass (inline style)
+ */
+export const MOOD_PILL_DARK_STYLE: CSSProperties = {
+  backgroundColor: 'rgba(255,255,255,0.10)',
+  borderColor: 'rgba(255,255,255,0.20)',
+  color: 'rgba(255,255,255,0.9)',
+};
+export const MOOD_PILL_DARK_CLASS = 'px-3 py-1 rounded-full backdrop-blur-md border text-xs font-medium tracking-wide';
+
+/**
+ * Mood selector button base Tailwind class — no color/opacity (handled by inline style)
  */
 export const MOOD_SELECTOR_BASE_CLASS = 'px-8 py-3.5 rounded-full backdrop-blur-sm border font-display text-base tracking-wide transition-all duration-song cursor-pointer hover:scale-105 hover:-translate-y-0.5';
 
 /**
- * Per-mood selector button classes (semi-transparent colored frosted)
+ * @deprecated Use MOOD_LIGHT_STYLES / MOOD_SELECTOR_STYLES inline styles instead.
+ * Kept for backward compat but opacity variants are now handled via inline styles.
  */
-export const MOOD_SELECTOR_CLASS: Record<string, string> = {
-  wanna_cry: 'bg-mood-wanna_cry/15 text-mood-wanna_cry border-mood-wanna_cry/25 hover:bg-mood-wanna_cry/25',
-  light_fun: 'bg-mood-light_fun/15 text-mood-light_fun border-mood-light_fun/25 hover:bg-mood-light_fun/25',
-  intense: 'bg-mood-intense/15 text-mood-intense border-mood-intense/25 hover:bg-mood-intense/25',
-  romantic: 'bg-mood-romantic/15 text-mood-romantic border-mood-romantic/25 hover:bg-mood-romantic/25',
-  mindbending: 'bg-mood-mindbending/15 text-mood-mindbending border-mood-mindbending/25 hover:bg-mood-mindbending/25',
-  spooky: 'bg-mood-spooky/15 text-mood-spooky border-mood-spooky/25 hover:bg-mood-spooky/25',
-  empowering: 'bg-mood-empowering/15 text-mood-empowering border-mood-empowering/25 hover:bg-mood-empowering/25',
-  aesthetic: 'bg-mood-aesthetic/15 text-mood-aesthetic border-mood-aesthetic/25 hover:bg-mood-aesthetic/25',
-};
+export const MOOD_PILL_LIGHT_CLASS: Record<string, string> = {};
+export const MOOD_SELECTOR_CLASS: Record<string, string> = {};
 
 /**
  * All mood keys

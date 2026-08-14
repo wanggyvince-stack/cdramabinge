@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { MOOD_SELECTOR_BASE_CLASS, MOOD_SELECTOR_CLASS } from '@/lib/utils/helpers';
+import { MOOD_SELECTOR_BASE_CLASS, MOOD_SELECTOR_STYLES } from '@/lib/utils/helpers';
 
 interface MoodButtonProps {
   mood: string;
@@ -14,19 +14,22 @@ interface MoodButtonProps {
 /**
  * MoodButton — Frosted glass mood selector button
  * Semi-transparent colored bg + backdrop-blur + border
+ * Uses inline styles for colors to avoid Tailwind opacity variant issues
  */
 export default function MoodButton({ mood, label, locale, dramaSlugs = [] }: MoodButtonProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const moodClass = MOOD_SELECTOR_CLASS[mood] || 'bg-mood-romantic/15 text-mood-romantic border-mood-romantic/25 hover:bg-mood-romantic/25';
+  const moodStyle = MOOD_SELECTOR_STYLES[mood] || MOOD_SELECTOR_STYLES['romantic'];
 
   return (
     <div className="flex flex-col items-center">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={`
-          ${MOOD_SELECTOR_BASE_CLASS}
-          ${moodClass}
-        `}
+        className={MOOD_SELECTOR_BASE_CLASS}
+        style={{
+          backgroundColor: moodStyle.backgroundColor,
+          borderColor: moodStyle.borderColor,
+          color: moodStyle.color,
+        }}
         aria-expanded={isExpanded}
         aria-label={label}
       >
