@@ -250,29 +250,38 @@ export default async function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════
-            ③ Virus Test CTA — 病毒测试横幅
+            ③ Soul Type Quiz CTA — 灵魂测试入口
             ═══════════════════════════════════════ */}
-        <section className="py-8">
-          <div className="relative w-full h-[120px] rounded-song overflow-hidden bg-gradient-to-r from-ruyao/20 via-ruyao/10 to-ruyao/20 border border-ivory-border flex items-center">
-            {/* Crackle texture decoration */}
-            <div className="absolute inset-0 crackle-bg opacity-30" />
+        <section className="py-12 md:py-16">
+          <div className="relative w-full rounded-song overflow-hidden bg-gradient-to-br from-zhusha/8 via-sujuan to-zhusha/5 border border-ivory-border p-10 md:p-14 text-center">
+            {/* Decorative crackle texture */}
+            <div className="absolute inset-0 crackle-bg opacity-20" />
 
-            <div className="relative z-10 flex items-center justify-between w-full px-8 md:px-12">
-              <div>
-                <p className="font-display text-xl md:text-2xl text-ink-2 tracking-wide">
-                  {t('home.quizCta')}
-                </p>
-                <p className="text-sm text-ink-4 mt-1">
-                  {locale === 'en' && 'Take our viral quiz and discover your C-drama personality'}
-                  {locale === 'vi' && 'Làm bài kiểm tra viral và khám phá tính cách phim Hoa của bạn'}
-                  {locale === 'th' && 'ทำควิซไวรัสและค้นพบบุคลิกซีรีส์จีนของคุณ'}
-                </p>
+            <div className="relative z-10">
+              {/* Decorative seal */}
+              <div className="mx-auto w-14 h-14 rounded-song bg-zhusha/10 border border-zhusha/30 flex items-center justify-center mb-6">
+                <span className="font-display text-2xl text-zhusha">?</span>
               </div>
 
-              {/* Seal-style quiz icon */}
-              <div className="hidden md:flex seal-stamp w-16 h-16 rounded-lg text-2xl flex-shrink-0">
-                Quiz
-              </div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-ink-1 tracking-wider mb-3">
+                {locale === 'en' && 'Discover Your C-drama Soul Type'}
+                {locale === 'vi' && 'Khám phá linh hồn phim Hoa của bạn'}
+                {locale === 'th' && 'ค้นพบประเภทจิตวิญญาณซีรีส์จีนของคุณ'}
+              </h2>
+              <p className="text-sm md:text-base text-ink-4 mb-8 max-w-md mx-auto">
+                {locale === 'en' && 'Take our 7-question quiz to find your drama-watching archetype'}
+                {locale === 'vi' && 'Trả lời 7 câu hỏi để khám phá phong cách xem phim của bạn'}
+                {locale === 'th' && 'ตอบ 7 คำถามเพื่อค้นพบสไตล์การดูซีรีส์ของคุณ'}
+              </p>
+
+              <Link
+                href={`/${locale}/quiz`}
+                className="inline-block px-8 py-3 bg-zhusha text-white font-display text-base tracking-wide rounded-song hover:bg-zhusha/90 transition-all duration-song hover:scale-105 hover:-translate-y-0.5 shadow-md shadow-zhusha/15"
+              >
+                {locale === 'en' && 'Start the Quiz'}
+                {locale === 'vi' && 'Bắt đầu ngay'}
+                {locale === 'th' && 'เริ่มทำควิซ'}
+              </Link>
             </div>
           </div>
         </section>

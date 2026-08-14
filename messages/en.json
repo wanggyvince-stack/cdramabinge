@@ -79,5 +79,22 @@
     "backHome": "Back to Home",
     "viewAll": "View All",
     "share": "Share"
+  },
+  "Quiz": {
+    "title": "Your C-drama Soul Type",
+    "subtitle": "Answer 7 questions to discover your drama-watching archetype",
+    "startButton": "Begin the Quiz",
+    "question": "Question {n} of 7",
+    "yourResult": "Your Result",
+    "shareResult": "Share Your Result",
+    "retake": "Retake Quiz",
+    "recommendations": "Dramas You'll Love",
+    "q1": "What draws you into a drama first?",
+    "q2": "It's Friday night. How are you watching?",
+    "q3": "Which drama moment hits the hardest?",
+    "q4": "Pick a drama title that speaks to your soul:",
+    "q5": "Your ideal drama ending is:",
+    "q6": "If you disappeared for a week, you'd be:",
+    "q7": "You find a secret notebook of drama recommendations. Which note excites you most?"
   }
 }

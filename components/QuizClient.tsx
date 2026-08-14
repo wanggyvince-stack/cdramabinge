@@ -2,14 +2,25 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import {
   QUIZ_QUESTIONS,
   QUIZ_RESULTS,
-  QUIZ_MOOD_GRADIENTS,
   type QuizTypeKey,
 } from '@/data/quiz-data';
-import { tmdbImage } from '@/lib/utils/helpers';
+
+// Mood color gradient mapping for result backgrounds
+// Defined here (not in data/) so Tailwind can scan the classes
+const QUIZ_MOOD_GRADIENTS: Record<string, string> = {
+  'mood-romantic': 'from-[#C4A882]/20 via-sujuan to-[#D8C8B0]/15',
+  'mood-mindbend': 'from-[#3A4E7B]/20 via-sujuan to-[#4A5C80]/15',
+  'mood-intense': 'from-[#B04030]/15 via-sujuan to-[#C73E3A]/10',
+  'mood-aesthetic': 'from-[#8CB4A0]/20 via-sujuan to-[#A0C8B0]/15',
+  'mood-fun': 'from-[#C8B098]/20 via-sujuan to-[#D4B8A0]/15',
+  'mood-empower': 'from-[#A08355]/20 via-sujuan to-[#C9A86C]/15',
+  'mood-spooky': 'from-[#3C3835]/20 via-sujuan to-[#4A4A4A]/15',
+};
 
 // ────────────────────────────────────────
 // Types
@@ -24,7 +35,6 @@ interface DramaInfo {
 
 interface QuizClientProps {
   locale: string;
-  t: (key: string) => string;
   dramasBySlug: Record<string, DramaInfo>;
 }
 
@@ -32,7 +42,8 @@ interface QuizClientProps {
 // Main Component
 // ────────────────────────────────────────
 
-export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps) {
+export default function QuizClient({ locale, dramasBySlug }: QuizClientProps) {
+  const t = useTranslations('Quiz');
   const searchParams = useSearchParams();
   const router = useRouter();
   const resultParam = searchParams.get('result');
@@ -52,7 +63,6 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
     if (resultParam && QUIZ_RESULTS[resultParam as QuizTypeKey]) {
       setResultType(resultParam as QuizTypeKey);
       setPhase('result');
-      // Delay animation
       setTimeout(() => setShowResult(true), 100);
     }
   }, [resultParam]);
@@ -72,20 +82,17 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
     const newAnswers = [...answers, typeKey];
     setAnswers(newAnswers);
 
-    // After 300ms transition, move to next question or show result
     setTimeout(() => {
       if (currentQ < QUIZ_QUESTIONS.length - 1) {
         setCurrentQ(currentQ + 1);
         setSelectedOption(null);
         setIsTransitioning(false);
       } else {
-        // Calculate result
         const counts: Record<string, number> = {};
         newAnswers.forEach((a) => { counts[a] = (counts[a] || 0) + 1; });
         const winner = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0] as QuizTypeKey;
         setResultType(winner);
         setPhase('result');
-        // Update URL without reload
         const url = `/${locale}/quiz?result=${winner}`;
         window.history.replaceState(null, '', url);
         setTimeout(() => setShowResult(true), 100);
@@ -122,24 +129,24 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
   if (phase === 'intro') {
     return (
       <div className="min-h-[80vh] flex items-center justify-center px-6">
-        <div className="text-center max-w-lg animate-fade-in">
+        <div className="text-center max-w-lg">
           {/* Decorative seal */}
-          <div className="mx-auto w-20 h-20 rounded-song bg-zhusha/10 border border-zhusha/30 flex items-center justify-center mb-8">
+          <div className="mx-auto w-20 h-20 rounded-song bg-zhusha/10 border border-zhusha/30 flex items-center justify-center mb-8 animate-pulse">
             <span className="font-display text-3xl text-zhusha">?</span>
           </div>
 
           <h1 className="font-display text-4xl md:text-5xl font-bold text-ink-1 tracking-wider mb-4">
-            {t('Quiz.title')}
+            {t('title')}
           </h1>
           <p className="text-base md:text-lg text-ink-4 mb-10 leading-relaxed">
-            {t('Quiz.subtitle')}
+            {t('subtitle')}
           </p>
 
           <button
             onClick={handleStart}
             className="px-10 py-4 bg-zhusha text-white font-display text-lg tracking-wide rounded-song hover:bg-zhusha/90 transition-all duration-song hover:scale-105 hover:-translate-y-0.5 shadow-lg shadow-zhusha/20"
           >
-            {t('Quiz.startButton')}
+            {t('startButton')}
           </button>
         </div>
       </div>
@@ -158,7 +165,7 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
         {/* Progress bar */}
         <div className="mb-10">
           <p className="text-sm text-ink-4 mb-2 tracking-wide">
-            {t('Quiz.question').replace('{n}', String(currentQ + 1))}
+            {t('question').replace('{n}', String(currentQ + 1))}
           </p>
           <div className="h-1.5 bg-ivory-border rounded-full overflow-hidden">
             <div
@@ -170,7 +177,7 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
 
         {/* Question */}
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-ink-1 tracking-wide mb-8 leading-snug">
-          {t(`Quiz.${question.questionKey}`)}
+          {t(`q${question.id}`)}
         </h2>
 
         {/* Options */}
@@ -180,7 +187,7 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
             const letter = String.fromCharCode(65 + idx);
             return (
               <button
-                key={idx}
+                key={`${currentQ}-${idx}`}
                 onClick={() => handleOptionSelect(idx, option.typeKey)}
                 disabled={isTransitioning}
                 className={`w-full text-left px-6 py-4 rounded-song border transition-all duration-300 group cursor-pointer
@@ -220,7 +227,6 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
 
-    // Get recommended drama info
     const recommendedDramas = result.dramaRecommendations
       .map((slug) => dramasBySlug[slug])
       .filter(Boolean);
@@ -231,11 +237,9 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
           {/* Result badge */}
           <div className="text-center mb-8">
             <p className="text-sm tracking-[0.2em] text-ink-4 uppercase mb-4">
-              {t('Quiz.yourResult')}
+              {t('yourResult')}
             </p>
-
-            {/* Decorative line */}
-            <div className="w-12 h-px bg-zhusha/50 mx-auto mb-6" />
+            <div className="w-12 h-px bg-zhusha/50 mx-auto" />
           </div>
 
           {/* Title */}
@@ -268,7 +272,7 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
           {/* Divider */}
           <div className="flex items-center gap-4 mb-10">
             <div className="flex-1 h-px bg-ivory-border" />
-            <span className="text-sm text-ink-4 tracking-wider font-display">{t('Quiz.recommendations')}</span>
+            <span className="text-sm text-ink-4 tracking-wider font-display">{t('recommendations')}</span>
             <div className="flex-1 h-px bg-ivory-border" />
           </div>
 
@@ -306,10 +310,9 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
           {/* Share Section */}
           <div className="text-center mb-8">
             <p className="text-sm text-ink-4 mb-4 tracking-wide">
-              {t('Quiz.shareResult')}
+              {t('shareResult')}
             </p>
             <div className="flex justify-center gap-3 mb-8">
-              {/* Twitter / X */}
               <a
                 href={twitterUrl}
                 target="_blank"
@@ -319,7 +322,6 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
               >
                 <span className="font-bold text-sm">X</span>
               </a>
-              {/* Facebook */}
               <a
                 href={facebookUrl}
                 target="_blank"
@@ -329,7 +331,6 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
               >
                 <span className="font-bold text-sm">f</span>
               </a>
-              {/* Copy Link */}
               <button
                 onClick={handleCopyLink}
                 className="w-10 h-10 rounded-song border border-ivory-border flex items-center justify-center text-ink-4 hover:bg-ruyao hover:text-white transition-all duration-song"
@@ -355,7 +356,7 @@ export default function QuizClient({ locale, t, dramasBySlug }: QuizClientProps)
               onClick={handleRetake}
               className="px-8 py-3 border border-ink-5 text-ink-3 font-display tracking-wide rounded-song hover:border-zhusha hover:text-zhusha transition-all duration-song"
             >
-              {t('Quiz.retake')}
+              {t('retake')}
             </button>
           </div>
         </div>

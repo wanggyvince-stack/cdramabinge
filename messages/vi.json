@@ -79,5 +79,22 @@
     "backHome": "Về trang chủ",
     "viewAll": "Xem tất cả",
     "share": "Chia sẻ"
+  },
+  "Quiz": {
+    "title": "Linh hồn phim Hoa của bạn",
+    "subtitle": "Trả lời 7 câu hỏi để khám phá phong cách xem phim của bạn",
+    "startButton": "Bắt đầu ngay",
+    "question": "Câu {n} / 7",
+    "yourResult": "Kết quả của bạn",
+    "shareResult": "Chia sẻ kết quả",
+    "retake": "Làm lại bài test",
+    "recommendations": "Phim dành cho bạn",
+    "q1": "Điều gì thu hút bạn vào một bộ phim đầu tiên?",
+    "q2": "Tối thứ Sáu. Bạn xem phim như thế nào?",
+    "q3": "Khoảnh khắc nào trong phim chạm đến trái tim bạn nhất?",
+    "q4": "Chọn một tựa phim nói lên tâm hồn bạn:",
+    "q5": "Cái kết lý tưởng của bạn là:",
+    "q6": "Nếu bạn biến mất một tuần, bạn sẽ:",
+    "q7": "Bạn tìm thấy một cuốn sổ bí mật chứa danh sách phim. Ghi chú nào khiến bạn hào hứng nhất?"
   }
 }
