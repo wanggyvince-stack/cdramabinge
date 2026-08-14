@@ -1,4 +1,5 @@
 export const dynamic = 'force-dynamic';
+import type { Metadata } from 'next';
 import { getTranslations, getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { readFileSync } from 'fs';
@@ -19,6 +20,43 @@ import {
   tmdbImage,
   fetchTmdbLocalization,
 } from '@/lib/utils/helpers';
+
+// ────────────────────────────────────────
+// Homepage Metadata
+// ────────────────────────────────────────
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const { locale } = params;
+  const canonicalUrl = `https://cdramabinge.com/${locale}`;
+
+  return {
+    title: 'CDramaBinge — Your Guide to Chinese Dramas',
+    description:
+      'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: 'https://cdramabinge.com/en',
+        vi: 'https://cdramabinge.com/vi',
+        th: 'https://cdramabinge.com/th',
+        'x-default': 'https://cdramabinge.com/en',
+      },
+    },
+    openGraph: {
+      title: 'CDramaBinge — Your Guide to Chinese Dramas',
+      description:
+        'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
+      url: canonicalUrl,
+      type: 'website',
+      siteName: 'CDramaBinge',
+      images: [{ url: 'https://cdramabinge.com/og-image.png', width: 1200, height: 630 }],
+    },
+  };
+}
 
 // ────────────────────────────────────────
 // Data fetching helpers

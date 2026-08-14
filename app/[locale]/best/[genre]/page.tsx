@@ -142,9 +142,26 @@ export async function generateMetadata({
   const intro = EDITORIAL_INTROS[genre]?.[locale] || EDITORIAL_INTROS[genre]?.en || '';
   const title = genre.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
+  const canonicalUrl = `https://cdramabinge.com/${locale}/best/${genre}`;
+
   return {
     title: `Best ${title} C-Dramas`,
     description: intro.slice(0, 160),
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `https://cdramabinge.com/en/best/${genre}`,
+        vi: `https://cdramabinge.com/vi/best/${genre}`,
+        th: `https://cdramabinge.com/th/best/${genre}`,
+        'x-default': `https://cdramabinge.com/en/best/${genre}`,
+      },
+    },
+    openGraph: {
+      title: `Best ${title} C-Dramas`,
+      description: intro.slice(0, 160),
+      url: canonicalUrl,
+      type: 'website',
+    },
   };
 }
 

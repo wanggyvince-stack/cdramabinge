@@ -73,6 +73,7 @@ export async function generateMetadata({
         en: `https://cdramabinge.com/en/drama/${normalizedSlug}`,
         vi: `https://cdramabinge.com/vi/drama/${normalizedSlug}`,
         th: `https://cdramabinge.com/th/drama/${normalizedSlug}`,
+        'x-default': `https://cdramabinge.com/en/drama/${normalizedSlug}`,
       },
     },
     openGraph: {
@@ -230,7 +231,7 @@ export default async function DramaDetailPage({
           ratingValue: drama.rating,
           bestRating: 10,
           worstRating: 1,
-          ratingCount: Math.floor(drama.rating * 100),
+          ratingCount: 1,
         }
       : undefined,
     image: realPosterUrl || undefined,

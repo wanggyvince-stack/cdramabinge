@@ -37,9 +37,27 @@ export async function generateMetadata({
     image: actor.photoUrl || undefined,
   };
 
+  const canonicalUrl = `https://cdramabinge.com/${locale}/actor/${slug}`;
+
   return {
     title: `${name}`,
     description: bio.slice(0, 160),
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `https://cdramabinge.com/en/actor/${slug}`,
+        vi: `https://cdramabinge.com/vi/actor/${slug}`,
+        th: `https://cdramabinge.com/th/actor/${slug}`,
+        'x-default': `https://cdramabinge.com/en/actor/${slug}`,
+      },
+    },
+    openGraph: {
+      title: `${name}`,
+      description: bio.slice(0, 160),
+      url: canonicalUrl,
+      type: 'profile',
+      images: actor.photoUrl ? [{ url: actor.photoUrl }] : [],
+    },
     other: {
       'application/ld+json': JSON.stringify(jsonLd),
     },

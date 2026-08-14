@@ -32,6 +32,8 @@ export async function generateMetadata({
   const title = getLocalizedText(drama.titlesJson, locale, drama.originalTitle);
   const suffix = locale === 'en' ? 'Dramas like' : locale === 'vi' ? 'Phim giống' : 'ซีรีส์ที่คล้าย';
 
+  const canonicalUrl = `https://cdramabinge.com/${locale}/dramas-like/${slug}`;
+
   return {
     title: `${suffix} ${title}`,
     description: locale === 'en'
@@ -39,6 +41,24 @@ export async function generateMetadata({
       : locale === 'vi'
         ? `Top 10 phim Hoa giống ${title}. Đề xuất AI dựa trên tâm trạng, thể loại và phong cách kể chuyện.`
         : `10 ซีรีส์จีนที่คล้าย ${title} คำแนะนำ AI ตามอารมณ์ แนว และสไตล์การเล่าเรื่อง`,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `https://cdramabinge.com/en/dramas-like/${slug}`,
+        vi: `https://cdramabinge.com/vi/dramas-like/${slug}`,
+        th: `https://cdramabinge.com/th/dramas-like/${slug}`,
+        'x-default': `https://cdramabinge.com/en/dramas-like/${slug}`,
+      },
+    },
+    openGraph: {
+      title: `${suffix} ${title}`,
+      description: locale === 'en'
+        ? `Top 10 C-dramas similar to ${title}. AI-powered recommendations.`
+        : `10 C-dramas similar to ${title}. AI-powered recommendations.`,
+      url: canonicalUrl,
+      type: 'website',
+      images: drama.posterUrl ? [{ url: tmdbImage(drama.posterUrl, 'w780') }] : [],
+    },
   };
 }
 

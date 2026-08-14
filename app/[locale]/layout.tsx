@@ -10,11 +10,39 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cdramabinge.com'),
   title: {
     template: '%s | CDramaBinge',
     default: 'CDramaBinge — Your Guide to Chinese Dramas',
   },
-  description: 'The ultimate guide to Chinese dramas. AI-powered recommendations, mood-based discovery, and in-depth reviews.',
+  description:
+    'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
+  alternates: {
+    canonical: 'https://cdramabinge.com',
+    languages: {
+      en: '/en',
+      vi: '/vi',
+      th: '/th',
+      'x-default': '/en',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://cdramabinge.com',
+    siteName: 'CDramaBinge',
+    title: 'CDramaBinge — Your Guide to Chinese Dramas',
+    description:
+      'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
+    images: [{ url: 'https://cdramabinge.com/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CDramaBinge — Your Guide to Chinese Dramas',
+    description:
+      'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
+    images: ['https://cdramabinge.com/og-image.png'],
+  },
 };
 
 export default async function LocaleLayout({
@@ -43,6 +71,26 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="bg-sujuan text-ink-2 antialiased font-sans">
+        {/* Global JSON-LD: WebSite + SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'CDramaBinge',
+              url: 'https://cdramabinge.com',
+              description:
+                'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://cdramabinge.com/en?q={search_term_string}',
+                'query-input': 'required name=search_term_string',
+              },
+              inLanguage: ['en', 'vi', 'th'],
+            }),
+          }}
+        />
         <NextIntlClientProvider messages={messages}>
           {/* Navigation */}
           <header className="fixed top-0 left-0 right-0 z-50 bg-sujuan/80 backdrop-blur-md border-b border-ivory-border">
