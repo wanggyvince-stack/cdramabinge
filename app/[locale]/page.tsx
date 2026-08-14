@@ -120,7 +120,7 @@ export default async function HomePage() {
 
   const carouselItems = (editorial.hero_carousel || [])
     .filter((item: { active: boolean }) => item.active)
-    .map((item: { drama_slug: string; title_override: Record<string, string>; comment: Record<string, string>; badge_text: string }) => {
+    .map((item: { drama_slug: string; title_override: Record<string, string>; comment: Record<string, string> }) => {
       const drama = heroDramaMap.get(item.drama_slug.trim());
       const slug = item.drama_slug.trim();
       let title = item.title_override?.[locale] || item.title_override?.en || drama?.originalTitle || item.drama_slug;
@@ -134,7 +134,6 @@ export default async function HomePage() {
         title,
         backdropUrl: drama ? (tmdbImage(drama.backdropUrl, 'original') || null) : null,
         comment: item.comment?.[locale] || item.comment?.en || '',
-        badge: item.badge_text || 'Trending',
       };
     });
 
@@ -179,7 +178,6 @@ export default async function HomePage() {
       <HeroCarousel
         items={carouselItems}
         locale={locale}
-        trendingLabel={t('home.heroTrending')}
       />
 
       <div className="max-w-7xl mx-auto px-6">

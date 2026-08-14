@@ -8,13 +8,11 @@ interface CarouselItem {
   title: string;
   backdropUrl?: string | null;
   comment: string;
-  badge: string;
 }
 
 interface HeroCarouselProps {
   items: CarouselItem[];
   locale: string;
-  trendingLabel: string;
 }
 
 /**
@@ -22,7 +20,7 @@ interface HeroCarouselProps {
  * Full-width, 5s auto-play, ink wash gradient transition
  * Fetches real backdrop images from TMDB when missing/placeholder
  */
-export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarouselProps) {
+export default function HeroCarousel({ items, locale }: HeroCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [resolvedBackdrops, setResolvedBackdrops] = useState<Record<string, string | null>>({});
@@ -40,6 +38,8 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
   }, [isPaused, next]);
+
+  const viewDetailsLabel = locale === 'vi' ? 'Xem chi tiết' : locale === 'th' ? 'ดูรายละเอียด' : 'View Details';
 
   // Fetch missing backdrops from TMDB API
   useEffect(() => {
@@ -102,16 +102,6 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
         <div className="max-w-7xl mx-auto px-6">
           {items[current] && (
             <div className="max-w-2xl">
-              {/* Badge — Song Dynasty seal stamp style */}
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-12 h-12 bg-[#c04851] text-white rounded-song flex items-center justify-center font-display text-xl shadow-lg">
-                  {current + 1}
-                </span>
-                <span className="inline-block px-3 py-1 bg-zhusha/90 text-white text-xs font-medium rounded-song tracking-wide">
-                  {items[current].badge || trendingLabel}
-                </span>
-              </div>
-
               {/* Title */}
               <Link href={`/${locale}/drama/${items[current].slug}`}>
                 <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-3 tracking-widest leading-tight hover:text-ruyao transition-colors duration-song">
@@ -123,6 +113,19 @@ export default function HeroCarousel({ items, locale, trendingLabel }: HeroCarou
               <p className="text-base md:text-lg text-white/80 leading-relaxed italic">
                 &ldquo;{items[current].comment}&rdquo;
               </p>
+
+              {/* CTA Button */}
+              <Link href={`/${locale}/drama/${items[current].slug}`}
+                 className="inline-flex items-center gap-2 mt-5
+                            bg-white/10 backdrop-blur-sm 
+                            border border-white/20
+                            text-white px-6 py-2.5 
+                            rounded-song 
+                            font-medium tracking-wide 
+                            transition-all duration-300
+                            hover:bg-white/20 hover:border-white/30">
+                {viewDetailsLabel}
+              </Link>
             </div>
           )}
         </div>
