@@ -148,7 +148,7 @@ for (const [key, hex] of Object.entries(MOOD_HEX)) {
  * Mood pill tag classes for light backgrounds — base Tailwind classes only (no opacity variants)
  * Combine with MOOD_LIGHT_STYLES inline for colors
  */
-export const MOOD_PILL_BASE_CLASS = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide backdrop-blur-sm border transition-colors duration-song';
+export const MOOD_PILL_BASE_CLASS = 'inline-flex items-center justify-center min-w-[4.5rem] px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide backdrop-blur-sm border transition-colors duration-song';
 
 /**
  * Mood pill dark class for hero/dark backgrounds — white frosted glass (inline style)
