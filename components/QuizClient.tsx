@@ -13,13 +13,13 @@ import {
 // Mood color gradient mapping for result backgrounds
 // Defined here (not in data/) so Tailwind can scan the classes
 const QUIZ_MOOD_GRADIENTS: Record<string, string> = {
-  'mood-romantic': 'from-[#C4A882]/20 via-sujuan to-[#D8C8B0]/15',
-  'mood-mindbend': 'from-[#3A4E7B]/20 via-sujuan to-[#4A5C80]/15',
-  'mood-intense': 'from-[#B04030]/15 via-sujuan to-[#C73E3A]/10',
-  'mood-aesthetic': 'from-[#8CB4A0]/20 via-sujuan to-[#A0C8B0]/15',
-  'mood-fun': 'from-[#C8B098]/20 via-sujuan to-[#D4B8A0]/15',
-  'mood-empower': 'from-[#A08355]/20 via-sujuan to-[#C9A86C]/15',
-  'mood-spooky': 'from-[#3C3835]/20 via-sujuan to-[#4A4A4A]/15',
+  'mood-romantic': 'from-[#e8a0b0]/20 via-sujuan to-[#d08898]/15',
+  'mood-mindbend': 'from-[#c0a8d8]/20 via-sujuan to-[#a090c0]/15',
+  'mood-intense': 'from-[#d8a0c8]/15 via-sujuan to-[#c080a8]/10',
+  'mood-aesthetic': 'from-[#d0a0b8]/20 via-sujuan to-[#b888a0]/15',
+  'mood-fun': 'from-[#b0d8b8]/20 via-sujuan to-[#90c0a0]/15',
+  'mood-empower': 'from-[#e0c890]/20 via-sujuan to-[#c8b078]/15',
+  'mood-spooky': 'from-[#a0b0c0]/20 via-sujuan to-[#8898a8]/15',
 };
 
 // ────────────────────────────────────────

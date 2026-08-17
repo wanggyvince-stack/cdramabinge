@@ -5,12 +5,12 @@
   height: 1px;
   background: repeating-linear-gradient(
     90deg,
-    #D8D4CC 0px,
-    #D8D4CC 8px,
+    #2a3040 0px,
+    #2a3040 8px,
     transparent 8px,
     transparent 10px,
-    #C9A86C 10px,
-    #C9A86C 11px,
+    #d4a853 10px,
+    #d4a853 11px,
     transparent 11px,
     transparent 16px
   );
@@ -31,11 +31,11 @@
   background: transparent;
 }
 .song-scrollbar::-webkit-scrollbar-thumb {
-  background: #D8D4CC;
+  background: #2a3040;
   border-radius: 4px;
 }
 .song-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #B8B0A8;
+  background: #3a4458;
 }
 
 /* Horizontal scroll container */
@@ -56,7 +56,7 @@
 }
 .glaze-hover:hover {
   filter: brightness(1.05);
-  box-shadow: 0 2px 16px rgba(145, 180, 190, 0.1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Seal stamp decoration */
@@ -70,14 +70,14 @@
   right: -2px;
   bottom: -2px;
   left: -2px;
-  border: 2px solid #C73E3A;
+  border: 2px solid #8b2828;
   border-radius: 4px;
   opacity: 0.6;
 }
 
 /* Karakusa / crackle texture background (极低透明度) */
 .crackle-bg {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L30 15 M30 15 L45 15 M45 15 L45 30 M45 30 L30 30 M30 30 L30 45 M30 45 L15 45 M15 45 L15 30 M15 30 L30 30' stroke='%23D8D4CC' stroke-width='0.5' fill='none' opacity='0.15'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L30 15 M30 15 L45 15 M45 15 L45 30 M45 30 L30 30 M30 30 L30 45 M30 45 L15 45 M15 45 L15 30 M15 30 L30 30' stroke='%232a3040' stroke-width='0.5' fill='none' opacity='0.15'/%3E%3C/svg%3E");
 }
 
 /* Carousel dot indicator */
@@ -106,7 +106,7 @@
 
 /* Gradient text effect for headings */
 .gradient-text-gold {
-  background: linear-gradient(135deg, #C9A86C, #D8C8B0);
+  background: linear-gradient(135deg, #d4a853, #e0c890);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

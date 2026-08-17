@@ -46,7 +46,7 @@ function generateDramaCard(searchParams: URLSearchParams) {
           height: '100%',
           display: 'flex',
           flexDirection: 'row',
-          backgroundColor: '#F5F0E8',
+          backgroundColor: '#121318',
           fontFamily: 'Georgia, serif',
         }}
       >
@@ -64,7 +64,7 @@ function generateDramaCard(searchParams: URLSearchParams) {
           <div
             style={{
               fontSize: 16,
-              color: '#999',
+              color: '#5a6478',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
               marginBottom: 20,
@@ -77,7 +77,7 @@ function generateDramaCard(searchParams: URLSearchParams) {
           <div
             style={{
               fontSize: title.length > 30 ? 42 : 52,
-              color: '#1A1A1A',
+              color: '#f0f4f8',
               fontWeight: 600,
               lineHeight: 1.15,
               marginBottom: 12,
@@ -96,7 +96,7 @@ function generateDramaCard(searchParams: URLSearchParams) {
             <div
               style={{
                 fontSize: 22,
-                color: '#C53B3B',
+                color: '#a03030',
                 marginBottom: 20,
                 fontWeight: 600,
               }}
@@ -110,7 +110,7 @@ function generateDramaCard(searchParams: URLSearchParams) {
             <div
               style={{
                 fontSize: 20,
-                color: '#555',
+                color: '#8b95a8',
                 lineHeight: 1.5,
                 maxWidth: '520px',
                 overflow: 'hidden',
@@ -140,7 +140,7 @@ function generateDramaCard(searchParams: URLSearchParams) {
                 height: 390,
                 objectFit: 'cover',
                 borderRadius: 8,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
               }}
             />
           </div>
@@ -172,7 +172,7 @@ function generateQuizCard(searchParams: URLSearchParams) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #1A1A1A 0%, #3D1F1F 50%, #C53B3B 100%)',
+          background: 'linear-gradient(135deg, #121318 0%, #1a1020 50%, #8b2828 100%)',
           fontFamily: 'Georgia, serif',
           padding: '60px',
         }}
@@ -194,7 +194,7 @@ function generateQuizCard(searchParams: URLSearchParams) {
         <div
           style={{
             fontSize: title.length > 30 ? 48 : 60,
-            color: '#F5F0E8',
+            color: '#f0f4f8',
             fontWeight: 700,
             textAlign: 'center',
             lineHeight: 1.2,
@@ -209,7 +209,7 @@ function generateQuizCard(searchParams: URLSearchParams) {
           <div
             style={{
               fontSize: 24,
-              color: 'rgba(245,240,232,0.7)',
+              color: 'rgba(240,244,248,0.7)',
               fontStyle: 'italic',
               textAlign: 'center',
               maxWidth: '700px',
@@ -254,7 +254,7 @@ function generateHomeCard() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#F5F0E8',
+          backgroundColor: '#121318',
           fontFamily: 'Georgia, serif',
         }}
       >
@@ -264,21 +264,21 @@ function generateHomeCard() {
             width: 60,
             height: 60,
             borderRadius: 8,
-            backgroundColor: '#C53B3B',
+            backgroundColor: '#8b2828',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: 30,
           }}
         >
-          <span style={{ fontSize: 28, color: '#F5F0E8', fontWeight: 700 }}>C</span>
+          <span style={{ fontSize: 28, color: '#f0f4f8', fontWeight: 700 }}>C</span>
         </div>
 
         {/* Title */}
         <div
           style={{
             fontSize: 64,
-            color: '#1A1A1A',
+            color: '#f0f4f8',
             fontWeight: 600,
             letterSpacing: '0.02em',
             marginBottom: 16,
@@ -291,7 +291,7 @@ function generateHomeCard() {
         <div
           style={{
             fontSize: 24,
-            color: '#666',
+            color: '#8b95a8',
             fontStyle: 'italic',
           }}
         >
@@ -302,7 +302,7 @@ function generateHomeCard() {
         <div
           style={{
             fontSize: 16,
-            color: '#999',
+            color: '#5a6478',
             marginTop: 20,
             letterSpacing: '0.15em',
             textTransform: 'uppercase',

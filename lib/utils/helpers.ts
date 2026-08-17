@@ -98,14 +98,14 @@ export const MOOD_SOLID_CLASS: Record<string, string> = {
  * Mood base hex colors — single source of truth for all mood styling
  */
 export const MOOD_HEX: Record<string, string> = {
-  wanna_cry: '#7888A0',
-  light_fun: '#C8B098',
-  intense: '#B04030',
-  romantic: '#C4A882',
-  mindbending: '#3A4E7B',
-  spooky: '#3C3835',
-  empowering: '#A08355',
-  aesthetic: '#8CB4A0',
+  wanna_cry: '#a0c8d8',
+  light_fun: '#b0d8b8',
+  intense: '#d8a0c8',
+  romantic: '#e8a0b0',
+  mindbending: '#c0a8d8',
+  spooky: '#a0b0c0',
+  empowering: '#e0c890',
+  aesthetic: '#d0a0b8',
 };
 
 /**
@@ -126,8 +126,8 @@ function hexToRgba(hex: string, alpha: number): string {
 export const MOOD_LIGHT_STYLES: Record<string, { backgroundColor: string; borderColor: string; color: string }> = {};
 for (const [key, hex] of Object.entries(MOOD_HEX)) {
   MOOD_LIGHT_STYLES[key] = {
-    backgroundColor: hexToRgba(hex, 0.12),
-    borderColor: hexToRgba(hex, 0.20),
+    backgroundColor: hexToRgba(hex, 0.35),
+    borderColor: hexToRgba(hex, 0.50),
     color: hex,
   };
 }
@@ -138,8 +138,8 @@ for (const [key, hex] of Object.entries(MOOD_HEX)) {
 export const MOOD_SELECTOR_STYLES: Record<string, { backgroundColor: string; borderColor: string; color: string }> = {};
 for (const [key, hex] of Object.entries(MOOD_HEX)) {
   MOOD_SELECTOR_STYLES[key] = {
-    backgroundColor: hexToRgba(hex, 0.15),
-    borderColor: hexToRgba(hex, 0.25),
+    backgroundColor: hexToRgba(hex, 0.30),
+    borderColor: hexToRgba(hex, 0.45),
     color: hex,
   };
 }

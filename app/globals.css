@@ -6,34 +6,34 @@
 
 @layer base {
   :root {
-    /* Song Dynasty Color System - Light Mode */
-    --color-brand: 145 180 190;       /* 汝窑天青 #91B4BE */
-    --color-brand-secondary: 184 176 168; /* 香灰胎 #B8B0A8 */
-    --color-accent: 199 62 58;        /* 朱砂红 #C73E3A */
-    --color-gold: 201 168 108;        /* 金丝金 #C9A86C */
-    --color-bg: 245 241 232;          /* 素绢 #F5F1E8 */
-    --color-card: 240 238 232;        /* 定窑白 #F0EEE8 */
-    --color-bg-secondary: 240 241 242; /* 釉色浅灰 #F0F1F2 */
-    --color-border: 216 212 204;      /* 象牙暖灰 #D8D4CC */
+    /* Song Dynasty Color System - Dark Mode (default) */
+    --color-brand: 74 158 142;        /* 青玉 #4a9e8e */
+    --color-brand-secondary: 90 100 120; /* 沉灰 #5a6478 */
+    --color-accent: 139 40 40;        /* 深朱砂 #8b2828 */
+    --color-gold: 212 168 83;         /* 琉璃金 #d4a853 */
+    --color-bg: 18 19 24;             /* 深墨 #121318 */
+    --color-card: 26 29 36;           /* 墨玉 #1a1d24 */
+    --color-bg-secondary: 34 38 46;   /* #22262e */
+    --color-border: 42 48 64;         /* 深边框 #2a3040 */
 
     /* Ink levels */
-    --ink-1: 13 13 13;    /* 焦墨 #0D0D0D */
-    --ink-2: 31 31 31;    /* 浓墨 #1F1F1F */
-    --ink-3: 74 74 74;    /* 重墨 #4A4A4A */
-    --ink-4: 122 122 122; /* 淡墨 #7A7A7A */
-    --ink-5: 184 184 184; /* 清墨 #B8B8B8 */
+    --ink-1: 240 244 248; /* 月白 #f0f4f8 */
+    --ink-2: 200 208 220; /* 柔化月白 #c8d0dc */
+    --ink-3: 139 149 168; /* 青灰 #8b95a8 */
+    --ink-4: 90 100 120;  /* 沉灰 #5a6478 */
+    --ink-5: 58 68 88;    /* 深灰 #3a4458 */
   }
 
   .dark {
-    /* Song Dynasty Color System - Dark Mode (墨韵) */
-    --color-bg: 26 26 26;             /* 浓墨 #1A1A1A */
-    --color-card: 44 40 37;           /* 重墨 #2C2825 */
-    --color-border: 80 76 72;
-    --ink-1: 242 240 234;            /* 鹤白 #F2F0EA */
-    --ink-2: 200 198 192;
-    --ink-3: 160 158 152;
-    --ink-4: 138 138 138;            /* 淡墨灰 #8A8A8A */
-    --ink-5: 100 100 100;
+    /* Same as :root since default is dark */
+    --color-bg: 18 19 24;
+    --color-card: 26 29 36;
+    --color-border: 42 48 64;
+    --ink-1: 240 244 248;
+    --ink-2: 200 208 220;
+    --ink-3: 139 149 168;
+    --ink-4: 90 100 120;
+    --ink-5: 58 68 88;
   }
 
   html {
@@ -78,20 +78,20 @@
   }
 
   .song-card:hover {
-    @apply brightness-105;
-    box-shadow: 0 2px 12px rgba(145, 180, 190, 0.08);
+    @apply brightness-110;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
   /* Crackling glaze border effect (哥窑开片) */
   .crackle-border {
     border-image: repeating-linear-gradient(
       90deg,
-      #D8D4CC 0px,
-      #D8D4CC 4px,
-      #C9A86C 4px,
-      #C9A86C 5px,
-      #D8D4CC 5px,
-      #D8D4CC 12px
+      #2a3040 0px,
+      #2a3040 4px,
+      #d4a853 4px,
+      #d4a853 5px,
+      #2a3040 5px,
+      #2a3040 12px
     ) 1;
   }
 
