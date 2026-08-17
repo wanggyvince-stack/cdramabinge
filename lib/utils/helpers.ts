@@ -202,6 +202,8 @@ export const ALL_GENRES = [
   'action',
   'mystery',
   'sci_fi',
+  'youth',
+  'crime',
 ] as const;
 
 /**

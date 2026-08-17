@@ -1,96 +1,300 @@
 {
   "the-untamed": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/36657c-the-untamed", "regions": ["global"] },
-      { "name": "WeTV", "url": "https://wetv.vip/en/play/the-untamed", "regions": ["global"] },
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81093102", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/36657c-the-untamed",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/the-untamed",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81093102",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "nirvana-in-fire": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/22943c-lang-ya-bang", "regions": ["global"] },
-      { "name": "iQIYI", "url": "https://www.iq.com/album/nirvana-in-fire-2015", "regions": ["global"] },
-      { "name": "Apple TV", "url": "https://tv.apple.com/show/nirvana-in-fire/umc.cmc.4bwvcoo8ef8euv8ki6dg0nyki", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/22943c-lang-ya-bang",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/nirvana-in-fire-2015",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Apple TV",
+        "url": "https://tv.apple.com/show/nirvana-in-fire/umc.cmc.4bwvcoo8ef8euv8ki6dg0nyki",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "story-of-minglan": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/35895c-the-story-of-ming-lan", "regions": ["global"] },
-      { "name": "WeTV", "url": "https://wetv.vip/en/play/the-story-of-minglan", "regions": ["global"] },
-      { "name": "iQIYI", "url": "https://www.iq.com/album/the-story-of-minglan-2018", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/35895c-the-story-of-ming-lan",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/the-story-of-minglan",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/the-story-of-minglan-2018",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "ashes-of-love": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/34950c-ashes-of-love", "regions": ["global"] },
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81040203", "regions": ["global"] },
-      { "name": "iQIYI", "url": "https://www.iq.com/album/ashes-of-love-2018", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/34950c-ashes-of-love",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81040203",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/ashes-of-love-2018",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "reset": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/38357c-reset", "regions": ["global"] },
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81459195", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/38357c-reset",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81459195",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "the-knockout": {
     "platforms": [
-      { "name": "iQIYI", "url": "https://www.iq.com/play/the-knockout-1jb4g5c4gpt", "regions": ["global"] }
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/play/the-knockout-1jb4g5c4gpt",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "meet-yourself": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/39165c-meet-yourself", "regions": ["global"] },
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81665850", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/39165c-meet-yourself",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81665850",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "love-like-the-galaxy": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/38649c-love-like-the-galaxy", "regions": ["global"] },
-      { "name": "WeTV", "url": "https://wetv.vip/en/play/5ns3tlffhfhwzto-Love-Like-The-Galaxy", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/38649c-love-like-the-galaxy",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/5ns3tlffhfhwzto-Love-Like-The-Galaxy",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "a-little-reunion": {
     "platforms": [
-      { "name": "iQIYI", "url": "https://www.iq.com/album/a-little-reunion-2019", "regions": ["global"] },
-      { "name": "Amazon Prime Video", "url": "https://www.amazon.com/dp/B07VQJN5YB", "regions": ["global"] }
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/a-little-reunion-2019",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Amazon Prime Video",
+        "url": "https://www.amazon.com/dp/B07VQJN5YB",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "hidden-love": {
     "platforms": [
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81596498", "regions": ["global"] },
-      { "name": "Youku", "url": "https://www.youku.com/show/hidden-love", "regions": ["global"] }
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81596498",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com/show/hidden-love",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "the-longest-promise": {
     "platforms": [
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81583553", "regions": ["global"] },
-      { "name": "WeTV", "url": "https://wetv.vip/en/play/the-longest-promise", "regions": ["global"] }
-    ]
-  },
-  "story-of-kunning-palace": {
-    "platforms": [
-      { "name": "iQIYI", "url": "https://www.iq.com/album/story-of-kunning-palace-2023", "regions": ["global"] },
-      { "name": "Amazon Prime Video", "url": "https://www.amazon.com/dp/B0CLXM5TQK", "regions": ["global"] }
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81583553",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/the-longest-promise",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "love-between-fairy-and-devil": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/38664c-love-between-fairy-and-devil", "regions": ["global"] },
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81591645", "regions": ["global"] },
-      { "name": "iQIYI", "url": "https://www.iq.com/album/love-between-fairy-and-devil-2022", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/38664c-love-between-fairy-and-devil",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81591645",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/love-between-fairy-and-devil-2022",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "word-of-honor": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/37730c-word-of-honor", "regions": ["global"] },
-      { "name": "Netflix", "url": "https://www.netflix.com/title/81452820", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/37730c-word-of-honor",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81452820",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   },
   "joy-of-life": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/36367c-joy-of-life", "regions": ["global"] },
-      { "name": "WeTV", "url": "https://wetv.vip/en/play/joy-of-life", "regions": ["global"] }
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/36367c-joy-of-life",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/joy-of-life",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "story-of-kunning": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/story-of-kunning-palace-2023",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Amazon Prime Video",
+        "url": "https://www.amazon.com/dp/B0CLXM5TQK",
+        "regions": [
+          "global"
+        ]
+      }
     ]
   }
 }

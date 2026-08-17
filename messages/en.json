@@ -47,7 +47,9 @@
     "drama": "Drama",
     "action": "Action",
     "mystery": "Mystery",
-    "sci_fi": "Sci-Fi"
+    "sci_fi": "Sci-Fi",
+    "youth": "Youth",
+    "crime": "Crime"
   },
   "drama": {
     "overview": "Overview",

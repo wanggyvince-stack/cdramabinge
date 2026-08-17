@@ -47,7 +47,9 @@
     "drama": "Chính kịch",
     "action": "Hành động",
     "mystery": "Bí ẩn",
-    "sci_fi": "Khoa học viễn tưởng"
+    "sci_fi": "Khoa học viễn tưởng",
+    "youth": "Thanh xuân",
+    "crime": "Hình sự"
   },
   "drama": {
     "overview": "Tổng quan",

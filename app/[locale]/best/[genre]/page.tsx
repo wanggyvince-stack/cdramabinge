@@ -81,6 +81,16 @@ const EDITORIAL_INTROS: Record<string, Record<string, string>> = {
     vi: 'Thế giới tương lai, AI, du hành vũ trụ và khoa học viễn tưởng bởi các nhà sáng tạo Trung Quốc.',
     th: 'โลกอนาคต AI การเดินทางอวกาศ และนิยายวิทยาศาสตร์โดยผู้สร้างจีน',
   },
+  youth: {
+    en: 'Campus days, first love, and growing up. These youth dramas capture the warmth and awkwardness of growing up.',
+    vi: 'Những ngày trường lớp, tình yêu đầu đời và trưởng thành. Phim thanh xuân bắt trọn sự ấm áp và ngượng ngùng tuổi trẻ.',
+    th: 'วันเวลาวัยรุ่น รักแรก และการเติบโต ซีรีส์วัยรุ่นเหล่านี้จับความอบอุ่นและความประหม่าของวัยหนุ่มสาว',
+  },
+  crime: {
+    en: 'Criminal minds, forensic investigations, and the relentless pursuit of justice.',
+    vi: 'Tâm lý tội phạm, điều tra pháp y và cuộc truy đuổi công lý không ngừng.',
+    th: 'จิตวิทยาอาชญากร การสืบสวนนิติเวช และการไล่ล่าความยุติธรรม',
+  },
   // Mood-based intros
   wanna_cry: {
     en: 'Need a good cry? These emotionally devastating C-dramas will have you reaching for tissues.',
