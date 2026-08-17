@@ -128,11 +128,6 @@ const EDITORIAL_INTROS: Record<string, Record<string, string>> = {
 // Params & Metadata
 // ────────────────────────────────────────
 
-export async function generateStaticParams() {
-  const allParams = [...ALL_MOODS, ...ALL_GENRES].map((g) => ({ genre: g }));
-  return allParams;
-}
-
 export async function generateMetadata({
   params,
 }: {

@@ -56,11 +56,13 @@ const QUIZ_RESULT_LABELS: Record<string, { title: string; subtitle: string }> = 
 };
 
 export async function generateMetadata({
+  params,
   searchParams,
 }: {
   params: { locale: string };
   searchParams: { result?: string };
 }): Promise<Metadata> {
+  const { locale } = params;
   const resultKey = searchParams?.result;
   const resultData = resultKey ? QUIZ_RESULT_LABELS[resultKey] : null;
 
@@ -83,12 +85,25 @@ export async function generateMetadata({
     ogUrl.searchParams.set('subtitle', 'Take the quiz on CDramaBinge');
   }
 
+  const canonicalUrl = `https://cdramabinge.com/${locale}/quiz`;
+
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `https://cdramabinge.com/en/quiz`,
+        vi: `https://cdramabinge.com/vi/quiz`,
+        th: `https://cdramabinge.com/th/quiz`,
+        'x-default': `https://cdramabinge.com/en/quiz`,
+      },
+    },
     openGraph: {
       title,
       description,
+      url: canonicalUrl,
+      type: 'website',
       images: [{ url: ogUrl.toString(), width: 1200, height: 630, alt: title }],
     },
     twitter: {

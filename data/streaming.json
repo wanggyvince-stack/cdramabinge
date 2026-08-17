@@ -46,7 +46,8 @@
   },
   "love-like-the-galaxy": {
     "platforms": [
-      { "name": "Viki", "url": "https://www.viki.com/tv/38649c-love-like-the-galaxy", "regions": ["global"] }
+      { "name": "Viki", "url": "https://www.viki.com/tv/38649c-love-like-the-galaxy", "regions": ["global"] },
+      { "name": "WeTV", "url": "https://wetv.vip/en/play/5ns3tlffhfhwzto-Love-Like-The-Galaxy", "regions": ["global"] }
     ]
   },
   "a-little-reunion": {

@@ -76,6 +76,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  // ─── Quiz page (each locale) ───
+  for (const locale of LOCALES) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/quiz`,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}/en/quiz`,
+          vi: `${BASE_URL}/vi/quiz`,
+          th: `${BASE_URL}/th/quiz`,
+        },
+      },
+    });
+  }
+
   // ─── Best category pages ───
   for (const category of BEST_CATEGORIES) {
     for (const locale of LOCALES) {
