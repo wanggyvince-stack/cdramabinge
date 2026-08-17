@@ -1,0 +1,135 @@
+{
+  "the-first-frost": {
+    "tmdb_id": 250060,
+    "original_title": "难哄",
+    "year": 2025,
+    "verified": true,
+    "english_title": "The First Frost",
+    "genres": ["romance", "drama"],
+    "mood": "romantic",
+    "platforms": ["Netflix", "Youku"],
+    "source": "shg.ninja/show/250060, kordless.tv/series/250060"
+  },
+  "the-double": {
+    "tmdb_id": 236033,
+    "original_title": "墨雨云间",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Double",
+    "genres": ["drama", "romance", "comedy"],
+    "mood": "intense",
+    "platforms": ["Netflix", "Youku"],
+    "source": "betaseries.com -> themoviedb.org/tv/236033"
+  },
+  "love-o2o": {
+    "tmdb_id": 66776,
+    "original_title": "微微一笑很倾城",
+    "year": 2016,
+    "verified": true,
+    "english_title": "Love O2O",
+    "genres": ["drama", "comedy", "romance"],
+    "mood": "light_fun",
+    "platforms": ["Viki"],
+    "source": "Multiple mirror sites (freestreaminghub.com/tv/66776, filmpertutti.me, soapone.org) all using TMDB data"
+  },
+  "falling-into-your-smile": {
+    "tmdb_id": 95486,
+    "original_title": "你微笑时很美",
+    "year": 2021,
+    "verified": true,
+    "english_title": "Falling Into Your Smile",
+    "genres": ["comedy", "drama", "romance", "sport"],
+    "mood": "romantic",
+    "platforms": ["Netflix", "Viki", "WeTV"],
+    "source": "fanart.tv/series/399900 (TMDB:95486), kordless.tv/series/95486"
+  },
+  "are-you-the-one": {
+    "tmdb_id": 237882,
+    "original_title": "柳舟记",
+    "year": 2024,
+    "verified": true,
+    "english_title": "Are You The One",
+    "genres": ["drama", "romance"],
+    "mood": "light_fun",
+    "platforms": ["Viki", "iQIYI"],
+    "source": "fanart.tv/series/441200 (TMDB:237882)"
+  },
+  "perfect-match": {
+    "tmdb_id": 254821,
+    "original_title": "五福临门",
+    "year": 2025,
+    "verified": true,
+    "english_title": "Perfect Match",
+    "genres": ["comedy", "romance", "family"],
+    "mood": "romantic",
+    "platforms": ["Netflix"],
+    "note": "Task listed original_title as 锦月如歌, but TMDB entry for 'Perfect Match' (2025) corresponds to 五福临门. 锦月如歌 may be a different drama not on TMDB.",
+    "source": "shg.ninja/show/254821-perfect-match"
+  },
+  "lost-you-forever": {
+    "tmdb_id": 210524,
+    "original_title": "长相思",
+    "year": 2023,
+    "verified": true,
+    "english_title": "Lost You Forever",
+    "genres": ["drama", "action", "sci-fi", "fantasy"],
+    "mood": "romantic",
+    "platforms": ["Viki", "WeTV"],
+    "source": "kordless.tv/series/210524/lost-you-forever"
+  },
+  "new-life-begins": {
+    "tmdb_id": 214172,
+    "original_title": "卿卿日常",
+    "year": 2022,
+    "verified": true,
+    "english_title": "New Life Begins",
+    "genres": ["comedy", "drama"],
+    "mood": "light_fun",
+    "platforms": ["iQIYI"],
+    "source": "dramakey.cc -> themoviedb.org/tv/214172, thenkiri.ng"
+  },
+  "the-best-thing": {
+    "tmdb_id": 256128,
+    "original_title": "爱你",
+    "year": 2025,
+    "verified": true,
+    "english_title": "The Best Thing",
+    "genres": ["drama", "romance"],
+    "mood": "romantic",
+    "platforms": ["iQIYI"],
+    "source": "kordless.tv/series/256128/the-best-thing"
+  },
+  "the-tale-of-rose": {
+    "tmdb_id": 229202,
+    "original_title": "玫瑰的故事",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Tale of Rose",
+    "genres": ["drama", "romance"],
+    "mood": "empowering",
+    "platforms": ["WeTV", "Viki"],
+    "source": "fanart.tv/series/436451 (TMDB:229202)"
+  },
+  "the-rise-of-ning": {
+    "tmdb_id": 229036,
+    "original_title": "锦绣安宁",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Rise of Ning",
+    "genres": ["drama", "romance"],
+    "mood": "romantic",
+    "platforms": ["Viki"],
+    "source": "kordless.tv/series/229036/the-rise-of-ning"
+  },
+  "kill-me-love-me": {
+    "tmdb_id": 243073,
+    "original_title": "春花焰",
+    "year": 2024,
+    "verified": true,
+    "english_title": "Kill Me Love Me",
+    "genres": ["action", "drama", "romance", "mystery"],
+    "mood": "intense",
+    "platforms": ["Youku"],
+    "source": "shg.ninja/show/243073"
+  }
+}

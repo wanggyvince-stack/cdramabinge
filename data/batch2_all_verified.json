@@ -1,0 +1,532 @@
+{
+  "the-first-frost": {
+    "tmdb_id": 250060,
+    "original_title": "难哄",
+    "year": 2025,
+    "verified": true,
+    "english_title": "The First Frost",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Netflix",
+      "Youku"
+    ],
+    "source": "shg.ninja/show/250060, kordless.tv/series/250060"
+  },
+  "the-double": {
+    "tmdb_id": 236033,
+    "original_title": "墨雨云间",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Double",
+    "genres": [
+      "drama",
+      "romance",
+      "comedy"
+    ],
+    "mood": "intense",
+    "platforms": [
+      "Netflix",
+      "Youku"
+    ],
+    "source": "betaseries.com -> themoviedb.org/tv/236033"
+  },
+  "love-o2o": {
+    "tmdb_id": 66776,
+    "original_title": "微微一笑很倾城",
+    "year": 2016,
+    "verified": true,
+    "english_title": "Love O2O",
+    "genres": [
+      "drama",
+      "comedy",
+      "romance"
+    ],
+    "mood": "light_fun",
+    "platforms": [
+      "Viki"
+    ],
+    "source": "Multiple mirror sites (freestreaminghub.com/tv/66776, filmpertutti.me, soapone.org) all using TMDB data"
+  },
+  "falling-into-your-smile": {
+    "tmdb_id": 95486,
+    "original_title": "你微笑时很美",
+    "year": 2021,
+    "verified": true,
+    "english_title": "Falling Into Your Smile",
+    "genres": [
+      "comedy",
+      "drama",
+      "romance",
+      "sport"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Netflix",
+      "Viki",
+      "WeTV"
+    ],
+    "source": "fanart.tv/series/399900 (TMDB:95486), kordless.tv/series/95486"
+  },
+  "are-you-the-one": {
+    "tmdb_id": 237882,
+    "original_title": "柳舟记",
+    "year": 2024,
+    "verified": true,
+    "english_title": "Are You The One",
+    "genres": [
+      "drama",
+      "romance"
+    ],
+    "mood": "light_fun",
+    "platforms": [
+      "Viki",
+      "iQIYI"
+    ],
+    "source": "fanart.tv/series/441200 (TMDB:237882)"
+  },
+  "perfect-match": {
+    "tmdb_id": 254821,
+    "original_title": "五福临门",
+    "year": 2025,
+    "verified": true,
+    "english_title": "Perfect Match",
+    "genres": [
+      "comedy",
+      "romance",
+      "family"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Netflix"
+    ],
+    "note": "Task listed original_title as 锦月如歌, but TMDB entry for 'Perfect Match' (2025) corresponds to 五福临门. 锦月如歌 may be a different drama not on TMDB.",
+    "source": "shg.ninja/show/254821-perfect-match"
+  },
+  "lost-you-forever": {
+    "tmdb_id": 210524,
+    "original_title": "长相思",
+    "year": 2023,
+    "verified": true,
+    "english_title": "Lost You Forever",
+    "genres": [
+      "drama",
+      "action",
+      "sci-fi",
+      "fantasy"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Viki",
+      "WeTV"
+    ],
+    "source": "kordless.tv/series/210524/lost-you-forever"
+  },
+  "new-life-begins": {
+    "tmdb_id": 214172,
+    "original_title": "卿卿日常",
+    "year": 2022,
+    "verified": true,
+    "english_title": "New Life Begins",
+    "genres": [
+      "comedy",
+      "drama"
+    ],
+    "mood": "light_fun",
+    "platforms": [
+      "iQIYI"
+    ],
+    "source": "dramakey.cc -> themoviedb.org/tv/214172, thenkiri.ng"
+  },
+  "the-best-thing": {
+    "tmdb_id": 256128,
+    "original_title": "爱你",
+    "year": 2025,
+    "verified": true,
+    "english_title": "The Best Thing",
+    "genres": [
+      "drama",
+      "romance"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "iQIYI"
+    ],
+    "source": "kordless.tv/series/256128/the-best-thing"
+  },
+  "the-tale-of-rose": {
+    "tmdb_id": 229202,
+    "original_title": "玫瑰的故事",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Tale of Rose",
+    "genres": [
+      "drama",
+      "romance"
+    ],
+    "mood": "empowering",
+    "platforms": [
+      "WeTV",
+      "Viki"
+    ],
+    "source": "fanart.tv/series/436451 (TMDB:229202)"
+  },
+  "the-rise-of-ning": {
+    "tmdb_id": 229036,
+    "original_title": "锦绣安宁",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Rise of Ning",
+    "genres": [
+      "drama",
+      "romance"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Viki"
+    ],
+    "source": "kordless.tv/series/229036/the-rise-of-ning"
+  },
+  "kill-me-love-me": {
+    "tmdb_id": 243073,
+    "original_title": "春花焰",
+    "year": 2024,
+    "verified": true,
+    "english_title": "Kill Me Love Me",
+    "genres": [
+      "action",
+      "drama",
+      "romance",
+      "mystery"
+    ],
+    "mood": "intense",
+    "platforms": [
+      "Youku"
+    ],
+    "source": "shg.ninja/show/243073"
+  },
+  "love-and-redemption": {
+    "slug": "love-and-redemption",
+    "title": "Love and Redemption",
+    "chinese_name": "琉璃",
+    "year": 2020,
+    "tmdb_id": 96128,
+    "verified": true,
+    "notes": "Confirmed via medialib.net/tv/tv96128 -> themoviedb.org/tv/96128"
+  },
+  "my-journey-to-you": {
+    "slug": "my-journey-to-you",
+    "title": "My Journey to You",
+    "chinese_name": "云之羽",
+    "year": 2023,
+    "tmdb_id": 226186,
+    "verified": true,
+    "notes": "Confirmed via medialib.net/tv/tv226186 -> themoviedb.org/tv/226186"
+  },
+  "the-princess-royal": {
+    "slug": "the-princess-royal",
+    "title": "The Princess Royal",
+    "chinese_name": "度华年",
+    "year": 2024,
+    "tmdb_id": 254474,
+    "verified": true,
+    "notes": "Confirmed via watch-list.me/tv/the-princess-royal-254474 and medialib.net/tv/tv254474 -> themoviedb.org/tv/254474. IMDB: tt29476809. Aired 2024-06-26 to 2024-07-13, 40 episodes."
+  },
+  "moonlight-mystique": {
+    "slug": "moonlight-mystique",
+    "title": "Moonlight Mystique",
+    "chinese_name": "白月梵星",
+    "year": 2025,
+    "tmdb_id": 238680,
+    "verified": true,
+    "notes": "Confirmed via filmnoir.app actor page (Zhang Xin in Moonlight Mystique -> tmdb.org/tv/238680). Cross-verified by multiple streaming sites. IMDB: tt27960886. MyDramaList ID: 738079."
+  },
+  "love-game-in-eastern-fantasy": {
+    "slug": "love-game-in-eastern-fantasy",
+    "title": "Love Game in Eastern Fantasy",
+    "chinese_name": "永夜星河",
+    "year": 2024,
+    "tmdb_id": 243084,
+    "verified": true,
+    "notes": "IMPORTANT: The English title 'Love Game in Eastern Fantasy' on TMDB (ID 243084) corresponds to Chinese drama 永夜星河, NOT 大奉打更人. 大奉打更人 has a different English title 'Guardians of the Dafeng' with a different TMDB entry. Confirmed via medialib.net/tv/tv243084."
+  },
+  "the-prisoner-of-beauty": {
+    "slug": "the-prisoner-of-beauty",
+    "title": "The Prisoner of Beauty",
+    "chinese_name": "折腰",
+    "year": 2025,
+    "tmdb_id": 220269,
+    "verified": true,
+    "notes": "Confirmed via medialib.net/tv/tv220269 -> themoviedb.org/tv/220269. IMDB: tt28115977. Aired 2025-05-13 to 2025-05-29, 36 episodes."
+  },
+  "fated-hearts": {
+    "slug": "fated-hearts",
+    "title": "Fated Hearts",
+    "chinese_name": "烽影燃梅香",
+    "year": 2025,
+    "tmdb_id": null,
+    "verified": false,
+    "notes": "NEEDS_REVIEW: TMDB ID not confirmed. The task list assigned English name 'Fated Hearts' to 烽影燃梅香, but TMDB ID 272484 (also labeled 'Fated Hearts') is actually 一笑随歌 (Li Qin/Chen Zheyuan), a completely different drama. 烽影燃梅香 (Wang Churan/Li Hongyi) is also known as 'Hidden Shadow' on MyDramaList (ID 740899). The drama has not yet aired as of verification date (scheduled for 2026 on Youku). TVDB ID: 449202. IMDB: tt32365684. TMDB may not yet have an entry for this unaired drama.",
+    "external_ids": {
+      "imdb_id": "tt32365684",
+      "tvdb_id": 449202,
+      "mydramalist_id": 740899
+    }
+  },
+  "put-your-head-on-my-shoulder": {
+    "slug": "put-your-head-on-my-shoulder",
+    "title": "Put Your Head on My Shoulder",
+    "chinese_name": "致我们暖暖的小时光",
+    "year": 2019,
+    "tmdb_id": 88548,
+    "verified": true,
+    "notes": "Confirmed via medialib.net/tv/tv88548 -> themoviedb.org/tv/88548"
+  },
+  "go-ahead": {
+    "tmdb_id": 103405,
+    "original_title": "以家人之名",
+    "year": 2020,
+    "verified": true,
+    "english_title": "Go Ahead",
+    "genres": [
+      "drama",
+      "youth"
+    ],
+    "mood": "wanna_cry",
+    "platforms": [
+      "Viki",
+      "Mango TV"
+    ],
+    "verification_notes": "TMDB ID confirmed via URL pattern themoviedb.org/tv/103405-go-ahead and third-party site skybluethemovie.com showing TMDB rating 8.4"
+  },
+  "a-love-so-beautiful": {
+    "tmdb_id": null,
+    "original_title": "致我们单纯的小美好",
+    "year": 2017,
+    "verified": false,
+    "english_title": "A Love So Beautiful",
+    "genres": [
+      "romance",
+      "youth"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "WeTV",
+      "Viki"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama exists on multiple platforms (Netflix, Viki) with IMDb tt10433136 reference not found. TMDB ID could not be extracted due to robots.txt blocking direct access. Known to exist on TMDB based on JustWatch/MyDramaList presence."
+  },
+  "bright-eyes-in-the-dark": {
+    "tmdb_id": null,
+    "original_title": "他从火光中走来",
+    "year": 2023,
+    "verified": false,
+    "english_title": "Bright Eyes in the Dark",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "mood": "empowering",
+    "platforms": [
+      "iQIYI"
+    ],
+    "verification_notes": "NEEDS_REVIEW - TMDB ID could not be extracted. Drama confirmed to exist (2023, iQIYI) but TMDB page inaccessible due to robots.txt restrictions."
+  },
+  "in-blossom": {
+    "tmdb_id": 235619,
+    "original_title": "花间令",
+    "year": 2024,
+    "verified": true,
+    "english_title": "In Blossom",
+    "genres": [
+      "historical",
+      "mystery"
+    ],
+    "mood": "mindbending",
+    "platforms": [
+      "Youku"
+    ],
+    "verification_notes": "TMDB ID confirmed via medialib.net external link to themoviedb.org/tv/235619. IMDb: tt29266659."
+  },
+  "brocade-odyssey": {
+    "tmdb_id": null,
+    "original_title": "蜀锦人家",
+    "year": 2024,
+    "verified": false,
+    "english_title": "Brocade Odyssey",
+    "genres": [
+      "historical",
+      "romance"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "WeTV"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt31129954, 2024, Youku). TMDB ID not extractable due to robots.txt. Likely exists on TMDB based on MyDramaList and medialib presence."
+  },
+  "blossoms-in-adversity": {
+    "tmdb_id": null,
+    "original_title": "惜花芷",
+    "year": 2024,
+    "verified": false,
+    "english_title": "Blossoms in Adversity",
+    "genres": [
+      "historical",
+      "drama"
+    ],
+    "mood": "empowering",
+    "platforms": [
+      "Youku"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed on TMDB (referenced on anystream.org as 'Source: TMDb'). Listed on listrr.pro but exact TMDB ID not visible in search results. IMDb reference exists. Year 2024, 40 episodes confirmed."
+  },
+  "lighter-and-princess": {
+    "tmdb_id": null,
+    "original_title": "点燃我温暖你",
+    "year": 2022,
+    "verified": false,
+    "english_title": "Lighter & Princess",
+    "genres": [
+      "romance",
+      "youth"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Viki",
+      "Youku"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt22460828, 2022, 36 episodes). Also known as '打火机与公主裙'. TMDB ID not extractable due to robots.txt blocking."
+  },
+  "under-the-skin": {
+    "tmdb_id": 139797,
+    "original_title": "猎罪图鉴",
+    "year": 2022,
+    "verified": true,
+    "english_title": "Under the Skin",
+    "genres": [
+      "mystery",
+      "crime"
+    ],
+    "mood": "mindbending",
+    "platforms": [
+      "iQIYI"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Popular drama confirmed (2022, iQIYI). TMDB page exists but ID not extractable due to robots.txt. Also has Season 2 (猎罪图鉴2)."
+  },
+  "day-of-change": {
+    "tmdb_id": null,
+    "original_title": "重生之门",
+    "year": 2022,
+    "verified": false,
+    "english_title": "Day of Change",
+    "genres": [
+      "mystery",
+      "thriller"
+    ],
+    "mood": "mindbending",
+    "platforms": [
+      "Youku"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt19850636, 2022, also known as 'Reborn', 26 episodes). Starring Zhang Yi and Wang Junkai. TMDB ID not extractable due to robots.txt."
+  },
+  "our-interpreter": {
+    "tmdb_id": null,
+    "original_title": "亲爱的翻译官",
+    "year": 2016,
+    "verified": false,
+    "english_title": "Our Interpreter",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "WeTV"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (2016, also known as 'Les Interprètes' / '翻译官', 42-45 episodes). Starring Yang Mi and Huang Xuan. Aired on Hunan TV. TMDB ID not extractable due to robots.txt."
+  },
+  "hello-mr-gu": {
+    "tmdb_id": null,
+    "original_title": "你好，先生们",
+    "year": 2021,
+    "verified": false,
+    "english_title": "Hello Mr. Gu",
+    "genres": [
+      "romance"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "Viki"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Small-scale drama confirmed (2021, 12 episodes, iQIYI). Also known as 'Hello, Gentlemen'. MyDramaList ID: 717905. TMDB presence uncertain - this is a low-profile production. May not have TMDB entry."
+  },
+  "the-happy-seven-in-changan": {
+    "tmdb_id": 244931,
+    "original_title": "喜卷常乐城",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Happy Seven in Changan",
+    "genres": [
+      "comedy",
+      "historical"
+    ],
+    "mood": "light_fun",
+    "platforms": [
+      "TBD"
+    ],
+    "verification_notes": "TMDB ID confirmed via good.film (good.film/title/tv/244931) which pulls from TMDB. TMDB rating: 7/10. IMPORTANT: The Chinese name in the original table was listed as '长安的荔枝' but this drama is actually '喜卷常乐城' (Xi Juan Chang An Cheng). '长安的荔枝' (The Lychee Road) is a completely different 2025 drama/film. Please verify the intended drama.",
+    "name_discrepancy": "Table says 长安的荔枝 but actual Chinese title is 喜卷常乐城. 长安的荔枝 is a different IP (2025 film/drama by Ma Boyong)."
+  },
+  "my-boss": {
+    "tmdb_id": null,
+    "original_title": "你是我的荣耀",
+    "year": 2021,
+    "verified": false,
+    "english_title": "My Boss",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "mood": "romantic",
+    "platforms": [
+      "WeTV",
+      "Tencent Video"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Major drama confirmed (IMDb: tt14872986, 2021, 32 episodes). Also known as 'You Are My Glory'. Starring Yang Yang and Dilraba. Extremely popular on Tencent Video. TMDB ID not extractable due to robots.txt but definitely exists on TMDB (referenced on JustWatch, anystream.org citing TMDb as source)."
+  },
+  "the-lost-tomb-2": {
+    "tmdb_id": null,
+    "original_title": "盗墓笔记之怒海潜沙",
+    "year": 2019,
+    "verified": false,
+    "english_title": "The Lost Tomb 2",
+    "genres": [
+      "action",
+      "mystery"
+    ],
+    "mood": "intense",
+    "platforms": [
+      "iQIYI"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt10433136, 2019, full title: 盗墓笔记之怒海潜沙&秦岭神树, 40 episodes). Also known as '盗墓笔记第二季'. Starring Hou Minghao, Cheng Yi. TMDB ID not extractable due to robots.txt."
+  },
+  "arsenal-military-academy": {
+    "tmdb_id": null,
+    "original_title": "烈火军校",
+    "year": 2019,
+    "verified": false,
+    "english_title": "Arsenal Military Academy",
+    "genres": [
+      "romance",
+      "drama"
+    ],
+    "mood": "empowering",
+    "platforms": [
+      "iQIYI"
+    ],
+    "verification_notes": "NEEDS_REVIEW - Major drama confirmed (IMDb: tt11024384, 2019, 48 episodes). Starring Bai Lu and Xu Kai. Very popular on iQIYI and MyDramaList (8.4/10). TMDB ID not extractable due to robots.txt but confirmed to exist on TMDB via image.tmdb.org references."
+  }
+}

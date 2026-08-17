@@ -296,5 +296,467 @@
         ]
       }
     ]
+  },
+  "the-first-frost": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-double": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "love-o2o": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "falling-into-your-smile": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "are-you-the-one": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "perfect-match": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "lost-you-forever": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "new-life-begins": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-best-thing": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-tale-of-rose": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-rise-of-ning": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "kill-me-love-me": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "go-ahead": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Mango TV",
+        "url": "https://www.mgtv.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "a-love-so-beautiful": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "bright-eyes-in-the-dark": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "in-blossom": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "brocade-odyssey": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "blossoms-in-adversity": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "lighter-and-princess": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "under-the-skin": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "day-of-change": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "our-interpreter": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "hello-mr-gu": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-happy-seven-in-changan": {
+    "platforms": [
+      {
+        "name": "TBD",
+        "url": "",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "you-are-my-glory": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-lost-tomb-2": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "arsenal-military-academy": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "love-and-redemption": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "my-journey-to-you": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-princess-royal": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "moonlight-mystique": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "love-game-in-eastern-fantasy": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "the-prisoner-of-beauty": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "fated-hearts": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.com",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
+  },
+  "put-your-head-on-my-shoulder": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip",
+        "regions": [
+          "global"
+        ]
+      }
+    ]
   }
 }

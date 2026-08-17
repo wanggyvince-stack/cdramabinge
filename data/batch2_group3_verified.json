@@ -1,0 +1,177 @@
+{
+  "go-ahead": {
+    "tmdb_id": 103405,
+    "original_title": "以家人之名",
+    "year": 2020,
+    "verified": true,
+    "english_title": "Go Ahead",
+    "genres": ["drama", "youth"],
+    "mood": "wanna_cry",
+    "platforms": ["Viki", "Mango TV"],
+    "verification_notes": "TMDB ID confirmed via URL pattern themoviedb.org/tv/103405-go-ahead and third-party site skybluethemovie.com showing TMDB rating 8.4"
+  },
+  "a-love-so-beautiful": {
+    "tmdb_id": null,
+    "original_title": "致我们单纯的小美好",
+    "year": 2017,
+    "verified": false,
+    "english_title": "A Love So Beautiful",
+    "genres": ["romance", "youth"],
+    "mood": "romantic",
+    "platforms": ["WeTV", "Viki"],
+    "verification_notes": "NEEDS_REVIEW - Drama exists on multiple platforms (Netflix, Viki) with IMDb tt10433136 reference not found. TMDB ID could not be extracted due to robots.txt blocking direct access. Known to exist on TMDB based on JustWatch/MyDramaList presence."
+  },
+  "bright-eyes-in-the-dark": {
+    "tmdb_id": null,
+    "original_title": "他从火光中走来",
+    "year": 2023,
+    "verified": false,
+    "english_title": "Bright Eyes in the Dark",
+    "genres": ["romance", "drama"],
+    "mood": "empowering",
+    "platforms": ["iQIYI"],
+    "verification_notes": "NEEDS_REVIEW - TMDB ID could not be extracted. Drama confirmed to exist (2023, iQIYI) but TMDB page inaccessible due to robots.txt restrictions."
+  },
+  "in-blossom": {
+    "tmdb_id": 235619,
+    "original_title": "花间令",
+    "year": 2024,
+    "verified": true,
+    "english_title": "In Blossom",
+    "genres": ["historical", "mystery"],
+    "mood": "mindbending",
+    "platforms": ["Youku"],
+    "verification_notes": "TMDB ID confirmed via medialib.net external link to themoviedb.org/tv/235619. IMDb: tt29266659."
+  },
+  "brocade-odyssey": {
+    "tmdb_id": null,
+    "original_title": "蜀锦人家",
+    "year": 2024,
+    "verified": false,
+    "english_title": "Brocade Odyssey",
+    "genres": ["historical", "romance"],
+    "mood": "romantic",
+    "platforms": ["WeTV"],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt31129954, 2024, Youku). TMDB ID not extractable due to robots.txt. Likely exists on TMDB based on MyDramaList and medialib presence."
+  },
+  "blossoms-in-adversity": {
+    "tmdb_id": null,
+    "original_title": "惜花芷",
+    "year": 2024,
+    "verified": false,
+    "english_title": "Blossoms in Adversity",
+    "genres": ["historical", "drama"],
+    "mood": "empowering",
+    "platforms": ["Youku"],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed on TMDB (referenced on anystream.org as 'Source: TMDb'). Listed on listrr.pro but exact TMDB ID not visible in search results. IMDb reference exists. Year 2024, 40 episodes confirmed."
+  },
+  "lighter-and-princess": {
+    "tmdb_id": null,
+    "original_title": "点燃我温暖你",
+    "year": 2022,
+    "verified": false,
+    "english_title": "Lighter & Princess",
+    "genres": ["romance", "youth"],
+    "mood": "romantic",
+    "platforms": ["Viki", "Youku"],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt22460828, 2022, 36 episodes). Also known as '打火机与公主裙'. TMDB ID not extractable due to robots.txt blocking."
+  },
+  "under-the-skin": {
+    "tmdb_id": null,
+    "original_title": "猎罪图鉴",
+    "year": 2022,
+    "verified": false,
+    "english_title": "Under the Skin",
+    "genres": ["mystery", "crime"],
+    "mood": "mindbending",
+    "platforms": ["iQIYI"],
+    "verification_notes": "NEEDS_REVIEW - Popular drama confirmed (2022, iQIYI). TMDB page exists but ID not extractable due to robots.txt. Also has Season 2 (猎罪图鉴2)."
+  },
+  "day-of-change": {
+    "tmdb_id": null,
+    "original_title": "重生之门",
+    "year": 2022,
+    "verified": false,
+    "english_title": "Day of Change",
+    "genres": ["mystery", "thriller"],
+    "mood": "mindbending",
+    "platforms": ["Youku"],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt19850636, 2022, also known as 'Reborn', 26 episodes). Starring Zhang Yi and Wang Junkai. TMDB ID not extractable due to robots.txt."
+  },
+  "our-interpreter": {
+    "tmdb_id": null,
+    "original_title": "亲爱的翻译官",
+    "year": 2016,
+    "verified": false,
+    "english_title": "Our Interpreter",
+    "genres": ["romance", "drama"],
+    "mood": "romantic",
+    "platforms": ["WeTV"],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (2016, also known as 'Les Interprètes' / '翻译官', 42-45 episodes). Starring Yang Mi and Huang Xuan. Aired on Hunan TV. TMDB ID not extractable due to robots.txt."
+  },
+  "hello-mr-gu": {
+    "tmdb_id": null,
+    "original_title": "你好，先生们",
+    "year": 2021,
+    "verified": false,
+    "english_title": "Hello Mr. Gu",
+    "genres": ["romance"],
+    "mood": "romantic",
+    "platforms": ["Viki"],
+    "verification_notes": "NEEDS_REVIEW - Small-scale drama confirmed (2021, 12 episodes, iQIYI). Also known as 'Hello, Gentlemen'. MyDramaList ID: 717905. TMDB presence uncertain - this is a low-profile production. May not have TMDB entry."
+  },
+  "the-happy-seven-in-changan": {
+    "tmdb_id": 244931,
+    "original_title": "喜卷常乐城",
+    "year": 2024,
+    "verified": true,
+    "english_title": "The Happy Seven in Changan",
+    "genres": ["comedy", "historical"],
+    "mood": "light_fun",
+    "platforms": ["TBD"],
+    "verification_notes": "TMDB ID confirmed via good.film (good.film/title/tv/244931) which pulls from TMDB. TMDB rating: 7/10. IMPORTANT: The Chinese name in the original table was listed as '长安的荔枝' but this drama is actually '喜卷常乐城' (Xi Juan Chang An Cheng). '长安的荔枝' (The Lychee Road) is a completely different 2025 drama/film. Please verify the intended drama.",
+    "name_discrepancy": "Table says 长安的荔枝 but actual Chinese title is 喜卷常乐城. 长安的荔枝 is a different IP (2025 film/drama by Ma Boyong)."
+  },
+  "my-boss": {
+    "tmdb_id": null,
+    "original_title": "你是我的荣耀",
+    "year": 2021,
+    "verified": false,
+    "english_title": "My Boss",
+    "genres": ["romance", "drama"],
+    "mood": "romantic",
+    "platforms": ["WeTV", "Tencent Video"],
+    "verification_notes": "NEEDS_REVIEW - Major drama confirmed (IMDb: tt14872986, 2021, 32 episodes). Also known as 'You Are My Glory'. Starring Yang Yang and Dilraba. Extremely popular on Tencent Video. TMDB ID not extractable due to robots.txt but definitely exists on TMDB (referenced on JustWatch, anystream.org citing TMDb as source)."
+  },
+  "the-lost-tomb-2": {
+    "tmdb_id": null,
+    "original_title": "盗墓笔记之怒海潜沙",
+    "year": 2019,
+    "verified": false,
+    "english_title": "The Lost Tomb 2",
+    "genres": ["action", "mystery"],
+    "mood": "intense",
+    "platforms": ["iQIYI"],
+    "verification_notes": "NEEDS_REVIEW - Drama confirmed (IMDb: tt10433136, 2019, full title: 盗墓笔记之怒海潜沙&秦岭神树, 40 episodes). Also known as '盗墓笔记第二季'. Starring Hou Minghao, Cheng Yi. TMDB ID not extractable due to robots.txt."
+  },
+  "arsenal-military-academy": {
+    "tmdb_id": null,
+    "original_title": "烈火军校",
+    "year": 2019,
+    "verified": false,
+    "english_title": "Arsenal Military Academy",
+    "genres": ["romance", "drama"],
+    "mood": "empowering",
+    "platforms": ["iQIYI"],
+    "verification_notes": "NEEDS_REVIEW - Major drama confirmed (IMDb: tt11024384, 2019, 48 episodes). Starring Bai Lu and Xu Kai. Very popular on iQIYI and MyDramaList (8.4/10). TMDB ID not extractable due to robots.txt but confirmed to exist on TMDB via image.tmdb.org references."
+  },
+  "_metadata": {
+    "total_dramas": 15,
+    "verified_count": 3,
+    "needs_review_count": 12,
+    "verification_date": "2025-07-10",
+    "verification_method": "search_web + fetch_web via third-party TMDB-referencing sites",
+    "notes": "TMDB (themoviedb.org) blocks direct access via robots.txt, making it impossible to extract TMDB IDs directly. Only 3 IDs were confirmed through third-party sites that link directly to TMDB pages (medialib.net, good.film). The remaining 12 dramas are confirmed to exist and likely have TMDB entries, but their exact TMDB IDs could not be extracted. These should be verified later using the TMDB API directly or by manually checking themoviedb.org.",
+    "critical_flag": "#32 (the-happy-seven-in-changan) has a NAME DISCREPANCY - the Chinese title in the original table (长安的荔枝) does not match the actual drama title (喜卷常乐城). These are two different properties."
+  }
+}

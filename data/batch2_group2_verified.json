@@ -1,0 +1,90 @@
+{
+  "batch": 2,
+  "group": 2,
+  "verified_at": "2025-01-16",
+  "dramas": [
+    {
+      "slug": "love-and-redemption",
+      "title": "Love and Redemption",
+      "chinese_name": "琉璃",
+      "year": 2020,
+      "tmdb_id": 96128,
+      "verified": true,
+      "notes": "Confirmed via medialib.net/tv/tv96128 -> themoviedb.org/tv/96128"
+    },
+    {
+      "slug": "my-journey-to-you",
+      "title": "My Journey to You",
+      "chinese_name": "云之羽",
+      "year": 2023,
+      "tmdb_id": 226186,
+      "verified": true,
+      "notes": "Confirmed via medialib.net/tv/tv226186 -> themoviedb.org/tv/226186"
+    },
+    {
+      "slug": "the-princess-royal",
+      "title": "The Princess Royal",
+      "chinese_name": "度华年",
+      "year": 2024,
+      "tmdb_id": 254474,
+      "verified": true,
+      "notes": "Confirmed via watch-list.me/tv/the-princess-royal-254474 and medialib.net/tv/tv254474 -> themoviedb.org/tv/254474. IMDB: tt29476809. Aired 2024-06-26 to 2024-07-13, 40 episodes."
+    },
+    {
+      "slug": "moonlight-mystique",
+      "title": "Moonlight Mystique",
+      "chinese_name": "白月梵星",
+      "year": 2025,
+      "tmdb_id": 238680,
+      "verified": true,
+      "notes": "Confirmed via filmnoir.app actor page (Zhang Xin in Moonlight Mystique -> tmdb.org/tv/238680). Cross-verified by multiple streaming sites. IMDB: tt27960886. MyDramaList ID: 738079."
+    },
+    {
+      "slug": "love-game-in-eastern-fantasy",
+      "title": "Love Game in Eastern Fantasy",
+      "chinese_name": "永夜星河",
+      "year": 2024,
+      "tmdb_id": 243084,
+      "verified": true,
+      "notes": "IMPORTANT: The English title 'Love Game in Eastern Fantasy' on TMDB (ID 243084) corresponds to Chinese drama 永夜星河, NOT 大奉打更人. 大奉打更人 has a different English title 'Guardians of the Dafeng' with a different TMDB entry. Confirmed via medialib.net/tv/tv243084."
+    },
+    {
+      "slug": "the-prisoner-of-beauty",
+      "title": "The Prisoner of Beauty",
+      "chinese_name": "折腰",
+      "year": 2025,
+      "tmdb_id": 220269,
+      "verified": true,
+      "notes": "Confirmed via medialib.net/tv/tv220269 -> themoviedb.org/tv/220269. IMDB: tt28115977. Aired 2025-05-13 to 2025-05-29, 36 episodes."
+    },
+    {
+      "slug": "fated-hearts",
+      "title": "Fated Hearts",
+      "chinese_name": "烽影燃梅香",
+      "year": 2025,
+      "tmdb_id": null,
+      "verified": false,
+      "notes": "NEEDS_REVIEW: TMDB ID not confirmed. The task list assigned English name 'Fated Hearts' to 烽影燃梅香, but TMDB ID 272484 (also labeled 'Fated Hearts') is actually 一笑随歌 (Li Qin/Chen Zheyuan), a completely different drama. 烽影燃梅香 (Wang Churan/Li Hongyi) is also known as 'Hidden Shadow' on MyDramaList (ID 740899). The drama has not yet aired as of verification date (scheduled for 2026 on Youku). TVDB ID: 449202. IMDB: tt32365684. TMDB may not yet have an entry for this unaired drama.",
+      "external_ids": {
+        "imdb_id": "tt32365684",
+        "tvdb_id": 449202,
+        "mydramalist_id": 740899
+      }
+    },
+    {
+      "slug": "put-your-head-on-my-shoulder",
+      "title": "Put Your Head on My Shoulder",
+      "chinese_name": "致我们暖暖的小时光",
+      "year": 2019,
+      "tmdb_id": 88548,
+      "verified": true,
+      "notes": "Confirmed via medialib.net/tv/tv88548 -> themoviedb.org/tv/88548"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "verified": 7,
+    "needs_review": 1,
+    "needs_review_slugs": ["fated-hearts"]
+  }
+}
