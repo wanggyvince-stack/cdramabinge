@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { notFound, redirect } from 'next/navigation';
 import { db } from '@/lib/db';
-import { dramas } from '@/lib/db/schema';
+import { dramas, actors } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import {
   getLocalizedText,
@@ -194,6 +194,46 @@ export default async function DramaDetailPage({
     platform: p.name,
     url: p.url,
   })) || [];
+
+  // Fetch cast members from actors table
+  // Query all actors whose dramas_json contains this drama's slug
+  type CastMember = {
+    slug: string;
+    name: string;
+    namesJson: string | null;
+    photoUrl: string | null;
+    character: string;
+  };
+  let castMembers: CastMember[] = [];
+  try {
+    const allActors = await db.select().from(actors).all();
+    for (const actor of allActors) {
+      try {
+        const dramasArr = JSON.parse(actor.dramasJson || '[]');
+        const match = dramasArr.find(
+          (d: any) => (typeof d === 'string' ? d : d.slug) === normalizedSlug
+        );
+        if (match) {
+          const character = typeof match === 'object' ? match.character || '' : '';
+          const namesObj = actor.namesJson ? JSON.parse(actor.namesJson) : {};
+          const displayName = locale === 'en'
+            ? (namesObj.en || actor.name)
+            : (namesObj.zh || namesObj.en || actor.name);
+          castMembers.push({
+            slug: actor.slug,
+            name: displayName,
+            namesJson: actor.namesJson,
+            photoUrl: actor.photoUrl,
+            character,
+          });
+        }
+      } catch {
+        // Skip actors with invalid dramas_json
+      }
+    }
+  } catch {
+    // Silently fail — cast section will show placeholder
+  }
 
   // Fetch trailer from TMDB videos API
   let trailerKey: string | null = null;
@@ -477,25 +517,44 @@ export default async function DramaDetailPage({
 
         <div className="crackle-divider my-8" />
 
-        {/* Cast — placeholder */}
+        {/* Cast */}
         <section className="py-6">
           <h2 className="font-display text-2xl font-semibold text-ink-1 mb-6 tracking-wider">
             {t('drama.cast')}
           </h2>
-          <div className="flex gap-4 horizontal-scroll song-scrollbar">
-            {/* Cast will be populated from database when actor data is available */}
-            <div className="flex-shrink-0 w-28 text-center">
-              <div className="w-20 h-20 mx-auto rounded-full bg-dingyao border border-ivory-border flex items-center justify-center mb-2">
-                <svg className="w-8 h-8 text-ink-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
-              </div>
-              <p className="text-xs text-ink-4">
-                {locale === 'en' ? 'Cast info coming soon' : locale === 'vi' ? 'Sắp có thông tin diễn viên' : 'ข้อมูลนักแสดงเร็วๆ นี้'}
-              </p>
+          {castMembers.length > 0 ? (
+            <div className="flex gap-4 horizontal-scroll song-scrollbar">
+              {castMembers.map((actor) => (
+                <div key={actor.slug} className="flex-shrink-0 w-28 text-center">
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border border-ivory-border mb-2">
+                    {actor.photoUrl ? (
+                      <img src={actor.photoUrl} alt={actor.name} className="w-full h-full object-cover" loading="lazy" />
+                    ) : (
+                      <div className="w-full h-full bg-dingyao flex items-center justify-center">
+                        <span className="text-ink-4 text-lg font-display">{actor.name.charAt(0)}</span>
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-xs text-ink-1 font-medium truncate">{actor.name}</p>
+                  {actor.character && <p className="text-xs text-ink-4 truncate">{actor.character}</p>}
+                </div>
+              ))}
             </div>
-          </div>
+          ) : (
+            <div className="flex gap-4 horizontal-scroll song-scrollbar">
+              <div className="flex-shrink-0 w-28 text-center">
+                <div className="w-20 h-20 mx-auto rounded-full bg-dingyao border border-ivory-border flex items-center justify-center mb-2">
+                  <svg className="w-8 h-8 text-ink-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <p className="text-xs text-ink-4">
+                  {locale === 'en' ? 'Cast info coming soon' : locale === 'vi' ? 'Sắp có thông tin diễn viên' : 'ข้อมูลนักแสดงเร็วๆ นี้'}
+                </p>
+              </div>
+            </div>
+          )}
         </section>
 
         <div className="crackle-divider my-8" />
