@@ -29,19 +29,20 @@ export async function generateMetadata({
   const name = getLocalizedText(actor.namesJson, locale, actor.name);
   const bio = getLocalizedText(actor.bioJson, locale);
 
+  const bioText = bio || `All Chinese dramas starring ${name}. Watch list, roles, filmography and where to watch on CDramaBinge.`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name,
-    description: bio.slice(0, 200),
+    description: bioText.slice(0, 200),
     image: actor.photoUrl || undefined,
   };
 
   const canonicalUrl = `https://cdramabinge.com/${locale}/actor/${slug}`;
 
   return {
-    title: `${name}`,
-    description: bio.slice(0, 160),
+    title: `${name} - Chinese Dramas, Roles & Filmography | CDramaBinge`,
+    description: bioText.slice(0, 160),
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -52,8 +53,8 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${name}`,
-      description: bio.slice(0, 160),
+      title: `${name} - Chinese Dramas, Roles & Filmography | CDramaBinge`,
+      description: bioText.slice(0, 160),
       url: canonicalUrl,
       type: 'profile',
       images: actor.photoUrl ? [{ url: actor.photoUrl }] : [],
@@ -81,13 +82,16 @@ export default async function ActorDetailPage({
 
   const name = getLocalizedText(actor.namesJson, locale, actor.name);
   const bio = getLocalizedText(actor.bioJson, locale);
-  const dramaSlugs = parseJsonArray<string>(actor.dramasJson);
+  // dramasJson stores [{slug, character}] objects, not plain strings
+  const dramaEntries = parseJsonArray<{ slug: string; character: string }>(actor.dramasJson);
   const collaborations = parseJsonArray<{ name: string; slug: string; count: number }>(actor.collaborationsJson);
 
   // Resolve dramas
   const actorDramas: any[] = [];
-  for (const dramaSlug of dramaSlugs.slice(0, 12)) {
+  for (const entry of dramaEntries.slice(0, 12)) {
     try {
+      const dramaSlug = typeof entry === 'string' ? entry : entry.slug;
+      const character = typeof entry === 'string' ? '' : entry.character;
       const drama = await db.select().from(dramas).where(eq(dramas.slug, dramaSlug.trim())).get();
       if (drama) {
         actorDramas.push({
@@ -96,6 +100,7 @@ export default async function ActorDetailPage({
           posterUrl: tmdbImage(drama.posterUrl, 'w342'),
           year: drama.year,
           moods: parseJsonArray<string>(drama.moodTags),
+          character,
         });
       }
     } catch {
@@ -130,7 +135,7 @@ export default async function ActorDetailPage({
         <section className="flex flex-col md:flex-row items-start gap-8 mb-16">
           {/* Avatar */}
           <div className="flex-shrink-0">
-            <div className="w-40 h-40 md:w-52 md:h-52 rounded-song overflow-hidden border-2 border-ivory-border">
+            <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: '#d4a853' }}>
               {actor.photoUrl ? (
                 <img
                   src={actor.photoUrl}
@@ -150,9 +155,20 @@ export default async function ActorDetailPage({
 
           {/* Info */}
           <div className="flex-1">
-            <h1 className="font-display text-3xl md:text-4xl font-bold text-ink-1 mb-3 tracking-wider">
+            <h1 className="font-display text-3xl md:text-4xl font-bold text-ink-1 mb-1 tracking-wider">
               {name}
             </h1>
+            {/* Chinese name */}
+            {actor.namesJson && (() => {
+              try {
+                const names = typeof actor.namesJson === 'string' ? JSON.parse(actor.namesJson) : actor.namesJson;
+                const zhName = names?.zh;
+                if (zhName && zhName !== name) {
+                  return <p className="text-lg text-ink-3 mb-3">{zhName}</p>;
+                }
+              } catch {}
+              return null;
+            })()}
             {bio && (
               <p className="text-base text-ink-3 leading-relaxed max-w-2xl mb-4">
                 {bio}
@@ -160,6 +176,7 @@ export default async function ActorDetailPage({
             )}
             <p className="text-sm text-ink-4">
               {actorDramas.length} {locale === 'en' ? 'dramas' : locale === 'vi' ? 'phim' : 'ซีรีส์'}
+              {collaborations.length > 0 && ` · ${collaborations.length} ${locale === 'en' ? 'collaborations' : locale === 'vi' ? 'bạn diễn' : 'นักแสดงร่วม'}`}
             </p>
           </div>
         </section>
@@ -174,25 +191,29 @@ export default async function ActorDetailPage({
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {actorDramas.map((drama) => (
-              <DramaCard
-                key={drama.slug}
-                slug={drama.slug}
-                title={drama.title}
-                posterUrl={drama.posterUrl}
-                moods={drama.moods.slice(0, 2)}
-                moodLabels={{
-                  wanna_cry: t('mood.wanna_cry'),
-                  light_fun: t('mood.light_fun'),
-                  intense: t('mood.intense'),
-                  romantic: t('mood.romantic'),
-                  mindbending: t('mood.mindbending'),
-                  spooky: t('mood.spooky'),
-                  empowering: t('mood.empowering'),
-                  aesthetic: t('mood.aesthetic'),
-                }}
-                year={drama.year}
-                locale={locale}
-              />
+              <div key={drama.slug}>
+                <DramaCard
+                  slug={drama.slug}
+                  title={drama.title}
+                  posterUrl={drama.posterUrl}
+                  moods={drama.moods.slice(0, 2)}
+                  moodLabels={{
+                    wanna_cry: t('mood.wanna_cry'),
+                    light_fun: t('mood.light_fun'),
+                    intense: t('mood.intense'),
+                    romantic: t('mood.romantic'),
+                    mindbending: t('mood.mindbending'),
+                    spooky: t('mood.spooky'),
+                    empowering: t('mood.empowering'),
+                    aesthetic: t('mood.aesthetic'),
+                  }}
+                  year={drama.year}
+                  locale={locale}
+                />
+                {drama.character && (
+                  <p className="text-xs text-ink-4 mt-1 truncate px-1">{drama.character}</p>
+                )}
+              </div>
             ))}
           </div>
 

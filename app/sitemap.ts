@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { db } from '@/lib/db';
-import { dramas } from '@/lib/db/schema';
+import { dramas, actors } from '@/lib/db/schema';
 
 const BASE_URL = 'https://cdramabinge.com';
 const LOCALES = ['en', 'vi', 'th'] as const;
@@ -106,6 +106,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             en: `${BASE_URL}/en/best/${category}`,
             vi: `${BASE_URL}/vi/best/${category}`,
             th: `${BASE_URL}/th/best/${category}`,
+          },
+        },
+      });
+    }
+  }
+
+  // ─── Actor pages (only actors with 2+ dramas to avoid thin content) ───
+  const allActors = await db.select({ slug: actors.slug, dramasJson: actors.dramasJson }).from(actors).all();
+  for (const actor of allActors) {
+    try {
+      const dramaEntries = JSON.parse(actor.dramasJson || '[]');
+      if (dramaEntries.length < 2) continue;
+    } catch {
+      continue;
+    }
+    for (const locale of LOCALES) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/actor/${actor.slug}`,
+        lastModified: today,
+        changeFrequency: 'weekly',
+        priority: 0.6,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en/actor/${actor.slug}`,
+            vi: `${BASE_URL}/vi/actor/${actor.slug}`,
+            th: `${BASE_URL}/th/actor/${actor.slug}`,
           },
         },
       });
