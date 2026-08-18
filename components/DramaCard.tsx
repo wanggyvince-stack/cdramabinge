@@ -99,7 +99,7 @@ export default function DramaCard({
         <div className="p-3 bg-dingyao">
           {/* Mood tags */}
           {moods.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-1">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-1">
               {moods.slice(0, 3).map((mood) => {
                 const moodStyle = MOOD_LIGHT_STYLES[mood] || MOOD_LIGHT_STYLES['romantic'];
                 return (

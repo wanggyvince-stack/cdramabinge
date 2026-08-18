@@ -358,7 +358,7 @@ export default async function DramaDetailPage({
             <div className="flex-1 min-w-0">
               {/* Mood tags */}
               {moodTags.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3 mb-3">
                   {moodTags.map((mood) => (
                     <MoodTag
                       key={mood}

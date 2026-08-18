@@ -1,0 +1,204 @@
+{
+  "the-first-frost": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81956912",
+        "regions": ["global"]
+      },
+      {
+        "name": "Youku",
+        "url": "https://www.youku.tv/v/v_show/id_XNjQwMTk3MzI2MA==.html",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "the-double": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81900131",
+        "regions": ["global"]
+      },
+      {
+        "name": "Youku",
+        "url": "https://www.youku.tv/v/v_show/id_XNjQwMDc1NjIyNA==.html",
+        "regions": ["global"]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40573c-the-double",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "love-o2o": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/36373c-love-o2o",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "falling-into-your-smile": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81566868",
+        "regions": ["global"]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/37358c-falling-into-your-smile",
+        "regions": ["global"]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/play/2knhnaakii18oxj/q0039ns0ou2",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "are-you-the-one": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40668c-are-you-the-one",
+        "regions": ["global"]
+      },
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/are-you-the-one%20柳舟记",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "perfect-match": {
+    "platforms": [
+      {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/search?q=Perfect+Match+五福临门",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "lost-you-forever": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40049c-lost-you-forever",
+        "regions": ["global"]
+      },
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/lost-you-forever",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "new-life-begins": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/album/new-life-begins-2022-xre41bur79",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "the-best-thing": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/the-best-thing%202025",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "the-tale-of-rose": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/the-tale-of-rose",
+        "regions": ["global"]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40351c-the-tale-of-rose",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "the-rise-of-ning": {
+    "platforms": [
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/search?q=the+rise+of+ning",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "kill-me-love-me": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.tv/search?q=kill+me+love+me+春花焰",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "love-and-redemption": {
+    "platforms": [
+      {
+        "name": "Youku",
+        "url": "https://www.youku.tv/search?q=love+and+redemption+琉璃",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "my-journey-to-you": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/my-journey-to-you%20云之羽",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "the-princess-royal": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/the-princess-royal%20度华年",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "moonlight-mystique": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/moonlight-mystique%20白月梵星",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "love-game-in-eastern-fantasy": {
+    "platforms": [
+      {
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/love-game-in-eastern-fantasy%20永夜星河",
+        "regions": ["global"]
+      }
+    ]
+  },
+  "the-prisoner-of-beauty": {
+    "platforms": [
+      {
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/the-prisoner-of-beauty",
+        "regions": ["global"]
+      }
+    ]
+  }
+}

@@ -9,7 +9,7 @@ import { dramas } from '@/lib/db/schema';
 import { inArray } from 'drizzle-orm';
 import HeroCarousel from '@/components/HeroCarousel';
 import DramaCard from '@/components/DramaCard';
-import MoodButton from '@/components/MoodButton';
+import MoodDiscoverySection from '@/components/MoodDiscoverySection';
 import EditorialComment from '@/components/EditorialComment';
 import {
   getLocalizedText,
@@ -242,17 +242,21 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-            {ALL_MOODS.map((mood) => (
-              <MoodButton
-                key={mood}
-                mood={mood}
-                label={t(`mood.${mood}`)}
-                locale={locale}
-                dramas={moodDramaMap[mood] || []}
-              />
-            ))}
-          </div>
+          <MoodDiscoverySection
+            moods={ALL_MOODS}
+            labels={{
+              wanna_cry: t('mood.wanna_cry'),
+              light_fun: t('mood.light_fun'),
+              intense: t('mood.intense'),
+              romantic: t('mood.romantic'),
+              mindbending: t('mood.mindbending'),
+              spooky: t('mood.spooky'),
+              empowering: t('mood.empowering'),
+              aesthetic: t('mood.aesthetic'),
+            }}
+            dramaMap={moodDramaMap}
+            locale={locale}
+          />
         </section>
 
         {/* ═══════════════════════════════════════

@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { MOOD_SELECTOR_BASE_CLASS, MOOD_SELECTOR_STYLES } from '@/lib/utils/helpers';
 
@@ -15,26 +14,30 @@ interface MoodButtonProps {
   label: string;
   locale: string;
   dramas?: DramaInfo[];
+  isExpanded: boolean;
+  onToggle: () => void;
 }
 
 /**
  * MoodButton — Frosted glass mood selector button
- * Semi-transparent colored bg + backdrop-blur + border
- * Uses inline styles for colors to avoid Tailwind opacity variant issues
+ * Controlled component: expansion state managed by parent (MoodDiscoverySection).
+ * Only one mood can be expanded at a time.
  */
-export default function MoodButton({ mood, label, locale, dramas = [] }: MoodButtonProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+export default function MoodButton({ mood, label, locale, dramas = [], isExpanded, onToggle }: MoodButtonProps) {
   const moodStyle = MOOD_SELECTOR_STYLES[mood] || MOOD_SELECTOR_STYLES['romantic'];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full sm:w-auto">
       <button
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={onToggle}
         className={MOOD_SELECTOR_BASE_CLASS}
         style={{
-          backgroundColor: moodStyle.backgroundColor,
+          backgroundColor: isExpanded
+            ? moodStyle.borderColor.replace(/[\d.]+\)$/, '0.50)')
+            : moodStyle.backgroundColor,
           borderColor: moodStyle.borderColor,
           color: moodStyle.color,
+          ...(isExpanded ? { transform: 'scale(1.05)', boxShadow: `0 4px 12px ${moodStyle.backgroundColor}` } : {}),
         }}
         aria-expanded={isExpanded}
         aria-label={label}
@@ -44,8 +47,8 @@ export default function MoodButton({ mood, label, locale, dramas = [] }: MoodBut
 
       {/* Expanded recommendations (horizontal scroll) */}
       {isExpanded && dramas.length > 0 && (
-        <div className="w-full mt-4 horizontal-scroll song-scrollbar">
-          <div className="flex gap-3 pb-2">
+        <div className="w-full mt-4 overflow-x-auto pb-2" style={{ scrollbarWidth: 'thin' }}>
+          <div className="flex gap-3 min-w-max px-1">
             {dramas.map((drama) => (
               <Link
                 key={drama.slug}
@@ -63,14 +66,12 @@ export default function MoodButton({ mood, label, locale, dramas = [] }: MoodBut
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-ink-5 text-xs text-center px-2">{drama.title}</span>
+                        <span className="text-ink-5 text-2xl font-display">{drama.title.charAt(0)}</span>
                       </div>
                     )}
                   </div>
-                  <div className="p-2 text-center">
-                    <p className="text-xs text-ink-2 truncate">{drama.title}</p>
-                  </div>
                 </div>
+                <p className="text-xs text-ink-2 truncate mt-1 text-center">{drama.title}</p>
               </Link>
             ))}
           </div>
