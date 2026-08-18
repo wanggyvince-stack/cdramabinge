@@ -351,7 +351,7 @@ export default async function HomePage() {
                   />
                 </div>
                 <p className="text-center text-xs mt-4" style={{ color: '#555' }}>
-                  {locale === 'en' && 'Take the quiz to see yours →' : locale === 'vi' && 'Làm bài trắc nghiệm để xem kết quả →' : 'ทำแบบทดสอบเพื่อดูผล →'}
+                  {locale === 'en' ? 'Take the quiz to see yours →' : locale === 'vi' ? 'Làm bài trắc nghiệm để xem kết quả →' : 'ทำแบบทดสอบเพื่อดูผล →'}
                 </p>
               </div>
             </div>
