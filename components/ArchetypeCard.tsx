@@ -26,7 +26,7 @@ export default function ArchetypeCard({
       className="rounded-xl p-4 md:p-5 border transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-default"
       style={{ backgroundColor: bgColor, borderColor }}
     >
-      <span className="text-2xl md:text-3xl mb-2 block">{emoji}</span>
+      {emoji && <span className="text-2xl md:text-3xl mb-2 block">{emoji}</span>}
       <h3
         className="font-display text-sm md:text-base font-semibold tracking-wide mb-1"
         style={{ color: titleColor }}

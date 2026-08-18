@@ -311,7 +311,7 @@ export default async function HomePage() {
                 <div className="grid grid-cols-2 gap-3 md:gap-4">
                   {/* The Hopeless Romantic */}
                   <ArchetypeCard
-                    emoji="💕"
+                    emoji=""
                     title={locale === 'en' ? 'The Hopeless Romantic' : locale === 'vi' ? 'Kẻ Mộng Mơ' : 'สายโรแมนติก'}
                     description={locale === 'en' ? 'You watch for the love stories' : locale === 'vi' ? 'Bạn xem vì chuyện tình' : 'คุณดูเพื่อเรื่องราวความรัก'}
                     bgColor="rgba(232,160,176,0.12)"
@@ -321,7 +321,7 @@ export default async function HomePage() {
                   />
                   {/* The Mind Bender */}
                   <ArchetypeCard
-                    emoji="🧩"
+                    emoji=""
                     title={locale === 'en' ? 'The Mind Bender' : locale === 'vi' ? 'Nhà Phân Tích' : 'นักวิเคราะห์'}
                     description={locale === 'en' ? 'You need plot twists to stay engaged' : locale === 'vi' ? 'Bạn cần plot twist để cuốn hút' : 'คุณต้องการพล็อตหักมุม'}
                     bgColor="rgba(192,168,216,0.12)"
@@ -331,7 +331,7 @@ export default async function HomePage() {
                   />
                   {/* The Emotional Wreck */}
                   <ArchetypeCard
-                    emoji="😭"
+                    emoji=""
                     title={locale === 'en' ? 'The Emotional Wreck' : locale === 'vi' ? 'Trái Tim Dễ Tổn Thương' : 'สายซึ้งน้ำตาไหล'}
                     description={locale === 'en' ? 'You cry at least once per drama' : locale === 'vi' ? 'Bạn khóc ít nhất 1 lần mỗi phim' : 'คุณร้องไห้ทุกเรื่อง'}
                     bgColor="rgba(160,200,216,0.12)"
@@ -341,7 +341,7 @@ export default async function HomePage() {
                   />
                   {/* The Thrill Seeker */}
                   <ArchetypeCard
-                    emoji="⚡"
+                    emoji=""
                     title={locale === 'en' ? 'The Thrill Seeker' : locale === 'vi' ? 'Kẻ Săn Cảm Giác Mạnh' : 'สายตื่นเต้น'}
                     description={locale === 'en' ? 'You watch dramas like movies — no pausing' : locale === 'vi' ? 'Bạn xem phim như xem điện ảnh' : 'คุณดูซีรีส์เหมือนดูหนัง'}
                     bgColor="rgba(216,160,200,0.12)"
