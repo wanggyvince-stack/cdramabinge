@@ -158,6 +158,7 @@ export async function generateMetadata({
         en: `https://cdramabinge.com/en/best/${genre}`,
         vi: `https://cdramabinge.com/vi/best/${genre}`,
         th: `https://cdramabinge.com/th/best/${genre}`,
+        id: `https://cdramabinge.com/id/best/${genre}`,
         'x-default': `https://cdramabinge.com/en/best/${genre}`,
       },
     },

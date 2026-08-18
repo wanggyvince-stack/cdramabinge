@@ -3,7 +3,7 @@ import { db } from '@/lib/db';
 import { dramas, actors } from '@/lib/db/schema';
 
 const BASE_URL = 'https://cdramabinge.com';
-const LOCALES = ['en', 'vi', 'th'] as const;
+const LOCALES = ['en', 'vi', 'th', 'id'] as const;
 
 // All genre/mood slugs for /best/ pages
 const BEST_CATEGORIES = [

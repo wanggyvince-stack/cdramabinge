@@ -91,6 +91,7 @@ export async function generateMetadata({
         en: `https://cdramabinge.com/en/drama/${normalizedSlug}`,
         vi: `https://cdramabinge.com/vi/drama/${normalizedSlug}`,
         th: `https://cdramabinge.com/th/drama/${normalizedSlug}`,
+        id: `https://cdramabinge.com/id/drama/${normalizedSlug}`,
         'x-default': `https://cdramabinge.com/en/drama/${normalizedSlug}`,
       },
     },

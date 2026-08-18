@@ -44,6 +44,7 @@ export async function generateMetadata({
         en: 'https://cdramabinge.com/en',
         vi: 'https://cdramabinge.com/vi',
         th: 'https://cdramabinge.com/th',
+        id: 'https://cdramabinge.com/id',
         'x-default': 'https://cdramabinge.com/en',
       },
     },

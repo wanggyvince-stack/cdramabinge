@@ -41,7 +41,7 @@ export async function generateMetadata({
   const canonicalUrl = `https://cdramabinge.com/${locale}/actor/${slug}`;
 
   return {
-    title: `${name} - Chinese Dramas, Roles & Filmography | CDramaBinge`,
+    title: `${name} - Chinese Dramas, Roles & Filmography`,
     description: bioText.slice(0, 160),
     alternates: {
       canonical: canonicalUrl,
@@ -49,11 +49,12 @@ export async function generateMetadata({
         en: `https://cdramabinge.com/en/actor/${slug}`,
         vi: `https://cdramabinge.com/vi/actor/${slug}`,
         th: `https://cdramabinge.com/th/actor/${slug}`,
+        id: `https://cdramabinge.com/id/actor/${slug}`,
         'x-default': `https://cdramabinge.com/en/actor/${slug}`,
       },
     },
     openGraph: {
-      title: `${name} - Chinese Dramas, Roles & Filmography | CDramaBinge`,
+      title: `${name} - Chinese Dramas, Roles & Filmography`,
       description: bioText.slice(0, 160),
       url: canonicalUrl,
       type: 'profile',

@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import '@/app/globals.css';
+import LocaleSuggestion from '@/components/LocaleSuggestion';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
       en: '/en',
       vi: '/vi',
       th: '/th',
+      id: '/id',
       'x-default': '/en',
     },
   },
@@ -154,6 +156,7 @@ export default async function LocaleLayout({
                 {locale === 'en' && 'Your guide to Chinese dramas'}
                 {locale === 'vi' && 'Cẩm nang phim Hoa của bạn'}
                 {locale === 'th' && 'คู่มือซีรีส์จีนของคุณ'}
+                {locale === 'id' && 'Panduan drama China Anda'}
               </p>
               <p className="text-xs text-ink-5 mt-4">
                 © 2026 CDramaBinge. Made with ♥ for C-drama fans.
@@ -161,6 +164,7 @@ export default async function LocaleLayout({
             </div>
           </footer>
         </NextIntlClientProvider>
+        <LocaleSuggestion />
       </body>
     </html>
   );

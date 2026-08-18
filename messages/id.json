@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "browse": "Jelajahi",
+    "actors": "Pemeran",
+    "quiz": "Kuis",
+    "search": "Cari drama China...",
+    "searchPlaceholder": "Cari berdasarkan judul, pemeran, atau genre..."
+  },
+  "footer": {
+    "tagline": "Panduan drama China Anda",
+    "about": "Tentang",
+    "privacy": "Privasi",
+    "terms": "Ketentuan",
+    "contact": "Kontak",
+    "copyright": "© 2026 CDramaBinge. Dibuat dengan ♥ untuk penggemar drama China."
+  },
+  "home": {
+    "heroTrending": "Sedang Trending",
+    "vibeTitle": "Temukan Berdasarkan Mood",
+    "vibeSubtitle": "Setiap mood membuka dunia yang berbeda",
+    "quizCta": "Temukan tipe jiwa drama China-mu →",
+    "editorsPicks": "Pilihan Editor",
+    "justPremiered": "Baru Tayang",
+    "browseMood": "Berdasarkan Mood",
+    "browseGenre": "Berdasarkan Genre"
+  },
+  "mood": {
+    "wanna_cry": "Mengharukan",
+    "light_fun": "Ringan",
+    "intense": "Tegangan",
+    "romantic": "Romantis",
+    "mindbending": "Misterius",
+    "spooky": "Mencekam",
+    "empowering": "Inspiratif",
+    "aesthetic": "Estetik"
+  },
+  "genre": {
+    "romance": "Romantis",
+    "historical": "Sejarah",
+    "fantasy": "Fantasi",
+    "wuxia": "Wuxia",
+    "xianxia": "Xianxia",
+    "modern": "Modern",
+    "thriller": "Thriller",
+    "comedy": "Komedi",
+    "drama": "Drama",
+    "action": "Aksi",
+    "mystery": "Misteri",
+    "sci_fi": "Sci-Fi",
+    "youth": "Remaja",
+    "crime": "Kriminal"
+  },
+  "drama": {
+    "overview": "Sinopsis",
+    "cast": "Pemeran",
+    "whereToWatch": "Tonton di mana",
+    "similar": "Jika suka ini, coba...",
+    "episodes": "Episode",
+    "rating": "Nilai",
+    "year": "Tahun",
+    "status": "Status",
+    "genres": "Genre",
+    "faq": "FAQ"
+  },
+  "quiz": {
+    "start": "Mulai Kuis",
+    "next": "Berikutnya",
+    "result": "Hasil",
+    "share": "Bagikan",
+    "retake": "Ulangi"
+  },
+  "seo": {
+    "siteName": "CDramaBinge",
+    "description": "Panduan lengkap drama China. Rekomendasi AI, penjelajahan berdasarkan mood, dan ulasan mendalam."
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "notFound": "Tidak ditemukan",
+    "backHome": "Kembali ke Beranda",
+    "viewAll": "Lihat Semua",
+    "share": "Bagikan"
+  },
+  "Quiz": {
+    "title": "Tipe Jiwa Drama China-mu",
+    "subtitle": "Jawab 7 pertanyaan untuk menemukan gaya menonton dramamu",
+    "startButton": "Mulai Kuis",
+    "question": "Pertanyaan {n} dari 7",
+    "yourResult": "Hasil Kamu",
+    "shareResult": "Bagikan Hasil",
+    "retake": "Ulangi Kuis",
+    "recommendations": "Drama yang Akan Kamu Suka",
+    "q1": "Apa yang pertama kali menarikmu ke sebuah drama?",
+    "q2": "Malam Jumat. Bagaimana kamu menonton?",
+    "q3": "Momen drama mana yang paling menyentuh?",
+    "q4": "Pilih judul drama yang menyentuh jiwamu:",
+    "q5": "Akhir ideal dramamu adalah:",
+    "q6": "Jika kamu menghilang seminggu, kamu akan:",
+    "q7": "Kamu menemukan buku rahasia berisi rekomendasi drama. Catatan mana yang paling membuatmu semangat?"
+  }
+}

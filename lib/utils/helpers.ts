@@ -264,7 +264,7 @@ export async function fetchTmdbLocalization(
   if (!TMDB_API_KEY) return null;
 
   const TMDB_BASE = 'https://api.themoviedb.org/3';
-  const langMap: Record<string, string> = { vi: 'vi', th: 'th' };
+  const langMap: Record<string, string> = { vi: 'vi', th: 'th', id: 'id' };
   const tmdbLang = langMap[locale];
   if (!tmdbLang) return null;
 
