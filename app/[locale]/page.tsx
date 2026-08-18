@@ -10,6 +10,7 @@ import { inArray } from 'drizzle-orm';
 import HeroCarousel from '@/components/HeroCarousel';
 import DramaCard from '@/components/DramaCard';
 import MoodDiscoverySection from '@/components/MoodDiscoverySection';
+import ArchetypeCard from '@/components/ArchetypeCard';
 import EditorialComment from '@/components/EditorialComment';
 import {
   getLocalizedText,
@@ -202,19 +203,23 @@ export default async function HomePage() {
       };
     });
 
-  // Build mood → drama info mapping for the mood engine
-  const moodDramaMap: Record<string, Array<{ slug: string; title: string; posterUrl: string | null }>> = {};
+  // Build mood → drama info mapping for the mood engine (grid preview)
+  const moodDramaMap: Record<string, Array<{ slug: string; title: string; posterUrl: string | null; rating: number | null }>> = {};
+  const moodTotalCounts: Record<string, number> = {};
   for (const mood of ALL_MOODS) {
-    moodDramaMap[mood] = allDramas
-      .filter((d) => {
-        const tags = parseJsonArray<string>(d.moodTags);
-        return tags.includes(mood);
-      })
-      .slice(0, 10)
+    const moodDramas = allDramas.filter((d) => {
+      const tags = parseJsonArray<string>(d.moodTags);
+      return tags.includes(mood);
+    });
+    moodTotalCounts[mood] = moodDramas.length;
+    moodDramaMap[mood] = moodDramas
+      .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+      .slice(0, 6)
       .map((d) => ({
         slug: d.slug,
         title: getLocalizedText(d.titlesJson, locale, d.originalTitle),
         posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w342') : null,
+        rating: d.rating || null,
       }));
   }
 
@@ -255,43 +260,100 @@ export default async function HomePage() {
               aesthetic: t('mood.aesthetic'),
             }}
             dramaMap={moodDramaMap}
+            totalCounts={moodTotalCounts}
             locale={locale}
           />
         </section>
 
         {/* ═══════════════════════════════════════
-            ③ Soul Type Quiz CTA — 灵魂测试入口
+            ③ Soul Type Quiz CTA — 灵魂测试入口（互动卡片式）
             ═══════════════════════════════════════ */}
         <section className="py-12 md:py-16">
-          <div className="relative w-full rounded-song overflow-hidden bg-gradient-to-br from-zhusha/8 via-sujuan to-zhusha/5 border border-ivory-border p-10 md:p-14 text-center">
-            {/* Decorative crackle texture */}
-            <div className="absolute inset-0 crackle-bg opacity-20" />
-
-            <div className="relative z-10">
-              {/* Decorative seal */}
-              <div className="mx-auto w-14 h-14 rounded-song bg-zhusha/10 border border-zhusha/30 flex items-center justify-center mb-6">
-                <span className="font-display text-2xl text-zhusha">?</span>
+          <div
+            className="relative w-full rounded-xl overflow-hidden border"
+            style={{ backgroundColor: '#121318', borderColor: 'rgba(100,100,100,0.2)' }}
+          >
+            <div className="flex flex-col md:flex-row">
+              {/* Left 40%: Title + Copy + CTA */}
+              <div className="w-full md:w-[40%] p-8 md:p-10 flex flex-col justify-center">
+                <h2 className="font-display text-2xl md:text-3xl font-bold tracking-wider mb-3" style={{ color: '#e8e0d0' }}>
+                  {locale === 'en' && 'Discover Your C-drama Soul Type'}
+                  {locale === 'vi' && 'Khám phá linh hồn phim Hoa của bạn'}
+                  {locale === 'th' && 'ค้นพบประเภทจิตวิญญาณซีรีส์จีนของคุณ'}
+                </h2>
+                <p className="text-sm md:text-base mb-6 leading-relaxed" style={{ color: '#9a9a9a' }}>
+                  {locale === 'en' && 'Are you a Hopeless Romantic or a Mind Bender? Take our 2-minute quiz to find your drama-watching archetype.'}
+                  {locale === 'vi' && 'Bạn là người Mơ Mộng hay Phân Tích? Làm bài trắc nghiệm 2 phút để khám phá phong cách xem phim.'}
+                  {locale === 'th' && 'คุณเป็นสายโรแมนติกหรือนักวิเคราะห์? ทำแบบทดสอบ 2 นาทีเพื่อค้นพบสไตล์การดูซีรีส์'}
+                </p>
+                <Link
+                  href={`/${locale}/quiz`}
+                  className="inline-block w-fit px-7 py-3 font-display text-sm tracking-wide rounded-lg transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+                  style={{
+                    backgroundColor: '#d4a853',
+                    color: '#1a1a1a',
+                    boxShadow: '0 4px 14px rgba(212,168,83,0.3)',
+                  }}
+                >
+                  {locale === 'en' && 'Start the Quiz →'}
+                  {locale === 'vi' && 'Bắt đầu ngay →'}
+                  {locale === 'th' && 'เริ่มทำควิซ →'}
+                </Link>
+                <p className="mt-4 text-xs" style={{ color: '#666' }}>
+                  {locale === 'en' && 'Join 523 drama fans who discovered their type'}
+                  {locale === 'vi' && 'Tham gia cùng 523 người hâm mộ đã khám phá'}
+                  {locale === 'th' && 'เข้าร่วมกับแฟนซีรีส์ 523 คน'}
+                </p>
               </div>
 
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-ink-1 tracking-wider mb-3">
-                {locale === 'en' && 'Discover Your C-drama Soul Type'}
-                {locale === 'vi' && 'Khám phá linh hồn phim Hoa của bạn'}
-                {locale === 'th' && 'ค้นพบประเภทจิตวิญญาณซีรีส์จีนของคุณ'}
-              </h2>
-              <p className="text-sm md:text-base text-ink-4 mb-8 max-w-md mx-auto">
-                {locale === 'en' && 'Take our 7-question quiz to find your drama-watching archetype'}
-                {locale === 'vi' && 'Trả lời 7 câu hỏi để khám phá phong cách xem phim của bạn'}
-                {locale === 'th' && 'ตอบ 7 คำถามเพื่อค้นพบสไตล์การดูซีรีส์ของคุณ'}
-              </p>
-
-              <Link
-                href={`/${locale}/quiz`}
-                className="inline-block px-8 py-3 bg-zhusha text-white font-display text-base tracking-wide rounded-song hover:bg-zhusha/90 transition-all duration-song hover:scale-105 hover:-translate-y-0.5 shadow-md shadow-zhusha/15"
-              >
-                {locale === 'en' && 'Start the Quiz'}
-                {locale === 'vi' && 'Bắt đầu ngay'}
-                {locale === 'th' && 'เริ่มทำควิซ'}
-              </Link>
+              {/* Right 60%: 4 Archetype cards (2×2) */}
+              <div className="w-full md:w-[60%] p-6 md:p-8">
+                <div className="grid grid-cols-2 gap-3 md:gap-4">
+                  {/* The Hopeless Romantic */}
+                  <ArchetypeCard
+                    emoji="💕"
+                    title={locale === 'en' ? 'The Hopeless Romantic' : locale === 'vi' ? 'Kẻ Mộng Mơ' : 'สายโรแมนติก'}
+                    description={locale === 'en' ? 'You watch for the love stories' : locale === 'vi' ? 'Bạn xem vì chuyện tình' : 'คุณดูเพื่อเรื่องราวความรัก'}
+                    bgColor="rgba(232,160,176,0.12)"
+                    borderColor="rgba(232,160,176,0.25)"
+                    titleColor="#e8a0b0"
+                    descColor="#b08a8a"
+                  />
+                  {/* The Mind Bender */}
+                  <ArchetypeCard
+                    emoji="🧩"
+                    title={locale === 'en' ? 'The Mind Bender' : locale === 'vi' ? 'Nhà Phân Tích' : 'นักวิเคราะห์'}
+                    description={locale === 'en' ? 'You need plot twists to stay engaged' : locale === 'vi' ? 'Bạn cần plot twist để cuốn hút' : 'คุณต้องการพล็อตหักมุม'}
+                    bgColor="rgba(192,168,216,0.12)"
+                    borderColor="rgba(192,168,216,0.25)"
+                    titleColor="#c0a8d8"
+                    descColor="#9a8aaa"
+                  />
+                  {/* The Emotional Wreck */}
+                  <ArchetypeCard
+                    emoji="😭"
+                    title={locale === 'en' ? 'The Emotional Wreck' : locale === 'vi' ? 'Trái Tim Dễ Tổn Thương' : 'สายซึ้งน้ำตาไหล'}
+                    description={locale === 'en' ? 'You cry at least once per drama' : locale === 'vi' ? 'Bạn khóc ít nhất 1 lần mỗi phim' : 'คุณร้องไห้ทุกเรื่อง'}
+                    bgColor="rgba(160,200,216,0.12)"
+                    borderColor="rgba(160,200,216,0.25)"
+                    titleColor="#a0c8d8"
+                    descColor="#8aa0aa"
+                  />
+                  {/* The Thrill Seeker */}
+                  <ArchetypeCard
+                    emoji="⚡"
+                    title={locale === 'en' ? 'The Thrill Seeker' : locale === 'vi' ? 'Kẻ Săn Cảm Giác Mạnh' : 'สายตื่นเต้น'}
+                    description={locale === 'en' ? 'You watch dramas like movies — no pausing' : locale === 'vi' ? 'Bạn xem phim như xem điện ảnh' : 'คุณดูซีรีส์เหมือนดูหนัง'}
+                    bgColor="rgba(216,160,200,0.12)"
+                    borderColor="rgba(216,160,200,0.25)"
+                    titleColor="#d8a0c8"
+                    descColor="#aa8a9a"
+                  />
+                </div>
+                <p className="text-center text-xs mt-4" style={{ color: '#555' }}>
+                  {locale === 'en' && 'Take the quiz to see yours →' : locale === 'vi' && 'Làm bài trắc nghiệm để xem kết quả →' : 'ทำแบบทดสอบเพื่อดูผล →'}
+                </p>
+              </div>
             </div>
           </div>
         </section>
