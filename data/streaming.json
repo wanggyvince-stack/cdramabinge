@@ -301,14 +301,14 @@
     "platforms": [
       {
         "name": "Netflix",
-        "url": "https://www.netflix.com",
+        "url": "https://www.netflix.com/title/81956912",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/v/v_show/id_XNjQwMTk3MzI2MA==.html",
         "regions": [
           "global"
         ]
@@ -319,14 +319,21 @@
     "platforms": [
       {
         "name": "Netflix",
-        "url": "https://www.netflix.com",
+        "url": "https://www.netflix.com/title/81900131",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/v/v_show/id_XNjQwMDc1NjIyNA==.html",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40573c-the-double",
         "regions": [
           "global"
         ]
@@ -337,7 +344,7 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/36373c-love-o2o",
         "regions": [
           "global"
         ]
@@ -348,21 +355,21 @@
     "platforms": [
       {
         "name": "Netflix",
-        "url": "https://www.netflix.com",
+        "url": "https://www.netflix.com/title/81566868",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/37358c-falling-into-your-smile",
         "regions": [
           "global"
         ]
       },
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/play/2knhnaakii18oxj/q0039ns0ou2",
         "regions": [
           "global"
         ]
@@ -373,14 +380,14 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/40668c-are-you-the-one",
         "regions": [
           "global"
         ]
       },
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/are-you-the-one%20柳舟记",
         "regions": [
           "global"
         ]
@@ -391,7 +398,14 @@
     "platforms": [
       {
         "name": "Netflix",
-        "url": "https://www.netflix.com",
+        "url": "https://www.netflix.com/search?q=Perfect+Match+五福临门",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Mango TV",
+        "url": "https://www.mgtv.com/search?keyword=五福临门",
         "regions": [
           "global"
         ]
@@ -402,14 +416,14 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/40049c-lost-you-forever",
         "regions": [
           "global"
         ]
       },
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/lost-you-forever",
         "regions": [
           "global"
         ]
@@ -420,7 +434,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/album/new-life-begins-2022-xre41bur79",
         "regions": [
           "global"
         ]
@@ -431,7 +445,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/the-best-thing%20爱你%202025",
         "regions": [
           "global"
         ]
@@ -442,14 +456,14 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/the-tale-of-rose",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/40351c-the-tale-of-rose",
         "regions": [
           "global"
         ]
@@ -459,8 +473,8 @@
   "the-rise-of-ning": {
     "platforms": [
       {
-        "name": "Viki",
-        "url": "https://www.viki.com",
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/the+rise+of+ning%20锦月如歌",
         "regions": [
           "global"
         ]
@@ -470,8 +484,22 @@
   "kill-me-love-me": {
     "platforms": [
       {
+        "name": "Netflix",
+        "url": "https://www.netflix.com/title/81954820",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40941c-kill-me-love-me",
+        "regions": [
+          "global"
+        ]
+      },
+      {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=kill+me+love+me+春花焰",
         "regions": [
           "global"
         ]
@@ -482,14 +510,14 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/36880c-go-ahead",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Mango TV",
-        "url": "https://www.mgtv.com",
+        "url": "https://www.mgtv.com/search?keyword=以家人之名",
         "regions": [
           "global"
         ]
@@ -500,14 +528,14 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/a-love-so-beautiful",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/35687c-a-love-so-beautiful",
         "regions": [
           "global"
         ]
@@ -518,7 +546,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/bright-eyes-in-the-dark%20暗中之眼",
         "regions": [
           "global"
         ]
@@ -529,7 +557,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=in+blossom+惜花芷",
         "regions": [
           "global"
         ]
@@ -540,7 +568,7 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/brocade-odyssey",
         "regions": [
           "global"
         ]
@@ -551,7 +579,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=blossoms+in+adversity+惜花芷",
         "regions": [
           "global"
         ]
@@ -562,14 +590,14 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/39052c-lighter-and-princess",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=lighter+and+princess+打火机与公主裙",
         "regions": [
           "global"
         ]
@@ -580,7 +608,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/under-the-skin%20猎罪图鉴",
         "regions": [
           "global"
         ]
@@ -591,7 +619,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=day+of+change+光阴之外",
         "regions": [
           "global"
         ]
@@ -602,7 +630,7 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/our-interpreter",
         "regions": [
           "global"
         ]
@@ -613,7 +641,7 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com",
+        "url": "https://www.viki.com/tv/40449c-hello-mr-gu",
         "regions": [
           "global"
         ]
@@ -623,8 +651,8 @@
   "the-happy-seven-in-changan": {
     "platforms": [
       {
-        "name": "TBD",
-        "url": "",
+        "name": "iQIYI",
+        "url": "https://www.iq.com/search/the+happy+seven+in+changan%20长安二十四计",
         "regions": [
           "global"
         ]
@@ -635,14 +663,14 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/you-are-my-glory",
         "regions": [
           "global"
         ]
       },
       {
-        "name": "WeTV",
-        "url": "https://wetv.vip",
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/37754c-you-are-my-glory",
         "regions": [
           "global"
         ]
@@ -653,7 +681,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/the-lost-tomb-2%20盗墓笔记2",
         "regions": [
           "global"
         ]
@@ -664,7 +692,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/arsenal+military+academy%20烈火军校",
         "regions": [
           "global"
         ]
@@ -674,8 +702,15 @@
   "love-and-redemption": {
     "platforms": [
       {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/36961c-love-and-redemption",
+        "regions": [
+          "global"
+        ]
+      },
+      {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=love+and+redemption+琉璃",
         "regions": [
           "global"
         ]
@@ -686,7 +721,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/my-journey-to-you%20云之羽",
         "regions": [
           "global"
         ]
@@ -696,8 +731,8 @@
   "the-princess-royal": {
     "platforms": [
       {
-        "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "name": "Youku",
+        "url": "https://www.youku.tv/search?q=the+princess+royal%20度华年",
         "regions": [
           "global"
         ]
@@ -708,7 +743,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "url": "https://www.iq.com/search/moonlight-mystique%20白月梵星",
         "regions": [
           "global"
         ]
@@ -718,8 +753,8 @@
   "love-game-in-eastern-fantasy": {
     "platforms": [
       {
-        "name": "iQIYI",
-        "url": "https://www.iq.com",
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/love-game-in-eastern-fantasy",
         "regions": [
           "global"
         ]
@@ -730,7 +765,7 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/en/play/the-prisoner-of-beauty",
         "regions": [
           "global"
         ]
@@ -741,7 +776,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.com",
+        "url": "https://www.youku.tv/search?q=fated+hearts+锦绣安宁",
         "regions": [
           "global"
         ]
@@ -752,7 +787,14 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip",
+        "url": "https://wetv.vip/play/put-your-head-on-my-shoulder",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/36617c-put-your-head-on-my-shoulder",
         "regions": [
           "global"
         ]
