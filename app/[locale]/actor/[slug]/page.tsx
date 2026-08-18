@@ -97,7 +97,7 @@ export default async function ActorDetailPage({
         actorDramas.push({
           slug: drama.slug,
           title: getLocalizedText(drama.titlesJson, locale, drama.originalTitle),
-          posterUrl: tmdbImage(drama.posterUrl, 'w342'),
+          posterUrl: tmdbImage(drama.posterUrl, 'w500'),
           year: drama.year,
           moods: parseJsonArray<string>(drama.moodTags),
           character,

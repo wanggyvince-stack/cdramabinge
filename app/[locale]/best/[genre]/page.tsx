@@ -294,7 +294,7 @@ export default async function BestGenrePage({
                   <div className="flex-shrink-0 w-16 md:w-20 aspect-[9/14] rounded-song overflow-hidden">
                     {drama.posterUrl ? (
                       <img
-                        src={tmdbImage(drama.posterUrl, 'w342')}
+                        src={tmdbImage(drama.posterUrl, 'w500')}
                         alt={title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"

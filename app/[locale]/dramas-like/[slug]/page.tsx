@@ -90,7 +90,7 @@ export default async function DramasLikePage({
           similarDramas.push({
             slug: similarDrama.slug,
             title: getLocalizedText(similarDrama.titlesJson, locale, similarDrama.originalTitle),
-            posterUrl: tmdbImage(similarDrama.posterUrl, 'w500'),
+            posterUrl: tmdbImage(similarDrama.posterUrl, 'w780'),
             reason: item.reason || '',
             score: item.score || 0,
             year: similarDrama.year,
@@ -137,7 +137,7 @@ export default async function DramasLikePage({
         similarDramas.push({
           slug: item.drama.slug,
           title: getLocalizedText(item.drama.titlesJson, locale, item.drama.originalTitle),
-          posterUrl: tmdbImage(item.drama.posterUrl, 'w500'),
+          posterUrl: tmdbImage(item.drama.posterUrl, 'w780'),
           reason: '',
           score: item.score,
           year: item.drama.year,

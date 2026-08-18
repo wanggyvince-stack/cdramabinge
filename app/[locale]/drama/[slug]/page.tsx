@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { notFound, redirect } from 'next/navigation';
+import Link from 'next/link';
 import { db } from '@/lib/db';
 import { dramas, actors } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
@@ -39,7 +40,7 @@ function buildOgUrl(type: string, title: string, desc: string, drama?: { posterU
   if (drama?.rating) ogUrl.searchParams.set('rating', String(drama.rating));
   if (drama?.year) ogUrl.searchParams.set('year', String(drama.year));
   if (drama?.posterUrl && !isPlaceholderPoster(drama.posterUrl)) {
-    ogUrl.searchParams.set('poster', tmdbImage(drama.posterUrl, 'w500'));
+    ogUrl.searchParams.set('poster', tmdbImage(drama.posterUrl, 'w780'));
   }
   return ogUrl.toString();
 }
@@ -174,7 +175,7 @@ export default async function DramaDetailPage({
           similarDramasResolved.push({
             slug: similarDrama.slug,
             title: getLocalizedText(similarDrama.titlesJson, locale, similarDrama.originalTitle),
-            posterUrl: tmdbImage(similarDrama.posterUrl, 'w342'),
+            posterUrl: tmdbImage(similarDrama.posterUrl, 'w500'),
             reason: item.reason || '',
           });
         }
@@ -273,7 +274,7 @@ export default async function DramaDetailPage({
   // Determine image URLs — use real URLs directly, or let client component fetch
   const posterIsPlaceholder = isPlaceholderPoster(drama.posterUrl);
   const backdropIsPlaceholder = isPlaceholderPoster(drama.backdropUrl);
-  const realPosterUrl = posterIsPlaceholder ? undefined : tmdbImage(drama.posterUrl, 'w500');
+  const realPosterUrl = posterIsPlaceholder ? undefined : tmdbImage(drama.posterUrl, 'w780');
   const realBackdropUrl = backdropIsPlaceholder ? undefined : tmdbImage(drama.backdropUrl, 'original');
 
   // FAQ items (generated from drama data)
@@ -523,8 +524,8 @@ export default async function DramaDetailPage({
           {castMembers.length > 0 ? (
             <div className="flex gap-4 horizontal-scroll song-scrollbar">
               {castMembers.map((actor) => (
-                <div key={actor.slug} className="flex-shrink-0 w-28 text-center">
-                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border border-ivory-border mb-2">
+                <Link key={actor.slug} href={`/${locale}/actor/${actor.slug}`} className="flex-shrink-0 w-28 text-center group">
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border border-ivory-border mb-2 group-hover:border-liuli-gold transition-colors">
                     {actor.photoUrl ? (
                       <img src={actor.photoUrl} alt={actor.name} className="w-full h-full object-cover" loading="lazy" />
                     ) : (
@@ -533,9 +534,9 @@ export default async function DramaDetailPage({
                       </div>
                     )}
                   </div>
-                  <p className="text-xs text-ink-1 font-medium truncate">{actor.name}</p>
+                  <p className="text-xs text-ink-1 font-medium truncate group-hover:text-liuli-gold transition-colors">{actor.name}</p>
                   {actor.character && <p className="text-xs text-ink-4 truncate">{actor.character}</p>}
-                </div>
+                </Link>
               ))}
             </div>
           ) : (

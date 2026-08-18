@@ -196,7 +196,7 @@ export default async function HomePage() {
       return {
         slug,
         title,
-        posterUrl: drama ? (tmdbImage(drama.posterUrl, 'w500') || null) : null,
+        posterUrl: drama ? (tmdbImage(drama.posterUrl, 'w780') || null) : null,
         comment: item.comment?.[locale] || item.comment?.en || '',
         year: drama?.year,
         moods: drama ? parseJsonArray(drama.moodTags) : [],
@@ -218,7 +218,7 @@ export default async function HomePage() {
       .map((d) => ({
         slug: d.slug,
         title: getLocalizedText(d.titlesJson, locale, d.originalTitle),
-        posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w342') : null,
+        posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w500') : null,
         rating: d.rating || null,
       }));
   }
@@ -424,7 +424,7 @@ export default async function HomePage() {
                   key={drama.slug}
                   slug={drama.slug}
                   title={title}
-                  posterUrl={tmdbImage(drama.posterUrl, 'w500') || null}
+                  posterUrl={tmdbImage(drama.posterUrl, 'w780') || null}
                   moods={moodTags.slice(0, 2)}
                   moodLabels={{
                     wanna_cry: t('mood.wanna_cry'),
@@ -458,7 +458,7 @@ export default async function HomePage() {
                     key={drama.slug}
                     slug={drama.slug}
                     title={title}
-                    posterUrl={tmdbImage(drama.posterUrl, 'w500') || null}
+                    posterUrl={tmdbImage(drama.posterUrl, 'w780') || null}
                     year={drama.year}
                     locale={locale}
                   />

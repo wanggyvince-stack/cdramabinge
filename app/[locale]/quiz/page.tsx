@@ -29,7 +29,7 @@ async function getDramasBySlugs(slugs: string[], locale: string) {
       map[d.slug] = {
         slug: d.slug,
         title,
-        posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w500') : null,
+        posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w780') : null,
         year: d.year || null,
       };
     }
