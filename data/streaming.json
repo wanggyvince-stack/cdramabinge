@@ -510,14 +510,14 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com/tv/36880c-go-ahead",
+        "url": "https://www.viki.com/tv/36770c-go-ahead",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Mango TV",
-        "url": "https://www.mgtv.com/search?keyword=以家人之名",
+        "url": "https://www.mgtv.com/h/333900/9762162.html",
         "regions": [
           "global"
         ]
@@ -528,7 +528,7 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip/en/play/a-love-so-beautiful",
+        "url": "https://wetv.vip/en/play/1twrzqdqktvdgu8",
         "regions": [
           "global"
         ]
@@ -546,7 +546,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com/search/bright-eyes-in-the-dark%20暗中之眼",
+        "url": "https://www.iq.com/album/他从火光中走来-2023-2fu3gdo9thg",
         "regions": [
           "global"
         ]
@@ -557,7 +557,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.tv/search?q=in+blossom+惜花芷",
+        "url": "https://v.youku.com/v_nextstage/id_ffaac0420f0042b9b1e1.html",
         "regions": [
           "global"
         ]
@@ -567,8 +567,8 @@
   "brocade-odyssey": {
     "platforms": [
       {
-        "name": "WeTV",
-        "url": "https://wetv.vip/en/play/brocade-odyssey",
+        "name": "Youku",
+        "url": "https://www.youku.com/show_page/id_dbaec98a534746888182.html",
         "regions": [
           "global"
         ]
@@ -579,7 +579,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.tv/search?q=blossoms+in+adversity+惜花芷",
+        "url": "https://v.youku.com/v_nextstage/id_aecde7cd84c94f36b7e7.html",
         "regions": [
           "global"
         ]
@@ -590,14 +590,14 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com/tv/39052c-lighter-and-princess",
+        "url": "https://www.viki.com/tv/38726c-lighter-and-princess",
         "regions": [
           "global"
         ]
       },
       {
         "name": "Youku",
-        "url": "https://www.youku.tv/search?q=lighter+and+princess+打火机与公主裙",
+        "url": "https://v.youku.com/v_show/id_XNTkxMjA2Nzk2MA==.html",
         "regions": [
           "global"
         ]
@@ -619,7 +619,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.tv/search?q=day+of+change+光阴之外",
+        "url": "https://v.youku.com/v_nextstage/id_zffdb0f1420364ebf8c69.html",
         "regions": [
           "global"
         ]
@@ -629,8 +629,8 @@
   "our-interpreter": {
     "platforms": [
       {
-        "name": "WeTV",
-        "url": "https://wetv.vip/en/play/our-interpreter",
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40353c-our-interpreter",
         "regions": [
           "global"
         ]
@@ -641,7 +641,7 @@
     "platforms": [
       {
         "name": "Viki",
-        "url": "https://www.viki.com/tv/40449c-hello-mr-gu",
+        "url": "https://www.viki.com/tv/37853c-hello-mr-gu",
         "regions": [
           "global"
         ]
@@ -651,8 +651,15 @@
   "the-happy-seven-in-changan": {
     "platforms": [
       {
-        "name": "iQIYI",
-        "url": "https://www.iq.com/search/the+happy+seven+in+changan%20长安二十四计",
+        "name": "WeTV",
+        "url": "https://wetv.vip/en/play/fladjtl2rm64w6z",
+        "regions": [
+          "global"
+        ]
+      },
+      {
+        "name": "Viki",
+        "url": "https://www.viki.com/tv/40447c-the-happy-seven-in-changan",
         "regions": [
           "global"
         ]
@@ -663,7 +670,7 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip/en/play/you-are-my-glory",
+        "url": "https://wetv.vip/zh-cn/play/u37kgfnfzs73kiu",
         "regions": [
           "global"
         ]
@@ -680,8 +687,8 @@
   "the-lost-tomb-2": {
     "platforms": [
       {
-        "name": "iQIYI",
-        "url": "https://www.iq.com/search/the-lost-tomb-2%20盗墓笔记2",
+        "name": "Tencent Video",
+        "url": "https://v.qq.com/x/cover/mzc00200n3ofyxa.html",
         "regions": [
           "global"
         ]
@@ -692,7 +699,7 @@
     "platforms": [
       {
         "name": "iQIYI",
-        "url": "https://www.iq.com/search/arsenal+military+academy%20烈火军校",
+        "url": "https://www.iq.com/play/arsenal-military-academy-episode-1-19rru5u8so",
         "regions": [
           "global"
         ]
@@ -776,7 +783,7 @@
     "platforms": [
       {
         "name": "Youku",
-        "url": "https://www.youku.tv/search?q=fated+hearts+锦绣安宁",
+        "url": "https://v.youku.com/v_nextstage/id_fbce17caf8bc45f99dd6.html",
         "regions": [
           "global"
         ]
@@ -787,7 +794,7 @@
     "platforms": [
       {
         "name": "WeTV",
-        "url": "https://wetv.vip/play/put-your-head-on-my-shoulder",
+        "url": "https://wetv.vip/en/play/4cpllzcg2i3hn1a-Put-Your-Head-On-My-Shoulder",
         "regions": [
           "global"
         ]
