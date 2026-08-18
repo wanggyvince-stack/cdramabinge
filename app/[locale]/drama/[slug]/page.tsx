@@ -235,9 +235,21 @@ export default async function DramaDetailPage({
     // Silently fail — cast section will show placeholder
   }
 
-  // Fetch trailer from TMDB videos API
+  // Fetch trailer — priority: static JSON > TMDB API
   let trailerKey: string | null = null;
-  if (drama.tmdbId) {
+  
+  // 1. Check static trailers.json first (manually curated)
+  try {
+    const trailersData = await import('@/data/trailers.json').then(m => m.default as Record<string, string>);
+    if (trailersData[normalizedSlug]) {
+      trailerKey = trailersData[normalizedSlug];
+    }
+  } catch {
+    // trailers.json may not exist yet
+  }
+  
+  // 2. Fallback to TMDB videos API
+  if (!trailerKey && drama.tmdbId) {
     try {
       const videosRes = await fetch(
         `https://api.themoviedb.org/3/tv/${drama.tmdbId}/videos?language=en-US`,
@@ -254,7 +266,7 @@ export default async function DramaDetailPage({
         videos.find((v: any) => v.site === 'YouTube');
       if (trailer) trailerKey = trailer.key;
     } catch {
-      // Silently ignore — keep "coming soon" placeholder
+      // Silently ignore
     }
   }
 
@@ -396,10 +408,10 @@ export default async function DramaDetailPage({
           Main Content
           ═══════════════════════════════════════ */}
       <div className="max-w-7xl mx-auto px-6">
-        {/* Trailer */}
+        {/* Trailer — only shown when trailer is available */}
+        {trailerKey && (
         <section className="py-8">
           <div className="max-w-3xl mx-auto">
-            {trailerKey ? (
               <div className="relative w-full aspect-video rounded-song overflow-hidden bg-dingyao border border-ivory-border">
                 <iframe
                   src={`https://www.youtube.com/embed/${trailerKey}`}
@@ -408,23 +420,9 @@ export default async function DramaDetailPage({
                   allow="autoplay; encrypted-media"
                 />
               </div>
-            ) : (
-              <div className="w-full aspect-video bg-dingyao rounded-song border border-ivory-border flex items-center justify-center">
-                <div className="text-center">
-                  <svg className="w-10 h-10 mx-auto mb-2 text-ink-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="23 7 16 12 23 17 23 7" />
-                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                  </svg>
-                  <p className="text-ink-4 text-sm">
-                    {locale === 'en' && 'Trailer coming soon'}
-                    {locale === 'vi' && 'Sắp có trailer'}
-                    {locale === 'th' && 'ตัวอย่างเร็วๆ นี้'}
-                  </p>
-                </div>
-              </div>
-            )}
           </div>
         </section>
+        )}
 
         {/* Editorial comment — "30秒追剧指南" */}
         <section className="py-6">
