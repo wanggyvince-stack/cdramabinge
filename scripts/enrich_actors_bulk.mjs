@@ -22,7 +22,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DB_PATH = `file:${path.resolve(__dirname, '..', 'data', 'cdrama.db')}`;
 
-const TMDB_API_KEY = '9a7c89408067f29c28c54ec4438ebd17';
+const TMDB_API_KEY = process.env.TMDB_API_KEY || '9a7c89408067f29c28c54ec4438ebd17';
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const TMDB_IMG = 'https://image.tmdb.org/t/p';
 
