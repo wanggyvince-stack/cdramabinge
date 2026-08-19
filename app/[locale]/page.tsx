@@ -246,6 +246,27 @@ export default async function HomePage() {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* ═══════════════════════════════════════
+            ①-b Starter Pack Entry — 新手入门入口
+            ═══════════════════════════════════════ */}
+        <section className="pt-10 pb-2">
+          <div className="text-center">
+            <Link
+              href={`/${locale}/starter-pack`}
+              className="inline-flex items-center gap-2 text-sm text-ink-4 hover:text-ruyao transition-colors duration-song"
+            >
+              <span>✨</span>
+              <span>
+                {locale === 'vi' ? 'Mới xem phim Hoa? Xem Starter Pack'
+                  : locale === 'th' ? 'ใหม่กับซีรีส์จีน? ดู Starter Pack'
+                  : locale === 'id' ? 'Baru nonton drama Cina? Cek Starter Pack'
+                  : 'New to C-dramas? Check our Starter Pack'}
+              </span>
+              <span>→</span>
+            </Link>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════
             ② Mood Discovery Engine — 情绪发现引擎
             ═══════════════════════════════════════ */}
         <section className="py-16 md:py-20">

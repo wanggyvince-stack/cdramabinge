@@ -93,6 +93,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
+  // ─── Starter Pack page (each locale) ───
+  for (const locale of LOCALES) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/starter-pack`,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${BASE_URL}/en/starter-pack`,
+          vi: `${BASE_URL}/vi/starter-pack`,
+          th: `${BASE_URL}/th/starter-pack`,
+          id: `${BASE_URL}/id/starter-pack`,
+          'x-default': `${BASE_URL}/en/starter-pack`,
+        },
+      },
+    });
+  }
+
   // ─── Best category pages ───
   for (const category of BEST_CATEGORIES) {
     for (const locale of LOCALES) {
