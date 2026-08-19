@@ -2,7 +2,9 @@ name: Enrich Actors Data
 
 on:
   workflow_dispatch:
-
+  schedule:
+    - cron: '0 3 1 * *'  # Monthly on 1st at 3:00 AM UTC
+    
 jobs:
   enrich-actors:
     runs-on: ubuntu-latest
