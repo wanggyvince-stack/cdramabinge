@@ -1,0 +1,42 @@
+name: Enrich Actors Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  enrich-actors:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run actor enrichment script
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: node scripts/enrich_actors_bulk.mjs
+      
+      - name: Check for changes
+        id: verify
+        run: |
+          git diff --quiet data/cdrama.db || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push changes
+        if: steps.verify.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cdrama.db
+          git commit -m "data: automated actor enrichment"
+          git push origin main
