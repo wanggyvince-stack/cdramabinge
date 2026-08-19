@@ -234,6 +234,16 @@ export default async function HomePage() {
         locale={locale}
       />
 
+      {/* Value Proposition Bar */}
+      <div className="text-center py-6 border-b border-ivory-border/30">
+        <p className="text-sm md:text-base text-ink-3 tracking-wide font-display px-6">
+          {locale === 'vi' ? 'Chọn phim theo tâm trạng — không cần biết tên, chỉ cần biết bạn muốn cảm thấy gì'
+            : locale === 'th' ? 'เลือกซีรีส์ตามอารมณ์ — ไม่ต้องรู้ชื่อ แค่รู้ว่าคุณอยากรู้สึกอะไร'
+            : locale === 'id' ? 'Pilih drama sesuai suasana hati — tidak perlu tahu judul, cukup tahu apa yang ingin kamu rasakan'
+            : "Don't know what to watch? Pick a mood, we'll pick your next obsession."}
+        </p>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6">
         {/* ═══════════════════════════════════════
             ② Mood Discovery Engine — 情绪发现引擎

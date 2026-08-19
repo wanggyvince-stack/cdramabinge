@@ -226,6 +226,7 @@ export default function QuizClient({ locale, dramasBySlug }: QuizClientProps) {
     const shareText = `I'm ${result.titleKey}! What's your C-drama soul type? Take the quiz on CDramaBinge`;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+    const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(shareUrl)}&description=${encodeURIComponent(shareText)}`;
 
     const recommendedDramas = result.dramaRecommendations
       .map((slug) => dramasBySlug[slug])
@@ -330,6 +331,15 @@ export default function QuizClient({ locale, dramasBySlug }: QuizClientProps) {
                 title="Share on Facebook"
               >
                 <span className="font-bold text-sm">f</span>
+              </a>
+              <a
+                href={pinterestUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-song border border-ivory-border flex items-center justify-center text-ink-4 hover:bg-red-600 hover:text-white transition-all duration-song"
+                title="Share on Pinterest"
+              >
+                <span className="font-bold text-sm">P</span>
               </a>
               <button
                 onClick={handleCopyLink}

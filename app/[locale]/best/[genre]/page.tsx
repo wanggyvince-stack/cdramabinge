@@ -135,6 +135,37 @@ const EDITORIAL_INTROS: Record<string, Record<string, string>> = {
 };
 
 // ────────────────────────────────────────
+// Editorial deep content for mood pages (English only for now)
+// ────────────────────────────────────────
+
+const EDITORIAL_DEEP: Record<string, Record<string, string>> = {
+  romantic: {
+    en: "## Why these C-dramas?\n\nWe picked these not just for their love stories, but for how they make you *feel*. From slow-burn campus romances to epic historical love affairs, each one delivers that butterflies-in-your-stomach moment. Our editors watched hundreds of romantic C-dramas — these are the ones that stayed with us long after the credits rolled.\n\n**New here?** Start with the highest-rated one. You can't go wrong.",
+  },
+  wanna_cry: {
+    en: "## Ready for a good cry?\n\nThese aren't just sad dramas — they're emotionally devastating in the best way. Family stories that hit close to home, romances that break your heart, and characters you'll mourn like real friends. Keep tissues nearby.\n\n**Warning:** Several of these have endings that will stay with you for weeks.",
+  },
+  intense: {
+    en: "## Edge-of-your-seat C-dramas\n\nIf you need plot twists, cliffhangers, and 'just one more episode' energy, you're in the right place. These are the dramas that make you forget you're watching subtitles. From courtroom thrillers to revenge epics — every episode ends on a hook.\n\n**Start with:** The highest-rated pick. It's the gateway drug.",
+  },
+  light_fun: {
+    en: "## Your comfort watch zone\n\nNo dark twists, no emotional devastation — just pure, feel-good entertainment. These C-dramas are perfect for rainy weekends, post-work wind-downs, or when you just need something light and charming.\n\n**Pro tip:** Pair with snacks and zero expectations. These are the dramas that surprise you.",
+  },
+  mindbending: {
+    en: "## For the plot-obsessed\n\nTime loops, parallel worlds, political chess games — these dramas demand your full attention. If you pause to check your phone, you'll miss something crucial. That's the point.\n\n**Start with:** Reset (only 15 episodes). It's the perfect entry point.",
+  },
+  spooky: {
+    en: "## Darkness awaits\n\nChinese horror and supernatural dramas are a unique beast — blending folklore, mythology, and genuine dread. These aren't your typical jump-scare fare; they build atmosphere and linger.\n\n**For the brave:** Start with the highest-rated and work your way down.",
+  },
+  empowering: {
+    en: "## Stories that lift you up\n\nThese dramas feature characters who rise against all odds — from forgotten daughters to empire builders. They'll make you want to stand up and conquer your own challenges.\n\n**Why we love these:** Every single one is based on real historical figures or inspired by true events.",
+  },
+  aesthetic: {
+    en: "## Visual poetry\n\nThese dramas are as much a feast for the eyes as they are for the heart. Stunning cinematography, breathtaking costumes, and locations that will make you book a flight to China. Sometimes the journey matters more than the destination.\n\n**Best watched:** On the biggest screen you have. These deserve it.",
+  },
+};
+
+// ────────────────────────────────────────
 // Params & Metadata
 // ────────────────────────────────────────
 
@@ -226,6 +257,8 @@ export default async function BestGenrePage({
 
   // Editorial intro
   const intro = EDITORIAL_INTROS[genre]?.[locale] || EDITORIAL_INTROS[genre]?.en || '';
+  // Editorial deep content (mood pages only, English for now)
+  const editorialDeep = isMood ? (EDITORIAL_DEEP[genre]?.en || '') : '';
   const displayTitle = isMood
     ? t(`mood.${genre}`)
     : t(`genre.${genre}`);
@@ -265,6 +298,15 @@ export default async function BestGenrePage({
             </p>
           )}
         </header>
+
+        {/* Editorial Deep Content */}
+        {editorialDeep && (
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="text-ink-2 text-sm md:text-base leading-relaxed whitespace-pre-line">
+              {editorialDeep}
+            </div>
+          </div>
+        )}
 
         <div className="crackle-divider mb-12" />
 
