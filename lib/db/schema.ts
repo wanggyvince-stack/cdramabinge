@@ -55,6 +55,18 @@ export const actors = sqliteTable('actors', {
   bioJson: text('bio_json'),            // {"en":"...", "vi":"...", "th":"..."}
   dramasJson: text('dramas_json'),      // JSON array of drama IDs/slugs
   collaborationsJson: text('collaborations_json'), // JSON of co-actors
+
+  // v9.1 TMDB Person enrichment
+  tmdbPersonId: integer('tmdb_person_id'),              // TMDB person ID
+  birthday: text('birthday'),                            // YYYY-MM-DD
+  deathday: text('deathday'),                            // if deceased
+  birthplace: text('birthplace'),                        // city/country
+  alsoKnownAs: text('also_known_as'),                    // JSON array of aliases
+  gender: integer('gender'),                             // 0=unknown, 1=female, 2=male
+  knownForDepartment: text('known_for_department'),      // "Acting" etc.
+  photosJson: text('photos_json'),                       // JSON array of photo URLs (up to 6)
+  fullFilmographyJson: text('full_filmography_json'),    // JSON array Top 30 by vote_count
+
   createdAt: text('created_at').default(sql`CURRENT_TIMESTAMP`),
   updatedAt: text('updated_at').default(sql`CURRENT_TIMESTAMP`),
 });
