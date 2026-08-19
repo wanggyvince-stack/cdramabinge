@@ -254,7 +254,6 @@ export default async function HomePage() {
               href={`/${locale}/starter-pack`}
               className="inline-flex items-center gap-2 text-sm text-ink-4 hover:text-ruyao transition-colors duration-song"
             >
-              <span>✨</span>
               <span>
                 {locale === 'vi' ? 'Mới xem phim Hoa? Xem Starter Pack'
                   : locale === 'th' ? 'ใหม่กับซีรีส์จีน? ดู Starter Pack'
