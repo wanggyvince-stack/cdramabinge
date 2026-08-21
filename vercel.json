@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/03a92e0080b24cfaa16c8d475ba543ed.txt",
+      "destination": "/api/indexnow?action=verify"
+    }
+  ]
+}
