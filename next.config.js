@@ -18,6 +18,7 @@ const nextConfig = {
       },
     ],
   },
+  // Remove invalid rewrite - will handle IndexNow via middleware instead
 };
 
 module.exports = withNextIntl(nextConfig);

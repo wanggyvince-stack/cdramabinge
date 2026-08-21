@@ -6,9 +6,11 @@ const INDEXNOW_KEY = '03a92e0080b24cfaa16c8d475ba543ed';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Handle IndexNow key verification
-  // Match /key.txt or /key at the root level
-  if (pathname === `/${INDEXNOW_KEY}.txt` || pathname === `/${INDEXNOW_KEY}`) {
+  // Handle IndexNow key verification - must run before any route matching
+  // Match exactly /key.txt or /key at the root level (single segment)
+  const pathWithoutSlash = pathname.slice(1); // Remove leading slash
+  
+  if (pathWithoutSlash === `${INDEXNOW_KEY}.txt` || pathWithoutSlash === INDEXNOW_KEY) {
     return new NextResponse(INDEXNOW_KEY, {
       status: 200,
       headers: {
@@ -23,7 +25,13 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Only match root-level paths that look like IndexNow keys (hex strings)
-    '/((?!_next|api|en|vi|th|id|favicon|robots|sitemap).*)',
+    /*
+     * Match all paths except:
+     * - _next/static (static files)
+     * - _next/image (image optimization)
+     * - favicon.ico (favicon)
+     * - api routes (handled separately)
+     */
+    '/((?!_next/static|_next/image|favicon.ico|api/).*)',
   ],
 };
