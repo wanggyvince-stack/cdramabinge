@@ -2,29 +2,32 @@ import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { dramas } from '@/lib/db/schema';
 
-// IndexNow API endpoint for manual triggering
-// Usage: POST /api/indexnow?key=YOUR_INDEXNOW_KEY
-// Or: GET /api/indexnow?key=YOUR_INDEXNOW_KEY (for testing)
+// IndexNow API endpoint
+// GET /api/indexnow - for key verification (returns key)
+// POST /api/indexnow - for URL submission
 
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '';
+const INDEXNOW_KEY = '03a92e0080b24cfaa16c8d475ba543ed';
 const SITE_URL = 'https://cdramabinge.com';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const key = searchParams.get('key') || INDEXNOW_KEY;
+  const action = searchParams.get('action');
 
-  if (!key) {
-    return NextResponse.json(
-      { error: 'Missing INDEXNOW_KEY. Set it in environment variables or pass as ?key= parameter.' },
-      { status: 400 }
-    );
+  // If action=verify, return the key for verification
+  if (action === 'verify') {
+    return new Response(INDEXNOW_KEY, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+      },
+    });
   }
 
-  try {
-    // Collect all URLs to submit
-    const urls = await collectAllUrls();
+  // Otherwise, collect and submit URLs
+  const key = searchParams.get('key') || INDEXNOW_KEY;
 
-    // Submit to IndexNow
+  try {
+    const urls = await collectAllUrls();
     const result = await submitToIndexNow(urls, key);
 
     return NextResponse.json({
@@ -67,9 +70,6 @@ async function collectAllUrls(): Promise<string[]> {
     urls.push(`${SITE_URL}/vi/dramas-like/${slug}`);
     urls.push(`${SITE_URL}/th/dramas-like/${slug}`);
     urls.push(`${SITE_URL}/id/dramas-like/${slug}`);
-
-    // Actor pages (all locales)
-    // Note: We'd need to query actors table too, but for now skip to keep it simple
   }
 
   // Best/mood pages (all locales)
@@ -90,11 +90,11 @@ async function collectAllUrls(): Promise<string[]> {
     urls.push(`${SITE_URL}/id/best/${genre}`);
   }
 
-  return [...new Set(urls)]; // Remove duplicates
+  return [...new Set(urls)];
 }
 
 async function submitToIndexNow(urls: string[], key: string) {
-  const response = await fetch('https://api.indexnow.org/indexnow', {
+  const response = await fetch('https://api.indexnow.org/IndexNow', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

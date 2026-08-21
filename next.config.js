@@ -18,7 +18,15 @@ const nextConfig = {
       },
     ],
   },
-  // Remove invalid rewrite - will handle IndexNow via middleware instead
+  async rewrites() {
+    return [
+      // IndexNow key verification - rewrite to API route
+      {
+        source: '/03a92e0080b24cfaa16c8d475ba543ed.txt',
+        destination: '/api/indexnow?action=verify',
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
