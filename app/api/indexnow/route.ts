@@ -90,7 +90,7 @@ async function collectAllUrls(): Promise<string[]> {
     urls.push(`${SITE_URL}/id/best/${genre}`);
   }
 
-  return [...new Set(urls)];
+  return Array.from(new Set(urls));
 }
 
 async function submitToIndexNow(urls: string[], key: string) {
