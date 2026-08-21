@@ -54,8 +54,8 @@ export async function generateMetadata({
     openGraph: {
       title: `${suffix} ${title}`,
       description: locale === 'en'
-        ? `Top 10 C-dramas similar to ${title}. AI-powered recommendations.`
-        : `10 C-dramas similar to ${title}. AI-powered recommendations.`,
+        ? `Looking for dramas like ${title}? 10 highly-rated C-dramas with similar mood & genre. Start your next binge on CDramaBinge.`
+        : `10 C-dramas similar to ${title}. Highly-rated recommendations on CDramaBinge.`,
       url: canonicalUrl,
       type: 'website',
       images: drama.posterUrl ? [{ url: tmdbImage(drama.posterUrl, 'w780') }] : [],
@@ -167,11 +167,49 @@ export default async function DramasLikePage({
     })),
   };
 
+  // FAQ Schema
+  const sourceGenres = parseJsonArray<string>(drama.genres);
+  const sourceMoodTags = parseJsonArray<string>(drama.moodTags);
+  const ratings = similarDramas.map(d => d.rating || 0).filter(r => r > 0);
+  const minRating = ratings.length > 0 ? Math.min(...ratings).toFixed(1) : '7.0';
+  const maxRating = ratings.length > 0 ? Math.max(...ratings).toFixed(1) : '9.1';
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `What dramas are similar to ${title}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `If you enjoyed ${title}, you'll love these ${similarDramas.length} similar C-dramas: ${similarDramas.slice(0, 5).map(d => d.title).join(', ')}. Each recommendation is based on matching mood, genre, and storytelling style.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Where can I watch ${title}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Visit the ${title} page on CDramaBinge to find streaming availability and discover more C-dramas you'll love.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What are the best C-dramas similar to ${title}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Our AI analyzed ${title}'s key traits — genre: ${sourceGenres.join(', ')}, mood: ${sourceMoodTags.join(', ')} — to find the top ${similarDramas.length} matching Chinese dramas. Ratings range from ${minRating} to ${maxRating}.`,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, faqJsonLd]) }}
       />
 
       <div className="max-w-7xl mx-auto px-6 py-10">
@@ -278,6 +316,89 @@ export default async function DramasLikePage({
                   : `ยังไม่พบซีรีส์ที่คล้ายกัน AI กำลังเรียนรู้เกี่ยวกับ ${title}!`}
             </p>
           </div>
+        )}
+
+        {/* More "Dramas Like" recommendations — cross-links */}
+        {similarDramas.length > 0 && (
+          <section className="mt-12 mb-10">
+            <div className="crackle-divider mb-8" />
+            <h2 className="font-display text-xl font-bold text-ink-1 mb-4 tracking-wider">
+              {locale === 'en'
+                ? 'More "Dramas Like" Recommendations'
+                : locale === 'vi'
+                  ? 'Thêm đề xuất "Phim giống"'
+                  : 'แนะนำ "ซีรีส์ที่คล้าย" เพิ่มเติม'}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {similarDramas
+                .filter(d => d.slug !== slug)
+                .slice(0, 6)
+                .map(d => (
+                  <Link
+                    key={d.slug}
+                    href={`/${locale}/dramas-like/${d.slug}`}
+                    className="px-3 py-1.5 rounded-song border border-ivory-border/60 text-sm text-ink-2 hover:bg-ruyao/10 hover:text-ruyao hover:border-ruyao/30 transition-colors duration-song"
+                  >
+                    {locale === 'en'
+                      ? `Dramas like ${d.title}`
+                      : locale === 'vi'
+                        ? `Phim giống ${d.title}`
+                        : `ซีรีส์ที่คล้าย ${d.title}`}
+                  </Link>
+                ))}
+            </div>
+          </section>
+        )}
+
+        {/* Browse by Mood — internal links to /best/ pages */}
+        {similarDramas.length > 0 && (
+          <section className="mb-10">
+            <h2 className="font-display text-xl font-bold text-ink-1 mb-4 tracking-wider">
+              {locale === 'en'
+                ? 'Browse C-Dramas by Mood'
+                : locale === 'vi'
+                  ? 'Khám phá phim theo tâm trạng'
+                  : 'ดูซีรีส์จีนตามอารมณ์'}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {(() => {
+                const moodConfig: Record<string, { label: string }> = {
+                  romantic: { label: 'Romantic' },
+                  intense: { label: 'Intense & Thrilling' },
+                  empowering: { label: 'Empowering' },
+                  light_fun: { label: 'Light & Fun' },
+                  mindbending: { label: 'Mind-Bending' },
+                  wanna_cry: { label: 'Tearjerker' },
+                  aesthetic: { label: 'Aesthetic' },
+                  spooky: { label: 'Spooky' },
+                };
+                const sourceMoods = parseJsonArray<string>(drama.moodTags);
+                const primaryMoods = sourceMoods.filter(m => moodConfig[m]);
+                const extraMoods = Object.keys(moodConfig)
+                  .filter(m => !primaryMoods.includes(m))
+                  .slice(0, 3);
+                const displayMoods = [...primaryMoods, ...extraMoods];
+
+                return displayMoods.map(moodKey => {
+                  const config = moodConfig[moodKey];
+                  if (!config) return null;
+                  return (
+                    <Link
+                      key={moodKey}
+                      href={`/${locale}/best/${moodKey}`}
+                      className="px-4 py-2 rounded-full border border-ivory-border/60 text-sm text-ink-2 hover:bg-ruyao/10 hover:text-ruyao hover:border-ruyao/30 transition-colors duration-song"
+                    >
+                      {locale === 'en'
+                        ? `Best ${config.label} C-Dramas`
+                        : locale === 'vi'
+                          ? `Phim ${config.label} hay nhất`
+                          : `ซีรีส์${config.label} ที่ดีที่สุดใน`}
+                    </Link>
+                  );
+                });
+              })()}
+            </div>
+          </section>
         )}
 
         <div className="h-12" />

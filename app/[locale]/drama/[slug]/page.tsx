@@ -559,6 +559,24 @@ export default async function DramaDetailPage({
 
         <div className="crackle-divider my-8" />
 
+        {/* Dramas Like This — CTA to dramas-like page */}
+        <section className="py-6 text-center">
+          <Link
+            href={`/${locale}/dramas-like/${normalizedSlug}`}
+            className="inline-block px-8 py-4 rounded-full border-2 border-ruyao/40 text-ruyao font-display font-semibold text-lg hover:bg-ruyao/10 hover:border-ruyao transition-colors duration-song"
+          >
+            {locale === 'en'
+              ? `Explore 10 Dramas Like ${displayTitle} →`
+              : locale === 'vi'
+                ? `Khám phá 10 phim giống ${displayTitle} →`
+                : locale === 'th'
+                  ? `ดู 10 ซีรีส์ที่คล้าย ${displayTitle} →`
+                  : `Temukan 10 Drama Seperti ${displayTitle} →`}
+          </Link>
+        </section>
+
+        <div className="crackle-divider my-8" />
+
         {/* Similar dramas */}
         <SimilarDramas
           dramas={similarDramasResolved}
