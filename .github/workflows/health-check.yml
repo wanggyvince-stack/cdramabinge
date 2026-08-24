@@ -1,0 +1,68 @@
+# Post-deployment health check
+# Runs after every Vercel deployment to catch routing/rendering regressions
+name: Deploy Health Check
+
+on:
+  deployment_status:
+
+jobs:
+  health-check:
+    if: github.event.deployment_status.state == 'ready'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for CDN propagation
+        run: sleep 15
+
+      - name: Homepage redirect
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com)
+          echo "Homepage: $STATUS"
+          [ "$STATUS" = "307" ] || exit 1
+
+      - name: English locale
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com/en)
+          echo "/en: $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
+      - name: Vietnamese locale
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com/vi)
+          echo "/vi: $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
+      - name: Thai locale
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com/th)
+          echo "/th: $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
+      - name: Indonesian locale
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com/id)
+          echo "/id: $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
+      - name: Drama detail page
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com/en/drama/the-untamed)
+          echo "Drama page: $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
+      - name: Actor page
+        run: |
+          STATUS=$(curl -sI -o /dev/null -w "%{http_code}" https://cdramabinge.com/en/actor/xiao-zhan)
+          echo "Actor page: $STATUS"
+          [ "$STATUS" = "200" ] || exit 1
+
+      - name: IndexNow key verification
+        run: |
+          BODY=$(curl -s https://cdramabinge.com/03a92e0080b24cfaa16c8d475ba543ed.txt)
+          echo "IndexNow key: $BODY"
+          [ "$BODY" = "03a92e0080b24cfaa16c8d475ba543ed" ] || exit 1
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Health check failed after deployment! Site may be down."
+          echo "Check Vercel deployment logs immediately."
