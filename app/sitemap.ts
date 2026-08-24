@@ -13,6 +13,19 @@ const BEST_CATEGORIES = [
   'spooky', 'empowering', 'aesthetic',
 ];
 
+/** Build hreflang alternates for a given path */
+function buildAlternates(path: string) {
+  return {
+    languages: {
+      en: `${BASE_URL}/en${path}`,
+      vi: `${BASE_URL}/vi${path}`,
+      th: `${BASE_URL}/th${path}`,
+      id: `${BASE_URL}/id${path}`,
+      'x-default': `${BASE_URL}/en${path}`,
+    },
+  };
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allDramas = await db.select({ slug: dramas.slug }).from(dramas).all();
   const dramaSlugs = allDramas.map((d) => d.slug);
@@ -28,13 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: today,
       changeFrequency: 'daily',
       priority: 1.0,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en`,
-          vi: `${BASE_URL}/vi`,
-          th: `${BASE_URL}/th`,
-        },
-      },
+      alternates: buildAlternates(''),
     });
   }
 
@@ -46,13 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: today,
         changeFrequency: 'weekly',
         priority: 0.8,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/drama/${slug}`,
-            vi: `${BASE_URL}/vi/drama/${slug}`,
-            th: `${BASE_URL}/th/drama/${slug}`,
-          },
-        },
+        alternates: buildAlternates(`/drama/${slug}`),
       });
     }
   }
@@ -65,13 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: today,
         changeFrequency: 'weekly',
         priority: 0.7,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/dramas-like/${slug}`,
-            vi: `${BASE_URL}/vi/dramas-like/${slug}`,
-            th: `${BASE_URL}/th/dramas-like/${slug}`,
-          },
-        },
+        alternates: buildAlternates(`/dramas-like/${slug}`),
       });
     }
   }
@@ -83,13 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: today,
       changeFrequency: 'weekly',
       priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en/quiz`,
-          vi: `${BASE_URL}/vi/quiz`,
-          th: `${BASE_URL}/th/quiz`,
-        },
-      },
+      alternates: buildAlternates('/quiz'),
     });
   }
 
@@ -100,15 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: today,
       changeFrequency: 'weekly',
       priority: 0.8,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en/starter-pack`,
-          vi: `${BASE_URL}/vi/starter-pack`,
-          th: `${BASE_URL}/th/starter-pack`,
-          id: `${BASE_URL}/id/starter-pack`,
-          'x-default': `${BASE_URL}/en/starter-pack`,
-        },
-      },
+      alternates: buildAlternates('/starter-pack'),
     });
   }
 
@@ -120,15 +101,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: today,
         changeFrequency: 'weekly',
         priority: 0.7,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/best/${category}`,
-            vi: `${BASE_URL}/vi/best/${category}`,
-            th: `${BASE_URL}/th/best/${category}`,
-          },
-        },
+        alternates: buildAlternates(`/best/${category}`),
       });
     }
+  }
+
+  // ─── Actors listing page ───
+  for (const locale of LOCALES) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/actors`,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: buildAlternates('/actors'),
+    });
   }
 
   // ─── Actor pages (only actors with 2+ dramas to avoid thin content) ───
@@ -146,13 +132,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: today,
         changeFrequency: 'weekly',
         priority: 0.6,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/actor/${actor.slug}`,
-            vi: `${BASE_URL}/vi/actor/${actor.slug}`,
-            th: `${BASE_URL}/th/actor/${actor.slug}`,
-          },
-        },
+        alternates: buildAlternates(`/actor/${actor.slug}`),
       });
     }
   }
