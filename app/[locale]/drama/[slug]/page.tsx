@@ -339,6 +339,8 @@ export default async function DramaDetailPage({
             src={realBackdropUrl}
             alt={displayTitle}
             className="w-full h-full object-cover hero-backdrop"
+                    width={800}
+                    height={450}
           />
         ) : (
           <DramaHeroImages
@@ -362,6 +364,8 @@ export default async function DramaDetailPage({
                   src={realPosterUrl}
                   alt={displayTitle}
                   className="w-full h-full object-cover"
+                    width={400}
+                    height={600}
                 />
               ) : (
                 <DramaPoster slug={normalizedSlug} title={displayTitle} />
@@ -528,7 +532,9 @@ export default async function DramaDetailPage({
                 <Link key={actor.slug} href={`/${locale}/actor/${actor.slug}`} className="flex-shrink-0 w-28 text-center group">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border border-ivory-border mb-2 group-hover:border-liuli-gold transition-colors">
                     {actor.photoUrl ? (
-                      <img src={actor.photoUrl} alt={actor.name} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={actor.photoUrl} alt={actor.name} className="w-full h-full object-cover" loading="lazy"
+                    width={200}
+                    height={300} />
                     ) : (
                       <div className="w-full h-full bg-dingyao flex items-center justify-center">
                         <span className="text-ink-4 text-lg font-display">{actor.name.charAt(0)}</span>

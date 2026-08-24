@@ -86,6 +86,8 @@ export default function HeroCarousel({ items, locale }: HeroCarouselProps) {
               src={getBackdrop(item)!}
               alt={item.title}
               className="w-full h-full object-cover hero-backdrop"
+                    width={800}
+                    height={450}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-ink-2 via-dingyao to-ink-3" />

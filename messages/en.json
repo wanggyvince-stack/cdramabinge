@@ -5,7 +5,9 @@
     "actors": "Actors",
     "quiz": "Quiz",
     "search": "Search C-dramas...",
-    "searchPlaceholder": "Search by title, actor, or genre..."
+    "searchPlaceholder": "Search by title, actor, or genre...",
+    "dramasLike": "Dramas Like",
+    "starterPack": "Starter Pack"
   },
   "footer": {
     "tagline": "Your guide to Chinese dramas",
@@ -98,5 +100,19 @@
     "q5": "Your ideal drama ending is:",
     "q6": "If you disappeared for a week, you'd be:",
     "q7": "You find a secret notebook of drama recommendations. Which note excites you most?"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page"
+  },
+  "actors": {
+    "title": "Chinese Drama Actors",
+    "subtitle": "{count} actors",
+    "searchPlaceholder": "Search by name...",
+    "dramas": "dramas",
+    "born": "Born",
+    "noResults": "No actors found.",
+    "allLetters": "All"
   }
 }

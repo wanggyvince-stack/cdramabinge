@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { db } from '@/lib/db';
 import { actors } from '@/lib/db/schema';
 import { getLocalizedText } from '@/lib/utils/helpers';
-import ActorGrid from './ActorGrid';
+import { getTranslations } from 'next-intl/server';
+import ActorsClient from './ActorsClient';
 
 // ────────────────────────────────────────
 // Metadata
@@ -64,6 +65,8 @@ export default async function ActorsPage({
   params: { locale: string };
 }) {
   const { locale } = params;
+  const t = await getTranslations('actors');
+  const tp = await getTranslations('pagination');
 
   // Fetch all actors
   const allActors = await db.select().from(actors).all();
@@ -100,28 +103,22 @@ export default async function ActorsPage({
       return a.name.localeCompare(b.name);
     });
 
-  // i18n labels
+  // Labels from i18n
   const labels = {
-    title: locale === 'vi' ? 'Diễn viên Hoa Ngữ' : locale === 'th' ? 'นักแสดงซีรีส์จีน' : locale === 'id' ? 'Aktor Drama Cina' : 'Chinese Drama Actors',
-    subtitle: locale === 'vi' ? `${actorData.length} diễn viên` : locale === 'th' ? `${actorData.length} คน` : locale === 'id' ? `${actorData.length} aktor` : `${actorData.length} actors`,
-    searchPlaceholder: locale === 'vi' ? 'Tìm theo tên...' : locale === 'th' ? 'ค้นหาตามชื่อ...' : locale === 'id' ? 'Cari berdasarkan nama...' : 'Search by name...',
-    dramas: locale === 'vi' ? 'phim' : locale === 'th' ? 'ซีรีส์' : locale === 'id' ? 'drama' : 'dramas',
-    born: locale === 'vi' ? 'Sinh' : locale === 'th' ? 'เกิด' : locale === 'id' ? 'Lahir' : 'Born',
-    noResults: locale === 'vi' ? 'Không tìm thấy diễn viên nào.' : locale === 'th' ? 'ไม่พบนักแสดง' : locale === 'id' ? 'Tidak ada aktor ditemukan.' : 'No actors found.',
+    title: t('title'),
+    subtitle: t('subtitle', { count: actorData.length }),
+    searchPlaceholder: t('searchPlaceholder'),
+    dramas: t('dramas'),
+    born: t('born'),
+    noResults: t('noResults'),
+    previous: tp('previous'),
+    next: tp('next'),
+    page: tp('page'),
   };
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-10">
-      {/* Header */}
-      <div className="mb-10">
-        <h1 className="font-display text-3xl md:text-4xl font-bold text-ink-1 tracking-wider mb-2">
-          {labels.title}
-        </h1>
-        <p className="text-ink-4 text-sm">{labels.subtitle}</p>
-      </div>
-
-      {/* Actor Grid (client component for search/filter) */}
-      <ActorGrid
+      <ActorsClient
         actors={actorData}
         locale={locale}
         labels={labels}

@@ -50,6 +50,8 @@ export default function DramaHeroImages({
           src={backdropUrl}
           alt={title}
           className="w-full h-full object-cover"
+                    width={800}
+                    height={450}
         />
       ) : (
         <div className="w-full h-full bg-gradient-to-br from-ink-2 to-ink-3" />
@@ -96,6 +98,8 @@ export function DramaPoster({
         src={url}
         alt={title}
         className="w-full h-full object-cover"
+                    width={400}
+                    height={600}
       />
     );
   }

@@ -64,6 +64,8 @@ export default function DramaPoster({
       alt={alt}
       className={className}
       loading={priority ? 'eager' : 'lazy'}
+      width={400}
+      height={600}
       onError={() => setError(true)}
     />
   );

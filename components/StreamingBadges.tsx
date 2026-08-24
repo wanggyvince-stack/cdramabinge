@@ -44,7 +44,9 @@ export default function StreamingBadges({ streaming, watchLabel }: StreamingBadg
           }`}
         >
           {item.logo && (
-            <img src={item.logo} alt={item.platform} className="w-5 h-5 rounded" />
+            <img src={item.logo} alt={item.platform} className="w-5 h-5 rounded"
+                    width={32}
+                    height={32} />
           )}
           <span>{item.platform}</span>
           <span className="text-xs opacity-70">→</span>

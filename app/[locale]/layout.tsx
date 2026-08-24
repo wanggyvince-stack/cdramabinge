@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import '@/app/globals.css';
@@ -61,6 +61,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const nav = await getTranslations('nav');
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -125,6 +126,12 @@ export default async function LocaleLayout({
                 CDramaBinge
               </a>
               <div className="flex items-center gap-6">
+                {/* Nav links */}
+                <div className="hidden md:flex items-center gap-4 text-sm">
+                  <a href={`/${locale}/actors`} className="text-ink-4 hover:text-ink-1 transition-colors duration-song tracking-wide">
+                    {nav('actors')}
+                  </a>
+                </div>
                 {/* Language switcher */}
                 <div className="flex items-center gap-2 text-sm text-ink-4">
                   {locales.map((l) => (
@@ -158,6 +165,17 @@ export default async function LocaleLayout({
                 {locale === 'th' && 'คู่มือซีรีส์จีนของคุณ'}
                 {locale === 'id' && 'Panduan drama China Anda'}
               </p>
+              <div className="flex justify-center gap-6 text-sm text-ink-4 mt-4 mb-4">
+                <a href={`/${locale}/actors`} className="hover:text-ink-1 transition-colors duration-song">
+                  {nav('actors')}
+                </a>
+                <a href={`/${locale}`} className="hover:text-ink-1 transition-colors duration-song">
+                  {nav('browse')}
+                </a>
+                <a href={`/${locale}/starter-pack`} className="hover:text-ink-1 transition-colors duration-song">
+                  {nav('starterPack')}
+                </a>
+              </div>
               <p className="text-xs text-ink-5 mt-4">
                 © 2026 CDramaBinge. Made with ♥ for C-drama fans.
               </p>

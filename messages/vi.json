@@ -5,7 +5,9 @@
     "actors": "Diễn viên",
     "quiz": "Trắc nghiệm",
     "search": "Tìm phim Trung Quốc...",
-    "searchPlaceholder": "Tìm theo tên, diễn viên hoặc thể loại..."
+    "searchPlaceholder": "Tìm theo tên, diễn viên hoặc thể loại...",
+    "dramasLike": "Phim tương tự",
+    "starterPack": "Gói khởi đầu"
   },
   "footer": {
     "tagline": "Cẩm nang phim Hoa của bạn",
@@ -98,5 +100,19 @@
     "q5": "Cái kết lý tưởng của bạn là:",
     "q6": "Nếu bạn biến mất một tuần, bạn sẽ:",
     "q7": "Bạn tìm thấy một cuốn sổ bí mật chứa danh sách phim. Ghi chú nào khiến bạn hào hứng nhất?"
+  },
+  "pagination": {
+    "previous": "Trước",
+    "next": "Tiếp",
+    "page": "Trang"
+  },
+  "actors": {
+    "title": "Diễn viên Hoa Ngữ",
+    "subtitle": "{count} diễn viên",
+    "searchPlaceholder": "Tìm theo tên...",
+    "dramas": "phim",
+    "born": "Sinh",
+    "noResults": "Không tìm thấy diễn viên nào.",
+    "allLetters": "Tất cả"
   }
 }

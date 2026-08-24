@@ -280,6 +280,8 @@ export default async function ActorDetailPage({
                   src={actor.photoUrl}
                   alt={name}
                   className="w-full h-full object-cover"
+                    width={200}
+                    height={300}
                 />
               ) : (
                 <div className="w-full h-full bg-dingyao flex items-center justify-center">
@@ -350,6 +352,8 @@ export default async function ActorDetailPage({
                       alt={`${name} - photo ${idx + 1}`}
                       className="w-full h-full object-cover"
                       loading={idx < 2 ? 'eager' : 'lazy'}
+                    width={200}
+                    height={300}
                     />
                   </div>
                 ))}
@@ -398,6 +402,8 @@ export default async function ActorDetailPage({
                                 alt=""
                                 className="w-8 h-12 rounded object-cover"
                                 loading="lazy"
+                    width={400}
+                    height={600}
                               />
                             )}
                           </td>
@@ -446,6 +452,8 @@ export default async function ActorDetailPage({
                           src={posterThumb}
                           alt=""
                           className="w-14 h-20 rounded object-cover flex-shrink-0"
+                          width={400}
+                          height={600}
                           loading="lazy"
                         />
                       )}

@@ -99,6 +99,8 @@ export default function MoodDiscoverySection({
                             alt={drama.title}
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
                             loading="lazy"
+                    width={400}
+                    height={600}
                           />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">

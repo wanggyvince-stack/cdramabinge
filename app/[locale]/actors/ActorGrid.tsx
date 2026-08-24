@@ -93,6 +93,8 @@ export default function ActorGrid({
                     alt={actor.name}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
+                    width={200}
+                    height={300}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">

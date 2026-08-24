@@ -63,6 +63,8 @@ export default function MoodButton({ mood, label, locale, dramas = [], isExpande
                         alt={drama.title}
                         className="absolute inset-0 w-full h-full object-cover"
                         loading="lazy"
+                    width={400}
+                    height={600}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">

@@ -5,7 +5,9 @@
     "actors": "Pemeran",
     "quiz": "Kuis",
     "search": "Cari drama China...",
-    "searchPlaceholder": "Cari berdasarkan judul, pemeran, atau genre..."
+    "searchPlaceholder": "Cari berdasarkan judul, pemeran, atau genre...",
+    "dramasLike": "Drama Serupa",
+    "starterPack": "Paket Pemula"
   },
   "footer": {
     "tagline": "Panduan drama China Anda",
@@ -98,5 +100,19 @@
     "q5": "Akhir ideal dramamu adalah:",
     "q6": "Jika kamu menghilang seminggu, kamu akan:",
     "q7": "Kamu menemukan buku rahasia berisi rekomendasi drama. Catatan mana yang paling membuatmu semangat?"
+  },
+  "pagination": {
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "page": "Halaman"
+  },
+  "actors": {
+    "title": "Aktor Drama Cina",
+    "subtitle": "{count} aktor",
+    "searchPlaceholder": "Cari berdasarkan nama...",
+    "dramas": "drama",
+    "born": "Lahir",
+    "noResults": "Tidak ada aktor ditemukan.",
+    "allLetters": "Semua"
   }
 }
