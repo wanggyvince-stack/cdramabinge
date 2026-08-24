@@ -91,10 +91,12 @@ export async function generateMetadata({
     knowsAbout: actor.knownForDepartment || 'Acting',
   };
 
-  // Add sameAs from external IDs (IMDb)
-  // TODO: if we store IMDb ID in the future
+  // sameAs — link to TMDB
+  if (actor.tmdbPersonId) {
+    jsonLd.sameAs = `https://www.themoviedb.org/person/${actor.tmdbPersonId}`;
+  }
 
-  // knownFor
+  // knownFor — with role
   const knownDramas = parseJsonArray<FilmographyEntry>(actor.fullFilmographyJson)
     .filter(f => f.is_in_our_db)
     .slice(0, 5);
@@ -103,8 +105,24 @@ export async function generateMetadata({
       '@type': 'TVSeries',
       name: d.name,
       url: `https://cdramabinge.com/${locale}/drama/${d.our_slug}`,
+      actor: {
+        '@type': 'Person',
+        name,
+        role: d.character || 'Actor',
+      },
     }));
   }
+
+  // BreadcrumbList JSON-LD
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://cdramabinge.com/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Actors', item: `https://cdramabinge.com/${locale}/actors` },
+      { '@type': 'ListItem', position: 3, name, item: `https://cdramabinge.com/${locale}/actor/${slug}` },
+    ],
+  };
 
   const canonicalUrl = `https://cdramabinge.com/${locale}/actor/${slug}`;
 
@@ -129,7 +147,7 @@ export async function generateMetadata({
       images: actor.photoUrl ? [{ url: actor.photoUrl }] : [],
     },
     other: {
-      'application/ld+json': JSON.stringify(jsonLd),
+      'application/ld+json': JSON.stringify([jsonLd, breadcrumbJsonLd]),
     },
   };
 }
@@ -225,11 +243,33 @@ export default async function ActorDetailPage({
     rating: locale === 'vi' ? 'Đánh giá' : locale === 'th' ? 'คะแนน' : locale === 'id' ? 'Rating' : 'Rating',
     projectsTogether: locale === 'vi' ? 'dự án chung' : locale === 'th' ? 'โปรเจกต์ร่วมกัน' : locale === 'id' ? 'proyek bersama' : 'projects together',
     noDramas: locale === 'vi' ? 'Chưa có phim nào cho diễn viên này.' : locale === 'th' ? 'ยังไม่พบซีรีส์สำหรับนักแสดงคนนี้' : locale === 'id' ? 'Belum ada drama untuk aktor ini.' : 'No dramas found for this actor yet.',
+    alsoStarredIn: locale === 'vi' ? 'Cũng xuất hiện trong các phim này trên CDramaBinge' : locale === 'th' ? 'ยังแสดงในซีรีส์เหล่านี้บน CDramaBinge' : locale === 'id' ? 'Juga membintangi drama ini di CDramaBinge' : 'Also starred in these dramas on CDramaBinge',
   };
 
   return (
     <>
       <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* ── Breadcrumb ── */}
+        <nav aria-label="Breadcrumb" className="mb-6">
+          <ol className="flex items-center gap-2 text-sm text-ink-4">
+            <li>
+              <Link href={`/${locale}`} className="hover:text-ruyao transition-colors duration-song">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-ink-5">/</li>
+            <li>
+              <Link href={`/${locale}/actors`} className="hover:text-ruyao transition-colors duration-song">
+                Actors
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-ink-5">/</li>
+            <li aria-current="page" className="text-ink-2 font-medium truncate max-w-[200px]">
+              {name}
+            </li>
+          </ol>
+        </nav>
+
         {/* ── Hero: Avatar + Name + Bio + Personal Info ── */}
         <section className="flex flex-col md:flex-row items-start gap-8 mb-12">
           {/* Avatar */}
@@ -480,6 +520,33 @@ export default async function ActorDetailPage({
         {/* ── No dramas fallback ── */}
         {actorDramas.length === 0 && sortedFilmography.length === 0 && (
           <p className="text-ink-4 text-sm mb-12">{labels.noDramas}</p>
+        )}
+
+        {/* ── Also Starred In (text-link internal link block) ── */}
+        {dramaEntries.length > 1 && (
+          <section className="mb-16">
+            <h2 className="font-display text-xl font-semibold text-ink-1 mb-4 tracking-wider">
+              {labels.alsoStarredIn}
+            </h2>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {dramaEntries.map((entry) => {
+                const dramaSlug = typeof entry === 'string' ? entry : entry.slug;
+                const character = typeof entry === 'string' ? '' : entry.character;
+                const drama = actorDramas.find(d => d.slug === dramaSlug);
+                if (!drama) return null;
+                return (
+                  <Link
+                    key={dramaSlug}
+                    href={`/${locale}/drama/${dramaSlug}`}
+                    className="text-sm text-ruyao hover:underline transition-colors duration-song"
+                  >
+                    {drama.title}
+                    {character && <span className="text-ink-4"> ({character})</span>}
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
         )}
 
         {/* ── Frequent Collaborators ── */}
