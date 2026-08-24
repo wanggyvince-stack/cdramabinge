@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { tmdbImage } from '@/lib/utils/helpers';
 
 interface ActorItem {
   slug: string;

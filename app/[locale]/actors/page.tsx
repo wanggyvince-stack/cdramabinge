@@ -2,7 +2,6 @@ export const dynamic = 'force-dynamic';
 import type { Metadata } from 'next';
 import { db } from '@/lib/db';
 import { actors } from '@/lib/db/schema';
-
 import { getLocalizedText } from '@/lib/utils/helpers';
 import ActorGrid from './ActorGrid';
 
@@ -66,12 +65,8 @@ export default async function ActorsPage({
 }) {
   const { locale } = params;
 
-  // Fetch all actors sorted by drama count (most prolific first)
-  const allActors = await db
-    .select()
-    .from(actors)
-    .orderBy(desc(actors.dramasJson))
-    .all();
+  // Fetch all actors
+  const allActors = await db.select().from(actors).all();
 
   // Build actor data for the client grid
   const actorData = allActors
