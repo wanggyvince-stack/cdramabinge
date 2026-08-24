@@ -294,7 +294,6 @@ export default async function DramaDetailPage({
         ? streamingForRegion.map((s) => s.platform).join(', ')
         : (locale === 'en' ? 'Check your local streaming platforms.' : locale === 'th' ? 'ตรวจสอบแพลตฟอร์มสตรีมมิ่งในท้องถิ่นของคุณ' : locale === 'vi' ? 'Kiểm tra nền tảng phát trực tuyến tại địa phương.' : 'Periksa platform streaming lokal Anda.'),
     },
-    },
   ];
 
   // JSON-LD Schema
