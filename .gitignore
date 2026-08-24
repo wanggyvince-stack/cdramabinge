@@ -46,3 +46,7 @@ dist/
 venv/
 .venv/
 scripts/embeddings/*.npy
+data/v12_tmdb_results.json
+data/v12_indexnow_urls.txt
+data/v12_test_tier1.json
+data/cdrama.db.bak.*
