@@ -154,7 +154,8 @@ export default async function HomePage() {
   }
 
   // Fetch localizations in parallel (cached by Next.js for 24h)
-  const localizationEntries = await Promise.all(
+  const isBuildTime = process.env.NEXT_PHASE === 'phase-production-build';
+  const localizationEntries = isBuildTime ? [] : await Promise.all(
     Array.from(allDramasForLocalization.entries()).map(async ([slug, originalTitle]) => {
       const localized = await fetchTmdbLocalization(originalTitle, locale);
       return [slug, localized] as const;
