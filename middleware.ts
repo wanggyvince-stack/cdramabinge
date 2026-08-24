@@ -1,6 +1,6 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/request';
+import type { NextRequest } from 'next/server';
 import { locales } from './i18n';
 
 const INDEXNOW_KEY = '03a92e0080b24cfaa16c8d475ba543ed';
