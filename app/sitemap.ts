@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { MetadataRoute } from 'next';
 import { db } from '@/lib/db';
 import { dramas, actors } from '@/lib/db/schema';
