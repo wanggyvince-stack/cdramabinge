@@ -281,18 +281,19 @@ export default async function DramaDetailPage({
   // FAQ items (generated from drama data)
   const faqItems = [
     {
-      question: locale === 'en' ? `What is ${displayTitle} about?` : locale === 'vi' ? `${displayTitle} nói về cái gì?` : `${displayTitle} เกี่ยวกับอะไร?`,
+      question: locale === 'en' ? `What is ${displayTitle} about?` : locale === 'th' ? `${displayTitle} เกี่ยวกับอะไร?` : locale === 'vi' ? `${displayTitle} nói về cái gì?` : `${displayTitle} tentang apa?`,
       answer: displaySynopsis.slice(0, 300),
     },
     {
-      question: locale === 'en' ? `How many episodes does ${displayTitle} have?` : locale === 'vi' ? `${displayTitle} có bao nhiêu tập?` : `${displayTitle} มีกี่ตอน?`,
-      answer: locale === 'en' ? `${displayTitle} has ${drama.episodes || 'N/A'} episodes.` : locale === 'vi' ? `${displayTitle} có ${drama.episodes || 'N/A'} tập.` : `${displayTitle} มี ${drama.episodes || 'N/A'} ตอน`,
+      question: locale === 'en' ? `How many episodes does ${displayTitle} have?` : locale === 'th' ? `${displayTitle} มีกี่ตอน?` : locale === 'vi' ? `${displayTitle} có bao nhiêu tập?` : `Berapa episode ${displayTitle}?`,
+      answer: locale === 'en' ? `${displayTitle} has ${drama.episodes || 'N/A'} episodes.` : locale === 'th' ? `${displayTitle} มี ${drama.episodes || 'N/A'} ตอน` : locale === 'vi' ? `${displayTitle} có ${drama.episodes || 'N/A'} tập.` : `${displayTitle} memiliki ${drama.episodes || 'N/A'} episode.`,
     },
     {
-      question: locale === 'en' ? `Where can I watch ${displayTitle}?` : locale === 'vi' ? `Tôi có thể xem ${displayTitle} ở đâu?` : `ฉันสามารถดู ${displayTitle} ได้ที่ไหน?`,
+      question: locale === 'en' ? `Where can I watch ${displayTitle}?` : locale === 'th' ? `ฉันสามารถดู ${displayTitle} ได้ที่ไหน?` : locale === 'vi' ? `Tôi có thể xem ${displayTitle} ở đâu?` : `Di mana saya bisa menonton ${displayTitle}?`,
       answer: streamingForRegion.length > 0
         ? streamingForRegion.map((s) => s.platform).join(', ')
-        : (locale === 'en' ? 'Check your local streaming platforms.' : locale === 'vi' ? 'Kiểm tra nền tảng phát trực tuyến tại địa phương.' : 'ตรวจสอบแพลตฟอร์มสตรีมมิ่งในท้องถิ่นของคุณ'),
+        : (locale === 'en' ? 'Check your local streaming platforms.' : locale === 'th' ? 'ตรวจสอบแพลตฟอร์มสตรีมมิ่งในท้องถิ่นของคุณ' : locale === 'vi' ? 'Kiểm tra nền tảng phát trực tuyến tại địa phương.' : 'Periksa platform streaming lokal Anda.'),
+    },
     },
   ];
 
