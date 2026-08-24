@@ -8,12 +8,17 @@ const dbPath = process.env.DATABASE_URL || `file:${path.resolve(process.cwd(), '
 const client = createClient({ url: dbPath });
 
 // Set journal mode to memory for read-only filesystem (Vercel serverless)
-// This prevents SQLite from trying to create WAL/journal files
-// Wrapped in try/catch to prevent build hangs if PRAGMA fails on certain DB files
+// Use @ts-ignore because executeSync may not exist in all @libsql/client versions
+// Wrapped in try/catch to prevent build hangs
 try {
-  client.executeSync('PRAGMA journal_mode=MEMORY');
+  // @ts-ignore - executeSync may not exist in type definitions
+  if (typeof client.executeSync === 'function') {
+    client.executeSync('PRAGMA journal_mode=MEMORY');
+  } else {
+    client.execute('PRAGMA journal_mode=MEMORY').catch(() => {});
+  }
 } catch {
-  // Silently ignore - DB will work fine without this pragma
+  // Silently ignore
 }
 
 export const db = drizzle(client, { schema });
