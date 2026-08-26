@@ -1,39 +1,49 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { dramas } from '@/lib/db/schema';
+import { notifyIndexNow, getDramaUrls } from '@/lib/indexnow';
 
-// IndexNow API endpoint
-// GET /api/indexnow - for key verification (returns key)
-// POST /api/indexnow - for URL submission
+// IndexNow API endpoint — SE-04 refactored
+// GET /api/indexnow?action=verify     — key verification
+// GET /api/indexnow                   — submit ALL site URLs
+// GET /api/indexnow?slugs=slug1,slug2 — submit specific drama URLs only
+// POST /api/indexnow                  — same as GET (body: { slugs?: string[] })
 
-const INDEXNOW_KEY = '03a92e0080b24cfaa16c8d475ba543ed';
-const SITE_URL = 'https://cdramabinge.com';
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '03a92e0080b24cfaa16c8d475ba543ed';
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const action = searchParams.get('action');
 
-  // If action=verify, return the key for verification
+  // Key verification
   if (action === 'verify') {
     return new Response(INDEXNOW_KEY, {
       status: 200,
-      headers: {
-        'Content-Type': 'text/plain; charset=utf-8',
-      },
+      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
     });
   }
 
-  // Otherwise, collect and submit URLs
-  const key = searchParams.get('key') || INDEXNOW_KEY;
-
   try {
-    const urls = await collectAllUrls();
-    const result = await submitToIndexNow(urls, key);
+    // Check for targeted slug submission
+    const slugsParam = searchParams.get('slugs');
+    let urls: string[];
+
+    if (slugsParam) {
+      // Targeted submission: only submit URLs for specific slugs
+      const slugs = slugsParam.split(',').map((s) => s.trim()).filter(Boolean);
+      urls = slugs.flatMap((slug) => getDramaUrls(slug));
+    } else {
+      // Full submission: collect all site URLs
+      urls = await collectAllUrls();
+    }
+
+    const result = await notifyIndexNow(urls);
 
     return NextResponse.json({
-      success: true,
-      submitted: urls.length,
-      result,
+      success: result.status === 'accepted',
+      submitted: result.submitted,
+      total_urls: urls.length,
+      error: result.error,
     });
   } catch (error) {
     return NextResponse.json(
@@ -43,11 +53,35 @@ export async function GET(request: Request) {
   }
 }
 
-export async function POST(request: Request) {
-  return GET(request);
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json().catch(() => ({}));
+    const slugs: string[] | undefined = body.slugs;
+
+    if (slugs && Array.isArray(slugs) && slugs.length > 0) {
+      // Targeted submission via POST body
+      const urls = slugs.flatMap((slug) => getDramaUrls(slug));
+      const result = await notifyIndexNow(urls);
+      return NextResponse.json({
+        success: result.status === 'accepted',
+        submitted: result.submitted,
+        total_urls: urls.length,
+        error: result.error,
+      });
+    }
+
+    // Fall back to full submission
+    return GET(request);
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Failed to submit to IndexNow', details: String(error) },
+      { status: 500 }
+    );
+  }
 }
 
 async function collectAllUrls(): Promise<string[]> {
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cdramabinge.com';
   const urls: string[] = [];
 
   // Homepage
@@ -58,59 +92,27 @@ async function collectAllUrls(): Promise<string[]> {
 
   for (const drama of allDramas) {
     const slug = drama.slug;
-
-    // Drama detail pages (all locales)
-    urls.push(`${SITE_URL}/en/drama/${slug}`);
-    urls.push(`${SITE_URL}/vi/drama/${slug}`);
-    urls.push(`${SITE_URL}/th/drama/${slug}`);
-    urls.push(`${SITE_URL}/id/drama/${slug}`);
-
-    // Dramas-like pages (all locales)
-    urls.push(`${SITE_URL}/en/dramas-like/${slug}`);
-    urls.push(`${SITE_URL}/vi/dramas-like/${slug}`);
-    urls.push(`${SITE_URL}/th/dramas-like/${slug}`);
-    urls.push(`${SITE_URL}/id/dramas-like/${slug}`);
+    for (const locale of ['en', 'vi', 'th', 'id']) {
+      urls.push(`${SITE_URL}/${locale}/drama/${slug}`);
+      urls.push(`${SITE_URL}/${locale}/dramas-like/${slug}`);
+    }
   }
 
-  // Best/mood pages (all locales)
+  // Best/mood pages
   const moods = ['romantic', 'intense', 'empowering', 'light_fun', 'mindbending', 'wanna_cry', 'aesthetic', 'spooky'];
   for (const mood of moods) {
-    urls.push(`${SITE_URL}/en/best/${mood}`);
-    urls.push(`${SITE_URL}/vi/best/${mood}`);
-    urls.push(`${SITE_URL}/th/best/${mood}`);
-    urls.push(`${SITE_URL}/id/best/${mood}`);
+    for (const locale of ['en', 'vi', 'th', 'id']) {
+      urls.push(`${SITE_URL}/${locale}/best/${mood}`);
+    }
   }
 
   // Genre pages
   const genres = ['romance', 'historical', 'wuxia', 'modern', 'fantasy', 'mystery', 'comedy'];
   for (const genre of genres) {
-    urls.push(`${SITE_URL}/en/best/${genre}`);
-    urls.push(`${SITE_URL}/vi/best/${genre}`);
-    urls.push(`${SITE_URL}/th/best/${genre}`);
-    urls.push(`${SITE_URL}/id/best/${genre}`);
+    for (const locale of ['en', 'vi', 'th', 'id']) {
+      urls.push(`${SITE_URL}/${locale}/best/${genre}`);
+    }
   }
 
   return Array.from(new Set(urls));
-}
-
-async function submitToIndexNow(urls: string[], key: string) {
-  const response = await fetch('https://api.indexnow.org/IndexNow', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      host: 'cdramabinge.com',
-      key: key,
-      keyLocation: `${SITE_URL}/${key}.txt`,
-      urlList: urls,
-    }),
-  });
-
-  if (response.status === 200 || response.status === 202) {
-    return { status: 'accepted', message: 'URLs submitted successfully' };
-  } else {
-    const text = await response.text();
-    throw new Error(`IndexNow API returned ${response.status}: ${text}`);
-  }
 }
