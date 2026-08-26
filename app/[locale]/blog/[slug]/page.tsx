@@ -9,13 +9,12 @@ import { dramas } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { getLocalizedText, tmdbImage, isPlaceholderPoster } from '@/lib/utils/helpers';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
-// Only generate static pages for English locale (blog is English-only)
+// Blog is English-only — other locales are 301 redirected by middleware
 export function generateStaticParams() {
   const slugs = getAllSlugs();
-  // Return en locale only — non-en blog URLs redirect to en
   return slugs.map((slug) => ({ locale: 'en', slug }));
 }
 
