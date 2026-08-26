@@ -82,9 +82,31 @@ export async function generateMetadata({
 
   const canonicalUrl = `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`;
 
+  // SE-01: SEO-optimized title with keywords
+  const yearStr = drama.year ? ` (${drama.year})` : '';
+  const titleBase = `${displayTitle}${yearStr}`;
+  const seoTitle = (locale === 'en'
+    ? `${titleBase} — Chinese Drama Synopsis & Cast`
+    : locale === 'vi'
+    ? `${titleBase} — Phim Trung Quốc Tóm Tắt & Diễn Viên`
+    : locale === 'th'
+    ? `${titleBase} — ซีรีส์จีน เรื่องย่อ & นักแสดง`
+    : `${titleBase} — Drama China Sinopsis & Pemain`
+  ).slice(0, 55);
+
+  // SE-01: SEO-optimized description with brand + CTA (total <= 160 chars)
+  const descSlice = locale === 'vi' ? 98 : 110;
+  const seoDesc = locale === 'en'
+    ? `${displaySynopsis.slice(0, descSlice)} Cast, ratings & similar picks on CDramaBinge.`
+    : locale === 'vi'
+    ? `${displaySynopsis.slice(0, descSlice)} Dàn diễn viên, đánh giá & phim tương tự trên CDramaBinge.`
+    : locale === 'th'
+    ? `${displaySynopsis.slice(0, descSlice)} นักแสดง เรตติ้ง & ซีรีส์ที่คล้ายบน CDramaBinge`
+    : `${displaySynopsis.slice(0, descSlice)} Pemeran, rating & drama serupa di CDramaBinge.`;
+
   return {
-    title: `${displayTitle} (${drama.year || 'N/A'})`,
-    description: displaySynopsis.slice(0, 160),
+    title: seoTitle,
+    description: seoDesc,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -96,8 +118,8 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${displayTitle} (${drama.year || 'N/A'})`,
-      description: displaySynopsis.slice(0, 160),
+      title: seoTitle,
+      description: seoDesc,
       url: canonicalUrl,
       type: 'video.tv_show',
       images: [{
@@ -109,8 +131,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${displayTitle} (${drama.year || 'N/A'})`,
-      description: displaySynopsis.slice(0, 160),
+      title: seoTitle,
+      description: seoDesc,
       images: [buildOgUrl('drama', displayTitle, displaySynopsis.slice(0, 160), drama)],
     },
   };

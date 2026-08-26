@@ -180,9 +180,12 @@ export async function generateMetadata({
 
   const canonicalUrl = `https://cdramabinge.com/${locale}/best/${genre}`;
 
+  // SE-01: Add brand suffix to description
+  const bestDesc = `${intro.slice(0, 120)} Curated by CDramaBinge.`;
+
   return {
     title: `Best ${title} C-Dramas`,
-    description: intro.slice(0, 160),
+    description: bestDesc,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -195,7 +198,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: `Best ${title} C-Dramas`,
-      description: intro.slice(0, 160),
+      description: bestDesc,
       url: canonicalUrl,
       type: 'website',
     },
