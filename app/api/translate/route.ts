@@ -2,14 +2,44 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const SECRET = 'cdrama-translate-2026';
 
-async function translateText(text: string, from: string, to: string): Promise<string> {
-  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURIComponent(text)}`;
-  const res = await fetch(url, {
-    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-  });
-  if (!res.ok) throw new Error(`Translation API error: ${res.status}`);
+// MyMemory API - free, 5000 words/day
+async function translateMyMemory(text: string, from: string, to: string): Promise<string> {
+  const langPair = `${from}|${to}`;
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${langPair}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`MyMemory error: ${res.status}`);
   const data = await res.json();
-  return data[0]?.map((chunk: any[]) => chunk[0]).join('') || '';
+  if (data.responseStatus === 429) throw new Error('MyMemory rate limited');
+  return data.responseData?.translatedText || '';
+}
+
+// Lingva API - free Google Translate alternative
+async function translateLingva(text: string, from: string, to: string): Promise<string> {
+  const url = `https://lingva.ml/api/v1/${from}/${to}/${encodeURIComponent(text)}`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Lingva error: ${res.status}`);
+  const data = await res.json();
+  return data.translation || '';
+}
+
+async function translateText(text: string, from: string, to: string): Promise<string> {
+  // Try MyMemory first
+  try {
+    const result = await translateMyMemory(text, from, to);
+    if (result) return result;
+  } catch (e) {
+    console.log('MyMemory failed, trying Lingva...', e);
+  }
+  
+  // Fallback to Lingva
+  try {
+    const result = await translateLingva(text, from, to);
+    if (result) return result;
+  } catch (e) {
+    console.log('Lingva failed', e);
+  }
+  
+  throw new Error('All translation services failed');
 }
 
 export async function POST(req: NextRequest) {
