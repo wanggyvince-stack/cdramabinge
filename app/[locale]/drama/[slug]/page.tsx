@@ -528,6 +528,49 @@ export default async function DramaDetailPage({
           </p>
         </section>
 
+        {/* SE-03: SEO text block — contextual internal links */}
+        {similarDramasResolved.length > 0 && (
+        <section className="py-6">
+          <h2 className="font-display text-xl font-semibold text-ink-1 mb-4">
+            {locale === 'en' ? `If you enjoyed ${displayTitle}` :
+             locale === 'vi' ? `Nếu bạn thích ${displayTitle}` :
+             locale === 'th' ? `หากคุณชอบ ${displayTitle}` :
+             `Jika Anda suka ${displayTitle}`}
+          </h2>
+          <p className="text-ink-3 leading-relaxed mb-4 max-w-3xl">
+            {locale === 'en' ? `Fans of ${displayTitle} also enjoy ` :
+             locale === 'vi' ? `Người hâm mộ ${displayTitle} cũng thích ` :
+             locale === 'th' ? `แฟนคลับของ ${displayTitle} ก็ชอบ ` :
+             `Penggemar ${displayTitle} juga menyukai `}
+            {similarDramasResolved.slice(0, 3).map((d, i) => (
+              <span key={d.slug}>
+                {i > 0 && (i < 2 ? ', ' : ', and ')}
+                <Link href={`/${locale}/drama/${d.slug}`} className="text-ruyao hover:underline">
+                  {d.title}
+                </Link>
+              </span>
+            ))}
+            .
+          </p>
+          {moodTags.length > 0 && (
+            <p className="text-ink-4 text-sm">
+              {locale === 'en' ? `Explore more ` :
+               locale === 'vi' ? `Khám phá thêm ` :
+               locale === 'th' ? `สำรวจเพิ่มเติม ` :
+               `Jelajahi lebih banyak `}
+              {moodTags.map((tag, i) => (
+                <span key={tag}>
+                  {i > 0 && ' · '}
+                  <Link href={`/${locale}/best/${tag}`} className="text-ruyao hover:underline">
+                    best {tag.replace(/_/g, ' ')} Chinese dramas
+                  </Link>
+                </span>
+              ))}
+            </p>
+          )}
+        </section>
+        )}
+
         <div className="crackle-divider my-8" />
 
         {/* Where to watch */}
@@ -543,10 +586,13 @@ export default async function DramaDetailPage({
 
         <div className="crackle-divider my-8" />
 
-        {/* Cast */}
+        {/* Cast — SE-03: title includes drama name for SEO */}
         <section className="py-6">
           <h2 className="font-display text-2xl font-semibold text-ink-1 mb-6 tracking-wider">
-            {t('drama.cast')}
+            {locale === 'en' ? `Cast of ${displayTitle}` :
+             locale === 'vi' ? `Dàn diễn viên ${displayTitle}` :
+             locale === 'th' ? `นักแสดงของ ${displayTitle}` :
+             `Pemeran ${displayTitle}`}
           </h2>
           {castMembers.length > 0 ? (
             <div className="flex gap-4 horizontal-scroll song-scrollbar">
@@ -605,10 +651,16 @@ export default async function DramaDetailPage({
 
         <div className="crackle-divider my-8" />
 
-        {/* Similar dramas */}
+        {/* Similar dramas — SE-03: title includes drama name for SEO */}
         <SimilarDramas
           dramas={similarDramasResolved}
-          title={t('drama.similar')}
+          title={locale === 'en'
+            ? `Dramas like ${displayTitle}`
+            : locale === 'vi'
+            ? `Phim giống ${displayTitle}`
+            : locale === 'th'
+            ? `ซีรีส์ที่คล้ายกับ ${displayTitle}`
+            : `Drama mirip ${displayTitle}`}
           locale={locale}
         />
 
