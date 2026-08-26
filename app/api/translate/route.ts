@@ -2,43 +2,65 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const SECRET = 'cdrama-translate-2026';
 
-// MyMemory API - free, 5000 words/day
+// Strategy 1: MyMemory with email (higher rate limit: 10k chars/day vs 1k)
 async function translateMyMemory(text: string, from: string, to: string): Promise<string> {
-  const langPair = `${from}|${to}`;
-  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${langPair}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`MyMemory error: ${res.status}`);
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}&de=product@cdramabinge.com`;
+  const res = await fetch(url, { next: { revalidate: 0 } });
+  if (!res.ok) throw new Error(`MyMemory: ${res.status}`);
   const data = await res.json();
-  if (data.responseStatus === 429) throw new Error('MyMemory rate limited');
-  return data.responseData?.translatedText || '';
+  if (data.responseStatus === 429 || data.responseStatus === 403) throw new Error(`MyMemory rate limited`);
+  const translated = data.responseData?.translatedText || '';
+  if (!translated || translated === text) throw new Error('MyMemory empty result');
+  return translated;
 }
 
-// Lingva API - free Google Translate alternative
-async function translateLingva(text: string, from: string, to: string): Promise<string> {
-  const url = `https://lingva.ml/api/v1/${from}/${to}/${encodeURIComponent(text)}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Lingva error: ${res.status}`);
-  const data = await res.json();
-  return data.translation || '';
+// Strategy 2: LibreTranslate public instances
+async function translateLibre(text: string, from: string, to: string): Promise<string> {
+  const instances = [
+    'https://libretranslate.de',
+    'https://translate.terraprint.co',
+  ];
+  for (const instance of instances) {
+    try {
+      const res = await fetch(`${instance}/translate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ q: text, source: from, target: to }),
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      if (data.translatedText) return data.translatedText;
+    } catch {}
+  }
+  throw new Error('LibreTranslate failed');
+}
+
+// Strategy 3: Google Translate via alternative URL
+async function translateGoogle(text: string, from: string, to: string): Promise<string> {
+  const url = `https://translate.google.com/m?tl=${to}&sl=${from}&q=${encodeURIComponent(text)}`;
+  const res = await fetch(url, {
+    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' }
+  });
+  if (!res.ok) throw new Error(`Google: ${res.status}`);
+  const html = await res.text();
+  // Extract translation from HTML response
+  const match = html.match(/class="result-container"[^>]*>([^<]+)</);
+  if (match && match[1]) return match[1].trim();
+  throw new Error('Google: no result');
 }
 
 async function translateText(text: string, from: string, to: string): Promise<string> {
-  // Try MyMemory first
-  try {
-    const result = await translateMyMemory(text, from, to);
-    if (result) return result;
-  } catch (e) {
-    console.log('MyMemory failed, trying Lingva...', e);
-  }
+  const strategies = [translateMyMemory, translateGoogle, translateLibre];
   
-  // Fallback to Lingva
-  try {
-    const result = await translateLingva(text, from, to);
-    if (result) return result;
-  } catch (e) {
-    console.log('Lingva failed', e);
+  for (const fn of strategies) {
+    try {
+      const result = await fn(text, from, to);
+      if (result && result.length > 5) return result;
+    } catch (e) {
+      console.log(`Strategy failed: ${e}`);
+      continue;
+    }
   }
-  
   throw new Error('All translation services failed');
 }
 
