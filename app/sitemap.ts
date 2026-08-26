@@ -189,5 +189,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  // ─── Blog pages (English only — SE-02) ───
+  const { getAllArticles } = await import('@/lib/blog');
+  const blogArticles = getAllArticles();
+  if (blogArticles.length > 0) {
+    // Blog list page
+    entries.push({
+      url: `${BASE_URL}/en/blog`,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+    // Individual articles
+    for (const article of blogArticles) {
+      entries.push({
+        url: `${BASE_URL}/en/blog/${article.slug}`,
+        lastModified: article.date,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    }
+  }
+
   return entries;
 }

@@ -43,6 +43,14 @@ export default function middleware(request: NextRequest) {
     }
   }
 
+  // SE-02: Blog is English-only — redirect non-EN blog routes to /en/blog
+  const blogMatch = pathname.match(/^\/(vi|th|id)(\/blog(?:\/.*)?)$/);
+  if (blogMatch) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/en${blogMatch[2]}`;
+    return NextResponse.redirect(url, 301);
+  }
+
   // Delegate to next-intl middleware for locale routing
   return intlMiddleware(request);
 }
