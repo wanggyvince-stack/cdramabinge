@@ -15,7 +15,7 @@ import {
 
 interface CategoryDef {
   id: string;
-  type: 'mood' | 'short' | 'top_rated';
+  type: 'mood' | 'short';
   moodTag?: string;
   enLabel: string;
   viLabel: string;
@@ -104,42 +104,63 @@ const CATEGORIES: CategoryDef[] = [
     thLabel: '"มีแค่สุดสัปดาห์"',
     idLabel: '"Cuma punya akhir pekan"',
   },
-  {
-    id: 'top_rated',
-    type: 'top_rated',
-    enLabel: '"The all-time best"',
-    viLabel: '"Hay nhất mọi thời đại"',
-    thLabel: '"ดีที่สุดตลอดกาล"',
-    idLabel: '"Terbaik sepanjang masa"',
-  },
 ];
 
 // ────────────────────────────────────────
-// Data fetching
+// Data fetching with dedup logic
 // ────────────────────────────────────────
 
-async function loadCategory(cat: CategoryDef, locale: string) {
+async function loadAllCategories(locale: string) {
   try {
     const allDramas = await db.select().from(dramas).all();
-    let filtered: typeof allDramas;
+    
+    // Track which dramas have been assigned to a mood category
+    const usedInMood = new Set<string>();
+    const results: { category: CategoryDef; dramas: any[] }[] = [];
 
-    if (cat.type === 'mood' && cat.moodTag) {
-      filtered = allDramas
-        .filter((d) => {
-          const tags: string[] = JSON.parse(d.moodTags || '[]');
-          return tags.includes(cat.moodTag!);
-        })
-        .sort((a, b) => (b.rating || 0) - (a.rating || 0));
-    } else if (cat.type === 'short') {
-      filtered = allDramas
-        .filter((d) => d.episodes && d.episodes <= 20)
-        .sort((a, b) => (b.rating || 0) - (a.rating || 0));
-    } else {
-      // top_rated
-      filtered = [...allDramas].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    // First pass: load all mood categories
+    for (const cat of CATEGORIES) {
+      if (cat.type === 'mood' && cat.moodTag) {
+        const filtered = allDramas
+          .filter((d) => {
+            try {
+              const tags: string[] = JSON.parse(d.moodTags || '[]');
+              return tags.includes(cat.moodTag!);
+            } catch { return false; }
+          })
+          .sort((a, b) => (b.rating || 0) - (a.rating || 0));
+
+        const top3 = filtered.slice(0, 3).map((d) => ({
+          slug: d.slug,
+          title: getLocalizedText(d.titlesJson, locale, d.originalTitle),
+          posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w500') : null,
+          year: d.year,
+          rating: d.rating,
+          episodes: d.episodes,
+        }));
+
+        // Track used dramas
+        top3.forEach((d) => usedInMood.add(d.slug));
+        if (top3.length > 0) {
+          results.push({ category: cat, dramas: top3 });
+        }
+      }
     }
 
-    return filtered.slice(0, 3).map((d) => ({
+    // Second pass: short category - prioritize dramas NOT in mood categories
+    // This reduces overlap between short and mood categories
+    const shortCandidates = allDramas
+      .filter((d) => d.episodes && d.episodes <= 16)
+      .sort((a, b) => {
+        // Primary: prefer dramas not used in mood categories
+        const aUsed = usedInMood.has(a.slug) ? 0 : 1;
+        const bUsed = usedInMood.has(b.slug) ? 0 : 1;
+        if (aUsed !== bUsed) return bUsed - aUsed;
+        // Secondary: sort by rating
+        return (b.rating || 0) - (a.rating || 0);
+      });
+
+    const shortTop3 = shortCandidates.slice(0, 3).map((d) => ({
       slug: d.slug,
       title: getLocalizedText(d.titlesJson, locale, d.originalTitle),
       posterUrl: d.posterUrl ? tmdbImage(d.posterUrl, 'w500') : null,
@@ -147,6 +168,13 @@ async function loadCategory(cat: CategoryDef, locale: string) {
       rating: d.rating,
       episodes: d.episodes,
     }));
+
+    const shortCat = CATEGORIES.find((c) => c.id === 'short')!;
+    if (shortTop3.length > 0) {
+      results.push({ category: shortCat, dramas: shortTop3 });
+    }
+
+    return results;
   } catch {
     return [];
   }
@@ -200,17 +228,7 @@ export default async function StarterPackPage({
   params: { locale: string };
 }) {
   const locale = await getLocale();
-
-  // Load all categories in parallel
-  const categoryResults = await Promise.all(
-    CATEGORIES.map(async (cat) => ({
-      category: cat,
-      dramas: await loadCategory(cat, locale),
-    }))
-  );
-
-  // Filter out categories with no dramas
-  const populatedCategories = categoryResults.filter((c) => c.dramas.length > 0);
+  const populatedCategories = await loadAllCategories(locale);
 
   const displayTitle = locale === 'vi'
     ? 'Gói Khởi Đầu CDrama'
@@ -304,8 +322,8 @@ export default async function StarterPackPage({
                             alt={drama.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
-                    width={400}
-                    height={600}
+                            width={400}
+                            height={600}
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center">

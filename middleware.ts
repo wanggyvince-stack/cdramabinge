@@ -12,6 +12,11 @@ const intlMiddleware = createMiddleware({
   localePrefix: 'always',
 });
 
+// Slug redirects (old -> new)
+const SLUG_REDIRECTS: Record<string, string> = {
+  'drama-a04f3efb': 'decisive-battle-1936',
+};
+
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -25,6 +30,17 @@ export default function middleware(request: NextRequest) {
         'Cache-Control': 'public, max-age=86400',
       },
     });
+  }
+
+  // Handle slug redirects
+  const dramaMatch = pathname.match(/^\/([^/]+)\/drama\/([^/]+)$/);
+  if (dramaMatch) {
+    const [, locale, oldSlug] = dramaMatch;
+    if (SLUG_REDIRECTS[oldSlug]) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${locale}/drama/${SLUG_REDIRECTS[oldSlug]}`;
+      return NextResponse.redirect(url, 301);
+    }
   }
 
   // Delegate to next-intl middleware for locale routing
