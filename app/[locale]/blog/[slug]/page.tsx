@@ -29,7 +29,7 @@ export async function generateMetadata({
   const url = `https://cdramabinge.com/en/blog/${article.slug}`;
 
   return {
-    title: `${article.title} | CDramaBinge`,
+    title: article.title,
     description: article.description,
     alternates: {
       canonical: url,

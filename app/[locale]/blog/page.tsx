@@ -12,13 +12,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Blog — Chinese Drama Guides & Recommendations | CDramaBinge',
+    title: 'Blog — Chinese Drama Guides & Recommendations',
     description: 'Expert guides, mood-based recommendations, and streaming tips for Chinese drama fans. Discover your next c-drama on CDramaBinge.',
     alternates: {
       canonical: 'https://cdramabinge.com/en/blog',
     },
     openGraph: {
-      title: 'Blog — Chinese Drama Guides & Recommendations | CDramaBinge',
+      title: 'Blog — Chinese Drama Guides & Recommendations',
       description: 'Expert guides, mood-based recommendations, and streaming tips for Chinese drama fans.',
       url: 'https://cdramabinge.com/en/blog',
       type: 'website',
