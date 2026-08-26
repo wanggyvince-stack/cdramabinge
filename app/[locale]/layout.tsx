@@ -29,6 +29,14 @@ export const metadata: Metadata = {
       'x-default': '/en',
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -37,7 +45,7 @@ export const metadata: Metadata = {
     title: 'CDramaBinge — Your Guide to Chinese Dramas',
     description:
       'Discover the best Chinese dramas — curated recommendations, mood-based browsing, and in-depth guides.',
-    images: [{ url: 'https://cdramabinge.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: 'https://cdramabinge.com/og-image.png', width: 1200, height: 1200 }],
   },
   twitter: {
     card: 'summary_large_image',
