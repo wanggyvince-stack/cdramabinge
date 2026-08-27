@@ -47,36 +47,50 @@ export default function BlogListPage() {
       ) : (
         <div className="space-y-8">
           {articles.map((article) => (
-            <article key={article.slug} className="song-card p-6 md:p-8 hover:border-liuli-gold/40 transition-colors">
+            <article key={article.slug} className="song-card overflow-hidden hover:border-liuli-gold/40 transition-colors">
               <Link href={`/en/blog/${article.slug}`} className="block group">
-                <div className="flex items-center gap-3 mb-3">
-                  <time className="text-sm text-ink-4">
-                    {new Date(article.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </time>
-                  {article.tags.length > 0 && (
-                    <div className="flex gap-2">
-                      {article.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs px-2 py-0.5 rounded-song bg-dingyao text-ink-4 border border-ivory-border"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                {article.coverImage && (
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={article.coverImage}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width={800}
+                      height={450}
+                    />
+                  </div>
+                )}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-3">
+                    <time className="text-sm text-ink-4">
+                      {new Date(article.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </time>
+                    {article.tags.length > 0 && (
+                      <div className="flex gap-2">
+                        {article.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2 py-0.5 rounded-song bg-dingyao text-ink-4 border border-ivory-border"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <h2 className="font-display text-2xl font-semibold text-ink-1 mb-2 group-hover:text-liuli-gold transition-colors">
+                    {article.title}
+                  </h2>
+                  <p className="text-ink-3 leading-relaxed">{article.description}</p>
+                  <span className="inline-block mt-4 text-ruyao text-sm font-medium group-hover:underline">
+                    Read more
+                  </span>
                 </div>
-                <h2 className="font-display text-2xl font-semibold text-ink-1 mb-2 group-hover:text-liuli-gold transition-colors">
-                  {article.title}
-                </h2>
-                <p className="text-ink-3 leading-relaxed">{article.description}</p>
-                <span className="inline-block mt-4 text-ruyao text-sm font-medium group-hover:underline">
-                  Read more
-                </span>
               </Link>
             </article>
           ))}

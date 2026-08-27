@@ -29,6 +29,7 @@ export interface BlogArticle {
   author: string;
   date: string; // YYYY-MM-DD
   tags: string[];
+  coverImage: string;
   relatedDramas: string[];
   relatedPages: string[];
   content: string; // markdown body (without frontmatter)
@@ -96,6 +97,7 @@ export function getAllArticles(): BlogArticle[] {
       author: data.author as string || 'CDramaBinge Editorial',
       date: data.date as string || '2026-01-01',
       tags: Array.isArray(data.tags) ? data.tags as string[] : [],
+      coverImage: (data.coverImage as string) || '',
       relatedDramas: Array.isArray(data.relatedDramas) ? data.relatedDramas as string[] : [],
       relatedPages: Array.isArray(data.relatedPages) ? data.relatedPages as string[] : [],
       content,

@@ -41,11 +41,13 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: article.date,
       authors: [article.author],
+      images: article.coverImage ? [{ url: article.coverImage, width: 1200, height: 630, alt: article.title }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
+      images: article.coverImage ? [article.coverImage] : undefined,
     },
   };
 }
@@ -102,6 +104,7 @@ export default async function BlogDetailPage({
     '@type': 'Article',
     headline: article.title,
     description: article.description,
+    image: article.coverImage || undefined,
     datePublished: article.date,
     author: {
       '@type': 'Organization',
@@ -151,6 +154,20 @@ export default async function BlogDetailPage({
       )}
 
       <article className="max-w-3xl mx-auto px-6 py-12">
+        {article.coverImage && (
+          <div className="relative w-full aspect-[16/9] rounded-song overflow-hidden mb-10 -mt-12">
+            <img
+              src={article.coverImage}
+              alt={article.title}
+              className="w-full h-full object-cover"
+              width={1200}
+              height={675}
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
+        )}
+
         {/* Back link */}
         <Link
           href="/en/blog"
@@ -239,6 +256,15 @@ export default async function BlogDetailPage({
               li: ({ children }) => <li className="leading-relaxed">{children}</li>,
               strong: ({ children }) => (
                 <strong className="font-semibold text-ink-1">{children}</strong>
+              ),
+              img: ({ src, alt }: { src?: string; alt?: string }) => (
+                <img
+                  src={src}
+                  alt={alt || ''}
+                  className="my-4 rounded-song border border-ivory-border shadow-sm"
+                  style={{ width: '160px', height: 'auto' }}
+                  loading="lazy"
+                />
               ),
               blockquote: ({ children }) => (
                 <blockquote className="border-l-4 border-ruyao/40 pl-5 py-2 my-6 bg-dingyao/50 rounded-r-song">
