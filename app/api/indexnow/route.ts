@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
-import { dramas } from '@/lib/db/schema';
+import { dramas, actors } from '@/lib/db/schema';
 import { notifyIndexNow, getDramaUrls } from '@/lib/indexnow';
 
 // IndexNow API endpoint — SE-04 refactored
@@ -82,36 +82,75 @@ export async function POST(request: NextRequest) {
 
 async function collectAllUrls(): Promise<string[]> {
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cdramabinge.com';
+  const LOCALES = ['en', 'vi', 'th', 'id'] as const;
   const urls: string[] = [];
 
-  // Homepage
-  urls.push(`${SITE_URL}/en`);
+  // Homepage (all locales)
+  for (const locale of LOCALES) {
+    urls.push(`${SITE_URL}/${locale}`);
+  }
 
-  // Get all dramas
-  const allDramas = await db.select().from(dramas).all();
-
+  // Drama detail + dramas-like pages (all locales)
+  const allDramas = await db.select({ slug: dramas.slug }).from(dramas).all();
   for (const drama of allDramas) {
-    const slug = drama.slug;
-    for (const locale of ['en', 'vi', 'th', 'id']) {
-      urls.push(`${SITE_URL}/${locale}/drama/${slug}`);
-      urls.push(`${SITE_URL}/${locale}/dramas-like/${slug}`);
+    for (const locale of LOCALES) {
+      urls.push(`${SITE_URL}/${locale}/drama/${drama.slug}`);
+      urls.push(`${SITE_URL}/${locale}/dramas-like/${drama.slug}`);
     }
   }
 
-  // Best/mood pages
-  const moods = ['romantic', 'intense', 'empowering', 'light_fun', 'mindbending', 'wanna_cry', 'aesthetic', 'spooky'];
-  for (const mood of moods) {
-    for (const locale of ['en', 'vi', 'th', 'id']) {
-      urls.push(`${SITE_URL}/${locale}/best/${mood}`);
+  // Quiz page (all locales)
+  for (const locale of LOCALES) {
+    urls.push(`${SITE_URL}/${locale}/quiz`);
+  }
+
+  // Starter-pack page (all locales)
+  for (const locale of LOCALES) {
+    urls.push(`${SITE_URL}/${locale}/starter-pack`);
+  }
+
+  // Best/mood/genre category pages (all 20 categories × all locales)
+  const categories = [
+    'romance', 'historical', 'fantasy', 'wuxia', 'xianxia',
+    'modern', 'thriller', 'comedy', 'drama', 'action', 'mystery', 'sci_fi',
+    'wanna_cry', 'light_fun', 'intense', 'romantic', 'mindbending',
+    'spooky', 'empowering', 'aesthetic',
+  ];
+  for (const cat of categories) {
+    for (const locale of LOCALES) {
+      urls.push(`${SITE_URL}/${locale}/best/${cat}`);
     }
   }
 
-  // Genre pages
-  const genres = ['romance', 'historical', 'wuxia', 'modern', 'fantasy', 'mystery', 'comedy'];
-  for (const genre of genres) {
-    for (const locale of ['en', 'vi', 'th', 'id']) {
-      urls.push(`${SITE_URL}/${locale}/best/${genre}`);
+  // Actors listing page (all locales)
+  for (const locale of LOCALES) {
+    urls.push(`${SITE_URL}/${locale}/actors`);
+  }
+
+  // Actor detail pages (only actors with 2+ dramas, all locales)
+  const allActors = await db.select({ slug: actors.slug, dramasJson: actors.dramasJson }).from(actors).all();
+  for (const actor of allActors) {
+    try {
+      const entries = JSON.parse(actor.dramasJson || '[]');
+      if (entries.length < 2) continue;
+    } catch {
+      continue;
     }
+    for (const locale of LOCALES) {
+      urls.push(`${SITE_URL}/${locale}/actor/${actor.slug}`);
+    }
+  }
+
+  // Blog pages (English only)
+  urls.push(`${SITE_URL}/en/blog`);
+  try {
+    const { getAllArticles } = await import('@/lib/blog');
+    const articles = getAllArticles();
+    for (const article of articles) {
+      urls.push(`${SITE_URL}/en/blog/${article.slug}`);
+    }
+  } catch {
+    // blog module may not be available in all environments
   }
 
   return Array.from(new Set(urls));

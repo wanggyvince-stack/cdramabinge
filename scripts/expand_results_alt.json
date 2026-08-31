@@ -1,0 +1,761 @@
+[
+  {
+    "zh_name": "晨雪笔记",
+    "found": true,
+    "tmdb_id": 240445,
+    "poster_url": "https://image.tmdb.org/t/p/w780/unalYN9lT9h9b5UgTxGo1CoS7fj.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/trAzKgcmDMkNBFXSr9ucZcfzxgm.jpg",
+    "original_title": "Coroner's Diary",
+    "slug": "coroner-s-diary",
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "synopsis_en": "Shen Wan, the daughter of the minister of Dali Temple, relied on her superb medical and forensic skills to join hands with Prince Yan Chi to solve unsolved cases and find the real culprit in order to vindicate her father.",
+    "synopsis_zh": "大理寺卿沈毅因卷入晋王案，全家惨遭灭门，其女沈莞借用秦府九娘子秦莞的身份逃到荆州。原本柔弱可欺的秦莞“性情大变”，不仅会治病救人，还能剖尸探案，顺带将秦府的伯母庶妹姨娘刁奴治得服服帖帖。探案期间秦莞结识了睿王世子燕迟，燕迟一心为晋王翻案，与秦莞为父昭雪的目标不谋而合，二人一起回京，途中联手破获了各式诡谲大案。回京后，一具意外发现的骸骨让晋王案得以重提，燕迟和秦莞一起慢慢接近了案件的真相，发现了皇宫里深藏的惊天秘密。",
+    "synopsis_vi": "Shen Wan, the daughter of the minister of Dali Temple, relied on her superb medical and forensic skills to join hands with Prince Yan Chi to solve unsolved cases and find the real culprit in order to vindicate her father.",
+    "synopsis_th": "Shen Wan, the daughter of the minister of Dali Temple, relied on her superb medical and forensic skills to join hands with Prince Yan Chi to solve unsolved cases and find the real culprit in order to vindicate her father.",
+    "synopsis_id": "Shen Wan, the daughter of the minister of Dali Temple, relied on her superb medical and forensic skills to join hands with Prince Yan Chi to solve unsolved cases and find the real culprit in order to vindicate her father.",
+    "cast": [
+      {
+        "name": "Li Landi",
+        "character": "Qin Wan / Shen Wan",
+        "tmdb_person_id": 1909812,
+        "photo_url": "https://image.tmdb.org/t/p/w300/a5ifktKg6n6xSSHOKmpJJshPqIk.jpg"
+      },
+      {
+        "name": "Ao Ruipeng",
+        "character": "Yan Chi",
+        "tmdb_person_id": 2798208,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ixekaZD5T0rkc518UZtadioBX9z.jpg"
+      },
+      {
+        "name": "Yu Chengen",
+        "character": "Yan Li",
+        "tmdb_person_id": 2863228,
+        "photo_url": "https://image.tmdb.org/t/p/w300/4ttvHIUGWK0WmLrbAsjRJhDwI0v.jpg"
+      },
+      {
+        "name": "Shen Yujie",
+        "character": "Yue Ning",
+        "tmdb_person_id": 2518577,
+        "photo_url": "https://image.tmdb.org/t/p/w300/uuuxrNW2br6qD0bSTCxrJccv3kQ.jpg"
+      },
+      {
+        "name": "Tien Niu",
+        "character": "Grand Princess",
+        "tmdb_person_id": 115610,
+        "photo_url": "https://image.tmdb.org/t/p/w300/pON5n5OWUqFO5kytJ4L9teeLNzN.jpg"
+      },
+      {
+        "name": "Cheng Hongxin",
+        "character": "Bai Feng",
+        "tmdb_person_id": 3817383,
+        "photo_url": "https://image.tmdb.org/t/p/w300/fmo0MN1aQZYsw4lIsq6mpPf8OGI.jpg"
+      },
+      {
+        "name": "Wang Luqing",
+        "character": "Fu Ling",
+        "tmdb_person_id": 2231067,
+        "photo_url": "https://image.tmdb.org/t/p/w300/2RnpcMA3uUAo2eiLH5ZZIpvGzHB.jpg"
+      },
+      {
+        "name": "Yu Xuanchen",
+        "character": "Yan Che",
+        "tmdb_person_id": 3575431,
+        "photo_url": "https://image.tmdb.org/t/p/w300/gHZZzXKx3PmXtnwjCBMi0t4oIQJ.jpg"
+      },
+      {
+        "name": "Liu Yihong",
+        "character": "Yan Qi",
+        "tmdb_person_id": 3037040,
+        "photo_url": "https://image.tmdb.org/t/p/w300/3laibBI6wa7ozK8ZwZQTRYB7Onb.jpg"
+      },
+      {
+        "name": "Sun Xuening",
+        "character": "Cai He",
+        "tmdb_person_id": 1905964,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ljAAA4TIWc6v1clXp7Hh9jYOPVh.jpg"
+      }
+    ],
+    "trailer_key": "ufzdjnrCXkE",
+    "number_of_episodes": 38,
+    "first_air_date": "2025-07-13",
+    "status": "Ended",
+    "search_term": "Coroner's Diary"
+  },
+  {
+    "zh_name": "暴雪中恋爱",
+    "found": true,
+    "tmdb_id": 221112,
+    "poster_url": "https://image.tmdb.org/t/p/w780/1v5ABzgSMlVJG2acb6S6JAkEM2S.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/2EiNPJuZMTY7Bm9setnS1GqhGAl.jpg",
+    "original_title": "Amidst a Snowstorm of Love",
+    "slug": "amidst-a-snowstorm-of-love",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "As a professional billiards player, Yin Guo has become quite a notable athlete. After receiving an invitation to play in a tournament in Hel, Yin Guo eagerly accepts. Little does she know that meeting former professional billiards player, Lin Yiyang, in Hel will change her life forever.",
+    "synopsis_zh": "昔日天才级职业斯诺克选手林亦扬与当红九球选手殷果相遇在一场十年难得一遇的暴雪之夜。在殷果表弟的助攻之下，两人慢慢熟识，殷果也了解到林亦扬的往事。原来林亦扬曾经也是轰动一时的斯诺克天才，在一次比赛中因对裁判判罚有异议，争取时无意冲撞裁判而被禁赛，少年气盛的他不服判决，竟直接宣布退役，从此离开了自己引以为傲的斯诺克事业。殷果的出现，让林亦扬的人生轨迹再次转变，林亦扬不仅开始努力地追求殷果，还在殷果的带动下重拾最初的梦想，返回斯诺克赛场。最终二人共攀事业高峰，一同为职业台球事业贡献力量，并携手教练与队友，共推全民健身台球项目发展。",
+    "synopsis_vi": "As a professional billiards player, Yin Guo has become quite a notable athlete. After receiving an invitation to play in a tournament in Hel, Yin Guo eagerly accepts. Little does she know that meeting former professional billiards player, Lin Yiyang, in Hel will change her life forever.",
+    "synopsis_th": "As a professional billiards player, Yin Guo has become quite a notable athlete. After receiving an invitation to play in a tournament in Hel, Yin Guo eagerly accepts. Little does she know that meeting former professional billiards player, Lin Yiyang, in Hel will change her life forever.",
+    "synopsis_id": "As a professional billiards player, Yin Guo has become quite a notable athlete. After receiving an invitation to play in a tournament in Hel, Yin Guo eagerly accepts. Little does she know that meeting former professional billiards player, Lin Yiyang, in Hel will change her life forever.",
+    "cast": [
+      {
+        "name": "Leo Wu",
+        "character": "Lin Yiyang",
+        "tmdb_person_id": 1438264,
+        "photo_url": "https://image.tmdb.org/t/p/w300/43fYrqW26tisHBblj9lazersTdr.jpg"
+      },
+      {
+        "name": "Zhao Jinmai",
+        "character": "Yin Guo",
+        "tmdb_person_id": 2113005,
+        "photo_url": "https://image.tmdb.org/t/p/w300/hndhOhSK0GAMi1qQaacacl3aHzO.jpg"
+      },
+      {
+        "name": "Wang Xingyue",
+        "character": "Meng Xiaodong",
+        "tmdb_person_id": 3157355,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mi4dqtBt53fRpRWFTgCf9GHgOA7.jpg"
+      },
+      {
+        "name": "Ding Xiaoying",
+        "character": "Lin Lin",
+        "tmdb_person_id": 2832840,
+        "photo_url": "https://image.tmdb.org/t/p/w300/sCk8K1hA8y92rFQTFLU7H5RQWsy.jpg"
+      },
+      {
+        "name": "Dong Zifan",
+        "character": "Wu Wei",
+        "tmdb_person_id": 3843832,
+        "photo_url": "https://image.tmdb.org/t/p/w300/x97b3NOgk9RuPCOeWjZJ21vC0gK.jpg"
+      },
+      {
+        "name": "Wang Jiaxuan",
+        "character": "Meng Xiaotian",
+        "tmdb_person_id": 4015041,
+        "photo_url": "https://image.tmdb.org/t/p/w300/hbDBOaNLIS08BKiG4k7GiHOHF6n.jpg"
+      },
+      {
+        "name": "Han Donglin",
+        "character": "Chen Anan",
+        "tmdb_person_id": 2642151,
+        "photo_url": "https://image.tmdb.org/t/p/w300/u3aXwq4jAAx737WDXV6aUZRMKSH.jpg"
+      },
+      {
+        "name": "Wang Runze",
+        "character": "Li Qingyan",
+        "tmdb_person_id": 2164716,
+        "photo_url": "https://image.tmdb.org/t/p/w300/oLQYPrZh7XLmRPHMUeuwibuAX28.jpg"
+      },
+      {
+        "name": "Wang Yuexi",
+        "character": "Liu Xiran",
+        "tmdb_person_id": 2027653,
+        "photo_url": "https://image.tmdb.org/t/p/w300/drXxgjNeVG3o1iYGgp02f4Bdyzm.jpg"
+      },
+      {
+        "name": "Li Ao",
+        "character": "Wen Xiao",
+        "tmdb_person_id": 3133580,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mxsQT1WrcwDux14KljPHgjHoJu3.jpg"
+      }
+    ],
+    "trailer_key": "gmeFwkXFsBs",
+    "number_of_episodes": 30,
+    "first_air_date": "2024-02-02",
+    "status": "Ended",
+    "search_term": "Amidst a Snowstorm of Love"
+  },
+  {
+    "zh_name": "司衿",
+    "found": true,
+    "tmdb_id": 263043,
+    "poster_url": "https://image.tmdb.org/t/p/w780/A3OOgq75rCyxdCOYuboXv2li1j9.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/qpARG9aRGsD4SkzpK92xw7cGdTM.jpg",
+    "original_title": "Si Jin",
+    "slug": "si-jin",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "Jiang Si, the fourth lady of Dongping Bo Mansion, is reborn after dying at the hands of her lover, Yu Jin. Determined to rewrite her fate, she breaks off her engagement, outsmarts her cruel aunt, opens a perfumery, and investigates a series of mysterious crimes. She reunites with Yu Jin, and despite their unresolved past, they join forces to change tragic destinies—saving her siblings and clearing her father’s name. As they overcome hardships together, Jiang Si’s feelings for Yu Jin rekindle, and they work hand in hand to protect the peace of the Zhou dynasty, embracing a lifetime of prosperity.",
+    "synopsis_zh": "东平伯府四小姐姜似死在爱人郁锦手中后，重启人生的故事。这一次，姜似勇敢退婚、智斗恶毒婶婶、开设香铺、助好友、查少女连环被害案……一点点将悲剧改写。姜似与少年将军郁锦再度相遇，二人虽各怀心事，却依旧陷入纠缠。姜似与郁锦联手改变了哥哥姜湛落水而亡、姐姐姜依自缢的命运，也改写了父亲被长公主嫁祸斩首的结局。两人共同战胜艰难险阻，姜似对郁锦的态度也在悄悄转变，愿意再与郁锦相爱一次。二人携手维护大周和平，收获一世繁花。",
+    "synopsis_vi": "Jiang Si, the fourth lady of Dongping Bo Mansion, is reborn after dying at the hands of her lover, Yu Jin. Determined to rewrite her fate, she breaks off her engagement, outsmarts her cruel aunt, opens a perfumery, and investigates a series of mysterious crimes. She reunites with Yu Jin, and despite their unresolved past, they join forces to change tragic destinies—saving her siblings and clearing her father’s name. As they overcome hardships together, Jiang Si’s feelings for Yu Jin rekindle, and they work hand in hand to protect the peace of the Zhou dynasty, embracing a lifetime of prosperity.",
+    "synopsis_th": "Jiang Si, the fourth lady of Dongping Bo Mansion, is reborn after dying at the hands of her lover, Yu Jin. Determined to rewrite her fate, she breaks off her engagement, outsmarts her cruel aunt, opens a perfumery, and investigates a series of mysterious crimes. She reunites with Yu Jin, and despite their unresolved past, they join forces to change tragic destinies—saving her siblings and clearing her father’s name. As they overcome hardships together, Jiang Si’s feelings for Yu Jin rekindle, and they work hand in hand to protect the peace of the Zhou dynasty, embracing a lifetime of prosperity.",
+    "synopsis_id": "Jiang Si, the fourth lady of Dongping Bo Mansion, is reborn after dying at the hands of her lover, Yu Jin. Determined to rewrite her fate, she breaks off her engagement, outsmarts her cruel aunt, opens a perfumery, and investigates a series of mysterious crimes. She reunites with Yu Jin, and despite their unresolved past, they join forces to change tragic destinies—saving her siblings and clearing her father’s name. As they overcome hardships together, Jiang Si’s feelings for Yu Jin rekindle, and they work hand in hand to protect the peace of the Zhou dynasty, embracing a lifetime of prosperity.",
+    "cast": [
+      {
+        "name": "Jing Tian",
+        "character": "Jiang Si",
+        "tmdb_person_id": 1151657,
+        "photo_url": "https://image.tmdb.org/t/p/w300/7jP3VMJOMjx90EalALHnlWKU36n.jpg"
+      },
+      {
+        "name": "Zhang Wanyi",
+        "character": "Yu Jin / Yu Qi",
+        "tmdb_person_id": 3028958,
+        "photo_url": "https://image.tmdb.org/t/p/w300/wG7GZ5XRUgwTMiAQS1gvgJEABKl.jpg"
+      },
+      {
+        "name": "Guo Tao",
+        "character": "Emperor Jingming",
+        "tmdb_person_id": 548608,
+        "photo_url": "https://image.tmdb.org/t/p/w300/5MZW82Bw5hif66xcBgwx9Lvxkdo.jpg"
+      },
+      {
+        "name": "Zhang Chi",
+        "character": "Jiang Zhan",
+        "tmdb_person_id": 3271562,
+        "photo_url": "https://image.tmdb.org/t/p/w300/8cpnTxwKfojLHmI4GOMpQsW49LU.jpg"
+      },
+      {
+        "name": "Xu Hao",
+        "character": "Cui Mingyue",
+        "tmdb_person_id": 2590478,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ga160oB0YlT8sxd80JPTvHBu5go.jpg"
+      },
+      {
+        "name": "Bai Bingke",
+        "character": "Lu Chuchu",
+        "tmdb_person_id": 3706783,
+        "photo_url": "https://image.tmdb.org/t/p/w300/7QcsBK6n5ZDNQoWgk9PaeOZT3w.jpg"
+      },
+      {
+        "name": "Cao Feiran",
+        "character": "Jiang Yi",
+        "tmdb_person_id": 3278808,
+        "photo_url": "https://image.tmdb.org/t/p/w300/z37msRIJgWFyXEDqcbwe3Ityieq.jpg"
+      },
+      {
+        "name": "Cui Hang",
+        "character": "Zhen Heng",
+        "tmdb_person_id": 3157396,
+        "photo_url": "https://image.tmdb.org/t/p/w300/T3nKzkRohNd4SWGNlEEmTSunn9.jpg"
+      }
+    ],
+    "trailer_key": "A0cINqB2VA8",
+    "number_of_episodes": 40,
+    "first_air_date": "2025-03-01",
+    "status": "Ended",
+    "search_term": "Si Jin"
+  },
+  {
+    "zh_name": "爱情在云端",
+    "found": true,
+    "tmdb_id": 226270,
+    "poster_url": "https://image.tmdb.org/t/p/w780/rz9njPrgpOWKlXeU3e3lvMChjnD.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/j5NeWPr4ddv5k4RIS71cdlQgF6g.jpg",
+    "original_title": "Love in Pavilion",
+    "slug": "love-in-pavilion",
+    "genres": [
+      "Drama",
+      "Sci-Fi & Fantasy",
+      "Action & Adventure"
+    ],
+    "synopsis_en": "It tells the story of Dongfang Huaizhu and Wangquan Hongye, the leaders of two major families, the Dongfangs and the Wangquans. In a time when humans and demons are in conflict, they work together to stabilize the situation in order to revive the Unity Alliance. On the seventh day of the seventh month, at the Bamboo Pavilion by the Huai River, their fates intertwine like the sheaths of two swords, never to be separated. They pick up the most heartwarming promise and tell a story that has endured for generations.",
+    "synopsis_zh": "该剧根据庹小新创作的漫画《狐妖小红娘》改编，讲述了两大家族东方家和王权家的掌舵人东方淮竹（刘诗诗 饰）、王权弘业（张云龙 饰）因一场意外相识，许下“七月初七， 淮水竹亭”的约定，与各路伙伴一起走上重振一气盟，共同努力安定局势的道 路，就此展开了一段互相救赎的故事。",
+    "synopsis_vi": "It tells the story of Dongfang Huaizhu and Wangquan Hongye, the leaders of two major families, the Dongfangs and the Wangquans. In a time when humans and demons are in conflict, they work together to stabilize the situation in order to revive the Unity Alliance. On the seventh day of the seventh month, at the Bamboo Pavilion by the Huai River, their fates intertwine like the sheaths of two swords, never to be separated. They pick up the most heartwarming promise and tell a story that has endured for generations.",
+    "synopsis_th": "It tells the story of Dongfang Huaizhu and Wangquan Hongye, the leaders of two major families, the Dongfangs and the Wangquans. In a time when humans and demons are in conflict, they work together to stabilize the situation in order to revive the Unity Alliance. On the seventh day of the seventh month, at the Bamboo Pavilion by the Huai River, their fates intertwine like the sheaths of two swords, never to be separated. They pick up the most heartwarming promise and tell a story that has endured for generations.",
+    "synopsis_id": "It tells the story of Dongfang Huaizhu and Wangquan Hongye, the leaders of two major families, the Dongfangs and the Wangquans. In a time when humans and demons are in conflict, they work together to stabilize the situation in order to revive the Unity Alliance. On the seventh day of the seventh month, at the Bamboo Pavilion by the Huai River, their fates intertwine like the sheaths of two swords, never to be separated. They pick up the most heartwarming promise and tell a story that has endured for generations.",
+    "cast": [
+      {
+        "name": "Liu Shishi",
+        "character": "Dongfang Huaizhu",
+        "tmdb_person_id": 1185786,
+        "photo_url": "https://image.tmdb.org/t/p/w300/yPyMTroHKKpK2g24o7920erAa3L.jpg"
+      },
+      {
+        "name": "Leon Zhang",
+        "character": "Wangquan Hongye",
+        "tmdb_person_id": 1785826,
+        "photo_url": "https://image.tmdb.org/t/p/w300/tebbwxd5F9CdDG3YzYZQJ2jC8bY.jpg"
+      },
+      {
+        "name": "Wu Xuanyi",
+        "character": "Wangquan Zui",
+        "tmdb_person_id": 1875782,
+        "photo_url": "https://image.tmdb.org/t/p/w300/4wpLjyVEhKkk21Ew1rB6YBLOavp.jpg"
+      },
+      {
+        "name": "Zhai Xiaowen",
+        "character": "Yang Yitan",
+        "tmdb_person_id": 3133673,
+        "photo_url": "https://image.tmdb.org/t/p/w300/sX4Fhh35IZxJwultxPSilG8C8Ng.jpg"
+      },
+      {
+        "name": "Shen Yue",
+        "character": "Dongfang Qinlan",
+        "tmdb_person_id": 1922808,
+        "photo_url": "https://image.tmdb.org/t/p/w300/za5X2mJ8Q38jjo07ON0l3bP96AR.jpg"
+      },
+      {
+        "name": "Ding Yuxi",
+        "character": "Zhang Zheng",
+        "tmdb_person_id": 2493492,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ellcOuCs2mo1Oh9zO2Qhb0OoZ4d.jpg"
+      },
+      {
+        "name": "Zhang Ruonan",
+        "character": "Yang Yan",
+        "tmdb_person_id": 2174697,
+        "photo_url": "https://image.tmdb.org/t/p/w300/7qFHUBL4qUusjOb4aCACYBKcb6C.jpg"
+      },
+      {
+        "name": "Meng Ziyi",
+        "character": "Qing Muyuan",
+        "tmdb_person_id": 2128468,
+        "photo_url": "https://image.tmdb.org/t/p/w300/R1cfuT9TQ2Xc7hsQHWzbzN0sbA.jpg"
+      },
+      {
+        "name": "Zhou Jieqiong",
+        "character": "Cuiyu Mingluan",
+        "tmdb_person_id": 1875642,
+        "photo_url": "https://image.tmdb.org/t/p/w300/tZPL5WmxgLmW01EpKDBwYZcopht.jpg"
+      },
+      {
+        "name": "Hou Minghao",
+        "character": "Baimu Demon Lord",
+        "tmdb_person_id": 1844511,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mhu2D7aWA49izHguvxx3tH9LsJX.jpg"
+      }
+    ],
+    "trailer_key": "u5Ej9k39Xw0",
+    "number_of_episodes": 36,
+    "first_air_date": "2025-04-28",
+    "status": "Ended",
+    "search_term": "Love in Pavilion"
+  },
+  {
+    "zh_name": "异姓公主",
+    "found": true,
+    "tmdb_id": 243495,
+    "poster_url": "https://image.tmdb.org/t/p/w780/qNRy3kc2JP20OppCJU1aCTp0g5h.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/vVcBHA5v2aFSMXxUdhmT3YRlW4N.jpg",
+    "original_title": "Different Princess",
+    "slug": "different-princess",
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Mystery",
+      "Sci-Fi & Fantasy"
+    ],
+    "synopsis_en": "Female author Hua Qingge unexpectedly enters the world of her novel, taking on the role of a supporting character destined for failure. Armed with the script, she anticipates turning the tide, but instead, her journey takes a series of unexpected turns as she becomes entangled in a tale of love and hate with Ji Chu.",
+    "synopsis_zh": "女作家花青歌进入自己小说的世界，变身炮灰女配。本以为手握剧本能逆风翻盘，结果一路翻车，和纪楚你追我赶，爱恨交织。",
+    "synopsis_vi": "Female author Hua Qingge unexpectedly enters the world of her novel, taking on the role of a supporting character destined for failure. Armed with the script, she anticipates turning the tide, but instead, her journey takes a series of unexpected turns as she becomes entangled in a tale of love and hate with Ji Chu.",
+    "synopsis_th": "Female author Hua Qingge unexpectedly enters the world of her novel, taking on the role of a supporting character destined for failure. Armed with the script, she anticipates turning the tide, but instead, her journey takes a series of unexpected turns as she becomes entangled in a tale of love and hate with Ji Chu.",
+    "synopsis_id": "Female author Hua Qingge unexpectedly enters the world of her novel, taking on the role of a supporting character destined for failure. Armed with the script, she anticipates turning the tide, but instead, her journey takes a series of unexpected turns as she becomes entangled in a tale of love and hate with Ji Chu.",
+    "cast": [
+      {
+        "name": "Ireine Song",
+        "character": "Hua Qingge",
+        "tmdb_person_id": 2164942,
+        "photo_url": "https://image.tmdb.org/t/p/w300/q97r6UwDSuNeWk0eq3ddXKBCspz.jpg"
+      },
+      {
+        "name": "Ding Zeren",
+        "character": "Ji Chu",
+        "tmdb_person_id": 2492321,
+        "photo_url": "https://image.tmdb.org/t/p/w300/f2ve2jdscf7H1wiVHdpd45SQ6Hy.jpg"
+      },
+      {
+        "name": "Zhu Rongjun",
+        "character": "Lin Xiyao",
+        "tmdb_person_id": 3734499,
+        "photo_url": "https://image.tmdb.org/t/p/w300/pYTPElWgI2b1Wx8n23gpIs7PwmT.jpg"
+      },
+      {
+        "name": "Sun Zujun",
+        "character": "Ji Yun",
+        "tmdb_person_id": 2165604,
+        "photo_url": "https://image.tmdb.org/t/p/w300/dhiOA7k1CyERP68BKXU2gmeGuVf.jpg"
+      },
+      {
+        "name": "Zhang Yuenan",
+        "character": "Ji Wan'er",
+        "tmdb_person_id": 2698071,
+        "photo_url": "https://image.tmdb.org/t/p/w300/6ZK8MFqiQGNzjPQR8LSAL4uh9ev.jpg"
+      },
+      {
+        "name": "Lin Lu",
+        "character": "Gong Yeqi",
+        "tmdb_person_id": 2913657,
+        "photo_url": "https://image.tmdb.org/t/p/w300/9IK8KuSLZxYJ4xvUvTE6P4QHPcf.jpg"
+      },
+      {
+        "name": "Yu Xiaolei",
+        "character": "Empress",
+        "tmdb_person_id": 4729520,
+        "photo_url": "https://image.tmdb.org/t/p/w300/bwFXOom8c0ilqzdT1fAdYRyGdyl.jpg"
+      },
+      {
+        "name": "Xu Qi",
+        "character": "Liu Xiang",
+        "tmdb_person_id": 5158995,
+        "photo_url": "https://image.tmdb.org/t/p/w300/eATv1t3AGemuD7tFlmPZKcCmLJq.jpg"
+      },
+      {
+        "name": "Wang Junzhe",
+        "character": "Feng Ji",
+        "tmdb_person_id": 3335367,
+        "photo_url": "https://image.tmdb.org/t/p/w300/u385UVrkE2SUURheU8LhKt9WWC4.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 36,
+    "first_air_date": "2024-01-12",
+    "status": "Ended",
+    "search_term": "Different Princess"
+  },
+  {
+    "zh_name": "全员ascending",
+    "found": true,
+    "tmdb_id": 90872,
+    "poster_url": "https://image.tmdb.org/t/p/w780/lgDVAetqJvCoBrZin2MpsYUdnwT.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/cjpOEE5PhoEZb7hyupj0MV3eJtD.jpg",
+    "original_title": "All Rise",
+    "slug": "all-rise",
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "synopsis_en": "A look at the personal and professional lives of the judges, lawyers, clerks, bailiffs and cops who work at an L.A. County courthouse.",
+    "synopsis_zh": "　　Greg Spottiswood负责的《全体起立 All Rise》（前名《法庭内外 Courthouse》）讲述在洛杉矶的法庭上，法官﹑助理地区检察官﹑公设辩护人﹑法警﹑文员﹑警察及陪审员等人的生活。  　　在《夜魔侠 Marvel's Daredevil》饰演靶眼的Wilson Bethel饰演一个爱捣蛋﹑成功的地区副检察官Mark，他死党兼同事Lola新近任命为法官，因此两人在公在私的关系有所变化。在《卢克·凯奇 Marvel's Luke Cage》饰演Misty Knight的Simone Cook饰演Lola，独立﹑令人敬畏﹑偶尔冲动的她身为地区副检察官时令人印象深刻，成为新任法官后她更倾向越过界限，挑战常人对法官的形象。  　　曾主演《犯罪现场调查 CSI: Crime Scene Investigation》的Marg Helgenberger饰演Judith法官，是加州罕有地打破玻璃天花板的女法官（玻璃天花板/Glass Ceiling是种指因为某人的性别或身份或某自身原因，在虽然没明文下，仍然被限制了升迁）。她以监督法官身份看着Lola成为法官，在期间也因而令她重拾对正义的热情。J. Alex Brinson饰演慷慨﹑勤奋的Luke，白天当庭警﹑晚上是法学院学生的他决心成为一名律师。Jessica Camacho饰演坚定的公设辩护心Emily Lopez-Berarro，为了证明客户的清白会显得无畏无惧。  　　Lindsay Mendez饰演Sara，热情洋溢﹑乐观﹑深藏不露的法庭记者，Emily的密友。她亦有主持法庭圈的牌局，并因此得到很多八卦及情报。Ruthie Ann Miles饰演Lola的司法助理Sherri，负责时间表﹑证人列表等文书工作。",
+    "synopsis_vi": "A look at the personal and professional lives of the judges, lawyers, clerks, bailiffs and cops who work at an L.A. County courthouse.",
+    "synopsis_th": "A look at the personal and professional lives of the judges, lawyers, clerks, bailiffs and cops who work at an L.A. County courthouse.",
+    "synopsis_id": "A look at the personal and professional lives of the judges, lawyers, clerks, bailiffs and cops who work at an L.A. County courthouse.",
+    "cast": [
+      {
+        "name": "Simone Missick",
+        "character": "Lola Carmichael",
+        "tmdb_person_id": 1034765,
+        "photo_url": "https://image.tmdb.org/t/p/w300/15IVj29u7NJgRoVnulCgbb9c8FA.jpg"
+      },
+      {
+        "name": "Wilson Bethel",
+        "character": "Mark Callan",
+        "tmdb_person_id": 85779,
+        "photo_url": "https://image.tmdb.org/t/p/w300/xHLjGi9onJXwHoZALZ9pLBVnH5x.jpg"
+      },
+      {
+        "name": "Jessica Camacho",
+        "character": "Emily Lopez",
+        "tmdb_person_id": 1030995,
+        "photo_url": "https://image.tmdb.org/t/p/w300/rmms55MpLdBWRDX8LLDTctgXUuA.jpg"
+      },
+      {
+        "name": "J. Alex Brinson",
+        "character": "Luke Watkins",
+        "tmdb_person_id": 1710898,
+        "photo_url": "https://image.tmdb.org/t/p/w300/3Fxz2myiFVTduhBFr881NGJRK9j.jpg"
+      },
+      {
+        "name": "Ruthie Ann Miles",
+        "character": "Sherri Kansky",
+        "tmdb_person_id": 1724466,
+        "photo_url": "https://image.tmdb.org/t/p/w300/gRjK7tm9Sk0bsyrnlSHo7B54Ft7.jpg"
+      },
+      {
+        "name": "Lindsay Mendez",
+        "character": "Sara Castillo",
+        "tmdb_person_id": 1478994,
+        "photo_url": "https://image.tmdb.org/t/p/w300/d7DDVWmAggN7STtVtIP0bE17e3J.jpg"
+      },
+      {
+        "name": "Lindsey Gort",
+        "character": "Amy Quinn",
+        "tmdb_person_id": 1474965,
+        "photo_url": "https://image.tmdb.org/t/p/w300/pwZIFiSPltZbspDWEAtSB14Pcae.jpg"
+      },
+      {
+        "name": "Tess Malis Kincaid",
+        "character": "Saundra Singh",
+        "tmdb_person_id": 2077300,
+        "photo_url": "https://image.tmdb.org/t/p/w300/vzZH2WrWNPmOywT3TX2DSCVzeuy.jpg"
+      }
+    ],
+    "trailer_key": "c0Aj6gG9lJM",
+    "number_of_episodes": 58,
+    "first_air_date": "2019-09-23",
+    "status": "Ended",
+    "search_term": "All Rise"
+  },
+  {
+    "zh_name": "野望花开",
+    "found": true,
+    "tmdb_id": 254488,
+    "poster_url": "https://image.tmdb.org/t/p/w780/1kC9v1RPvrAF7VuQf20MqufnwHA.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/wG8MSuvOMfOEiRh6qZeWbKwXkXJ.jpg",
+    "original_title": "Wild Ambition Bloom",
+    "slug": "wild-ambition-bloom",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "In 1916, Chu Shaohua marries Chen Dashun, the eldest son of the Chen family’s pharmacy, to save her brother. With integrity and sharp business skills, she earns the respect of Chen’s father and becomes the manager. After the sudden deaths of Chen’s father and Dashun, the pharmacy passes to Chen Ershun, who squanders the family fortune, driving it to ruin. Through hardship, Chu Shaohua establishes Huashun Pharmacy to support the family. Just as she plans to start a new life with her first love, Xia Chu, Chen Ershun and his mother block her path. When bandits raid the Chen household, Chu loses her daughter and, devastated, leaves for Shanghai. There, her outstanding performance at Yongxin Department Store draws the attention of business talent Wen Zhiqiu, who invites her to co-found a new venture. Step by step, she rises to become a bold and trustworthy woman entrepreneur.",
+    "synopsis_zh": "1916年，褚韶华为救哥哥褚韶中而嫁给陈记药铺的大少爷陈大顺，她以诚信和出色的商业才能得到陈父的赏识，成为药铺管理人。陈父和陈大顺意外去世后，陈二顺继承药铺并败光家财，药铺陷入绝境。褚韶华在艰辛努力下，开了华顺药铺养活一家老小。褚韶华决意携手初恋情人夏初开启新的生活，却遭陈二顺和陈母的阻挠。陈家被土匪洗劫一空，褚韶华也在这次劫难中失去女儿，伤心不已的她独自出走上海。褚韶华在上海永新百货业绩突出，受经营奇才闻知秋之邀共同创业，逐步成长为胆略过人、重诺守信的女商人。",
+    "synopsis_vi": "In 1916, Chu Shaohua marries Chen Dashun, the eldest son of the Chen family’s pharmacy, to save her brother. With integrity and sharp business skills, she earns the respect of Chen’s father and becomes the manager. After the sudden deaths of Chen’s father and Dashun, the pharmacy passes to Chen Ershun, who squanders the family fortune, driving it to ruin. Through hardship, Chu Shaohua establishes Huashun Pharmacy to support the family. Just as she plans to start a new life with her first love, Xia Chu, Chen Ershun and his mother block her path. When bandits raid the Chen household, Chu loses her daughter and, devastated, leaves for Shanghai. There, her outstanding performance at Yongxin Department Store draws the attention of business talent Wen Zhiqiu, who invites her to co-found a new venture. Step by step, she rises to become a bold and trustworthy woman entrepreneur.",
+    "synopsis_th": "In 1916, Chu Shaohua marries Chen Dashun, the eldest son of the Chen family’s pharmacy, to save her brother. With integrity and sharp business skills, she earns the respect of Chen’s father and becomes the manager. After the sudden deaths of Chen’s father and Dashun, the pharmacy passes to Chen Ershun, who squanders the family fortune, driving it to ruin. Through hardship, Chu Shaohua establishes Huashun Pharmacy to support the family. Just as she plans to start a new life with her first love, Xia Chu, Chen Ershun and his mother block her path. When bandits raid the Chen household, Chu loses her daughter and, devastated, leaves for Shanghai. There, her outstanding performance at Yongxin Department Store draws the attention of business talent Wen Zhiqiu, who invites her to co-found a new venture. Step by step, she rises to become a bold and trustworthy woman entrepreneur.",
+    "synopsis_id": "In 1916, Chu Shaohua marries Chen Dashun, the eldest son of the Chen family’s pharmacy, to save her brother. With integrity and sharp business skills, she earns the respect of Chen’s father and becomes the manager. After the sudden deaths of Chen’s father and Dashun, the pharmacy passes to Chen Ershun, who squanders the family fortune, driving it to ruin. Through hardship, Chu Shaohua establishes Huashun Pharmacy to support the family. Just as she plans to start a new life with her first love, Xia Chu, Chen Ershun and his mother block her path. When bandits raid the Chen household, Chu loses her daughter and, devastated, leaves for Shanghai. There, her outstanding performance at Yongxin Department Store draws the attention of business talent Wen Zhiqiu, who invites her to co-found a new venture. Step by step, she rises to become a bold and trustworthy woman entrepreneur.",
+    "cast": [
+      {
+        "name": "Rayzha Alimjan",
+        "character": "Chu Shaohua",
+        "tmdb_person_id": 1882287,
+        "photo_url": "https://image.tmdb.org/t/p/w300/1p78v9DB2LTqWy2j2qcniQRyOdq.jpg"
+      },
+      {
+        "name": "Tony Yang",
+        "character": "Wen Zhiqiu",
+        "tmdb_person_id": 96958,
+        "photo_url": "https://image.tmdb.org/t/p/w300/d0C8Dp9itcFV4Q8bLRISguGJmPR.jpg"
+      },
+      {
+        "name": "Mao Zijun",
+        "character": "Xia Chu",
+        "tmdb_person_id": 1176004,
+        "photo_url": "https://image.tmdb.org/t/p/w300/cqugMweL96ERGdE98D2z3Cza5JY.jpg"
+      },
+      {
+        "name": "Tang Zeng",
+        "character": "Chen Dashun",
+        "tmdb_person_id": 3131747,
+        "photo_url": "https://image.tmdb.org/t/p/w300/dPWJl8mZ7KWyUbd1HlgigKTLZDe.jpg"
+      },
+      {
+        "name": "Chai Biyun",
+        "character": "Kang Erniu",
+        "tmdb_person_id": 1743475,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ehsE51hTSzLkmFMbPsZBH1bF91D.jpg"
+      },
+      {
+        "name": "Xuan Yan",
+        "character": "Chen Ershun",
+        "tmdb_person_id": 2541538,
+        "photo_url": "https://image.tmdb.org/t/p/w300/gUTppI7r8APCpcy1RFsBETPC2KX.jpg"
+      },
+      {
+        "name": "Zhang Jiayue",
+        "character": "Song Ping",
+        "tmdb_person_id": 4715361,
+        "photo_url": null
+      }
+    ],
+    "trailer_key": "k1jAHbej_PA",
+    "number_of_episodes": 38,
+    "first_air_date": "2025-09-11",
+    "status": "Ended",
+    "search_term": "Wild Ambition Bloom"
+  },
+  {
+    "zh_name": "小心背后",
+    "found": true,
+    "tmdb_id": 305952,
+    "poster_url": "https://image.tmdb.org/t/p/w780/zUMVYhbxvr7OKBiGkkigdRPOToH.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/6zSRM3CPKbV8lTxHPvPhmCyO3cl.jpg",
+    "original_title": "Watch Your Back",
+    "slug": "watch-your-back",
+    "genres": [
+      "Reality"
+    ],
+    "synopsis_en": "In Watch Your Back, host Soy Kroon welcomes twelve familiar faces to his mansion. In the real world, they've made a name for themselves. Here, they're nothing more than a number. That number is printed on their backs—visible to everyone except themselves. Whoever knows it stays in the game. What do you do when everyone knows it except you?",
+    "synopsis_zh": "In Watch Your Back, host Soy Kroon welcomes twelve familiar faces to his mansion. In the real world, they've made a name for themselves. Here, they're nothing more than a number. That number is printed on their backs—visible to everyone except themselves. Whoever knows it stays in the game. What do you do when everyone knows it except you?",
+    "synopsis_vi": "In Watch Your Back, host Soy Kroon welcomes twelve familiar faces to his mansion. In the real world, they've made a name for themselves. Here, they're nothing more than a number. That number is printed on their backs—visible to everyone except themselves. Whoever knows it stays in the game. What do you do when everyone knows it except you?",
+    "synopsis_th": "In Watch Your Back, host Soy Kroon welcomes twelve familiar faces to his mansion. In the real world, they've made a name for themselves. Here, they're nothing more than a number. That number is printed on their backs—visible to everyone except themselves. Whoever knows it stays in the game. What do you do when everyone knows it except you?",
+    "synopsis_id": "In Watch Your Back, host Soy Kroon welcomes twelve familiar faces to his mansion. In the real world, they've made a name for themselves. Here, they're nothing more than a number. That number is printed on their backs—visible to everyone except themselves. Whoever knows it stays in the game. What do you do when everyone knows it except you?",
+    "cast": [
+      {
+        "name": "Soy Kroon",
+        "character": "Self - Presenter",
+        "tmdb_person_id": 1655913,
+        "photo_url": "https://image.tmdb.org/t/p/w300/okiwf4KstvjTjKTW1QPople3COa.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 10,
+    "first_air_date": "2026-01-01",
+    "status": "Returning Series",
+    "search_term": "Watch Your Back"
+  },
+  {
+    "zh_name": "破影",
+    "found": true,
+    "tmdb_id": 252572,
+    "poster_url": "https://image.tmdb.org/t/p/w780/weHTKnnTnSjxb2zs8wqS7wuwldB.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/gId0qV04Np9d4zfZ6GdPS92H68o.jpg",
+    "original_title": "Breaking the Shadows",
+    "slug": "breaking-the-shadows",
+    "genres": [
+      "Mystery",
+      "Drama",
+      "Crime"
+    ],
+    "synopsis_en": "When her longtime partner Zhong Wei goes missing during a case, stoic detective Han Qing refuses to give up the search. As she investigates a new murder, she uncovers a connection to Zhong Wei’s disappearance and a hidden criminal network involving murder, abductions, and drug trafficking. With her team, Han Qing races to unravel the truth and bring the syndicate to justice.",
+    "synopsis_zh": "韩青（孙俪 饰）是三合刑侦队的女警官，工作上一丝不苟，被同事们称为“不高兴”。她与搭档钟伟（罗晋 饰）合作多年，默契十足，然而在一次跟踪嫌疑人的任务后，钟伟离奇失踪，近两个月杳无音信。\n\n2017年夏天，一场暴雨席卷南方小城后，惊现碎尸。韩青一边全力侦办这起碎尸案，一边持续寻找失踪的搭档钟伟。随着调查的深入，她通过蛛丝马迹发现新命案与钟伟的失踪有着千丝万缕的联系。见习警员林嘉嘉（丁冠森 饰）的加入，为案件侦破带来新的视角。在追查过程中，罪犯总能快人一步，让警方怀疑警局内部有人泄露消息，甚至惊觉有“内鬼”存在。\n\n面对重重阻力，韩青始终没有放弃。随着调查推进，警方发现这起碎尸案背后暗藏着一个庞大的贩毒集团，而钟伟的失踪也与该贩毒案紧密关联。最终，三合刑侦队抽丝剥茧，发现了失踪、杀人、贩毒三件大案的内在联系，一个精心构建的犯罪网络慢慢浮出水面。全体成员群策群力，拨开重重迷雾，一举破获全案，将犯罪分子悉数落网。",
+    "synopsis_vi": "When her longtime partner Zhong Wei goes missing during a case, stoic detective Han Qing refuses to give up the search. As she investigates a new murder, she uncovers a connection to Zhong Wei’s disappearance and a hidden criminal network involving murder, abductions, and drug trafficking. With her team, Han Qing races to unravel the truth and bring the syndicate to justice.",
+    "synopsis_th": "When her longtime partner Zhong Wei goes missing during a case, stoic detective Han Qing refuses to give up the search. As she investigates a new murder, she uncovers a connection to Zhong Wei’s disappearance and a hidden criminal network involving murder, abductions, and drug trafficking. With her team, Han Qing races to unravel the truth and bring the syndicate to justice.",
+    "synopsis_id": "When her longtime partner Zhong Wei goes missing during a case, stoic detective Han Qing refuses to give up the search. As she investigates a new murder, she uncovers a connection to Zhong Wei’s disappearance and a hidden criminal network involving murder, abductions, and drug trafficking. With her team, Han Qing races to unravel the truth and bring the syndicate to justice.",
+    "cast": [
+      {
+        "name": "Sun Li",
+        "character": "Han Qing",
+        "tmdb_person_id": 52898,
+        "photo_url": "https://image.tmdb.org/t/p/w300/12JSX18m5yzoNpLCTLQ104CUslf.jpg"
+      },
+      {
+        "name": "Luo Jin",
+        "character": "Zhong Wei",
+        "tmdb_person_id": 1115666,
+        "photo_url": "https://image.tmdb.org/t/p/w300/qP8nQt2PpHh19odhuhUXqGqdEO9.jpg"
+      },
+      {
+        "name": "Ding Guansen",
+        "character": "Lin Jiajia",
+        "tmdb_person_id": 1780717,
+        "photo_url": "https://image.tmdb.org/t/p/w300/iuf2pu3drbiYMsqW3DEIbpxaPt8.jpg"
+      },
+      {
+        "name": "Li Xiaoran",
+        "character": "Zhou Xueman",
+        "tmdb_person_id": 78870,
+        "photo_url": "https://image.tmdb.org/t/p/w300/9kDjTtOTUEGInaYHDuG0CKn9vuQ.jpg"
+      },
+      {
+        "name": "Wang Ziyi",
+        "character": "Wang Xuehua",
+        "tmdb_person_id": 1016316,
+        "photo_url": "https://image.tmdb.org/t/p/w300/6xOEI8NnQuvRwe6nSDXYGAamKzO.jpg"
+      },
+      {
+        "name": "Huang Man",
+        "character": "Dong Jie",
+        "tmdb_person_id": 3093272,
+        "photo_url": "https://image.tmdb.org/t/p/w300/sIv8K2FpOdhBUclAMGwty8vMO6C.jpg"
+      },
+      {
+        "name": "Yiying Liu",
+        "character": "Bai Xiaohui",
+        "tmdb_person_id": 2405949,
+        "photo_url": "https://image.tmdb.org/t/p/w300/l29G3fUb4o1YlL3BvOARXEjnUBX.jpg"
+      },
+      {
+        "name": "Kaavie Wong",
+        "character": "Chen Bin",
+        "tmdb_person_id": 2318293,
+        "photo_url": "https://image.tmdb.org/t/p/w300/g17qLcGWPsugZdMmFFcETiG4DtE.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 17,
+    "first_air_date": "2025-04-03",
+    "status": "Ended",
+    "search_term": "Breaking the Shadows"
+  },
+  {
+    "zh_name": "大河之源",
+    "found": true,
+    "tmdb_id": 284914,
+    "poster_url": "https://image.tmdb.org/t/p/w780/mnVx0tN1pl1ltbERrW8qOmOUh8B.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/IVo4TJWIyrPIUvhcTI7d2Ngzuc.jpg",
+    "original_title": "The Source of River",
+    "slug": "the-source-of-river",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "Years after a personal and professional setback, tax investigator Zheng Hao is assigned to expose a major tax evasion network in Xindong. As his former fiancée, Liang Jinqiu, returns from abroad and their old friend, Professor Zhao Mingda, faces a family crisis, they become entangled in a dangerous fight against corruption and deception hidden beneath the city’s facade.",
+    "synopsis_zh": "2012年，郑昊是新东市税务稽查局的中坚力量，在与女友梁锦秋谈婚论嫁之时，梁父因涉税违法而入狱。与此同时，郑昊的师父陈大军查案身亡。随后，梁锦秋母女也被追债人逼得出走国外；面对大军之死的疑点、梁锦秋的出走，郑昊因自己无能为力而深陷痛苦。时间来到六年后，时任新东市岭水区税务局风控局局长郑昊运用大数据技术屡破要案，被调入稽查局担任检查二科科长；其前女友梁锦秋，在异国打拼多年后也在此时回国发展事业；而与二人在大学期间称为“高智商铁三角”的财大教授赵明达，正因女儿的病情陷入困境。看似祥和安泰的新东，暗处却有着一张巨大的以偷逃税牟利的犯罪网络，几人的命运被突如其来的种种境遇卷向了未知......",
+    "synopsis_vi": "Years after a personal and professional setback, tax investigator Zheng Hao is assigned to expose a major tax evasion network in Xindong. As his former fiancée, Liang Jinqiu, returns from abroad and their old friend, Professor Zhao Mingda, faces a family crisis, they become entangled in a dangerous fight against corruption and deception hidden beneath the city’s facade.",
+    "synopsis_th": "Years after a personal and professional setback, tax investigator Zheng Hao is assigned to expose a major tax evasion network in Xindong. As his former fiancée, Liang Jinqiu, returns from abroad and their old friend, Professor Zhao Mingda, faces a family crisis, they become entangled in a dangerous fight against corruption and deception hidden beneath the city’s facade.",
+    "synopsis_id": "Years after a personal and professional setback, tax investigator Zheng Hao is assigned to expose a major tax evasion network in Xindong. As his former fiancée, Liang Jinqiu, returns from abroad and their old friend, Professor Zhao Mingda, faces a family crisis, they become entangled in a dangerous fight against corruption and deception hidden beneath the city’s facade.",
+    "cast": [
+      {
+        "name": "Nie Yuan",
+        "character": "Zheng Hao",
+        "tmdb_person_id": 1251627,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mI99d1TAys4QztwiPaw0AlAZQ59.jpg"
+      },
+      {
+        "name": "Yang Rong",
+        "character": "Liang Jinqiu",
+        "tmdb_person_id": 1258369,
+        "photo_url": "https://image.tmdb.org/t/p/w300/skYJrfi5ii3dHxA2a5Gra7ZCAMT.jpg"
+      },
+      {
+        "name": "Zhang Duo",
+        "character": "Zhao Mingda",
+        "tmdb_person_id": 1291379,
+        "photo_url": "https://image.tmdb.org/t/p/w300/19i1X8AsMvyTE0eXXeGfCN03FJF.jpg"
+      },
+      {
+        "name": "Shi Jingming",
+        "character": "Zheng Tianchou",
+        "tmdb_person_id": 2391404,
+        "photo_url": "https://image.tmdb.org/t/p/w300/w0BQ47vcknd2CSn1GAqco5zagQl.jpg"
+      },
+      {
+        "name": "Wu Mian",
+        "character": "Ren Sumin",
+        "tmdb_person_id": 2314449,
+        "photo_url": "https://image.tmdb.org/t/p/w300/297YqYTeJ5VVbD9M2me8s9xrTZe.jpg"
+      },
+      {
+        "name": "Yang Boxiao",
+        "character": "Xiong Yi",
+        "tmdb_person_id": 2496899,
+        "photo_url": "https://image.tmdb.org/t/p/w300/yrCjTVExTv8xWV4jJcDiobDr3Fc.jpg"
+      },
+      {
+        "name": "Wang Ruixin",
+        "character": "Li Xinxin",
+        "tmdb_person_id": 3177467,
+        "photo_url": "https://image.tmdb.org/t/p/w300/gcxL2XaoPgwUiLl1Uosz7dtkKjP.jpg"
+      },
+      {
+        "name": "Huang Meng",
+        "character": "Li Dongjie",
+        "tmdb_person_id": 2231439,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mq9Yf4LtaXa7TdrtkpvO6CuJjge.jpg"
+      },
+      {
+        "name": "Zeng Kelang",
+        "character": "Gao Peng",
+        "tmdb_person_id": 3161422,
+        "photo_url": "https://image.tmdb.org/t/p/w300/38AFb57JgdNgdDNuiKVztC5RI5I.jpg"
+      },
+      {
+        "name": "Zhao Liang",
+        "character": "Yan Minghua",
+        "tmdb_person_id": 2233106,
+        "photo_url": "https://image.tmdb.org/t/p/w300/vbXmkQkqmiKRHyQCv7OXPmwVzF1.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 36,
+    "first_air_date": "2025-02-28",
+    "status": "Ended",
+    "search_term": "The Source of River"
+  },
+  {
+    "zh_name": "黎明之光",
+    "found": true,
+    "tmdb_id": 128207,
+    "poster_url": "https://image.tmdb.org/t/p/w780/zQSTHkN0pWri4IQ4bjqbeS626Ou.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/oiK5eqiVIhtmXC15nAXwGFEmDm6.jpg",
+    "original_title": "The Light of Dawn: The Normandy Landings",
+    "slug": "the-light-of-dawn-the-normandy-landings",
+    "genres": [
+      "Documentary",
+      "War & Politics"
+    ],
+    "synopsis_en": "The Normandy landings of 1944 were pivotal to the outcome of WW2. Discover when Churchill and Roosevelt first proposed the operation and how preparations started, finishing with the key events of D-Day and the far-reaching effects of its outcome.",
+    "synopsis_zh": "The Normandy landings of 1944 were pivotal to the outcome of WW2. Discover when Churchill and Roosevelt first proposed the operation and how preparations started, finishing with the key events of D-Day and the far-reaching effects of its outcome.",
+    "synopsis_vi": "The Normandy landings of 1944 were pivotal to the outcome of WW2. Discover when Churchill and Roosevelt first proposed the operation and how preparations started, finishing with the key events of D-Day and the far-reaching effects of its outcome.",
+    "synopsis_th": "The Normandy landings of 1944 were pivotal to the outcome of WW2. Discover when Churchill and Roosevelt first proposed the operation and how preparations started, finishing with the key events of D-Day and the far-reaching effects of its outcome.",
+    "synopsis_id": "The Normandy landings of 1944 were pivotal to the outcome of WW2. Discover when Churchill and Roosevelt first proposed the operation and how preparations started, finishing with the key events of D-Day and the far-reaching effects of its outcome.",
+    "cast": [],
+    "trailer_key": null,
+    "number_of_episodes": 2,
+    "first_air_date": "2019-04-28",
+    "status": "Returning Series",
+    "search_term": "Light of Dawn"
+  }
+]

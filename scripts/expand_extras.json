@@ -1,0 +1,519 @@
+[
+  {
+    "zh_name": "淬火年代",
+    "found": true,
+    "tmdb_id": 233969,
+    "poster_url": "https://image.tmdb.org/t/p/w780/6UBQRdfsXmygtAn4l9NC93bVrN6.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/57aCh7b1m5w1TvYRmGHW22xsUz8.jpg",
+    "original_title": "Created in China",
+    "slug": "created-in-china",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "In the late 1990s, Liu Jun returned to Donghai after studying in Germany. He aimed to transform his father's old machinery factory into a modern, technologically advanced facility. Despite facing challenges in technology, funding, and connections, Liu Jun, with the support of local industry leaders, successfully upgraded the factory and established it as a prominent player in China's manufacturing sector.",
+    "synopsis_zh": "上世纪九十年代末，留学德国的柳钧回到家乡东海，他顺应时代发展，立志将父亲的老机械制造厂改造成科技领先的现代化制造厂。民企在技术、资金、人脉等各方面都遇到重重困难，举步维艰，但好友钱宏明的进出口贸易、房地产等事业却搞得风生水起，二人互相帮助互相提醒。柳钧因技术结识了杨巡，后又因为技术与杨巡闹翻，结下冤仇，好在当地东海集团负责人宋运辉对他青睐有加，在腾飞厂的发展中给予了有力支持。柳钧脚踏实地，一面适应、融入国内环境，探索经营管理之道，一面攻破技术壁垒，最终凭借过硬的技术和一腔理想主义，渡过生存难关，完成了腾飞厂一次又一次的转型升级。柳钧实现了自己的价值，腾飞厂也在中国制造业的洪流中奋勇争先，占据了一席之地。",
+    "synopsis_vi": "In the late 1990s, Liu Jun returned to Donghai after studying in Germany. He aimed to transform his father's old machinery factory into a modern, technologically advanced facility. Despite facing challenges in technology, funding, and connections, Liu Jun, with the support of local industry leaders, successfully upgraded the factory and established it as a prominent player in China's manufacturing sector.",
+    "synopsis_th": "In the late 1990s, Liu Jun returned to Donghai after studying in Germany. He aimed to transform his father's old machinery factory into a modern, technologically advanced facility. Despite facing challenges in technology, funding, and connections, Liu Jun, with the support of local industry leaders, successfully upgraded the factory and established it as a prominent player in China's manufacturing sector.",
+    "synopsis_id": "In the late 1990s, Liu Jun returned to Donghai after studying in Germany. He aimed to transform his father's old machinery factory into a modern, technologically advanced facility. Despite facing challenges in technology, funding, and connections, Liu Jun, with the support of local industry leaders, successfully upgraded the factory and established it as a prominent player in China's manufacturing sector.",
+    "cast": [
+      {
+        "name": "Zhang Xincheng",
+        "character": "Liu Jun",
+        "tmdb_person_id": 2027708,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mpCVPsEvnMUkmMd1IN1xsBJpk7r.jpg"
+      },
+      {
+        "name": "Song Zuer",
+        "character": "Cui Bingbing",
+        "tmdb_person_id": 2104489,
+        "photo_url": "https://image.tmdb.org/t/p/w300/aB1MfYz5LDZmfULDnqGjRgsg25Z.jpg"
+      },
+      {
+        "name": "Wang Yanlin",
+        "character": "Qian Hongming",
+        "tmdb_person_id": 1724346,
+        "photo_url": "https://image.tmdb.org/t/p/w300/bl4wKqUhYdPNVg0p4rXJ2ZVO3T0.jpg"
+      },
+      {
+        "name": "Ren Chengwei",
+        "character": "Liu Shitang",
+        "tmdb_person_id": 2390029,
+        "photo_url": "https://image.tmdb.org/t/p/w300/5YCMaFyc4FbIgMOEVTtykBOh4R3.jpg"
+      },
+      {
+        "name": "Zhang Yue",
+        "character": "Lin Chuan",
+        "tmdb_person_id": 2175838,
+        "photo_url": "https://image.tmdb.org/t/p/w300/b0V8ScOkRTcGOXaSHMGIREFZzGn.jpg"
+      },
+      {
+        "name": "He Yuhong",
+        "character": "Shen Jiali",
+        "tmdb_person_id": 3767357,
+        "photo_url": "https://image.tmdb.org/t/p/w300/uNBz0zKlJvBZ5yM7yjRgxF6Wsb6.jpg"
+      },
+      {
+        "name": "Liu Yitie",
+        "character": "Lu Huadong",
+        "tmdb_person_id": 3480427,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ptHoNnFwmzJryRi1TS6CPka6bvp.jpg"
+      },
+      {
+        "name": "Wang Yinglu",
+        "character": "Yu Shanshan",
+        "tmdb_person_id": 3066782,
+        "photo_url": "https://image.tmdb.org/t/p/w300/d6KZ9WWIGdiOtuU0kbxSIA53ng.jpg"
+      },
+      {
+        "name": "Zhou Tienan",
+        "character": "Luo Qing",
+        "tmdb_person_id": 3883685,
+        "photo_url": "https://image.tmdb.org/t/p/w300/2w5ZXrGUl7ApAyTkm6puiBLdIte.jpg"
+      },
+      {
+        "name": "Wu Chao",
+        "character": "Manager Zhu",
+        "tmdb_person_id": 576499,
+        "photo_url": "https://image.tmdb.org/t/p/w300/tDHzZ5RseT8dtOHQvt4vRXNt9pz.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 34,
+    "first_air_date": "2025-06-18",
+    "status": "Ended"
+  },
+  {
+    "zh_name": "浴血荣光",
+    "found": true,
+    "tmdb_id": 282589,
+    "poster_url": "https://image.tmdb.org/t/p/w780/3ywnMqp2JgLYSRJbUlsOKaD3LYn.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/lk7T2GSFWAGaoStQWxjDHMd31l0.jpg",
+    "original_title": "Glorious Struggle",
+    "slug": "glorious-struggle",
+    "genres": [
+      "War & Politics"
+    ],
+    "synopsis_en": "Amid political turmoil in 1927, the Chinese Communist Party launches uprisings and forms the Red Army, establishing a revolutionary base in Jinggangshan. As they endure fierce battles and hardships during the Long March, a turning point comes with the 1935 Zunyi Conference—marking the rise of new leadership.",
+    "synopsis_zh": "1927年国共两党合作破裂后，年轻的中国共产党组织了南昌起义、秋收起义，并在井冈山开辟了革命根据地，创建了人民军队。随后，转战闽西，历经血与火的考验和不断探索，终于在古田会议上确定了思想建党、政治建军的伟大原则。第五次反围剿失败后，红军开始了二万五千里长征。长征路上，红军历经艰难险阻，冲过四道封锁线，血战湘江，突破乌江。在中国革命面临生死存亡的紧要关头，毛泽东力挽狂澜，与周恩来、朱德、张闻天、王稼祥等老一辈无产阶级革命家一同于1935年1月15日召开了遵义会议，中国革命历经了伟大的转折，开创了中国革命胜利的伟大征程。",
+    "synopsis_vi": "Amid political turmoil in 1927, the Chinese Communist Party launches uprisings and forms the Red Army, establishing a revolutionary base in Jinggangshan. As they endure fierce battles and hardships during the Long March, a turning point comes with the 1935 Zunyi Conference—marking the rise of new leadership.",
+    "synopsis_th": "Amid political turmoil in 1927, the Chinese Communist Party launches uprisings and forms the Red Army, establishing a revolutionary base in Jinggangshan. As they endure fierce battles and hardships during the Long March, a turning point comes with the 1935 Zunyi Conference—marking the rise of new leadership.",
+    "synopsis_id": "Amid political turmoil in 1927, the Chinese Communist Party launches uprisings and forms the Red Army, establishing a revolutionary base in Jinggangshan. As they endure fierce battles and hardships during the Long March, a turning point comes with the 1935 Zunyi Conference—marking the rise of new leadership.",
+    "cast": [
+      {
+        "name": "Wang Renjun",
+        "character": "Mao Zedong",
+        "tmdb_person_id": 2227795,
+        "photo_url": "https://image.tmdb.org/t/p/w300/wFbrPdHXYqi783qyrgUVk8fr8VX.jpg"
+      },
+      {
+        "name": "Wang Zhifei",
+        "character": "Zhu De",
+        "tmdb_person_id": 1291458,
+        "photo_url": "https://image.tmdb.org/t/p/w300/p5A1cWUaoCkL4yRnoyKOG6mvfNb.jpg"
+      },
+      {
+        "name": "Chen Long",
+        "character": "Zhou Enlai",
+        "tmdb_person_id": 2311832,
+        "photo_url": "https://image.tmdb.org/t/p/w300/iF3V2rSk9gSsxvyNxqar63Jdems.jpg"
+      },
+      {
+        "name": "Liu Zhiyang",
+        "character": "Chen Yi",
+        "tmdb_person_id": 2377261,
+        "photo_url": "https://image.tmdb.org/t/p/w300/hZ9UdLkCXksjGg8uGJfaxiYSj7V.jpg"
+      },
+      {
+        "name": "Sun Weimin",
+        "character": "Lin Yucai",
+        "tmdb_person_id": 1299493,
+        "photo_url": "https://image.tmdb.org/t/p/w300/bMdLZ3nYhDRRHhcUBiGFeR1mRs.jpg"
+      },
+      {
+        "name": "Zhang Yishan",
+        "character": "Lin Biao",
+        "tmdb_person_id": 1191743,
+        "photo_url": "https://image.tmdb.org/t/p/w300/x6XyIBhGt3mwvLZDL3UicnSzSSM.jpg"
+      },
+      {
+        "name": "Zhang Huiwen",
+        "character": "Yang Kaihui",
+        "tmdb_person_id": 1376103,
+        "photo_url": "https://image.tmdb.org/t/p/w300/medfjgb0DvHMWsyEyOortnCps3R.jpg"
+      },
+      {
+        "name": "Tao Huimin",
+        "character": "Chen Juling",
+        "tmdb_person_id": 565295,
+        "photo_url": "https://image.tmdb.org/t/p/w300/slKTrK3SKugpRXQDUL1cLHtD3G1.jpg"
+      },
+      {
+        "name": "Bao Jianfeng",
+        "character": "Chen Shuxiang",
+        "tmdb_person_id": 1174467,
+        "photo_url": "https://image.tmdb.org/t/p/w300/uxcM72kcp4YUTic8sQz8vBSceR9.jpg"
+      },
+      {
+        "name": "Gong Zhe",
+        "character": "He Zizhen",
+        "tmdb_person_id": 1286609,
+        "photo_url": "https://image.tmdb.org/t/p/w300/fnsbosZWAvePnvoCOSgI6FMFPWk.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 40,
+    "first_air_date": "2025-07-15",
+    "status": "Ended"
+  },
+  {
+    "zh_name": "阵地",
+    "found": true,
+    "tmdb_id": 300521,
+    "poster_url": "https://image.tmdb.org/t/p/w780/2nH7zQ7YyqP4XkRUoNxfO1wNcrO.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/tISW1rbaKxhvLjpiBogfGXBiJEY.jpg",
+    "original_title": "The Cultural Front",
+    "slug": "the-cultural-front",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "During 1938-1944, under the CCP's leadership, Chinese intellectuals like Guo Moruo and Ba Jin joined forces with the Eighth Route Army's Guilin office to wage a cultural resistance against Japanese invasion through literature, art, and media.",
+    "synopsis_zh": "该剧讲述1938年至1944年期间，日本侵华、山河破碎，在中国共产党的领导和推动下，郭沫若、夏衍、田汉、巴金、柳亚子、陶行知、徐悲鸿、茅盾、欧阳予倩等一大批爱国进步文化人士云集桂林，与以李克农为代表的桂林“八办”一起，在绝美的山水间，以笔为枪，以舞台做战场，通过新闻、文学、戏剧、音乐、美术等一系列文化运动，宣传抗日民族统一战线，将流亡与复兴、时艰与责任、生存与死亡、个人情感与民族情怀等都转化为抵御外来侵略的民族文化长城，进行一场没有硝烟的“文化抗战”的故事。",
+    "synopsis_vi": "During 1938-1944, under the CCP's leadership, Chinese intellectuals like Guo Moruo and Ba Jin joined forces with the Eighth Route Army's Guilin office to wage a cultural resistance against Japanese invasion through literature, art, and media.",
+    "synopsis_th": "During 1938-1944, under the CCP's leadership, Chinese intellectuals like Guo Moruo and Ba Jin joined forces with the Eighth Route Army's Guilin office to wage a cultural resistance against Japanese invasion through literature, art, and media.",
+    "synopsis_id": "During 1938-1944, under the CCP's leadership, Chinese intellectuals like Guo Moruo and Ba Jin joined forces with the Eighth Route Army's Guilin office to wage a cultural resistance against Japanese invasion through literature, art, and media.",
+    "cast": [
+      {
+        "name": "William Feng",
+        "character": "Xia Yan",
+        "tmdb_person_id": 936431,
+        "photo_url": "https://image.tmdb.org/t/p/w300/tSn5BIRw3Xdj3XYKIycjyNTgl49.jpg"
+      },
+      {
+        "name": "Jerry Lee",
+        "character": "Li Ke'nong",
+        "tmdb_person_id": 130984,
+        "photo_url": "https://image.tmdb.org/t/p/w300/29SF639O4mzp3dhIuIFcaux0Te9.jpg"
+      },
+      {
+        "name": "Xu Lu",
+        "character": "Ren Suning",
+        "tmdb_person_id": 1236326,
+        "photo_url": "https://image.tmdb.org/t/p/w300/hgaIcXhEhS68u5ACYLKO9FIv06k.jpg"
+      },
+      {
+        "name": "Wang Likun",
+        "character": "An E",
+        "tmdb_person_id": 1251113,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mAPYXNk7L8SHoEy7azrVku6Oe8g.jpg"
+      },
+      {
+        "name": "Wang Jinsong",
+        "character": "Guo Moruo",
+        "tmdb_person_id": 1675909,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mYJPE6Xqo3dyRzBL4jkQuCSOHdo.jpg"
+      },
+      {
+        "name": "Zhang Bo",
+        "character": "Tian Han",
+        "tmdb_person_id": 2027663,
+        "photo_url": "https://image.tmdb.org/t/p/w300/ricGIFPoAMqYCvb7sWOe94kzlQB.jpg"
+      },
+      {
+        "name": "Li Honglei",
+        "character": "Wang  Jia Xiang",
+        "tmdb_person_id": 2699896,
+        "photo_url": "https://image.tmdb.org/t/p/w300/gBOHffCXT6Bj4oIzfLGIKuh8ZnO.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 39,
+    "first_air_date": "2025-09-16",
+    "status": "Ended"
+  },
+  {
+    "zh_name": "归队",
+    "found": true,
+    "tmdb_id": 273271,
+    "poster_url": "https://image.tmdb.org/t/p/w780/nsPfI1Ad9xpNqYtpYASCajL9voz.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/3KXfYrUN4TYL3L0t4v8AaPBOZap.jpg",
+    "original_title": "The Long Way Back",
+    "slug": "the-long-way-back",
+    "genres": [
+      "Drama",
+      "War & Politics"
+    ],
+    "synopsis_en": "The journey of an ordinary soldier in the Northeast Anti-Japanese United Army during the 14-year Second Sino-Japanese War, highlighting the region's grueling and heroic fight against Japanese imperialist forces.",
+    "synopsis_zh": "以东北抗联十四年艰苦抗战历程为背景，讲述了一支抗联小队历经惨烈战役与大部队、党组织失联，在日军层层围追堵截下致队员纷纷失散，历经艰难险阻、生死考验重新集结，重返东北战场，为中国抗战、乃至世界反法西斯战争胜利贡献热血和生命的故事。",
+    "synopsis_vi": "The journey of an ordinary soldier in the Northeast Anti-Japanese United Army during the 14-year Second Sino-Japanese War, highlighting the region's grueling and heroic fight against Japanese imperialist forces.",
+    "synopsis_th": "The journey of an ordinary soldier in the Northeast Anti-Japanese United Army during the 14-year Second Sino-Japanese War, highlighting the region's grueling and heroic fight against Japanese imperialist forces.",
+    "synopsis_id": "The journey of an ordinary soldier in the Northeast Anti-Japanese United Army during the 14-year Second Sino-Japanese War, highlighting the region's grueling and heroic fight against Japanese imperialist forces.",
+    "cast": [
+      {
+        "name": "Hu Jun",
+        "character": "Lao Shandong",
+        "tmdb_person_id": 96862,
+        "photo_url": "https://image.tmdb.org/t/p/w300/3RXwZKvACtHdnrmOvQbJWJa718W.jpg"
+      },
+      {
+        "name": "Li Naiwen",
+        "character": "Tang Deyuan",
+        "tmdb_person_id": 124995,
+        "photo_url": "https://image.tmdb.org/t/p/w300/wiLgtAy6XOoSz79BxFX9vX4GRiJ.jpg"
+      },
+      {
+        "name": "Chen Jingke",
+        "character": "Tian Xiaogui",
+        "tmdb_person_id": 2682101,
+        "photo_url": "https://image.tmdb.org/t/p/w300/yqGeMSEZVJlxAvh9k6JFo6jhrUT.jpg"
+      },
+      {
+        "name": "Yuan Shanshan",
+        "character": "Hua'er",
+        "tmdb_person_id": 1192905,
+        "photo_url": "https://image.tmdb.org/t/p/w300/fEheRp6W3T2OAvo8caXKLVE3etM.jpg"
+      },
+      {
+        "name": "Ren Bin",
+        "character": "Gao Yunhu",
+        "tmdb_person_id": 2349404,
+        "photo_url": "https://image.tmdb.org/t/p/w300/1Xf1fCJmkd9leRlc7DCkyV7rjbI.jpg"
+      },
+      {
+        "name": "Song Jiateng",
+        "character": "Fu Qing",
+        "tmdb_person_id": 3238981,
+        "photo_url": "https://image.tmdb.org/t/p/w300/d2xlaPPUl07P5NOHUI5jTdH9X17.jpg"
+      },
+      {
+        "name": "Lin Yongjian",
+        "character": "Xiao Tie Lin [Mudanjiang police chief]",
+        "tmdb_person_id": 2194537,
+        "photo_url": "https://image.tmdb.org/t/p/w300/wD66OOCOhiKC5mNmfOn7AX3D8mo.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 34,
+    "first_air_date": "2025-08-25",
+    "status": "Ended"
+  },
+  {
+    "zh_name": "寂静之声",
+    "found": true,
+    "tmdb_id": 286126,
+    "poster_url": "https://image.tmdb.org/t/p/w780/wcxKUos6s1xwgR1c66wAbdfA5BC.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/113VPI8oYOr8s2b7NdatAYKs9nM.jpg",
+    "original_title": "Silent Tides",
+    "slug": "silent-tides",
+    "genres": [
+      "Drama",
+      "War & Politics"
+    ],
+    "synopsis_en": "He Ruoxian, Feng Baichuan, and the Shen brothers navigate wartime struggles in finance, espionage, and material transport in Macau during World War II. Though untouched by Japanese occupation, Macau becomes a crucial battleground where they courageously fight for the nation.",
+    "synopsis_zh": "该剧讲述澳门“风潮”时期，何若贤、冯柏川、沈氏兄弟等人携手在金融、谍报、物资运输等领域的抗战风云故事，也是第一次将镜头完全聚焦于“孤岛”澳门——这块未遭日本侵占，却仍然英勇抗击共赴国难的土地。",
+    "synopsis_vi": "He Ruoxian, Feng Baichuan, and the Shen brothers navigate wartime struggles in finance, espionage, and material transport in Macau during World War II. Though untouched by Japanese occupation, Macau becomes a crucial battleground where they courageously fight for the nation.",
+    "synopsis_th": "He Ruoxian, Feng Baichuan, and the Shen brothers navigate wartime struggles in finance, espionage, and material transport in Macau during World War II. Though untouched by Japanese occupation, Macau becomes a crucial battleground where they courageously fight for the nation.",
+    "synopsis_id": "He Ruoxian, Feng Baichuan, and the Shen brothers navigate wartime struggles in finance, espionage, and material transport in Macau during World War II. Though untouched by Japanese occupation, Macau becomes a crucial battleground where they courageously fight for the nation.",
+    "cast": [
+      {
+        "name": "Ren Jialun",
+        "character": "He Xian",
+        "tmdb_person_id": 2084465,
+        "photo_url": "https://image.tmdb.org/t/p/w300/5sBfnbHbTmNriFPGGD12mPpTNNO.jpg"
+      },
+      {
+        "name": "Lyric Lan",
+        "character": "Qiao Yinwan",
+        "tmdb_person_id": 1742841,
+        "photo_url": "https://image.tmdb.org/t/p/w300/2jLu5wGbyJFiIh2Uq6xunaTANwB.jpg"
+      },
+      {
+        "name": "Li Chun",
+        "character": "Guo Qiwen",
+        "tmdb_person_id": 1683309,
+        "photo_url": "https://image.tmdb.org/t/p/w300/26Z1lcLUTtcqqwzKYPUqYKmD1h9.jpg"
+      },
+      {
+        "name": "Tan Kai",
+        "character": "Ke Lin",
+        "tmdb_person_id": 1183237,
+        "photo_url": "https://image.tmdb.org/t/p/w300/hVwVrNZmaEgdzsnrNqvJKqpxmdg.jpg"
+      },
+      {
+        "name": "Ma Qiyue",
+        "character": "Ma Wanqi",
+        "tmdb_person_id": 3061322,
+        "photo_url": "https://image.tmdb.org/t/p/w300/mHESOVUXZUuJD1Atqx4YuzqIGOK.jpg"
+      },
+      {
+        "name": "Wang Fang",
+        "character": "Yang Chang",
+        "tmdb_person_id": 1467182,
+        "photo_url": "https://image.tmdb.org/t/p/w300/hBCnqIMbZKmDVVR9piK7n1cPl1M.jpg"
+      },
+      {
+        "name": "Zhao Runnan",
+        "character": "Huang Zixia",
+        "tmdb_person_id": 2440952,
+        "photo_url": "https://image.tmdb.org/t/p/w300/bifZzJ7bySkF3rTjoRx6vLazgp1.jpg"
+      },
+      {
+        "name": "Liang Dawei",
+        "character": "Qiao Renyu",
+        "tmdb_person_id": 1528928,
+        "photo_url": "https://image.tmdb.org/t/p/w300/5AbdsvEkKh9KIgWcgy5CanMQOL2.jpg"
+      },
+      {
+        "name": "Song Wenzuo",
+        "character": "Ke Zhengping",
+        "tmdb_person_id": 2701117,
+        "photo_url": "https://image.tmdb.org/t/p/w300/e7uATn1ro8myyRAnfvVyBcX8cDE.jpg"
+      },
+      {
+        "name": "Tan Quan",
+        "character": "Ou Xin",
+        "tmdb_person_id": 2203383,
+        "photo_url": "https://image.tmdb.org/t/p/w300/yUE85h3rAAhNDjDwMCn75uonzhz.jpg"
+      }
+    ],
+    "trailer_key": "fb0QaPSJqD0",
+    "number_of_episodes": 31,
+    "first_air_date": "2025-12-09",
+    "status": "Ended"
+  },
+  {
+    "zh_name": "猎狼刀",
+    "found": true,
+    "tmdb_id": 286279,
+    "poster_url": "https://image.tmdb.org/t/p/w780/zW1MHQxOhD0BGlTQRfeXyeXLJmH.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/dY4bK1jl330VggHolHmh9nEHgLo.jpg",
+    "original_title": "猎狼刀",
+    "slug": "猎狼刀",
+    "genres": [
+      "War & Politics"
+    ],
+    "synopsis_en": "",
+    "synopsis_zh": "电视剧《决战1936》，讲述了1936年的甘肃环县山城堡，隶属不同势力的萧关、纪晓蔓等人，有感于红军的大仁大义加入队伍，并一步步成长为坚定的红色革命者的故事。",
+    "synopsis_vi": "",
+    "synopsis_th": "",
+    "synopsis_id": "",
+    "cast": [
+      {
+        "name": "Ren Tianye",
+        "character": "Xiao Guan",
+        "tmdb_person_id": 2512381,
+        "photo_url": "https://image.tmdb.org/t/p/w300/cUYQlTjl5ykrcldCWUrYmPOjQ1d.jpg"
+      },
+      {
+        "name": "Chen Weihan",
+        "character": "Ji Xiaoman",
+        "tmdb_person_id": 2735114,
+        "photo_url": "https://image.tmdb.org/t/p/w300/e6prxOLLNBxdSnnKCoCTEeJwI5q.jpg"
+      },
+      {
+        "name": "Zhang Hongrui",
+        "character": "Liu Dazhi",
+        "tmdb_person_id": 2405772,
+        "photo_url": "https://image.tmdb.org/t/p/w300/kFDuoqIFUPmp51i0LkWCdtEMiSJ.jpg"
+      },
+      {
+        "name": "Zhao Bo",
+        "character": "Liu Gengshou",
+        "tmdb_person_id": 3617576,
+        "photo_url": null
+      },
+      {
+        "name": "Qi Fang",
+        "character": "Xiao Yun",
+        "tmdb_person_id": 1620269,
+        "photo_url": "https://image.tmdb.org/t/p/w300/2XFnMca6M2c2XwPa0fDT7l9sSub.jpg"
+      }
+    ],
+    "trailer_key": null,
+    "number_of_episodes": 31,
+    "first_air_date": "2019-09-03",
+    "status": "Ended"
+  },
+  {
+    "zh_name": "守护者们",
+    "found": true,
+    "tmdb_id": 271486,
+    "poster_url": "https://image.tmdb.org/t/p/w780/g5fznpQAnFBCEzrmA3IjJmFcm81.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/original/9pS3L3FHsG3GkRY8LRfL61xqHnR.jpg",
+    "original_title": "The Guardians",
+    "slug": "the-guardians",
+    "genres": [
+      "Drama"
+    ],
+    "synopsis_en": "In 1940s Shanghai, struggling actor Ding Yi is forced to impersonate a blind cryptography expert after agent Gu Yinshan mistakenly kills the real man. Disguised as his assistant, Gu Yinshan joins Ding Yi to infiltrate Japanese intelligence with the help of theater owner Xian Biyun. Facing constant danger, the unlikely duo form a deep brotherhood, but their clashing loyalties lead to an inevitable test of trust and sacrifice.",
+    "synopsis_zh": "1940年上海，丁一和顾仰山，一个是龙套演员，为生计做眼盲密码专家李约瑟的替身；一个是军统特工，将李约瑟误杀后，雇佣丁一继续冒充他，自己则扮作“助手”。他们在潮声剧团老板冼碧云的帮助下，潜伏进日军情报机构，破坏日军密码系统及研发更新。身份背景完全不同的二人，历经重重考验后，结成生死之交。而前行路上的不同立场，让这对兄弟即将面临重大的人生考验……",
+    "synopsis_vi": "In 1940s Shanghai, struggling actor Ding Yi is forced to impersonate a blind cryptography expert after agent Gu Yinshan mistakenly kills the real man. Disguised as his assistant, Gu Yinshan joins Ding Yi to infiltrate Japanese intelligence with the help of theater owner Xian Biyun. Facing constant danger, the unlikely duo form a deep brotherhood, but their clashing loyalties lead to an inevitable test of trust and sacrifice.",
+    "synopsis_th": "In 1940s Shanghai, struggling actor Ding Yi is forced to impersonate a blind cryptography expert after agent Gu Yinshan mistakenly kills the real man. Disguised as his assistant, Gu Yinshan joins Ding Yi to infiltrate Japanese intelligence with the help of theater owner Xian Biyun. Facing constant danger, the unlikely duo form a deep brotherhood, but their clashing loyalties lead to an inevitable test of trust and sacrifice.",
+    "synopsis_id": "In 1940s Shanghai, struggling actor Ding Yi is forced to impersonate a blind cryptography expert after agent Gu Yinshan mistakenly kills the real man. Disguised as his assistant, Gu Yinshan joins Ding Yi to infiltrate Japanese intelligence with the help of theater owner Xian Biyun. Facing constant danger, the unlikely duo form a deep brotherhood, but their clashing loyalties lead to an inevitable test of trust and sacrifice.",
+    "cast": [
+      {
+        "name": "Zhang Yishan",
+        "character": "Ding Yi / Li Yuese",
+        "tmdb_person_id": 1191743,
+        "photo_url": "https://image.tmdb.org/t/p/w300/x6XyIBhGt3mwvLZDL3UicnSzSSM.jpg"
+      },
+      {
+        "name": "Elvis Han",
+        "character": "Gu Yangshan / Cha Li",
+        "tmdb_person_id": 1541647,
+        "photo_url": "https://image.tmdb.org/t/p/w300/r3b5X3gHqHStLnBcs51L7QqraKp.jpg"
+      },
+      {
+        "name": "Zhang Tian'ai",
+        "character": "Xian Biyun / Ruan Qing",
+        "tmdb_person_id": 1599854,
+        "photo_url": "https://image.tmdb.org/t/p/w300/7YfldHgtWzOLOjLJ1gdODPeKiHV.jpg"
+      },
+      {
+        "name": "Liu Huan",
+        "character": "Liang Jingyuan",
+        "tmdb_person_id": 3227810,
+        "photo_url": "https://image.tmdb.org/t/p/w300/tUL4Znn78vSZdUEC3BgD0cfQgnP.jpg"
+      },
+      {
+        "name": "Zhu Gangrirao",
+        "character": "Luo Han",
+        "tmdb_person_id": 3124450,
+        "photo_url": "https://image.tmdb.org/t/p/w300/iNTED9WDtMU35dtnmWwrP62kqgj.jpg"
+      },
+      {
+        "name": "Fan Shiran",
+        "character": "Meng Jie",
+        "tmdb_person_id": 3451480,
+        "photo_url": "https://image.tmdb.org/t/p/w300/l8NLIJWLSP5J5tplzUM0XKtL6xC.jpg"
+      },
+      {
+        "name": "Wang Ziyun",
+        "character": "Ye Yin",
+        "tmdb_person_id": 2417156,
+        "photo_url": "https://image.tmdb.org/t/p/w300/kwDF67AlH7omW7G4XU9cI4ZS0aK.jpg"
+      },
+      {
+        "name": "He Qiang",
+        "character": "Lao Wu",
+        "tmdb_person_id": 2808411,
+        "photo_url": "https://image.tmdb.org/t/p/w300/bNE9J2lcy1SWVRri1Yg63v0Qd3L.jpg"
+      },
+      {
+        "name": "Guan Chang",
+        "character": "Hong Yu",
+        "tmdb_person_id": 2456864,
+        "photo_url": "https://image.tmdb.org/t/p/w300/f6VPfWlvXkiok0rHSLLArCwBHNa.jpg"
+      },
+      {
+        "name": "Ma Yue",
+        "character": "Old Xiao",
+        "tmdb_person_id": 2027745,
+        "photo_url": "https://image.tmdb.org/t/p/w300/2wigjT8JMRhzSi3qfXLwjylUKH9.jpg"
+      }
+    ],
+    "trailer_key": "5dXwCA5Ub_Q",
+    "number_of_episodes": 35,
+    "first_air_date": "2025-09-23",
+    "status": "Ended"
+  }
+]
