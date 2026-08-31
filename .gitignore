@@ -50,3 +50,17 @@ data/v12_tmdb_results.json
 data/v12_indexnow_urls.txt
 data/v12_test_tier1.json
 data/cdrama.db.bak.*
+
+# Database files
+*.db
+*.db.bak
+*.sqlite
+*.sqlite3
+
+# Script output files
+scripts/expand_*.json
+scripts/expand_results*.json
+scripts/v12_tmdb_fetch.py
+data/cleanup_marker.txt
+cdrama-database.db
+cdrama.db
