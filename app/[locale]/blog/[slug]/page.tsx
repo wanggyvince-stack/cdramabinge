@@ -234,6 +234,11 @@ export default async function BlogDetailPage({
                   </a>
                 );
               },
+              h1: ({ children }) => (
+                <h2 className="font-display text-2xl font-semibold text-ink-1 mt-10 mb-4 tracking-wider">
+                  {children}
+                </h2>
+              ),
               h2: ({ children }) => (
                 <h2 className="font-display text-2xl font-semibold text-ink-1 mt-10 mb-4 tracking-wider">
                   {children}

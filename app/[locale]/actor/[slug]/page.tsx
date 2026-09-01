@@ -71,9 +71,7 @@ export async function generateMetadata({
   }
 
   // Title format
-  const titleText = birthYear
-    ? `${name} (${birthYear}-) - Chinese Actor, Filmography & Dramas`
-    : `${name} - Chinese Actor, Filmography & Dramas`;
+  const titleText = `${name} - Chinese Actor, Filmography & Dramas`;
 
   // JSON-LD Person schema
   const jsonLd: Record<string, unknown> = {
@@ -399,7 +397,7 @@ export default async function ActorDetailPage({
                             {posterThumb && (
                               <img
                                 src={posterThumb}
-                                alt=""
+                                alt={`${item.name} poster`}
                                 className="w-8 h-12 rounded object-cover"
                                 loading="lazy"
                     width={400}
@@ -450,7 +448,7 @@ export default async function ActorDetailPage({
                       {posterThumb && (
                         <img
                           src={posterThumb}
-                          alt=""
+                          alt={`${item.name} poster`}
                           className="w-14 h-20 rounded object-cover flex-shrink-0"
                           width={400}
                           height={600}

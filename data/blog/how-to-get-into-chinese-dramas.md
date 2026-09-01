@@ -10,7 +10,7 @@ relatedDramas: ["the-untamed", "nirvana-in-fire", "with-you", "story-of-minglan"
 relatedPages: ["/en/starter-pack", "/en/quiz", "/en/best/romantic"]
 ---
 
-# How to Get Into Chinese Dramas: A Beginner's Guide
+## How to Get Into Chinese Dramas: A Beginner's Guide
 
 If you have been hearing about Chinese dramas everywhere — from friends, from social media, from that one coworker who will not stop talking about a 50-episode fantasy epic — you are not alone. Chinese dramas, also known as C-dramas, have quietly become one of the most-watched non-English content categories in the world, and for good reason. The production quality has skyrocketed, the stories are richer and more varied than ever, and there has never been a better time to get into Chinese dramas than right now.
 

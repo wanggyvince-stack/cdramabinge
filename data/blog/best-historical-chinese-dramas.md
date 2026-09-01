@@ -10,7 +10,7 @@ relatedDramas: ["nirvana-in-fire", "story-of-minglan", "empresses-in-the-palace"
 relatedPages: ["/en/best/historical", "/en/best/fantasy", "/en/best/wuxia"]
 ---
 
-# The 12 Best Chinese Period Dramas, Ranked by Rating
+## The 12 Best Chinese Period Dramas, Ranked by Rating
 
 Historical Chinese dramas have captivated viewers worldwide, and for good reason. From the treacherous corridors of imperial courts to misty mountain landscapes where immortal warriors clash, Chinese period dramas offer a storytelling depth and visual grandeur that few other genres can match. Whether you are drawn to intricate palace scheming, [wuxia](/en/best/wuxia) swordsmanship, or [fantasy](/en/best/fantasy) romance set against breathtaking ancient backdrops, this list has something for every viewer.
 

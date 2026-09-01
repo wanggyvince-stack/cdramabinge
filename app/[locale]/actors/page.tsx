@@ -19,7 +19,7 @@ export async function generateMetadata({
   const canonicalUrl = `https://cdramabinge.com/${locale}/actors`;
 
   const titles: Record<string, string> = {
-    en: 'Chinese Drama Actors — Filmography, Photos & Where to Watch',
+    en: 'Chinese Drama Actors — Filmography & Where to Watch',
     vi: 'Diễn viên Hoa Ngữ — Danh sách phim, Ảnh & Xem ở đâu',
     th: 'นักแสดงซีรีส์จีน — ผลงาน, รูปภาพ & ดูที่ไหน',
     id: 'Aktor Drama Cina — Filmografi, Foto & Tonton di mana',
