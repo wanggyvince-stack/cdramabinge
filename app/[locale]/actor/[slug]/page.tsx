@@ -46,18 +46,14 @@ export async function generateMetadata({
   const name = getLocalizedText(actor.namesJson, locale, actor.name);
   const bio = getLocalizedText(actor.bioJson, locale);
 
-  // Extract Chinese name for alternateName
+  // Extract Chinese name for description
   let zhName = '';
   try {
     const names = typeof actor.namesJson === 'string' ? JSON.parse(actor.namesJson) : actor.namesJson;
     zhName = names?.zh || '';
   } catch {}
 
-  const alsoKnownAs = parseJsonArray<string>(actor.alsoKnownAs);
-  const alternateNames = [name, zhName, ...alsoKnownAs].filter(Boolean);
-
   // Build description
-  const birthYear = actor.birthday ? new Date(actor.birthday).getFullYear() : '';
   const topDramas = parseJsonArray<FilmographyEntry>(actor.fullFilmographyJson)
     .filter(f => f.is_in_our_db)
     .slice(0, 3)
@@ -73,80 +69,18 @@ export async function generateMetadata({
   // Title format
   const titleText = `${name} - Chinese Actor, Filmography & Dramas`;
 
-  // JSON-LD Person schema
-  const jsonLd: Record<string, unknown> = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name,
-    alternateName: alternateNames.length > 1 ? alternateNames : undefined,
-    description: descriptionText.slice(0, 200),
-    image: actor.photoUrl || undefined,
-    url: `https://cdramabinge.com/${locale}/actor/${slug}`,
-    birthDate: actor.birthday || undefined,
-    birthPlace: actor.birthplace || undefined,
-    gender: actor.gender === 1 ? 'Female' : actor.gender === 2 ? 'Male' : undefined,
-    nationality: 'Chinese',
-    knowsAbout: actor.knownForDepartment || 'Acting',
-  };
-
-  // sameAs — link to TMDB
-  if (actor.tmdbPersonId) {
-    jsonLd.sameAs = `https://www.themoviedb.org/person/${actor.tmdbPersonId}`;
-  }
-
-  // knownFor — with role
-  const knownDramas = parseJsonArray<FilmographyEntry>(actor.fullFilmographyJson)
-    .filter(f => f.is_in_our_db)
-    .slice(0, 5);
-  if (knownDramas.length > 0) {
-    jsonLd.knownFor = knownDramas.map(d => ({
-      '@type': 'TVSeries',
-      name: d.name,
-      url: `https://cdramabinge.com/${locale}/drama/${d.our_slug}`,
-      actor: {
-        '@type': 'Person',
-        name,
-        role: d.character || 'Actor',
-      },
-    }));
-  }
-
-  // BreadcrumbList JSON-LD
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://cdramabinge.com/${locale}` },
-      { '@type': 'ListItem', position: 2, name: 'Actors', item: `https://cdramabinge.com/${locale}/actors` },
-      { '@type': 'ListItem', position: 3, name, item: `https://cdramabinge.com/${locale}/actor/${slug}` },
-    ],
-  };
-
   const canonicalUrl = `https://cdramabinge.com/${locale}/actor/${slug}`;
 
   return {
     title: titleText,
     description: descriptionText.slice(0, 160),
     robots: { index: false, follow: true },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: `https://cdramabinge.com/en/actor/${slug}`,
-        vi: `https://cdramabinge.com/vi/actor/${slug}`,
-        th: `https://cdramabinge.com/th/actor/${slug}`,
-        id: `https://cdramabinge.com/id/actor/${slug}`,
-        'x-default': `https://cdramabinge.com/en/actor/${slug}`,
-      },
-    },
     openGraph: {
       title: titleText,
       description: descriptionText.slice(0, 160),
       url: canonicalUrl,
       type: 'profile',
       images: actor.photoUrl ? [{ url: actor.photoUrl }] : [],
-    },
-    other: {
-      'application/ld+json': JSON.stringify([jsonLd, breadcrumbJsonLd]),
     },
   };
 }
