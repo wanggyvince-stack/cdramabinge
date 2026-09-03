@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
-import { dramas, actors } from '@/lib/db/schema';
+import { dramas } from '@/lib/db/schema';
 import { notifyIndexNow, getDramaUrls } from '@/lib/indexnow';
 
 // IndexNow API endpoint — SE-04 refactored
@@ -127,19 +127,8 @@ async function collectAllUrls(): Promise<string[]> {
     urls.push(`${SITE_URL}/${locale}/actors`);
   }
 
-  // Actor detail pages (only actors with 2+ dramas, all locales)
-  const allActors = await db.select({ slug: actors.slug, dramasJson: actors.dramasJson }).from(actors).all();
-  for (const actor of allActors) {
-    try {
-      const entries = JSON.parse(actor.dramasJson || '[]');
-      if (entries.length < 2) continue;
-    } catch {
-      continue;
-    }
-    for (const locale of LOCALES) {
-      urls.push(`${SITE_URL}/${locale}/actor/${actor.slug}`);
-    }
-  }
+  // Actor detail pages — REMOVED (SEO-03: noindex, follow)
+  // Actor pages are now noindex; no need to submit to IndexNow.
 
   // Blog pages (English only)
   urls.push(`${SITE_URL}/en/blog`);

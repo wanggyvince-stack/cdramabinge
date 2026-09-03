@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 import { MetadataRoute } from 'next';
 import { db } from '@/lib/db';
-import { dramas, actors } from '@/lib/db/schema';
+import { dramas } from '@/lib/db/schema';
 
 const BASE_URL = 'https://cdramabinge.com';
 const LOCALES = ['en', 'vi', 'th', 'id'] as const;
@@ -161,33 +161,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
-  // ─── Actor pages (only actors with 2+ dramas to avoid thin content) ───
-  const allActors = await db.select({ slug: actors.slug, dramasJson: actors.dramasJson }).from(actors).all();
-  for (const actor of allActors) {
-    try {
-      const dramaEntries = JSON.parse(actor.dramasJson || '[]');
-      if (dramaEntries.length < 2) continue;
-    } catch {
-      continue;
-    }
-    for (const locale of LOCALES) {
-      entries.push({
-        url: `${BASE_URL}/${locale}/actor/${actor.slug}`,
-        lastModified: today,
-        changeFrequency: 'weekly',
-        priority: 0.6,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/actor/${actor.slug}`,
-            vi: `${BASE_URL}/vi/actor/${actor.slug}`,
-            th: `${BASE_URL}/th/actor/${actor.slug}`,
-            id: `${BASE_URL}/id/actor/${actor.slug}`,
-            'x-default': `${BASE_URL}/en/actor/${actor.slug}`,
-          },
-        },
-      });
-    }
-  }
+  // ─── Actor detail pages — REMOVED (SEO-03: noindex, follow) ───
+  // Actor detail pages are now noindex to avoid thin-content drag on site quality signal.
+  // The actors listing page (/actors) is still included above.
 
   // ─── Blog pages (English only — SE-02) ───
   const { getAllArticles } = await import('@/lib/blog');

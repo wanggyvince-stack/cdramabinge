@@ -127,6 +127,7 @@ export async function generateMetadata({
   return {
     title: titleText,
     description: descriptionText.slice(0, 160),
+    robots: { index: false, follow: true },
     alternates: {
       canonical: canonicalUrl,
       languages: {
