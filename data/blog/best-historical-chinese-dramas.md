@@ -2,7 +2,7 @@
 slug: "best-historical-chinese-dramas"
 title: "12 Best Historical Chinese Dramas Ranked by Rating"
 description: "From imperial court intrigue to wuxia adventures — the best historical Chinese dramas and period dramas, ranked by rating with synopsis and episode guide."
-author: "CDramaBinge Editorial"
+author: "Mei Lin"
 date: "2026-08-27"
 tags: ["historical", "period-drama", "recommendations", "best-of"]
 coverImage: "https://image.tmdb.org/t/p/w780/pzDC9rdyJhGdgVGoYuAj8LTHBtJ.jpg"

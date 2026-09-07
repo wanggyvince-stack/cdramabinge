@@ -2,7 +2,7 @@
 slug: "chinese-romance-dramas-by-mood"
 title: "Find Your Perfect Chinese Romance Drama by Mood"
 description: "Stop scrolling through random lists. We organized 78 Chinese romance dramas by mood — sweet, heartbreaking, intense — so you find exactly the love story you need tonight."
-author: "CDramaBinge Editorial"
+author: "Mei Lin"
 date: "2026-08-27"
 tags: ["romance", "mood", "recommendations", "guide"]
 coverImage: "https://image.tmdb.org/t/p/w780/jBiWSSukY3hjy7iYC9bMmZ2JXvr.jpg"

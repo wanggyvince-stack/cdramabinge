@@ -2,7 +2,7 @@
 slug: "best-chinese-thriller-mystery-dramas"
 title: "10 Best Chinese Thriller & Mystery Dramas to Watch Now"
 description: "From psychological crime to supernatural suspense — the best Chinese thriller and mystery dramas ranked by rating, with synopsis and viewing guide."
-author: "CDramaBinge Editorial"
+author: "Mei Lin"
 date: "2026-08-27"
 tags: ["thriller", "mystery", "recommendations", "best-of"]
 coverImage: "https://image.tmdb.org/t/p/w780/mRHRrlH7LXezAbdxuqWaKvBghqY.jpg"

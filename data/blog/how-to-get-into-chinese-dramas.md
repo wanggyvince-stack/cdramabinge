@@ -2,7 +2,7 @@
 slug: "how-to-get-into-chinese-dramas"
 title: "How to Get Into Chinese Dramas: A Beginner's Guide"
 description: "New to Chinese dramas? This guide covers where to start, how to choose your first show, and common questions about subtitles, episode counts, and genres."
-author: "CDramaBinge Editorial"
+author: "Mei Lin"
 date: "2026-08-27"
 tags: ["beginner", "guide", "getting-started"]
 coverImage: "https://image.tmdb.org/t/p/w780/1KS9QjE0JlKe7Dk30yPLO42J7Kd.jpg"

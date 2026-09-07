@@ -139,8 +139,11 @@ export default async function LocaleLayout({
                   <a href={`/${locale}/actors`} className="text-ink-4 hover:text-ink-1 transition-colors duration-song tracking-wide">
                     {nav('actors')}
                   </a>
-                  <a href="/en/blog" className="text-ink-4 hover:text-ink-1 transition-colors duration-song tracking-wide">
+                  <a href={`/${locale}/blog`} className="text-ink-4 hover:text-ink-1 transition-colors duration-song tracking-wide">
                     Blog
+                  </a>
+                  <a href={`/${locale}/about`} className="text-ink-4 hover:text-ink-1 transition-colors duration-song tracking-wide">
+                    About
                   </a>
                 </div>
                 {/* Language switcher */}
@@ -186,8 +189,11 @@ export default async function LocaleLayout({
                 <a href={`/${locale}/starter-pack`} className="hover:text-ink-1 transition-colors duration-song">
                   {nav('starterPack')}
                 </a>
-                <a href="/en/blog" className="hover:text-ink-1 transition-colors duration-song">
+                <a href={`/${locale}/blog`} className="hover:text-ink-1 transition-colors duration-song">
                   Blog
+                </a>
+                <a href={`/${locale}/about`} className="hover:text-ink-1 transition-colors duration-song">
+                  About
                 </a>
               </div>
               <p className="text-xs text-ink-5 mt-4">

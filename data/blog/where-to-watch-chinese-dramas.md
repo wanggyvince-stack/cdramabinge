@@ -2,7 +2,7 @@
 slug: "where-to-watch-chinese-dramas"
 title: "Where to Watch Chinese Dramas Legally in 2026"
 description: "A complete guide to legal streaming platforms for Chinese dramas — Netflix, Viki, WeTV, iQIYI, and more — with drama recommendations for each platform."
-author: "CDramaBinge Editorial"
+author: "Mei Lin"
 date: "2026-08-27"
 tags: ["streaming", "guide", "where-to-watch"]
 coverImage: "https://image.tmdb.org/t/p/w780/q2sNliRi4j0ncXKUO1x0MldR20A.jpg"

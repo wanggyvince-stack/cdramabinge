@@ -98,6 +98,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
+  // ─── About page (each locale) — SEO-02 E-E-A-T ───
+  for (const locale of LOCALES) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/about`,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    });
+  }
+
   // ─── Starter Pack page (each locale) ───
   for (const locale of LOCALES) {
     entries.push({

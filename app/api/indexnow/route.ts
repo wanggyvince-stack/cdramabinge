@@ -105,6 +105,11 @@ async function collectAllUrls(): Promise<string[]> {
     urls.push(`${SITE_URL}/${locale}/quiz`);
   }
 
+  // About page (all locales) — SEO-02 E-E-A-T
+  for (const locale of LOCALES) {
+    urls.push(`${SITE_URL}/${locale}/about`);
+  }
+
   // Starter-pack page (all locales)
   for (const locale of LOCALES) {
     urls.push(`${SITE_URL}/${locale}/starter-pack`);

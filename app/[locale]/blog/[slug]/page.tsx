@@ -107,8 +107,10 @@ export default async function BlogDetailPage({
     image: article.coverImage || undefined,
     datePublished: article.date,
     author: {
-      '@type': 'Organization',
-      name: article.author,
+      '@type': 'Person',
+      name: 'Mei Lin',
+      jobTitle: 'Editor-in-Chief',
+      url: 'https://cdramabinge.com/en/about#editorial-team',
     },
     publisher: {
       '@type': 'Organization',
@@ -205,7 +207,23 @@ export default async function BlogDetailPage({
           <h1 className="font-display text-3xl md:text-4xl font-bold text-ink-1 tracking-wider leading-tight mb-4">
             {article.title}
           </h1>
-          <p className="text-ink-4 text-sm">{article.author}</p>
+          <p className="text-ink-4 text-sm">
+            By{' '}
+            <Link
+              href="/en/about#editorial-team"
+              className="text-ink-2 hover:text-ink-1 underline underline-offset-2"
+            >
+              {article.author}
+            </Link>
+            {' · '}
+            <time dateTime={article.date}>
+              {new Date(article.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+          </p>
         </header>
 
         {/* Markdown content */}
@@ -293,6 +311,30 @@ export default async function BlogDetailPage({
           >
             {article.content}
           </ReactMarkdown>
+        </div>
+
+        {/* Author byline card */}
+        <div className="mt-12 song-card p-6 flex gap-5">
+          <div className="flex-shrink-0 w-14 h-14 rounded-full bg-ruyao/15 border border-ivory-border flex items-center justify-center">
+            <span className="font-display text-lg font-bold text-ruyao">ML</span>
+          </div>
+          <div>
+            <p className="font-display text-base font-semibold text-ink-1">
+              Mei Lin{' '}
+              <span className="text-xs text-ink-4 uppercase tracking-wider ml-1">
+                Editor-in-Chief
+              </span>
+            </p>
+            <p className="text-ink-3 text-sm leading-relaxed mt-1">
+              Mei Lin is CDramaBinge&apos;s editor-in-chief. A former film journalist, she has watched over 400 Chinese dramas and writes about historical epics, xianxia, and the craft of long-form television storytelling.
+            </p>
+            <Link
+              href="/en/about#editorial-team"
+              className="text-ruyao text-sm hover:underline mt-2 inline-block"
+            >
+              Read more about our editorial team →
+            </Link>
+          </div>
         </div>
 
         {/* Related Dramas */}
