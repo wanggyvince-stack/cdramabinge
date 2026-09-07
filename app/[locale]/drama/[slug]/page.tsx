@@ -186,6 +186,17 @@ export default async function DramaDetailPage({
   // Load streaming data from editorial JSON instead of DB
   const streamingDataFile = await import('@/data/streaming.json').then(m => m.default as Record<string, { platforms: Array<{ name: string; url: string; regions: string[] }> }>);
   const dramaStreaming = streamingDataFile[normalizedSlug] || streamingDataFile[drama.slug];
+
+  // Load genuine editorial "Our Take" reviews (SEO-11: never fabricate editorial quotes)
+  const ourTakesFile = await import('@/data/our-takes.json').then(m => m.default as Record<string, {
+    our_take: { en?: string; vi?: string; th?: string; id?: string };
+    card_comment: { en?: string; vi?: string; th?: string; id?: string };
+    review_rating?: number;
+  }>);
+  const ourTakeEntry = ourTakesFile[normalizedSlug] || ourTakesFile[drama.slug];
+  const ourTakeText = ourTakeEntry
+    ? (ourTakeEntry.our_take?.[locale as 'en' | 'vi' | 'th' | 'id'] || ourTakeEntry.our_take?.en || '')
+    : '';
   const similarDramasData = parseJsonObject<Array<{ slug: string; title: string; score: number; reason: string }>>(drama.similarDramasJson);
 
   // Resolve similar dramas to get poster URLs
@@ -452,13 +463,18 @@ export default async function DramaDetailPage({
         </section>
         )}
 
-        {/* Editorial comment — "30秒追剧指南" */}
+        {/* Genuine editorial review — only rendered when a real Our Take exists (SEO-11) */}
+        {ourTakeText && (
         <section className="py-6">
+          <h2 className="font-display text-xl font-semibold text-ink-1 mb-4 tracking-wider">
+            {locale === 'en' ? 'Our Take' : locale === 'vi' ? 'Góc nhìn biên tập' : locale === 'th' ? 'มุมมองของเรา' : 'Ulasan Kami'}
+          </h2>
           <EditorialComment
-            text={displaySynopsis.slice(0, 250)}
-            author={locale === 'en' ? 'CDramaBinge Editors' : locale === 'vi' ? 'Biên tập CDramaBinge' : 'บรรณาธิการ CDramaBinge'}
+            text={ourTakeText}
+            author={locale === 'en' ? 'CDramaBinge Editors' : locale === 'vi' ? 'Biên tập CDramaBinge' : locale === 'id' ? 'Editor CDramaBinge' : 'บรรณาธิการ CDramaBinge'}
           />
         </section>
+        )}
 
         <div className="crackle-divider my-8" />
 

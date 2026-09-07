@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { dramas } from '@/lib/db/schema';
 import { notifyIndexNow, getDramaUrls } from '@/lib/indexnow';
+import { ALL_MOODS, ALL_GENRES } from '@/lib/utils/helpers';
 
 // IndexNow API endpoint — SE-04 refactored
 // GET /api/indexnow?action=verify     — key verification
@@ -109,13 +110,8 @@ async function collectAllUrls(): Promise<string[]> {
     urls.push(`${SITE_URL}/${locale}/starter-pack`);
   }
 
-  // Best/mood/genre category pages (all 20 categories × all locales)
-  const categories = [
-    'romance', 'historical', 'fantasy', 'wuxia', 'xianxia',
-    'modern', 'thriller', 'comedy', 'drama', 'action', 'mystery', 'sci_fi',
-    'wanna_cry', 'light_fun', 'intense', 'romantic', 'mindbending',
-    'spooky', 'empowering', 'aesthetic',
-  ];
+  // Best/mood/genre category pages (all categories × all locales) — SEO-10: unified with helpers
+  const categories: string[] = [...ALL_MOODS, ...ALL_GENRES];
   for (const cat of categories) {
     for (const locale of LOCALES) {
       urls.push(`${SITE_URL}/${locale}/best/${cat}`);

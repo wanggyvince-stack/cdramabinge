@@ -2,17 +2,13 @@ export const dynamic = 'force-dynamic';
 import { MetadataRoute } from 'next';
 import { db } from '@/lib/db';
 import { dramas } from '@/lib/db/schema';
+import { ALL_MOODS, ALL_GENRES } from '@/lib/utils/helpers';
 
 const BASE_URL = 'https://cdramabinge.com';
 const LOCALES = ['en', 'vi', 'th', 'id'] as const;
 
-// All genre/mood slugs for /best/ pages
-const BEST_CATEGORIES = [
-  'romance', 'historical', 'fantasy', 'wuxia', 'xianxia',
-  'modern', 'thriller', 'comedy', 'drama', 'action', 'mystery', 'sci_fi',
-  'wanna_cry', 'light_fun', 'intense', 'romantic', 'mindbending',
-  'spooky', 'empowering', 'aesthetic',
-];
+// All genre/mood slugs for /best/ pages — single source of truth in helpers (SEO-10)
+const BEST_CATEGORIES: string[] = [...ALL_MOODS, ...ALL_GENRES];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allDramas = await db.select({ slug: dramas.slug }).from(dramas).all();
