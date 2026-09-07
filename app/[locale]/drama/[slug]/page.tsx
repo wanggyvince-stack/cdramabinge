@@ -329,8 +329,8 @@ export default async function DramaDetailPage({
     },
   ];
 
-  // JSON-LD Schema
-  const jsonLd = {
+  // JSON-LD Schema — array form so we can attach a Review node when a genuine Our Take exists (SEO-05 / SEO-11 收尾)
+  const seriesNode: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'TVSeries',
     name: displayTitle,
@@ -351,6 +351,30 @@ export default async function DramaDetailPage({
     url: `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`,
     inLanguage: ['zh', 'en', 'vi', 'th'],
   };
+
+  const jsonLdNodes: unknown[] = [seriesNode];
+  if (ourTakeEntry && ourTakeText) {
+    jsonLdNodes.push({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Mei Lin' },
+      datePublished: new Date().toISOString().slice(0, 10),
+      reviewBody: ourTakeText,
+      reviewRating: ourTakeEntry.review_rating
+        ? {
+            '@type': 'Rating',
+            ratingValue: ourTakeEntry.review_rating,
+            bestRating: 10,
+            worstRating: 1,
+          }
+        : undefined,
+      itemReviewed: {
+        '@type': 'TVSeries',
+        name: displayTitle,
+        url: `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`,
+      },
+    });
+  }
+  const jsonLd = jsonLdNodes.length === 1 ? jsonLdNodes[0] : jsonLdNodes;
 
   const pageUrl = `https://cdramabinge.com/${locale}/drama/${normalizedSlug}`;
 
