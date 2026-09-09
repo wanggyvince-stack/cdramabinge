@@ -5,7 +5,6 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import '@/app/globals.css';
-import LocaleSuggestion from '@/components/LocaleSuggestion';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -23,9 +22,6 @@ export const metadata: Metadata = {
     canonical: 'https://cdramabinge.com',
     languages: {
       en: '/en',
-      vi: '/vi',
-      th: '/th',
-      id: '/id',
       'x-default': '/en',
     },
   },
@@ -78,7 +74,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
@@ -122,7 +118,7 @@ export default async function LocaleLayout({
                 target: 'https://cdramabinge.com/en?q={search_term_string}',
                 'query-input': 'required name=search_term_string',
               },
-              inLanguage: ['en', 'vi', 'th'],
+              inLanguage: 'en',
             }),
           }}
         />
@@ -146,20 +142,7 @@ export default async function LocaleLayout({
                     About
                   </a>
                 </div>
-                {/* Language switcher */}
-                <div className="flex items-center gap-2 text-sm text-ink-4">
-                  {locales.map((l) => (
-                    <a
-                      key={l}
-                      href={`/${l}`}
-                      className={`uppercase tracking-wider transition-colors duration-song ${
-                        l === locale ? 'text-ink-1 font-medium' : 'hover:text-ink-2'
-                      }`}
-                    >
-                      {l}
-                    </a>
-                  ))}
-                </div>
+
               </div>
             </nav>
           </header>
@@ -173,12 +156,7 @@ export default async function LocaleLayout({
           <footer className="bg-dingyao border-t border-ivory-border py-12">
             <div className="max-w-7xl mx-auto px-6 text-center">
               <p className="font-display text-xl text-ink-3 mb-2">CDramaBinge</p>
-              <p className="text-sm text-ink-4">
-                {locale === 'en' && 'Your guide to Chinese dramas'}
-                {locale === 'vi' && 'Cẩm nang phim Hoa của bạn'}
-                {locale === 'th' && 'คู่มือซีรีส์จีนของคุณ'}
-                {locale === 'id' && 'Panduan drama China Anda'}
-              </p>
+              <p className="text-sm text-ink-4">Your guide to Chinese dramas</p>
               <div className="flex justify-center gap-6 text-sm text-ink-4 mt-4 mb-4">
                 <a href={`/${locale}/actors`} className="hover:text-ink-1 transition-colors duration-song">
                   {nav('actors')}
@@ -202,8 +180,7 @@ export default async function LocaleLayout({
             </div>
           </footer>
         </NextIntlClientProvider>
-        <LocaleSuggestion />
-      </body>
+              </body>
     </html>
   );
 }

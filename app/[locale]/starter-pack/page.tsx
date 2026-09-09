@@ -200,9 +200,6 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `https://cdramabinge.com/en/starter-pack`,
-        vi: `https://cdramabinge.com/vi/starter-pack`,
-        th: `https://cdramabinge.com/th/starter-pack`,
-        id: `https://cdramabinge.com/id/starter-pack`,
         'x-default': `https://cdramabinge.com/en/starter-pack`,
       },
     },

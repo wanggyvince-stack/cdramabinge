@@ -85,24 +85,10 @@ export async function generateMetadata({
   // SE-01: SEO-optimized title with keywords
   const yearStr = drama.year ? ` (${drama.year})` : '';
   const titleBase = `${displayTitle}${yearStr}`;
-  const seoTitle = (locale === 'en'
-    ? `${titleBase} — Chinese Drama Synopsis & Cast`
-    : locale === 'vi'
-    ? `${titleBase} — Phim Trung Quốc Tóm Tắt & Diễn Viên`
-    : locale === 'th'
-    ? `${titleBase} — ซีรีส์จีน เรื่องย่อ & นักแสดง`
-    : `${titleBase} — Drama China Sinopsis & Pemain`
-  ).slice(0, 55);
+  const seoTitle = `${titleBase} — Chinese Drama Synopsis & Cast`.slice(0, 55);
 
   // SE-01: SEO-optimized description with brand + CTA (total <= 160 chars)
-  const descSlice = locale === 'vi' ? 98 : 110;
-  const seoDesc = locale === 'en'
-    ? `${displaySynopsis.slice(0, descSlice)} Cast, ratings & similar picks on CDramaBinge.`
-    : locale === 'vi'
-    ? `${displaySynopsis.slice(0, descSlice)} Dàn diễn viên, đánh giá & phim tương tự trên CDramaBinge.`
-    : locale === 'th'
-    ? `${displaySynopsis.slice(0, descSlice)} นักแสดง เรตติ้ง & ซีรีส์ที่คล้ายบน CDramaBinge`
-    : `${displaySynopsis.slice(0, descSlice)} Pemeran, rating & drama serupa di CDramaBinge.`;
+  const seoDesc = `${displaySynopsis.slice(0, 110)} Cast, ratings & similar picks on CDramaBinge.`;
 
   return {
     title: seoTitle,
@@ -111,9 +97,6 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `https://cdramabinge.com/en/drama/${normalizedSlug}`,
-        vi: `https://cdramabinge.com/vi/drama/${normalizedSlug}`,
-        th: `https://cdramabinge.com/th/drama/${normalizedSlug}`,
-        id: `https://cdramabinge.com/id/drama/${normalizedSlug}`,
         'x-default': `https://cdramabinge.com/en/drama/${normalizedSlug}`,
       },
     },

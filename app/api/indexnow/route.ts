@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
 
 async function collectAllUrls(): Promise<string[]> {
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cdramabinge.com';
-  const LOCALES = ['en', 'vi', 'th', 'id'] as const;
+  const LOCALES = ['en'] as const;
   const urls: string[] = [];
 
   // Homepage (all locales)

@@ -10,7 +10,7 @@
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '03a92e0080b24cfaa16c8d475ba543ed';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cdramabinge.com';
 
-const LOCALES = ['en', 'vi', 'th', 'id'] as const;
+const LOCALES = ['en'] as const;
 
 export interface IndexNowResult {
   submitted: number;

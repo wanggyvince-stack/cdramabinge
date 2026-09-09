@@ -39,9 +39,6 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `https://cdramabinge.com/en/actors`,
-        vi: `https://cdramabinge.com/vi/actors`,
-        th: `https://cdramabinge.com/th/actors`,
-        id: `https://cdramabinge.com/id/actors`,
         'x-default': `https://cdramabinge.com/en/actors`,
       },
     },

@@ -94,9 +94,6 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `https://cdramabinge.com/en/quiz`,
-        vi: `https://cdramabinge.com/vi/quiz`,
-        th: `https://cdramabinge.com/th/quiz`,
-        id: `https://cdramabinge.com/id/quiz`,
         'x-default': `https://cdramabinge.com/en/quiz`,
       },
     },

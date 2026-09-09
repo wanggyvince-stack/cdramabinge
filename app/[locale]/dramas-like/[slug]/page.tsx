@@ -45,9 +45,6 @@ export async function generateMetadata({
       canonical: canonicalUrl,
       languages: {
         en: `https://cdramabinge.com/en/dramas-like/${slug}`,
-        vi: `https://cdramabinge.com/vi/dramas-like/${slug}`,
-        th: `https://cdramabinge.com/th/dramas-like/${slug}`,
-        id: `https://cdramabinge.com/id/dramas-like/${slug}`,
         'x-default': `https://cdramabinge.com/en/dramas-like/${slug}`,
       },
     },
