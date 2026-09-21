@@ -9,7 +9,6 @@ import { dramas } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { getLocalizedText, tmdbImage, isPlaceholderPoster } from '@/lib/utils/helpers';
 
-export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
 // Blog is English-only — other locales are 301 redirected by middleware

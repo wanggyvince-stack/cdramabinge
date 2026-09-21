@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/blog';
 
-export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
 
 // Blog is English-only — other locales are 301 redirected by middleware

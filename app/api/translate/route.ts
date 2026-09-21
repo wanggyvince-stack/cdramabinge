@@ -5,7 +5,7 @@ const SECRET = 'cdrama-translate-2026';
 // Strategy 1: MyMemory with email (higher rate limit: 10k chars/day vs 1k)
 async function translateMyMemory(text: string, from: string, to: string): Promise<string> {
   const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}&de=product@cdramabinge.com`;
-  const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(url, { next: { revalidate: 86400 } });
   if (!res.ok) throw new Error(`MyMemory: ${res.status}`);
   const data = await res.json();
   if (data.responseStatus === 429 || data.responseStatus === 403) throw new Error(`MyMemory rate limited`);

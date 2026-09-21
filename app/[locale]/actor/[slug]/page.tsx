@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600;
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { db } from '@/lib/db';
